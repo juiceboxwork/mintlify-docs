@@ -34,11 +34,15 @@ To keep Agents running and drive the most ROI, Agents are best utilized for role
 
 ## **Setting up an Agent**
 
+{/* TODO [agents-restructure]: Reinforce that agents ONLY exist inside projects — there is no standalone "create an agent" entry point anymore. Creating an agent = creating a project. */}
+
 Every Agent in Juicebox lives inside a project — creating an Agent means creating (or opening) the project it will source for. To set up an Agent, please follow the below steps:
 
 1. Navigate to **Projects** and click **Create new project**, or open an existing project you'd like to add an Agent to.
 2. Name the project after the role, configure collaborators, and link it to your ATS job (business plans only).
+   {/* TODO [agents-restructure]: Call out the ATS-job-launched flow — if a user links an ATS job and launches with a JD at project creation, the project homepage is bypassed entirely and the Search/Agent toggle in step 3 does not appear. Document how to get back to picking Agent from that entry path (e.g. via the project's table view / toggle). */}
 3. From the project homepage, select **Agent** to hand this role off to an Agent instead of running a manual search. If you're already inside a project running a manual search, you can toggle over to **Agent** at any time.
+   {/* TODO [agents-restructure]: Note that the project homepage is the only place the Search vs Agent choice is made now — the old standalone "create agent" flow is gone. */}
 
 ![Screenshot 2026-05-18 at 3.56.19 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-18_at_3-56-19_PM.png)
 
@@ -139,13 +143,15 @@ Whether your Agent is configured for manual review or automatic outreach, the sh
 
 ## **Recalibrating an Agent**
 
+{/* TODO [agents-restructure]: The "Agents homepage" referenced below no longer exists. Rewrite to point users to the project itself, or to the Projects page with the "Show agents only" filter applied. */}
+
 When an Agent runs out of leads, the Agent will be tagged as **Out of Leads.**
 
 ![Screenshot 2026-05-18 at 5.20.07 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-18_at_5-20-07_PM.png)
 
 If this message occurs you can:
 
-1. Select **Calibrate agent** from the Agents homepage to review and apply the Agent’s recommendations, or edit your filters and criteria directly.
+1. Select **Calibrate agent** from the Agents homepage to review and apply the Agent’s recommendations, or edit your filters and criteria directly. {/* TODO [agents-restructure]: Replace "Agents homepage" — that surface is being removed. Update to project view / projects page with "Show agents only" filter. */}
 
 ![Screenshot 2026-05-18 at 5.22.17 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-18_at_5-22-17_PM.png)
 
@@ -169,19 +175,30 @@ The Agent lives inside the same project as your search, so any leads it surfaces
 
 ## Trying Agents without an Agent seat
 
+{/* TODO [agents-restructure]: This whole section needs a pass once the trial flow is finalized. Open questions from the Jul 22 review:
+    - Sean is moving the paywall UP to the calibration step (before outreach settings). Bullet 3 currently mentions "approve leads, configure outreach, or start sourcing" — the outreach/sourcing framing is going away.
+    - Trial users should see ~3 sample profiles VIEW-ONLY. Clicking approve/reject is what triggers the paywall. Bullet 2 currently says trial users "calibrate... by reviewing sample profiles and giving feedback" — overstates what's allowed.
+    - "Request a guided trial" copy should reflect the emotional/CSM framing (training + swag, two-week trial) and note that both the admin and the CSM are emailed.
+    - Add a self-serve "buy now" path for admins alongside the guided-trial request.
+*/}
+
 If your plan doesn't currently include Agent seats, you can still start an Agent to see how it works. When you do, you'll see a **Trial** badge on the Agent and a persistent banner explaining what's happening as you go:
 
 - Name the role and describe what you're looking for, just like a paid Agent.
-- Calibrate the Agent by reviewing sample profiles and giving feedback.
-- After a couple of sample batches, you'll hit an upgrade prompt before you can approve leads, configure outreach, or start sourcing.
+- Calibrate the Agent by reviewing sample profiles and giving feedback. {/* TODO [agents-restructure]: Trial profiles are view-only — remove "giving feedback" or clarify that approve/reject triggers the upgrade prompt. */}
+- After a couple of sample batches, you'll hit an upgrade prompt before you can approve leads, configure outreach, or start sourcing. {/* TODO [agents-restructure]: Paywall is moving to the calibration step. Drop "configure outreach, or start sourcing" and reframe to "before you can approve or reject leads." */}
 
 From the upgrade prompt, you can:
 
-- **Buy Agent seats** directly to unlock the Agent you just calibrated.
-- **Request a guided trial** to have your CSM run a two-week trial with training for your team. An email is sent to your admin and your CSM when you request.
+- **Buy Agent seats** directly to unlock the Agent you just calibrated. {/* TODO [agents-restructure]: Confirm end-user vs admin-only for direct purchase; add admin self-serve "buy now" behavior. */}
+- **Request a guided trial** to have your CSM run a two-week trial with training for your team. An email is sent to your admin and your CSM when you request. {/* TODO [agents-restructure]: Expand copy — mention swag, team training, and the "your CSM will reach out to discuss" framing. */}
 - **Continue as a manual search** to convert the calibrated Agent into a regular search inside the same project — your prompt, filters, and criteria carry over so you don't have to redo the work.
 
+{/* TODO [agents-restructure]: Add a new "Pausing or stopping an Agent" section. Meeting confirmed stop/pause lives under "more options" inside the Agent view. Document how to pause, resume, and close an agent from the agent itself. */}
+
 ## Glossary
+
+{/* TODO [agents-restructure]: These statuses now surface on the redesigned Projects page (with a "Show agents only" filter and status filters), not on a standalone Agents page. Update surrounding context so users know where to find them. */}
 
 Understand the key terms associated to an Agent and its current status:
 
