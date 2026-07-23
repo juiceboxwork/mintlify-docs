@@ -176,6 +176,10 @@
     {
       "source": "/hiring-manager-seats",
       "destination": "/hiring-managers"
+    },
+    {
+      "source": "/integrations",
+      "destination": "/ats-integrations"
     }
   ],
   "description": "Official documentation for Juicebox, the AI recruiting platform used by 5,000+ customers. \n\nLearn how to search 800M+ candidate profiles with natural language, rank talent with AI filters and criteria, run personalized email outreach sequences, and sync results to your ATS or CRM.",
