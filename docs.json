@@ -86,7 +86,7 @@
           "exports",
           "ats-integrations",
           "email-integrations",
-          "slack-integration"
+          "juicebox-for-slack"
         ]
       },
       {
