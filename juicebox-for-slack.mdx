@@ -1,0 +1,127 @@
+---
+title: "Juicebox for Slack"
+description: "Bring Juicebox notifications and profile actions into the Slack channels where your recruiting team already collaborates."
+---
+
+<Note>
+  Juicebox for Slack is available in **early access** only.
+</Note>
+
+## Overview
+
+Recruiters and hiring managers already coordinate on roles in Slack, but candidate profiles live in other tabs.
+
+Juicebox for Slack closes that gap: connect a Project or Agent to the channel where the team works, and updates show up at the right time — right in the thread, ready to act on.
+
+Juicebox for Slack lets you:
+
+- **Notify, answer, and act** on existing projects, sequences, and Agents
+- **Review and surface leads** produced by an existing Agent or shortlist
+- **Act faster** on common actions — especially on mobile
+
+## Set up in three steps
+
+<Steps>
+  <Step title="Connect Slack to Juicebox">
+    Navigate to the **Integrations** tab and connect the Slack integration to Juicebox. This creates a single workspace connection.
+  </Step>
+  <Step title="Link a project or Agent">
+    From the **Projects** page, connect the relevant project to the Slack channel where the team collaborates on that role.
+  </Step>
+  <Step title="Tag @Juicebox in the slack channel">
+    Get started by asking Juicebox what it can do in Slack.
+
+    Type:
+
+    ```text
+    @Juicebox, what can you do?
+    ```
+
+    Juicebox will be added to the Slack channel and will now surface notifications, project updates, and shortlist review requests in that channel.
+  </Step>
+</Steps>
+
+## Core capabilities
+
+### Review leads directly in Slack channels
+
+When a review is requested, Slack posts a candidate carousel: approve, skip, or reject each profile.
+
+- Add context during the decision; feedback syncs back and informs the Agent's learning and the platform.
+- Carousels hold up to 10 cards, and press **See More** to generate more profiles at the end of the carousel.
+- Shortlist reviews and Agent leads follow the same flow.
+
+### Get project and sequence notifications
+
+Once a Project is connected to a Slack channel, activity shows up in that channel:
+
+- New Agent leads ready for review, or interested replies from an email sequence
+- Project activity such as name changes or collaborators being added or removed
+- Project activity summaries on a configurable cadence
+
+You can also chat directly with Juicebox in Slack to get project notifications and status updates.
+
+### Ask @Juicebox for project and Agent analytics
+
+Tag `@Juicebox` in your Slack Chat to get quick answers without navigating dashboards:
+
+- Pending, approved, or reviewed lead counts at a glance
+- Outreach volume — how many people contacted or added to a sequence
+- Pipeline, project, Agent, or sequence health, answered in the thread
+- What happened to a profile after it was approved
+
+### Take profile actions and create tasks
+
+Manage profiles and follow-up straight from Slack:
+
+- Add a **note** or update **tags** on a profile
+- Create a **reminder or task** and assign it to a teammate in the channel — the assignee is tagged in Slack, and the task and note live in Juicebox
+- Share a **LinkedIn URL** and add it straight to a project shortlist
+
+## Actions to try in Slack
+
+| Action | Example prompt |
+| --- | --- |
+| Lead review | `@juicebox, show me the pending leads for [Agent].` |
+| Agent status | `@juicebox, how is [Agent] doing?` |
+| Approvals | `@juicebox, how many leads did we approve this week for [Project]?` |
+| Outreach | `@juicebox, how many people have we contacted in [Sequence]?` |
+| Profile history | `@juicebox, what happened to [Profile] after we approved them?` |
+| Shortlist add | `@juicebox, add this LinkedIn profile to the shortlist for [Project].` |
+| Pipeline health | `@juicebox, what is the current health of [Project]?` |
+| Task | `@juicebox, assign [Teammate] a task to follow up with [Profile] by Friday.` |
+
+## Slack permissions requested
+
+When you connect Slack, Juicebox requests the following scopes:
+
+| Permission | Why we need it |
+| --- | --- |
+| `app_mentions:read` | View messages that directly mention @Juicebox in conversations that the app is in |
+| `chat:write` | Send messages as @Juicebox (app action) |
+| `files:write` | Upload, edit, and delete files as "Juicebox" (app action) |
+| `im:write` | Start direct messages with people (app action) |
+| `incoming-webhook` | Post messages to specific channels in Slack (app action) |
+| `links:write` | Show previews of app.juicebox.ai URLs in messages (app action) |
+| `reactions:write` | Add and edit emoji reactions (app action) |
+| `assistant:write` | Allow "Juicebox" to act as an App Agent |
+| `channels:history` | View messages and other content in public channels that "Juicebox" has been added to (app action) |
+| `channels:read` | View basic information about public channels in a workspace (app action) |
+| `files:read` | View files shared in channels and conversations that "Juicebox" has been added to (app action) |
+| `groups:history` | View messages and other content in private channels that "Juicebox" has been added to (app action) |
+| `groups:read` | View basic information about private channels that "Juicebox" has been added to (app action) |
+| `im:history` | View messages and other content in direct messages that "Juicebox" has been added to (app action) |
+| `im:read` | View basic information about direct messages that "Juicebox" has been added to (app action) |
+| `links:read` | View app.juicebox.ai URLs in messages (app action) |
+| `mpim:history` | View messages and other content in group direct messages that "Juicebox" has been added to (app action) |
+| `mpim:read` | View basic information about group direct messages that "Juicebox" has been added to (app action) |
+| `reactions:read` | View emoji reactions and their associated content in channels and conversations that "Juicebox" has been added to (app action) |
+| `users:read` | View people in a workspace (app action) |
+| `users:read.email` | View email addresses of people in a workspace (app action) |
+
+## Best practices
+
+- The integration creates one workspace connection, but supports unlimited Slack channel to project or Agent mappings. We recommend **one channel per project or Agent**, though some teams put everything in a single channel.
+- Notifications are scoped to the channel — anyone in the channel gets them. Some notifications (project renamed, collaborators added or removed) can't be disabled. The project activity summary has a configurable cadence — it defaults to weekly, and can be set to daily or monthly.
+- You only need to tag `@Juicebox` when starting a new thread, not on every message within the thread.
+- DMing Juicebox directly works for status and analytics questions, and works for users without a Juicebox seat (view-only). Lead review cannot happen in DMs.
