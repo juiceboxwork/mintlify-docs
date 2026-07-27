@@ -76,7 +76,8 @@
         "group": "Contacts",
         "icon": "address-book",
         "pages": [
-          "contacts-page"
+          "contacts-page",
+          "smart-notes"
         ]
       },
       {
