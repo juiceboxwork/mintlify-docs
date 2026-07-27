@@ -124,6 +124,20 @@ In order of appearance, these icons have the following functionality:
 3. **Columns:** Tailor the columns shown to only show the information you care about (e.g., Job Title, Company, Education, and Location)
 4. **Rows:** Hide or dim candidates from the table that have already been viewed
 
+### Evaluated count
+
+When your search returns more matches than Juicebox has evaluated for the table, you’ll see an **N evaluated** label next to the view toggle in table view. Clicking the info icon opens a popover that reads _“Evaluated N of X total matches. Evaluate more to view additional candidates in the table.”_ Selecting **Evaluate more** opens the same Evaluate More dialog as the People Plus icon, which pulls in candidates in batches of 500 up to a cap of 5,000 profiles.
+
+Use this to understand why some candidates in the total match pool aren’t yet visible in the table and to expand the evaluated set on demand.
+
+The evaluated-count cluster only appears when:
+
+- You’re in table view and the initial rerank has finished (so the count is final).
+- The total match pool exceeds the 500-profile evaluation cap.
+- Your search has at least one ranking criterion.
+
+It’s hidden or disabled for free plans, similar-profile searches, and searches with no ranking criteria — matching the disabled treatment on Review and the Evaluate More icon.
+
 ### Bulk Select
 
 Bulk select the perfect (100%), strong (75%\+), average (50%\+), and weak (25%\+) matches by clicking on the checkbox next to “Matches” and then adding those candidates who meet that match rate and above to your shortlist, a sequence or directly to your ATS.
