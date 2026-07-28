@@ -1,0 +1,48 @@
+---
+title: "How do I protect and improve my domain health?"
+sidebarTitle: "Domain health"
+description: "Keep your sending domain off spam lists with daily limits, strict mode, authentication records, and opt-out links."
+---
+
+Juicebox takes several measures to reduce the likelihood of emails being flagged as spam — such as limiting the number of emails sent per day and adding delays between each message. Here's what you can do on your end to protect your domain.
+
+## 1. Limit the number of emails sent per day
+
+- For new email domains, start with a limit of 5–10 emails/day.
+- All mailboxes are automatically set to a default limit of 100 emails/day.
+- For established domains, this limit can be increased up to a maximum of 200 emails per mailbox.
+- **If your domain has been restricted or is recovering from sending issues**, start with 25–50 emails/day and slowly increase back to your target limit once your domain recovers.
+
+To configure your daily sending limit, navigate to the **Integrations** tab and set your **Max Emails Per Day**.
+
+**What happens when you exceed your configured limit:** If you add more candidates to your sequences than your configured max emails limit allows, Juicebox will automatically delay sequence emails to later dates rather than sending them immediately. This can result in sequences starting several days later than expected.
+
+<Note>
+  Daily email limits apply per individual mailbox — not per project or cumulatively across all mailboxes. For example, if you have 3 mailboxes each configured with a 40 email per day limit, each mailbox can send up to 40 emails per day — not 120 emails from a single mailbox. If you have multiple active projects, they all share the same mailbox limit.
+</Note>
+
+To utilize multiple mailboxes' sending capacity, tie each sequence to a different mailbox. If you have 3 sequences each tied to a different mailbox (with 40 emails/day limits), you can send up to 120 emails per day total across all sequences. A sequence tied to only one mailbox is limited to that mailbox's individual daily limit.
+
+On the Growth plan, you can add up to 3 mailboxes, increasing your total daily capacity to 300 emails/day distributed across mailboxes. Distributing load across mailboxes also helps avoid provider-side rate limiting errors like "Daily Message/Recipient limit exceeded." Learn how to connect additional mailboxes in [Email Integrations](/email-integrations).
+
+## 2. Enable strict mode
+
+Navigate to **Account Settings > Email and Mailbox > Strict Mode** ([direct link](https://app.juicebox.ai/account?tab=mailbox-settings)). Strict mode only sends to verified email addresses.
+
+![Strict mode setting](/images/help/deliverability/domain-health-1.png)
+
+## 3. Set up email authentication records
+
+Make sure your domain is correctly configured with:
+
+- SPF
+- DKIM
+- DMARC
+
+These DNS records are managed outside of Juicebox by your domain administrator.
+
+## 4. Include an unsubscribe link
+
+Every email sequence should include a clear opt-out link. This improves deliverability and keeps you compliant with anti-spam laws. Admins can enforce this for the whole organization with **Force include unsubscribe link** in [organization settings](/manage-account#general).
+
+![Unsubscribe link in a sequence email](/images/help/deliverability/domain-health-2.png)
