@@ -155,6 +155,7 @@
             "pages": [
               "help/plans/upgrade-plan",
               "help/plans/add-team-members",
+              "help/plans/reduce-seats",
               "help/plans/merge-team-subscriptions",
               "help/plans/subscription-not-appearing",
               "help/plans/business-plan"
@@ -291,6 +292,14 @@
     {
       "source": "/articles/2915625155-how-can-i-change-the-email-address-associated-with-my-account",
       "destination": "/help/account/change-email-address"
+    },
+    {
+      "source": "/articles/6005783705-how-to-change-the-email-address-associated-with-your-account",
+      "destination": "/help/account/change-email-address"
+    },
+    {
+      "source": "/articles/8997402312-how-can-i-reduce-the-number-of-seats-i-m-paying-for",
+      "destination": "/help/plans/reduce-seats"
     },
     {
       "source": "/articles/5680485909-i-need-help-with-my-payment-method-billing-information-or-cancelling-my-subscription",
