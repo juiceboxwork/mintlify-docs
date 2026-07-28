@@ -12,107 +12,197 @@
     "dark": "/images/juicebox-favicon-white.svg"
   },
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Getting Started",
-        "icon": "rocket",
-        "pages": [
-          "index",
-          "getting-started",
-          "project-walkthrough",
-          "manage-account",
-          "all-about-credits"
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "icon": "rocket",
+            "pages": [
+              "index",
+              "getting-started",
+              "project-walkthrough",
+              "manage-account",
+              "all-about-credits"
+            ]
+          },
+          {
+            "group": "Search & Prompt",
+            "icon": "magnifying-glass",
+            "pages": [
+              "search",
+              "filters-vs-criteria",
+              "filters",
+              "criteria",
+              "insights",
+              "talent-rediscovery",
+              "network-sourcing",
+              "research-signals",
+              "profile-view",
+              "sharing-searches",
+              "search-library",
+              "tips-and-tricks"
+            ]
+          },
+          {
+            "group": "Agents",
+            "icon": "robot",
+            "pages": [
+              "juicebox-agents",
+              "memory"
+            ]
+          },
+          {
+            "group": "Shortlist",
+            "icon": "list-check",
+            "pages": [
+              "shortlist-profiles",
+              "profile-status",
+              "smart-report",
+              "request-a-review"
+            ]
+          },
+          {
+            "group": "Sequences",
+            "icon": "envelope",
+            "pages": [
+              "sequences",
+              "add-profiles",
+              "sequence-tracking",
+              "analytics",
+              "maximize-replies",
+              "contact-data"
+            ]
+          },
+          {
+            "group": "Contacts",
+            "icon": "address-book",
+            "pages": [
+              "contacts-page",
+              "smart-notes"
+            ]
+          },
+          {
+            "group": "Exports & Integrations",
+            "icon": "arrow-up-right-from-square",
+            "pages": [
+              "exports",
+              "ats-integrations",
+              "email-integrations"
+            ]
+          },
+          {
+            "group": "Organization",
+            "icon": "building",
+            "pages": [
+              "projects",
+              "hiding-profiles",
+              "hiring-managers",
+              "data-sources",
+              "reporting-stale-profiles",
+              "dnc"
+            ]
+          },
+          {
+            "group": "Support",
+            "icon": "life-ring",
+            "pages": [
+              "contact-support"
+            ]
+          }
         ]
       },
       {
-        "group": "Search & Prompt",
-        "icon": "magnifying-glass",
-        "pages": [
-          "search",
-          "filters-vs-criteria",
-          "filters",
-          "criteria",
-          "insights",
-          "talent-rediscovery",
-          "network-sourcing",
-          "research-signals",
-          "profile-view",
-          "sharing-searches",
-          "search-library",
-          "tips-and-tricks"
-        ]
-      },
-      {
-        "group": "Agents",
-        "icon": "robot",
-        "pages": [
-          "juicebox-agents",
-          "memory"
-        ]
-      },
-      {
-        "group": "Shortlist",
-        "icon": "list-check",
-        "pages": [
-          "shortlist-profiles",
-          "profile-status",
-          "smart-report",
-          "request-a-review"
-        ]
-      },
-      {
-        "group": "Sequences",
-        "icon": "envelope",
-        "pages": [
-          "sequences",
-          "add-profiles",
-          "sequence-tracking",
-          "analytics",
-          "maximize-replies",
-          "contact-data"
-        ]
-      },
-      {
-        "group": "Contacts",
-        "icon": "address-book",
-        "pages": [
-          "contacts-page",
-          "smart-notes"
-        ]
-      },
-      {
-        "group": "Exports & Integrations",
-        "icon": "arrow-up-right-from-square",
-        "pages": [
-          "exports",
-          "ats-integrations",
-          "email-integrations"
-        ]
-      },
-      {
-        "group": "Organization",
-        "icon": "building",
-        "pages": [
-          "projects",
-          "hiding-profiles",
-          "hiring-managers",
-          "data-sources",
-          "reporting-stale-profiles",
-          "dnc"
-        ]
-      },
-      {
-        "group": "Support",
-        "icon": "life-ring",
-        "pages": [
-          "contact-support"
-        ]
-      },
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
+        "tab": "Help Center",
+        "groups": [
+          {
+            "group": "Help Center",
+            "icon": "circle-question",
+            "pages": [
+              "help/index"
+            ]
+          },
+          {
+            "group": "Account & Login",
+            "icon": "user",
+            "pages": [
+              "help/account/login-issues",
+              "help/account/change-password",
+              "help/account/change-email-address",
+              "help/account/change-organization-name",
+              "help/account/roles-and-permissions",
+              "help/account/change-admin-user",
+              "help/account/remove-users",
+              "help/account/delete-account"
+            ]
+          },
+          {
+            "group": "Billing",
+            "icon": "credit-card",
+            "pages": [
+              "help/billing/update-payment-method",
+              "help/billing/download-invoices",
+              "help/billing/annual-billing",
+              "help/billing/switch-billing-frequency",
+              "help/billing/cancel-subscription",
+              "help/billing/resume-paused-account"
+            ]
+          },
+          {
+            "group": "Plans & Seats",
+            "icon": "layer-group",
+            "pages": [
+              "help/plans/upgrade-plan",
+              "help/plans/add-team-members",
+              "help/plans/merge-team-subscriptions",
+              "help/plans/subscription-not-appearing",
+              "help/plans/business-plan"
+            ]
+          },
+          {
+            "group": "ATS Setup Guides",
+            "icon": "plug",
+            "pages": [
+              "help/ats-setup/greenhouse",
+              "help/ats-setup/lever",
+              "help/ats-setup/ashby",
+              "help/ats-setup/bullhorn",
+              "help/ats-setup/recruiterflow",
+              "help/ats-setup/smartrecruiters",
+              "help/ats-setup/jobvite",
+              "help/ats-setup/teamtailor"
+            ]
+          },
+          {
+            "group": "Data Import & Migration",
+            "icon": "database",
+            "pages": [
+              "help/data-migration/migrate-starter-growth",
+              "help/data-migration/migrate-business",
+              "help/data-migration/linkedin-connections"
+            ]
+          },
+          {
+            "group": "Email Deliverability",
+            "icon": "envelope-circle-check",
+            "pages": [
+              "help/deliverability/email-bounces",
+              "help/deliverability/minimize-bounces",
+              "help/deliverability/re-enroll-bounced-emails",
+              "help/deliverability/domain-health",
+              "help/deliverability/suspended-email-account"
+            ]
+          },
+          {
+            "group": "FAQ",
+            "icon": "circle-info",
+            "pages": [
+              "help/faq/free-trial-limits",
+              "help/faq/more-export-credits",
+              "help/faq/ev-charger-support"
+            ]
+          }
         ]
       }
     ]
@@ -156,7 +246,11 @@
   "redirects": [
     {
       "source": "/untitled-page",
-      "destination": "/report-profile"
+      "destination": "/reporting-stale-profiles"
+    },
+    {
+      "source": "/report-profile",
+      "destination": "/reporting-stale-profiles"
     },
     {
       "source": "/export-profiles",
@@ -181,6 +275,242 @@
     {
       "source": "/integrations",
       "destination": "/ats-integrations"
+    },
+    {
+      "source": "/quickstart",
+      "destination": "/getting-started"
+    },
+    {
+      "source": "/articles/7800074844-how-can-i-change-my-password",
+      "destination": "/help/account/change-password"
+    },
+    {
+      "source": "/articles/6562934920-how-can-i-change-my-organization-name",
+      "destination": "/help/account/change-organization-name"
+    },
+    {
+      "source": "/articles/2915625155-how-can-i-change-the-email-address-associated-with-my-account",
+      "destination": "/help/account/change-email-address"
+    },
+    {
+      "source": "/articles/5680485909-i-need-help-with-my-payment-method-billing-information-or-cancelling-my-subscription",
+      "destination": "/help/billing/update-payment-method"
+    },
+    {
+      "source": "/articles/6853498701-how-can-i-upgrade-my-plan",
+      "destination": "/help/plans/upgrade-plan"
+    },
+    {
+      "source": "/articles/4115587548-how-can-i-add-or-edit-my-email-signature",
+      "destination": "/manage-account#email-signatures"
+    },
+    {
+      "source": "/articles/8685092979-how-can-i-delete-my-account",
+      "destination": "/help/account/delete-account"
+    },
+    {
+      "source": "/articles/8158527838-how-can-i-connect-an-outreach-email",
+      "destination": "/email-integrations"
+    },
+    {
+      "source": "/articles/2488131522-troubleshooting-login-issues-and-password-reset",
+      "destination": "/help/account/login-issues"
+    },
+    {
+      "source": "/articles/5290432383-how-to-change-the-admin-user-for-your-organization",
+      "destination": "/help/account/change-admin-user"
+    },
+    {
+      "source": "/articles/9696594586-account-roles-and-permissions",
+      "destination": "/help/account/roles-and-permissions"
+    },
+    {
+      "source": "/articles/4733197304-how-do-i-remove-users-from-my-workspace",
+      "destination": "/help/account/remove-users"
+    },
+    {
+      "source": "/articles/7270239207-how-can-i-access-the-knowledge-base",
+      "destination": "/help"
+    },
+    {
+      "source": "/articles/4360164293-recruiterflow-ats-juicebox-integration-set-up",
+      "destination": "/help/ats-setup/recruiterflow"
+    },
+    {
+      "source": "/articles/6424700779-smartrecruiters-ats-juicebox-integration-set-up",
+      "destination": "/help/ats-setup/smartrecruiters"
+    },
+    {
+      "source": "/articles/1079804348-how-do-i-export-my-linkedin-connections-to-juicebox",
+      "destination": "/help/data-migration/linkedin-connections"
+    },
+    {
+      "source": "/articles/7290894929-jobvite-ats-juicebox-integration-set-up",
+      "destination": "/help/ats-setup/jobvite"
+    },
+    {
+      "source": "/articles/9097293405-bullhorn-ats-juicebox-integration-set-up",
+      "destination": "/help/ats-setup/bullhorn"
+    },
+    {
+      "source": "/articles/8545167003-greenhouse-ats-juicebox-integration-set-up",
+      "destination": "/help/ats-setup/greenhouse"
+    },
+    {
+      "source": "/articles/8765787649-all-other-integrations",
+      "destination": "/ats-integrations"
+    },
+    {
+      "source": "/articles/2860868808-lever-ats-juicebox-integration-set-up",
+      "destination": "/help/ats-setup/lever"
+    },
+    {
+      "source": "/articles/8273174837-teamtailor-ats-juicebox-integration-set-up",
+      "destination": "/help/ats-setup/teamtailor"
+    },
+    {
+      "source": "/articles/3987097521-ashby-ats-juicebox-integration-set-up",
+      "destination": "/help/ats-setup/ashby"
+    },
+    {
+      "source": "/articles/5519346018-how-can-i-edit-my-billing-info",
+      "destination": "/help/billing/update-payment-method"
+    },
+    {
+      "source": "/articles/6852311521-how-can-i-change-my-payment-method",
+      "destination": "/help/billing/update-payment-method"
+    },
+    {
+      "source": "/articles/6148108744-how-can-i-access-my-invoice",
+      "destination": "/help/billing/download-invoices"
+    },
+    {
+      "source": "/articles/3630941883-how-can-i-cancel-my-subscription",
+      "destination": "/help/billing/cancel-subscription"
+    },
+    {
+      "source": "/articles/8527921044-how-does-annual-billing-work",
+      "destination": "/help/billing/annual-billing"
+    },
+    {
+      "source": "/articles/5010350233-how-can-i-switch-to-an-annual-subscription",
+      "destination": "/help/billing/switch-billing-frequency"
+    },
+    {
+      "source": "/articles/7247721300-how-to-resume-a-paused-account-or-update-payment-method",
+      "destination": "/help/billing/resume-paused-account"
+    },
+    {
+      "source": "/articles/6512363948-how-do-i-switch-between-monthly-and-annual-billing",
+      "destination": "/help/billing/switch-billing-frequency"
+    },
+    {
+      "source": "/articles/6128650977-how-can-i-add-team-members-to-the-growth-plan",
+      "destination": "/help/plans/add-team-members"
+    },
+    {
+      "source": "/articles/1635832469-my-team-member-already-has-a-subscription-how-can-i-add-them-to-my-team-plan",
+      "destination": "/help/plans/merge-team-subscriptions"
+    },
+    {
+      "source": "/articles/6234796474-where-can-i-find-more-information-on-the-business-plan",
+      "destination": "/help/plans/business-plan"
+    },
+    {
+      "source": "/articles/9435992662-how-can-i-book-a-business-plan-demo",
+      "destination": "/help/plans/business-plan"
+    },
+    {
+      "source": "/articles/4648021497-why-is-my-premium-subscription-not-appearing",
+      "destination": "/help/plans/subscription-not-appearing"
+    },
+    {
+      "source": "/articles/3620560401-how-do-credits-work",
+      "destination": "/all-about-credits"
+    },
+    {
+      "source": "/articles/1320187643-how-do-export-limits-work",
+      "destination": "/all-about-credits"
+    },
+    {
+      "source": "/articles/8178113905-business-plan-migrating-your-data-to-juicebox",
+      "destination": "/help/data-migration/migrate-business"
+    },
+    {
+      "source": "/articles/3092410146-starter-growth-migrating-your-data-to-juicebox",
+      "destination": "/help/data-migration/migrate-starter-growth"
+    },
+    {
+      "source": "/articles/8800206813-email-outreach",
+      "destination": "/help/deliverability/email-bounces"
+    },
+    {
+      "source": "/articles/1905794642-how-can-i-minimize-bounce-rates",
+      "destination": "/help/deliverability/minimize-bounces"
+    },
+    {
+      "source": "/articles/3484601519-how-can-i-re-enroll-bounced-emails",
+      "destination": "/help/deliverability/re-enroll-bounced-emails"
+    },
+    {
+      "source": "/articles/1494581546-how-do-i-protect-improve-my-domain-health",
+      "destination": "/help/deliverability/domain-health"
+    },
+    {
+      "source": "/articles/3452169619-my-email-account-is-suspended-what-can-i-do",
+      "destination": "/help/deliverability/suspended-email-account"
+    },
+    {
+      "source": "/articles/2230973216-how-to-get-more-export-credits",
+      "destination": "/help/faq/more-export-credits"
+    },
+    {
+      "source": "/articles/6447787013-wrong-company-juicebox-ev-charging-support-vs-juicebox-ai",
+      "destination": "/help/faq/ev-charger-support"
+    },
+    {
+      "source": "/articles/9836530784-how-to-find-similar-linkedin-profiles-using-agents",
+      "destination": "/juicebox-agents"
+    },
+    {
+      "source": "/articles/1895395362-what-are-the-free-trial-limits-and-duration",
+      "destination": "/help/faq/free-trial-limits"
+    },
+    {
+      "source": "/articles/1957724754-can-i-try-the-product-for-just-one-month",
+      "destination": "/help/faq/free-trial-limits"
+    },
+    {
+      "source": "/collections/2541201379-account",
+      "destination": "/help"
+    },
+    {
+      "source": "/collections/1168816381-knowledge_base",
+      "destination": "/help"
+    },
+    {
+      "source": "/collections/8104508190-integrations",
+      "destination": "/ats-integrations"
+    },
+    {
+      "source": "/collections/4957433120-billing",
+      "destination": "/help"
+    },
+    {
+      "source": "/collections/7047624041-paid_plans",
+      "destination": "/help"
+    },
+    {
+      "source": "/collections/9399061470-data_migration",
+      "destination": "/help"
+    },
+    {
+      "source": "/collections/8465059987-email_outreach",
+      "destination": "/help"
+    },
+    {
+      "source": "/collections/5023103341-faq",
+      "destination": "/help"
     }
   ],
   "description": "Official documentation for Juicebox, the AI recruiting platform used by 5,000+ customers. \n\nLearn how to search 800M+ candidate profiles with natural language, rank talent with AI filters and criteria, run personalized email outreach sequences, and sync results to your ATS or CRM.",

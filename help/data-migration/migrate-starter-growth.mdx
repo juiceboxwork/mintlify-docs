@@ -1,0 +1,39 @@
+---
+title: "Migrating your Data to Juicebox (Starter & Growth)"
+sidebarTitle: "Migrate data (Starter & Growth)"
+description: "Self-serve migration of contact data from your existing CRM into Juicebox."
+---
+
+Juicebox supports data migration from most major recruitment CRMs. As a Starter or Growth plan customer, you have access to self-serve data migration.
+
+_If you're on a Business plan, see [Migrating your Data to Juicebox (Business Plan)](/help/data-migration/migrate-business) for fully assisted migration._
+
+The self-serve migration process allows you to import large-scale contact data to avoid reaching out to profiles you already recently contacted.
+
+## Process
+
+1. **Export contact data.**
+   - Export your contacts directly from your current CRM as a CSV file, usually labeled "Export all Contacts" or similar.
+   - **Important:** Ensure your export includes each profile's LinkedIn or GitHub URL. Juicebox uses this URL to identify and match profiles.
+   - If exporting directly isn't possible, contact your CRM provider for assistance.
+
+2. **Reformat your data.**
+   - Juicebox accepts CSV format only.
+   - Your CSV must have one column containing LinkedIn URLs (plus an optional header row).
+   - Limit uploads to 500 profiles per CSV. You may perform multiple imports if necessary.
+   - If you plan to import more than 10,000 profiles, email [support@juicebox.ai](mailto:support@juicebox.ai).
+
+3. **Create a new Juicebox project.**
+   - Create a new project on Juicebox, for example "Past Contacts". This project will store all contacts you've had previous interactions with.
+
+4. **Import to Juicebox.**
+   - Open the **Shortlist** tab in your project. Then, select the **Import** option to upload a CSV of your contacts. More details on [bulk imports](/shortlist-profiles).
+   - Note that some contacts may not be resolved in Juicebox. You may need to exclude them from your export.
+
+5. **Testing.**
+   - After importing your profiles, test adding them to a sequence from a different project. You should see a [warning](/add-profiles) saying "This profile is shortlisted in another project".
+   - Additionally, you'll be able to see their shortlist status in the **Activities** field of the profile.
+
+<Tip>
+  To import your personal LinkedIn network rather than CRM data, see [How do I export my LinkedIn connections to Juicebox?](/help/data-migration/linkedin-connections)
+</Tip>
