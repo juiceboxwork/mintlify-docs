@@ -85,8 +85,7 @@
         "pages": [
           "exports",
           "ats-integrations",
-          "email-integrations",
-          "juicebox-for-slack"
+          "email-integrations"
         ]
       },
       {
