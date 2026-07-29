@@ -110,6 +110,13 @@
             "pages": [
               "contact-support"
             ]
+          },
+          {
+            "group": "Unlisted",
+            "hidden": true,
+            "pages": [
+              "email-deliverability"
+            ]
           }
         ]
       },

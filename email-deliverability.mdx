@@ -1,0 +1,121 @@
+---
+title: "Maximizing email deliverability"
+description: "A tool-agnostic guide to protecting your sender reputation, plus how Juicebox's native OAuth mailbox integration builds on these fundamentals."
+---
+
+Deliverability is the difference between your email landing in a candidate's primary inbox and never being seen. It is shaped less by the tool you send from and more by the state of your domain, your mailbox, and how you send. This guide walks through the fundamentals that apply to any sending platform, and then covers what changes when you send through Juicebox.
+
+## Why deliverability matters
+
+Every email you send is evaluated by mailbox providers (Gmail, Outlook, Yahoo, and others) against dozens of signals: your domain reputation, your authentication setup, your sending volume, and how recipients engage with your messages. Providers use these signals to decide whether your email lands in the inbox, the promotions tab, spam, or is blocked entirely.
+
+Poor deliverability compounds quickly. A few spam complaints or bounces can degrade your sender reputation across every recipient, not just the ones who complained. Rebuilding that reputation takes weeks — sometimes months.
+
+## 1. Authenticate your sending domain
+
+Authentication is the single most important step, and it happens in your DNS — outside of any sending tool. Without it, most modern inbox providers will silently deprioritize or block your mail.
+
+Configure all three of the following records on the domain you send from:
+
+- **SPF (Sender Policy Framework):** A DNS record that lists which servers are allowed to send on behalf of your domain. Prevents attackers from spoofing your address.
+- **DKIM (DomainKeys Identified Mail):** A cryptographic signature added to every message you send, proving it was not altered in transit and that it really came from your domain.
+- **DMARC (Domain-based Message Authentication, Reporting, and Conformance):** A policy that tells receiving servers what to do when SPF or DKIM checks fail. Start with `p=none` for monitoring, then move to `quarantine` or `reject` once you're confident in your setup.
+
+<Note>
+  Your domain administrator or IT team manages these records. If you use a dedicated recruiting domain (for example, `talent.yourcompany.com`), each subdomain needs its own authentication.
+</Note>
+
+## 2. Warm up new domains and mailboxes
+
+A brand-new domain or mailbox has no sending history, and providers treat sudden high volumes from unknown senders as a strong spam signal.
+
+- **New domains:** start at 5–10 emails/day and increase gradually over 4–6 weeks.
+- **New mailboxes on an established domain:** start at 20–30 emails/day and ramp up over 2–3 weeks.
+- **Recovering from a sending issue:** drop back to 25–50 emails/day and rebuild slowly once your domain recovers.
+
+The goal during warm-up is a steady, low-volume pattern of real conversations — not bulk sends. Positive engagement (opens, replies, and messages moved out of spam) during this period is what actually builds reputation.
+
+## 3. Respect daily sending limits
+
+Even on a warmed-up mailbox, there's a ceiling. As a general rule:
+
+- **100 emails/day per mailbox** is a safe steady-state for most established domains.
+- **Up to 200 emails/day** is achievable with strong open and reply rates.
+- **Above 200/day per mailbox** consistently trips provider rate limits and reputation thresholds.
+
+If you need more capacity, add more mailboxes rather than pushing a single mailbox harder. Distributing load across several senders is safer for reputation and avoids provider-side errors like "Daily Message/Recipient limit exceeded."
+
+## 4. Keep your list clean
+
+Every bounce and every spam complaint costs you reputation. Two habits that reduce both:
+
+- **Verify email addresses before sending.** Sending to invalid addresses is the fastest way to get flagged.
+- **Prefer personal addresses where appropriate.** Personal inboxes tend to have lower bounce rates and higher reply rates than professional addresses, which are frequently filtered by corporate spam systems or become stale when someone changes jobs.
+- **Suppress bounced and unsubscribed contacts.** Never re-send to an address that hard-bounced or opted out. Most sending tools do this automatically — confirm yours does.
+
+## 5. Write emails that get replies
+
+Engagement is not just a nice-to-have — it's a direct deliverability signal. Providers watch how recipients interact with your mail and adjust your reputation accordingly.
+
+- **Personalize the subject line and opening.** A relevant reference to the recipient's background dramatically increases open and reply rates.
+- **Keep it short.** Long emails to strangers rarely get read, and low read time is a negative signal.
+- **Avoid spam triggers.** Excessive links, all-caps subject lines, "FREE" language, and heavy image-to-text ratios all raise flags. Plain-text-style messages perform best.
+- **Include a clear opt-out.** An unsubscribe link is legally required in most jurisdictions and materially improves deliverability — it gives uninterested recipients an alternative to marking your email as spam.
+
+## 6. Send at a human pace
+
+Bulk sends to hundreds of recipients in a single minute look nothing like real human behavior. Space messages out across the day, and avoid sending to your entire list at exactly the same time. A steady drip of a few emails per minute over several hours is far safer than a single burst.
+
+## 7. Monitor and iterate
+
+Deliverability is not a one-time setup. Watch these metrics over time:
+
+- **Bounce rate** should stay below ~3%. Higher rates indicate list quality issues.
+- **Open rates** below your baseline suggest your mail is being filtered.
+- **Spam complaints** above ~0.1% will damage reputation quickly — pause and review immediately.
+- **Reply rates** are the strongest positive signal. Tune content, targeting, and timing to keep them high.
+
+Tools like Google Postmaster Tools and Microsoft SNDS provide visibility into how the two largest providers view your domain.
+
+## How Juicebox sends: native OAuth and why the above matters more
+
+Juicebox does not send email through a shared third-party relay or a Juicebox-owned domain. When you connect a mailbox, you authenticate directly with your email provider (Gmail, Microsoft 365, or IMAP) via OAuth, and every message goes through **your** mailbox using **your** domain.
+
+This is the same path a message takes when you send it from Gmail or Outlook yourself. There is no intermediate sending infrastructure, no shared IP pool, and no Juicebox domain in the headers.
+
+The upside: recipients see mail from you, not from a marketing tool, which is generally better for both deliverability and candidate experience.
+
+The tradeoff: **every deliverability signal is tied directly to your domain and your mailbox.** There is no shared reputation to fall back on. That means:
+
+- **Authentication is on you.** SPF, DKIM, and DMARC must be configured on your sending domain. Juicebox cannot sign messages on your behalf.
+- **Reputation is on you.** Bounces, spam complaints, and engagement all accrue to your domain — not to a pooled sender. Everything in the sections above matters more, not less, when you send through OAuth.
+- **Warm-up is on you.** A newly connected mailbox with no sending history should be warmed up the same way any new mailbox would be.
+
+### What Juicebox does automatically
+
+To help you send responsibly, Juicebox applies several safeguards on top of your mailbox:
+
+- **Email verification.** We run an [email waterfall](/contact-data) across multiple providers with automated bounce checks before sending. In [strict mode](/help/deliverability/domain-health#2-enable-strict-mode), sequences only send to verified addresses.
+- **Sending intervals.** Messages in a sequence are automatically spaced out — typically ~120 seconds between sends from the same mailbox — so a scheduled batch goes out at a human pace instead of a burst.
+- **Daily limits.** Each mailbox has a configurable per-day cap (100/day by default, up to 200/day). Sequences that would exceed the cap automatically defer to later days rather than pushing volume through.
+- **Multi-mailbox distribution.** Tie different sequences to different connected mailboxes to spread load and grow total capacity without over-sending from any single mailbox.
+- **Unsubscribe enforcement.** Admins can require an unsubscribe link on every sequence email from [organization settings](/manage-account#general).
+
+### Recommended setup checklist
+
+Before you start sending at volume through Juicebox:
+
+1. Confirm SPF, DKIM, and DMARC are configured on your sending domain.
+2. Connect your mailbox via OAuth on the **Integrations** page.
+3. If the mailbox or domain is new, start with a low daily limit and increase gradually.
+4. Turn on [strict mode](/help/deliverability/domain-health#2-enable-strict-mode) to send only to verified addresses.
+5. Include an unsubscribe link on every sequence.
+6. Monitor bounce and reply rates weekly during your first month, then monthly.
+
+## Related reading
+
+- [Email integrations](/email-integrations) — connect and manage your mailboxes
+- [Domain health](/help/deliverability/domain-health) — protect an established sending domain
+- [Minimize bounces](/help/deliverability/minimize-bounces) — reduce bounce rate on your sequences
+- [Contact data](/contact-data) — how Juicebox sources and verifies emails
+- [Maximize replies](/maximize-replies) — write outreach that gets responses
