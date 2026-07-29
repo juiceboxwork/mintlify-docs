@@ -72,6 +72,7 @@
               "sequence-tracking",
               "analytics",
               "maximize-replies",
+              "email-deliverability",
               "contact-data"
             ]
           },
@@ -109,13 +110,6 @@
             "icon": "life-ring",
             "pages": [
               "contact-support"
-            ]
-          },
-          {
-            "group": "Unlisted",
-            "hidden": true,
-            "pages": [
-              "email-deliverability"
             ]
           }
         ]
