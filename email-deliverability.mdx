@@ -205,6 +205,50 @@ Open: [app.juicebox.ai/account?tab=calendar](https://app.juicebox.ai/account?tab
   <img src="/images/deliverability/calendar-section.png" alt="Calendar section with toggle to allow disabling calendar integration" />
 </Frame>
 
+### Admin settings for deliverability
+
+Organization admins have a few additional levers under **Account → Organization settings** that apply across the whole team. These are the highest-leverage controls for deliverability because they set defaults and ceilings that every member operates within.
+
+Open: [app.juicebox.ai/account?tab=organization-settings](https://app.juicebox.ai/account?tab=organization-settings)
+
+#### Organization email sending limit
+
+Under **Email limits**, **Organization email sending limit** sets the maximum daily emails per mailbox for everyone in the organization. Individual mailbox caps (set on the Email integrations page) can be lower, but never higher, than this ceiling.
+
+<Frame>
+  <img src="/images/deliverability/org-email-limits.png" alt="Organization email sending limit field set to 500" />
+</Frame>
+
+- **Business plan:** up to 500/day
+- **Self-serve plans:** up to 200/day
+
+Lowering this org-wide ceiling is the fastest way to enforce a conservative sending posture across the whole team — useful when you are warming a new domain, or recovering from a deliverability incident and want to cap volume before individual members can push it back up.
+
+#### Default mailbox access
+
+Under **Mailboxes**, **Default mailbox access** controls the privacy setting applied to newly connected mailboxes:
+
+<Frame>
+  <img src="/images/deliverability/org-default-mailbox-access.png" alt="Default mailbox access setting with Public and Private options" />
+</Frame>
+
+- **Public** — everyone in the organization can send from new mailboxes (useful for SOBO workflows).
+- **Private** — only mailbox owners and users the owner shares with can send from new mailboxes.
+
+This does not directly change deliverability, but it shapes how many people can send from any given mailbox — which affects how easy it is to keep per-mailbox volume within a healthy range. Existing mailboxes are not affected; owners can change their own privacy settings from the Integrations tab.
+
+#### Enforced footer addendum (Enterprise)
+
+Under the org-wide sequence controls, **Enforced footer addendum** appends default text to the footer of every outbound sequence email. Users can't disable or edit it.
+
+<Frame>
+  <img src="/images/deliverability/org-enforced-footer-addendum.png" alt="Enforced footer addendum toggle with text input for default footer content" />
+</Frame>
+
+This is an Enterprise feature, primarily used when legal or compliance requires that a specific notice (privacy policy link, regulatory disclosure, unsubscribe wording) appears on every message regardless of who sends it. When enabled, the addendum is force-appended to every sequence email — members can't turn it off, edit it, or omit it on individual sends.
+
+The related **Force include unsubscribe link** toggle on the same page ensures every sequence email includes an unsubscribe link, which is legally required in most jurisdictions and materially improves deliverability.
+
 ### What Juicebox does automatically
 
 On top of your settings, Juicebox applies several safeguards regardless of configuration:
