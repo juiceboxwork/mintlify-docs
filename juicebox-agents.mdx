@@ -4,6 +4,8 @@ sidebarTitle: "Juicebox Agents"
 description: "Juicebox Agents are your 24/7 sourcing partner, built to take manual sourcing off your plate and instantly scale your recruiting team’s capacity."
 ---
 
+{/* TODO (Jul 22 restructure): Reframe up top — an agent lives inside a project (there is no standalone Agents page anymore); every agent = a project. Add a short note that manual searches and agents are two modes of the same project and you toggle between them. */}
+
 ## **Agent Overview**
 
 Juicebox Agents are automated sourcing assistants that continuously source for talent based on the criteria you define. Instead of running the same search manually every day, Agents work in the background to monitor the market and surface new, relevant candidates as they appear.
@@ -169,6 +171,33 @@ The Agent lives inside the same project as your search, so any leads it surfaces
 
 ## Trying Agents without an Agent seat
 
+{/* TODO (Jul 22 restructure): This section is close but needs several tweaks based on Jul 22 review:
+
+  1. Where the block happens: the current copy says "before you can approve leads, configure outreach, or start sourcing" — Sean is moving the paywall earlier, so users hit the upgrade prompt at the **calibration step**, before ever reviewing/approving profiles. In the trial, users can *view* two batches of three sample profiles (get a "taste") but should NOT be able to approve or reject them; approval/reject actions are what triggers the upgrade prompt. Rewrite the "what you can do in trial" bullets accordingly.
+
+  2. Add the persistent guidance surfaces users see during trial:
+     - A **Trial** badge on the agent (hoverable, links to a "how agents work" help page for source of truth on the trial rules).
+     - A persistent left-hand banner during calibration so the trial context is visible even if the user missed the initial screen.
+     - The agent itself narrates what it is doing during the sample runs (self-explanation copy — "I'm an agent, here's how I work, here's what you'd see if you had an agent seat"). Note this as the intended agent voice during trial.
+
+  3. Emphasize "no wasted work" — the same project can convert to a regular manual search without duplicating effort; the calibration, prompt, filters, and criteria carry over.
+
+  4. Expand the upgrade prompt options to match what was agreed:
+     - **Buy Agent seats now** — an admin (and any user with buy permission) can purchase directly from the prompt (prorated to end of term). Non-admin users see this option but the actual purchase is gated to their permissions.
+     - **Request a guided trial** — opens a popup that explains what's included ("Your CSM can run training for your team, send swag, and set up a two-week trial") before firing the request.
+     - **Continue as a manual search** — one-click convert of the calibrated agent into a regular search inside the same project.
+
+  5. Update the "request guided trial" email description:
+     - The email now goes to *both* the admin and the requesting user's CSM.
+     - The admin email needs an emotionally resonant framing (e.g. "N people on your team this quarter have wanted to run agents autonomously") plus usage-based stats we already have (time spent sourcing manually vs projected with agents, searches run, shortlists built, reply-rate comparison). Coordinate with GTM/CSM on the exact copy — flag this as a copy TODO.
+     - Internally, the CSM also receives an alert (not just an email) surfaced in whichever channel the CSM team chooses.
+
+  6. Note the training/enablement follow-ups triggered by this change:
+     - 1:1 (John / Giana): revamp the standard onboarding flow to reflect the new project-first model — still separate the agent-only onboarding for customers who already have agents.
+     - Customer.io: coordinate with Tailor/KB team to define the new events and triggers this flow needs (Sonia to loop in David/KB; separate session scheduled to align on which data can be sent and which triggers to add). Add link to the KB doc once it exists.
+     - Give customers advance notice before launch (per prior commitment) — noted as an internal action, not a doc surface.
+*/}
+
 If your plan doesn't currently include Agent seats, you can still start an Agent to see how it works. When you do, you'll see a **Trial** badge on the Agent and a persistent banner explaining what's happening as you go:
 
 - Name the role and describe what you're looking for, just like a paid Agent.
@@ -190,3 +219,5 @@ Understand the key terms associated to an Agent and its current status:
 - **Out of Leads:** An Agent that has finished running and should either be recalibrated or closed, and takes up a seat.
 - **Calibrating:** An Agent that is being set up or calibrated, but has not yet started sourcing, and does **not** take up a seat.
 - **Closed:** An Agent that is turned off and cannot be restarted, and does **not** take up a seat.
+
+{/* TODO (Jul 22 restructure): Add an **Action Needed** status to the glossary (used on the projects list agent stats panel) once the exact definition is confirmed with product — likely covers "waiting for approval" and other states where the user needs to intervene. */}

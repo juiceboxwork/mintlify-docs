@@ -3,11 +3,20 @@ title: "Projects"
 description: "Projects are the primary organizational feature in Juicebox, helping you segment searches and shortlisted profiles."
 ---
 
+{/* TODO (Jul 22 restructure): Reframe projects as the top-level unit — "campaigns for a role" — and make it explicit that there is no longer a separate Agents page or a separate Search entry point. Creating a search or an agent means creating a project; both live inside a project and are mutually exclusive per project (an agent replaces the search for that role). Add a short intro paragraph capturing this framing before "Overview of Projects". */}
+
 ### Overview of Projects
 
 Projects act as folders, which can hold searches, agents, and shortlisted candidates for a given role. We recommend creating a new project for each new role or target audience that you're kicking off. You can create a new project by selecting **Create new project +** in the top right.
 
 Every search and every agent in Juicebox lives inside a project. When you create a new project, you'll land on the project homepage, where you can name the project, connect it to an ATS job, and then choose whether to start with a **Search** or an **Agent** for that role. You can switch between the two modes at any time within the project.
+
+{/* TODO (Jul 22 restructure): Document what actually appears on the project homepage:
+    - Project name at top
+    - Central action area to fire off a Search or start an Agent for the role (this is where the old "focus search state" options now live)
+    - Right-hand side: collaborators, connected integrations (including ATS job links), and a **mini shortlist preview** with a link out to the full shortlist page (no redundant full shortlist here)
+    - Naming behavior: typing a role name (e.g. "Brand Designer") auto-completes the ATS job link and hiring manager when there's an unambiguous match; if multiple matching ATS roles exist, the user picks
+    - ATS-launch shortcut: when creating a project by launching from an ATS job description, the project homepage is **bypassed** and you go straight into the search — call out that to switch that project to an agent afterward you toggle from inside the project. */}
 
 ![Screenshot 2026-02-16 at 4.05.08 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/projects/Screenshot_2026-02-16_at_4-05-08_PM.png)
 
@@ -52,6 +61,8 @@ Projects will appear in your home screen depending on the categorization:
 
 Alongside each project, you'll see project-level details (owner, ATS link, shortlist size) as well as agent-level details when the project has an agent — including agent status (sourcing, paused, out of leads, calibrating), calibration progress, and any files attached. Your total project count sits on the left, and team-wide agent stats are grouped separately so you can tell agent activity apart from project activity at a glance.
 
+{/* TODO (Jul 22 restructure): Clarify the "no agents = blank columns" state. For teams without agents, the agent-specific columns on the projects list render as dashes/blanks, and the agent stats panel becomes a promo card encouraging the user to try an agent. Add a screenshot or short note about this state. Also confirm the agent stats panel exposes: total agents, how many are sourcing / paused / out of leads / calibrating / awaiting approval — this is what the team specifically wants surfaced (utilization at a glance). */}
+
 **Filtering the list**
 
 To narrow the home screen, use the filters at the top of the list:
@@ -59,6 +70,8 @@ To narrow the home screen, use the filters at the top of the list:
 - **Show agents only** to hide projects that don't have an agent attached — this is the replacement for the old dedicated Agents page.
 - Filter by **status** (for example, sourcing or paused) to focus on the work that needs attention.
 - Filter to just your own projects, or just your agent-backed projects.
+
+{/* TODO (Jul 22 restructure): Explicitly state that the standalone Agents page/dashboard has been removed. The **Show agents only** filter on the projects list is the canonical way to view agents now. Reference this from any lingering "Agents dashboard" mentions elsewhere. */}
 
 ![Screenshot 2026-02-16 at 3.26.58 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/projects/Screenshot_2026-02-16_at_3-26-58_PM.png)
 
