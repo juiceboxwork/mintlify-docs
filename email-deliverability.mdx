@@ -27,7 +27,7 @@ Configure all three of the following records on the domain you send from:
 
 A brand-new domain or mailbox has no sending history, and providers treat sudden high volumes from unknown senders as a strong spam signal.
 
-- **New domains:** start at 5–10 emails/day and increase gradually over 4–6 weeks.
+- **New domains:** start at the minimum daily cap (20 emails/day in Juicebox) and increase gradually over 4–6 weeks.
 - **New mailboxes on an established domain:** start at 20–30 emails/day and ramp up over 2–3 weeks.
 - **Recovering from a sending issue:** drop back to 25–50 emails/day and rebuild slowly once your domain recovers.
 
@@ -35,13 +35,13 @@ The goal during warm-up is a steady, low-volume pattern of real conversations �
 
 ### 3. Respect daily sending limits
 
-Even on a warmed-up mailbox, there's a ceiling. As a general rule:
+Scale sending volume to match how much your domain has proven it can handle. As a general rule:
 
 - **100 emails/day per mailbox** is a safe steady-state for most established domains — this is the Juicebox default.
-- **Up to 200 emails/day** is achievable with strong open and reply rates.
-- **Above 200/day per mailbox** consistently trips provider rate limits and reputation thresholds.
+- **200–500 emails/day** is achievable on an established domain with strong open and reply rates. Scale up gradually as your reputation holds — do not jump straight to the ceiling.
+- **New or recovering domains** should stay well below these numbers until sending history is built up.
 
-If you need more capacity, add more mailboxes rather than pushing a single mailbox harder. Distributing load across several senders is safer for reputation and avoids provider-side errors like "Daily Message/Recipient limit exceeded."
+If you need more capacity, adding more mailboxes is generally safer than pushing a single mailbox to its ceiling. Distributing load across several senders spreads reputation risk and helps avoid provider-side errors like "Daily Message/Recipient limit exceeded."
 
 In Juicebox, the per-mailbox daily cap is adjusted per mailbox from [Email integrations](/email-integrations) — see the [Per-mailbox daily send limit](#per-mailbox-daily-send-limit) section below for defaults and ceilings.
 
@@ -274,7 +274,6 @@ Before you start sending at volume through Juicebox:
 ## Related reading
 
 - [Email integrations](/email-integrations) — connect and manage your mailboxes
-- [Domain health](/help/deliverability/domain-health) — protect an established sending domain
 - [Minimize bounces](/help/deliverability/minimize-bounces) — reduce bounce rate on your sequences
 - [Contact data](/contact-data) — how Juicebox sources and verifies emails
 - [Maximize replies](/maximize-replies) — write outreach that gets responses

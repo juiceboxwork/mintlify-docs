@@ -192,7 +192,6 @@
               "help/deliverability/email-bounces",
               "help/deliverability/minimize-bounces",
               "help/deliverability/re-enroll-bounced-emails",
-              "help/deliverability/domain-health",
               "help/deliverability/suspended-email-account"
             ]
           },
@@ -464,7 +463,11 @@
     },
     {
       "source": "/articles/1494581546-how-do-i-protect-improve-my-domain-health",
-      "destination": "/help/deliverability/domain-health"
+      "destination": "/email-deliverability"
+    },
+    {
+      "source": "/help/deliverability/domain-health",
+      "destination": "/email-deliverability"
     },
     {
       "source": "/articles/3452169619-my-email-account-is-suspended-what-can-i-do",
