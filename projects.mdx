@@ -5,9 +5,21 @@ description: "Projects are the primary organizational feature in Juicebox, helpi
 
 ### Overview of Projects
 
-Projects act as folders, which can hold searches, agents, and shortlisted candidates for a given role. We recommend creating a new project for each new role or target audience that you're kicking off. You can create a new project by selecting **Create new project +** in the top right.
+Projects are the top-level unit of work in Juicebox — think of one project as a campaign for a single role. Every search and every agent lives inside a project, and there is no separate Agents page or standalone "create a search" entry point: creating a search or an agent means creating (or opening) a project. Each project runs in one mode at a time — a manual **Search** or an **Agent** — and you can toggle between the two whenever you like.
 
-Every search and every agent in Juicebox lives inside a project. When you create a new project, you'll land on the project homepage, where you can name the project, connect it to an ATS job, and then choose whether to start with a **Search** or an **Agent** for that role. You can switch between the two modes at any time within the project.
+We recommend creating a new project for each new role or target audience that you're kicking off. You can create a new project by selecting **Create new project +** in the top right.
+
+### The project homepage
+
+When you create a new project, you'll land on the project homepage. This is the launch pad for the role:
+
+- **Name the project.** Naming it after the role (for example, "Brand Designer") lets Juicebox auto-complete the ATS job link and the hiring manager when there's a unique match. If more than one open role matches, you'll be asked to pick which one to link.
+- **Choose Search or Agent.** The central action area is where you fire off a manual **Search** or hand the role off to an **Agent**. You can switch between the two at any time from inside the project.
+- **See project context on the right.** Collaborators, connected integrations, the linked ATS job, and a mini preview of the current shortlist all live in the right-hand panel. The mini shortlist links out to the full shortlist page — there's no duplicated shortlist view on the homepage.
+
+<Tip>
+  If you create a project by launching directly from an ATS job description, Juicebox skips the project homepage and drops you straight into a new search using the imported job description. To turn that project into an agent later, toggle over to **Agent** from inside the project.
+</Tip>
 
 ![Screenshot 2026-02-16 at 4.05.08 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/projects/Screenshot_2026-02-16_at_4-05-08_PM.png)
 
@@ -50,13 +62,17 @@ Projects will appear in your home screen depending on the categorization:
 - **Organization:** Includes projects created and shared across your team
 - **Closed:** Includes projects that are manually closed in Juicebox
 
-Alongside each project, you'll see project-level details (owner, ATS link, shortlist size) as well as agent-level details when the project has an agent — including agent status (sourcing, paused, out of leads, calibrating), calibration progress, and any files attached. Your total project count sits on the left, and team-wide agent stats are grouped separately so you can tell agent activity apart from project activity at a glance.
+Alongside each project, you'll see project-level details (owner, ATS link, shortlist size) as well as agent-level details when the project has an agent — including agent status, calibration progress, and any files attached.
+
+Your total project count sits on the left, and team-wide agent stats are grouped separately so you can tell agent activity apart from project activity at a glance. The agent stats panel surfaces how many agents you have and how each is trending — sourcing, paused, out of leads, calibrating, or action needed — so you can see agent utilization at a glance.
+
+If your team doesn't have agents yet, the agent-specific columns on the list render as dashes and the agent stats panel becomes a short promo pointing you to try an agent — no empty dashboards to configure around.
 
 **Filtering the list**
 
 To narrow the home screen, use the filters at the top of the list:
 
-- **Show agents only** to hide projects that don't have an agent attached — this is the replacement for the old dedicated Agents page.
+- **Show agents only** to hide projects that don't have an agent attached — this is the canonical way to view your agents now that the standalone Agents page has been retired.
 - Filter by **status** (for example, sourcing or paused) to focus on the work that needs attention.
 - Filter to just your own projects, or just your agent-backed projects.
 

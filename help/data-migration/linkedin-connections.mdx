@@ -1,0 +1,35 @@
+---
+title: "How do I export my LinkedIn connections to Juicebox?"
+sidebarTitle: "Import LinkedIn connections"
+description: "Download your LinkedIn connections and upload them to Juicebox."
+---
+
+To export your connections to Juicebox, follow the steps below:
+
+1. Click this [link](https://www.linkedin.com/mypreferences/d/download-my-data) to navigate to LinkedIn's data export interface. If the link does not work, follow the steps in [LinkedIn's help article](https://www.linkedin.com/help/linkedin/answer/a566336/export-connections-from-linkedin).
+
+2. In the interface, select **Download larger data archive** (option 1) and then click **Request archive**.
+
+   ![LinkedIn data export interface](/images/help/data-migration/linkedin-connections-1.png)
+
+3. Within 24 hours, you should receive an email from LinkedIn containing a CSV file called "Connections". Download that file and head to the Juicebox platform. On Juicebox, in the **Integrations** tab, select **LinkedIn** and upload the CSV file.
+
+<Note>
+  If you receive a ZIP file instead of a CSV file from LinkedIn, this is normal — simply extract the ZIP file to access the `Connections.csv` file inside, then upload that CSV to Juicebox as described.
+
+  Juicebox supports up to 500 profiles per upload, so if your connections file contains more than 500 rows, you'll need to split it into multiple CSV files of 500 rows or fewer and upload them separately.
+</Note>
+
+## Troubleshooting CSV import issues
+
+If your CSV import fails, check whether your LinkedIn export file contains a "Notes" section at the top before the connection data. Open the CSV file and verify that the very first row starts with the header:
+
+```
+First Name, Last Name, URL, Email Address, Company, Position, Connected On
+```
+
+If you see notes or other text above this header, delete those rows so the header becomes the first row, save the file, and re-upload it to Juicebox.
+
+<Tip>
+  Uploaded connections power [Network Sourcing](/network-sourcing), which surfaces candidates your team already has a path to.
+</Tip>
