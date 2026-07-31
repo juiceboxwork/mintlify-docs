@@ -1,17 +1,17 @@
 ---
 title: "Email deliverability"
-description: "A tool-agnostic guide to protecting your sender reputation, plus a walkthrough of every Juicebox setting that affects how — and how much — your messages get delivered."
+description: "Protect your sender reputation and get more of your emails into the inbox."
 ---
 
-Deliverability comes down to the state of your domain, your mailbox, and how you send — not the tool you send from. This guide covers the fundamentals that apply anywhere, then the Juicebox-specific settings that let you tune it.
+Deliverability comes down to your domain, your mailbox, and how you send. This guide covers the fundamentals that apply anywhere, then the Juicebox settings that let you tune them.
 
 ## Outside Juicebox
 
-The most important deliverability work happens on your domain and in your sending habits — regardless of which tool you use to send.
+The most important deliverability work happens on your domain and in your sending habits, regardless of which tool you use to send.
 
 ### 1. Authenticate your sending domain
 
-Authentication is the single most important step, and it happens in your DNS — outside of any sending tool. Without it, most modern inbox providers will silently deprioritize or block your mail.
+Authentication is the single most important step, and it happens in your DNS, outside of any sending tool. Without it, most modern inbox providers will silently deprioritize or block your mail.
 
 Configure all three of the following records on the domain you send from:
 
@@ -31,40 +31,40 @@ A brand-new domain or mailbox has no sending history, and providers treat sudden
 - **New mailboxes on an established domain:** start at 20–30 emails/day and ramp up over 2–3 weeks.
 - **Recovering from a sending issue:** drop back to 25–50 emails/day and rebuild slowly once your domain recovers.
 
-The goal during warm-up is a steady, low-volume pattern of real conversations — not bulk sends. Positive engagement (opens, replies, and messages moved out of spam) during this period is what actually builds reputation.
+The goal during warm-up is a steady, low-volume pattern of real conversations, not bulk sends. Positive engagement (opens, replies, and messages moved out of spam) during this period is what actually builds reputation.
 
 ### 3. Respect daily sending limits
 
 Scale sending volume to match how much your domain has proven it can handle. As a general rule:
 
-- **100 emails/day per mailbox** is a safe steady-state for most established domains — this is the Juicebox default.
-- **200–500 emails/day** is achievable on an established domain with strong open and reply rates. Scale up gradually as your reputation holds — do not jump straight to the ceiling.
+- **100 emails/day per mailbox** is a safe steady-state for most established domains; this is the Juicebox default.
+- **200–500 emails/day** is achievable on an established domain with strong open and reply rates. Scale up gradually as your reputation holds, and do not jump straight to the ceiling.
 - **New or recovering domains** should stay well below these numbers until sending history is built up.
 
 If you need more capacity, adding more mailboxes is generally safer than pushing a single mailbox to its ceiling. Distributing load across several senders spreads reputation risk and helps avoid provider-side errors like "Daily Message/Recipient limit exceeded."
 
-In Juicebox, the per-mailbox daily cap is adjusted per mailbox from [Email integrations](/email-integrations) — see the [Per-mailbox daily send limit](#per-mailbox-daily-send-limit) section below for defaults and ceilings.
+In Juicebox, the per-mailbox daily cap is adjusted per mailbox from [Email integrations](/email-integrations); see the [Per-mailbox daily send limit](#per-mailbox-daily-send-limit) section below for defaults and ceilings.
 
 ### 4. Keep your list clean
 
 Every bounce and every spam complaint costs you reputation. Two habits that reduce both:
 
-- **Verify email addresses before sending.** Sending to invalid addresses is the fastest way to get flagged. Juicebox does this for you automatically — every address is run through an [email waterfall with multi-provider verification](/contact-data) before it can be used in a sequence, and turning on **Email strict mode** enforces verified-only sending as a hard gate.
+- **Verify email addresses before sending.** Sending to invalid addresses is the fastest way to get flagged. Juicebox does this for you automatically: every address is run through an [email waterfall with multi-provider verification](/contact-data) before it can be used in a sequence, and turning on **Email strict mode** enforces verified-only sending as a hard gate.
 - **Prefer personal addresses where appropriate.** Personal inboxes tend to have lower bounce rates and higher reply rates than professional addresses, which are frequently filtered by corporate spam systems or become stale when someone changes jobs. Juicebox defaults to *Prefer personal emails, fallback to professional* when you add profiles to a sequence, and you can enforce personal-only sending organization-wide from account settings.
-- **Suppress bounced and unsubscribed contacts.** Never re-send to an address that hard-bounced or opted out. Juicebox does this automatically — bounced emails are re-enrolled only via [an explicit action](/help/deliverability/re-enroll-bounced-emails), and unsubscribes are enforced across every sequence.
+- **Suppress bounced and unsubscribed contacts.** Never re-send to an address that hard-bounced or opted out. Juicebox does this automatically: bounced emails are re-enrolled only via [an explicit action](/help/deliverability/re-enroll-bounced-emails), and unsubscribes are enforced across every sequence.
 
 ### 5. Write emails that get replies
 
-Engagement is not just a nice-to-have — it's a direct deliverability signal. Providers watch how recipients interact with your mail and adjust your reputation accordingly.
+Engagement is not just a nice-to-have; it's a direct deliverability signal. Providers watch how recipients interact with your mail and adjust your reputation accordingly.
 
 - **Personalize the subject line and opening.** A relevant reference to the recipient's background dramatically increases open and reply rates.
 - **Keep it short.** Long emails to strangers rarely get read, and low read time is a negative signal.
 - **Avoid spam triggers.** Excessive links, all-caps subject lines, "FREE" language, and heavy image-to-text ratios all raise flags. Plain-text-style messages perform best.
-- **Include a clear opt-out.** An unsubscribe link is legally required in most jurisdictions and materially improves deliverability — it gives uninterested recipients an alternative to marking your email as spam.
+- **Include a clear opt-out.** An unsubscribe link is legally required in most jurisdictions and materially improves deliverability, because it gives uninterested recipients an alternative to marking your email as spam.
 
 In Juicebox, [Sequences](/sequences) handle most of this for you:
 
-- **AI-generated sequences** produce short, plain-text-style outreach that follows the patterns above by default — a good starting point if you're not sure how to phrase a first message.
+- **AI-generated sequences** produce short, plain-text-style outreach that follows the patterns above by default, a good starting point if you're not sure how to phrase a first message.
 - **AI Commands** insert per-candidate personalization (a one-line reference to their experience, skills, or background) into every step, so every message reads like it was written specifically for that person rather than a template blast.
 - **Snippets** let you reuse blocks of copy across sequences without copy-pasting entire messages, which helps avoid the "identical text over and over" pattern that inbox providers flag.
 
@@ -80,7 +80,7 @@ Deliverability is not a one-time setup. Watch these metrics over time:
 
 - **Bounce rate** should stay below ~3%. Higher rates indicate list quality issues.
 - **Open rates** below your baseline suggest your mail is being filtered.
-- **Spam complaints** above ~0.1% will damage reputation quickly — pause and review immediately.
+- **Spam complaints** above ~0.1% will damage reputation quickly; pause and review immediately.
 - **Reply rates** are the strongest positive signal. Tune content, targeting, and timing to keep them high.
 
 Tools like Google Postmaster Tools and Microsoft SNDS provide visibility into how the two largest providers view your domain.
@@ -93,7 +93,7 @@ This is the same path a message takes when you send it from Gmail or Outlook you
 
 The upside: recipients see mail from you, not from a marketing tool, which is generally better for both deliverability and candidate experience.
 
-The tradeoff: **every deliverability signal is tied directly to your domain and your mailbox.** There is no shared reputation to fall back on. Bounces, spam complaints, and engagement all accrue to your domain — so everything in the section above matters more, not less, when you send through OAuth.
+The tradeoff: **every deliverability signal is tied directly to your domain and your mailbox.** There is no shared reputation to fall back on. Bounces, spam complaints, and engagement all accrue to your domain, so everything in the section above matters more, not less, when you send through OAuth.
 
 ### Settings that affect deliverability
 
@@ -136,8 +136,8 @@ The same **Email** panel controls open tracking and link-click tracking.
 
 Open: [app.juicebox.ai/account?tab=email-settings](https://app.juicebox.ai/account?tab=email-settings)
 
-- **Track when emails are opened** — inserts a tracking pixel so you can see open rates.
-- **Track link clicks in emails** — rewrites links so you can see who clicked what.
+- **Track when emails are opened**: inserts a tracking pixel so you can see open rates.
+- **Track link clicks in emails**: rewrites links so you can see who clicked what.
 
 Both features rely on inserting tracking mechanics into your emails, which is one of the signals inbox providers use to distinguish personal mail from bulk/marketing mail. Disabling them makes your outbound look more like a hand-written email.
 
@@ -150,7 +150,7 @@ Both features rely on inserting tracking mechanics into your emails, which is on
 
 #### Mailbox connections and per-day team limits
 
-**Account → Email integrations** shows all mailboxes you have connected personally, and — on **Your team's mailboxes** — every mailbox connected across your organization. Each row shows the provider, sender name, address, connection status, per-day cap, and signature.
+**Account → Email integrations** shows all mailboxes you have connected personally, and, on **Your team's mailboxes**, every mailbox connected across your organization. Each row shows the provider, sender name, address, connection status, per-day cap, and signature.
 
 Open: [app.juicebox.ai/account?tab=email-integrations](https://app.juicebox.ai/account?tab=email-integrations)
 
@@ -173,7 +173,7 @@ Defaults and ceilings for the per-mailbox daily cap:
 
 #### Signatures, sender name, and drafts
 
-Also from **Manage mailboxes**, you can set the **Sender name** that appears in the "From" field and choose whether Juicebox should **create drafts in your mailbox** for replies. Neither directly changes deliverability, but a recognizable sender name meaningfully improves open and reply rates — which do feed back into reputation.
+Also from **Manage mailboxes**, you can set the **Sender name** that appears in the "From" field and choose whether Juicebox should **create drafts in your mailbox** for replies. Neither directly changes deliverability, but a recognizable sender name meaningfully improves open and reply rates, which do feed back into reputation.
 
 Open: [app.juicebox.ai/account?tab=mailbox-settings](https://app.juicebox.ai/account?tab=mailbox-settings)
 
@@ -222,7 +222,7 @@ Under **Email limits**, **Organization email sending limit** sets the maximum da
 - **Business plan:** up to 500/day
 - **Self-serve plans:** up to 200/day
 
-Lowering this org-wide ceiling is the fastest way to enforce a conservative sending posture across the whole team — useful when you are warming a new domain, or recovering from a deliverability incident and want to cap volume before individual members can push it back up.
+Lowering this org-wide ceiling is the fastest way to enforce a conservative sending posture across the whole team, and is useful when you are warming a new domain, or recovering from a deliverability incident and want to cap volume before individual members can push it back up.
 
 #### Default mailbox access
 
@@ -232,10 +232,10 @@ Under **Mailboxes**, **Default mailbox access** controls the privacy setting app
   <img src="/images/deliverability/org-default-mailbox-access.png" alt="Default mailbox access setting with Public and Private options" />
 </Frame>
 
-- **Public** — everyone in the organization can send from new mailboxes (useful for SOBO workflows).
-- **Private** — only mailbox owners and users the owner shares with can send from new mailboxes.
+- **Public**: everyone in the organization can send from new mailboxes (useful for SOBO workflows).
+- **Private**: only mailbox owners and users the owner shares with can send from new mailboxes.
 
-This does not directly change deliverability, but it shapes how many people can send from any given mailbox — which affects how easy it is to keep per-mailbox volume within a healthy range. Existing mailboxes are not affected; owners can change their own privacy settings from the Integrations tab.
+This does not directly change deliverability, but it shapes how many people can send from any given mailbox, which affects how easy it is to keep per-mailbox volume within a healthy range. Existing mailboxes are not affected; owners can change their own privacy settings from the Integrations tab.
 
 #### Enforced footer addendum (Enterprise)
 
@@ -245,7 +245,7 @@ Under the org-wide sequence controls, **Enforced footer addendum** appends defau
   <img src="/images/deliverability/org-enforced-footer-addendum.png" alt="Enforced footer addendum toggle with text input for default footer content" />
 </Frame>
 
-This is an Enterprise feature, primarily used when legal or compliance requires that a specific notice (privacy policy link, regulatory disclosure, unsubscribe wording) appears on every message regardless of who sends it. When enabled, the addendum is force-appended to every sequence email — members can't turn it off, edit it, or omit it on individual sends.
+This is an Enterprise feature, primarily used when legal or compliance requires that a specific notice (privacy policy link, regulatory disclosure, unsubscribe wording) appears on every message regardless of who sends it. When enabled, the addendum is force-appended to every sequence email, and members can't turn it off, edit it, or omit it on individual sends.
 
 The related **Force include unsubscribe link** toggle on the same page ensures every sequence email includes an unsubscribe link, which is legally required in most jurisdictions and materially improves deliverability.
 
@@ -254,7 +254,7 @@ The related **Force include unsubscribe link** toggle on the same page ensures e
 On top of your settings, Juicebox applies several safeguards regardless of configuration:
 
 - **Email verification.** We run an [email waterfall](/contact-data) across multiple providers with automated bounce checks before sending. When strict mode is on, this becomes a hard gate.
-- **Sending intervals.** Messages in a sequence are automatically spaced out — typically ~120 seconds between sends from the same mailbox — so a scheduled batch goes out at a human pace instead of a burst.
+- **Sending intervals.** Messages in a sequence are automatically spaced out, typically ~120 seconds between sends from the same mailbox, so a scheduled batch goes out at a human pace instead of a burst.
 - **Daily caps enforcement.** Sequences that would exceed a mailbox's per-day cap automatically defer to later days rather than pushing volume through.
 - **Multi-mailbox distribution.** Sequences can be tied to different connected mailboxes to spread load without over-sending from any single one.
 - **Unsubscribe enforcement.** Admins can require an unsubscribe link on every sequence email from [organization settings](/manage-account#general).
@@ -273,7 +273,7 @@ Before you start sending at volume through Juicebox:
 
 ## Related reading
 
-- [Email integrations](/email-integrations) — connect and manage your mailboxes
-- [Minimize bounces](/help/deliverability/minimize-bounces) — reduce bounce rate on your sequences
-- [Contact data](/contact-data) — how Juicebox sources and verifies emails
-- [Maximize replies](/maximize-replies) — write outreach that gets responses
+- [Email integrations](/email-integrations): connect and manage your mailboxes
+- [Minimize bounces](/help/deliverability/minimize-bounces): reduce bounce rate on your sequences
+- [Contact data](/contact-data): how Juicebox sources and verifies emails
+- [Maximize replies](/maximize-replies): write outreach that gets responses
