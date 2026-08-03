@@ -19,6 +19,58 @@ To navigate to sequences, select the **Sequences** tab on the left-hand menu.
 
 From the Sequences page, you can create a new sequence, track overall or individual sequence performance, and view the total number of scheduled steps queued for a certain day.
 
+## Sequence visibility
+
+When you create a sequence, you choose who on your team can see and work with it. Every sequence is either **Shared** or **Private**.
+
+- **Shared (Default):** Anyone in your organization can view and edit this sequence.
+- **Private:** Only visible to you, the collaborators you pick, and admins. Choose people to view the sequence.
+
+For a private sequence, use the collaborators picker to grant access to specific teammates. You can add or remove collaborators at any time — only the visibility setting itself is locked in (see below).
+
+### Choosing visibility at creation
+
+New sequences are created as **Shared** by default. Before your sequence has any runs, you can change the visibility (and, for private sequences, edit the collaborator list) from the **visibility pill** in the sequence editor header.
+
+Once a sequence has at least one run — meaning at least one contact has been added to it — the Shared/Private choice is locked. This prevents a sequence's audience from silently changing after data has already been recorded against it. On a private sequence, you can still edit the collaborators after the sequence is locked.
+
+To change a locked sequence's visibility, use the **Clone** action on the sequence row to create a copy with the visibility you want.
+
+### The visibility pill and lock icon
+
+Two indicators help you see a sequence's visibility at a glance:
+
+- **Visibility pill (editor header):** Every sequence shows a Shared or Private pill next to its title in the editor. Select the pill to change visibility (when unlocked) or to edit collaborators on a private sequence.
+- **Lock icon (connected sequences table):** Private sequences show a lock icon next to their name in the connected sequences table on a project, so you can see which sequences have restricted access.
+
+### Who can access a private sequence
+
+Access to a private sequence is limited to:
+
+- The sequence **owner** (the person who created it)
+- Anyone listed as a **collaborator** on the sequence
+- Your **organization admins**
+
+Juicebox treats everyone else in the org as unauthorized. For those viewers, Juicebox hides the sequence's identity across every surface where it might otherwise appear:
+
+- **Sequence detail page:** Opening the direct URL to a private sequence you don't have access to shows a "you don't have access" state instead of the sequence's contents, stats, or runs.
+- **Stats and exports:** Unauthorized viewers can't pull the sequence's stats. CSV exports still include the row for a contact who was sent through a private sequence, but blank out the sequence title.
+- **Activity feeds:** In a contact's activity feed, entries tied to a private sequence you can't see are labeled as "a sequence" instead of the sequence's real name.
+- **Draft-conflict warnings:** Warnings that appear when someone else is already drafting to a contact scrub the private sequence's title the same way.
+- **Slack integration:** The Slack contact-outreach tool skips private sequence runs entirely for viewers without access, and Slack analytics queries (including aggregate metrics and group-bys) exclude private sequences the viewer can't access before results are returned. Slack users who aren't linked to a Juicebox account only see data for shared sequences.
+
+Non-authorized org members can't tell whether a private sequence exists, only that "a sequence" is or was involved.
+
+### Cloning to change visibility
+
+Because visibility is immutable after a sequence starts sending, the supported way to switch a running sequence between Shared and Private is:
+
+1. Open the sequence row's **…** menu and choose **Clone**.
+2. Give the copy a new name and, in the editor, set the visibility (and collaborators, if private) you want.
+3. Use the new copy for future runs.
+
+The original sequence's history and stats stay intact on the original; only new outreach uses the copy.
+
 ## Creating a sequence
 
 To create a sequence, select the **New sequence** button in the top-right corner of the Sequences page.
