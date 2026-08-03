@@ -70,6 +70,23 @@ Tag `@Juicebox` in your Slack Chat to get quick answers without navigating dashb
 - Pipeline, project, Agent, or sequence health, answered in the thread
 - What happened to a profile after it was approved
 
+### Manage notifications from Slack
+
+Configure which Juicebox notifications a channel receives without leaving Slack. In any channel connected to a project or Agent, run:
+
+```text
+@Juicebox settings
+```
+
+Juicebox posts a launcher that opens an in-Slack configuration modal for the projects and Agents linked to that channel. From the modal you can:
+
+- **Mute all notifications** for the project or Agent in this channel
+- **Choose which notification groups fire** — for example, new leads, sequence replies, or project activity
+
+Changes made in Slack stay in sync with the notification settings on the web, so you can manage the same connection from either surface. Muting keeps your group selections intact, so unmuting restores your previous choices. The project activity summary schedule (daily, weekly, or monthly digest) is unchanged and continues to follow the cadence set in Juicebox.
+
+Before the modal opens or a change is saved, Juicebox checks that your Slack account is linked to a Juicebox user and that you have permission to manage the project or Agent. If you don't, Juicebox posts an ephemeral message explaining why instead of opening the modal.
+
 ### Take profile actions and create tasks
 
 Manage profiles and follow-up straight from Slack:
@@ -78,10 +95,15 @@ Manage profiles and follow-up straight from Slack:
 - Create a **reminder or task** and assign it to a teammate in the channel — the assignee is tagged in Slack, and the task and note live in Juicebox
 - Share a **LinkedIn URL** and add it straight to a project shortlist
 
+### Archived Slack channels
+
+If a Slack channel linked to a Juicebox project or Agent is archived, Juicebox marks the connection inactive and automatically stops sending notifications to that channel. Your notification preferences and the connection record are preserved — reconnect the project or Agent to a channel from the **Projects** page to resume delivery with the same settings.
+
 ## Actions to try in Slack
 
 | Action | Example prompt |
 | --- | --- |
+| Notification settings | `@juicebox settings` |
 | Lead review | `@juicebox, show me the pending leads for [Agent].` |
 | Agent status | `@juicebox, how is [Agent] doing?` |
 | Approvals | `@juicebox, how many leads did we approve this week for [Project]?` |
