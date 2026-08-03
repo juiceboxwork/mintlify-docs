@@ -43,29 +43,29 @@ Juicebox for Slack lets you:
 
 ### Suggest Slack channels for new projects
 
-Once Slack is connected, Juicebox can suggest a matching `#project-…` channel every time a teammate names a new project — so channels get created and linked without anyone leaving the project page.
+Once Slack is connected, Juicebox can suggest a matching `#project-…` channel every time you name a new project — so channels get created and linked without leaving the project page.
 
 **Turn it on (admins):**
 
 1. Go to **Settings → Slack**.
 2. Toggle on **Suggest channels for new projects**.
 
-The toggle is only available when Slack is connected and the Juicebox app has permission to create channels. If it's disabled with a reconnect prompt, open **Integrations**, choose **Options → Reconnect Slack** on the Slack card, and re-authorize. Existing workspaces need to reconnect once to grant the new channel-management scopes.
+The toggle is only available when Slack is connected and the Juicebox app has permission to create channels. If it's disabled with a reconnect prompt, open **Integrations**, select **Options → Reconnect Slack** on the Slack card, and re-authorize. Existing workspaces need to reconnect once to grant the new channel-management scopes.
 
-**What users see:**
+**Using the suggestion:**
 
-When a user names a fresh project, an inline dashed `#project-…` suggestion appears next to the **Slack** row on the project home. From there:
+When you name a fresh project, an inline dashed `#project-…` suggestion appears next to the **Slack** row on the project home. From there:
 
-- Clicking the suggested channel name opens the standard Slack channel picker, where the user can pick a different channel or confirm the suggested one.
-- Clicking **apply** accepts the suggestion. Juicebox provisions the channel in the background as soon as the user starts their first Search or Agent — it creates the `#project-…` channel with the project's visibility (private if the project is confidential), invites the creator, owner, and collaborators, and connects it to the project.
+- Select the suggested channel name to open the standard Slack channel picker, where you can pick a different channel or confirm the suggested one.
+- Select **apply** to accept the suggestion. Juicebox provisions the channel in the background as soon as you start your first Search or Agent. It creates the `#project-…` channel with the project's visibility (private if the project is confidential), invites the creator, owner, and collaborators, and connects it to the project.
 
 The Slack row reflects provisioning state:
 
 - **Creating #project-…** — the channel is being provisioned.
 - **#project-…** — the channel is connected and ready.
-- **Couldn't create #project-…** — provisioning failed. Click the **✕** to reset and try again, or open the Slack picker to connect a different channel manually.
+- **Couldn't create #project-…** — provisioning failed. Select the **✕** to reset and try again, or open the Slack picker to connect a different channel manually.
 
-Suggestions are transient: if the user ignores or dismisses one, the row falls back to the normal **Connect Slack channel** action, and they can still link a channel by hand at any time.
+Suggestions are transient: if you ignore or dismiss one, the row falls back to the normal **Connect Slack channel** action, and you can still link a channel by hand at any time.
 
 
 ## Core capabilities
