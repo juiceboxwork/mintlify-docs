@@ -33,6 +33,34 @@ _ATS icons for profile deduplication in the search. If the ATS logo is highlight
 
 _Expanded view showing additional details about the candidate’s profile in your ATS._
 
+#### Reviewing All ATS Jobs and Applications
+
+When you open a candidate in the sidebar, the ATS block shows every job the candidate has applied to or been associated with in your ATS — not just the most recent one. Expand the block to see the candidate's latest job, then use the **← / →** arrows at the bottom of the block to page through their other applications. The counter (e.g. **2 of 5**) tells you where you are in the list, and each application shows its own job title, job code, stage, tags, and owner.
+
+This is useful when a candidate has applied to multiple roles at your company over time — you can quickly review their full application history without leaving the sidebar or opening your ATS.
+
+#### Confirmed vs. Potential Matches
+
+Juicebox classifies each ATS match by how strongly it can tie the ATS record to the candidate:
+
+- **Confirmed matches** are backed by a LinkedIn URL match between the ATS record and the Juicebox profile. These are the strongest identity signal and render with a solid border.
+- **Potential matches** include name-based (fuzzy) matches and matches made only via email address. Email overlap alone can be a weaker signal — shared inboxes, stale addresses, or personal-vs-work emails can all cause false positives — so email matches surface as potential rather than confirmed. Potential matches render with a dashed border.
+
+Agents and workflows configured to exclude only direct/confirmed matches will treat email-only matches as potential and continue to surface them.
+
+#### Marking a Profile as “Not a Match”
+
+If Juicebox links the wrong ATS record to a candidate, you can dismiss that match directly from the sidebar. Expand the ATS block and click **Remove** in the header. A confirmation dialog will appear:
+
+- For **confirmed matches** (linked by LinkedIn URL), the dialog is labeled **Confirmed match in \<ATS name\>**.
+- For **potential matches** (name-based or email-only matches, shown with a dashed border), the dialog is labeled **Potential match in \<ATS name\>**.
+
+Clicking **Not a match** hides the ATS badge for that contact everywhere in Juicebox — including on search result cards, in bulk lists, and in the sidebar itself. Dismissed matches stay hidden after a page reload. If the same LinkedIn profile or email address is duplicated across multiple records in your ATS, dismissing one record suppresses the others too. This action can’t be undone from Juicebox.
+
+<Note>
+  Dismissing a match only hides it inside Juicebox. It does not delete or modify the underlying record in your ATS.
+</Note>
+
 ### Import a Job from ATS
 
 If your ATS is connected, you will be able to see jobs from the ATS when first creating a project. You can select a job to automatically import it and start a search with the associated job description.
