@@ -2,6 +2,10 @@
 title: "Welcome Kit: Automate your sourcing with Agents"
 ---
 
+<Note>
+  This guide is part of a welcome kit series for Juicebox users. Check out the [previous guides on running a search](https://docs.juicebox.ai/welcome-kit-run-your-first-search) and [reaching out to candidates](https://docs.juicebox.ai/welcome-kit-reach-out-to-candidates) if you haven't used natural-language search, filters, criteria, shortlists, or sequences yet.
+</Note>
+
 In the previous welcome guides, we showed you how to create a project, search for candidates using filters and criteria, shortlist top candidates, and create outreach sequences. If you need to review those topics, check out those guides first.
 
 In this guide, we’ll set up AI Agents to source autonomously for us. You’ll learn how to:
@@ -34,7 +38,7 @@ Agents don’t replace your human thought and judgment, so it’s important to k
 
 Like a junior sourcing partner, an Agent will learn from your guidance and continuously search for relevant candidates to surface for you. But also like a junior sourcing partner, it needs your feedback to get better over time. We’ll show you how that works.
 
-**Want more help?** Learn more about Juicebox Agents.
+**Want more help?** Learn more about [Juicebox Agents](https://docs.juicebox.ai/juicebox-agents).
 
 ## Set up an agent
 
@@ -72,7 +76,7 @@ Now, things will start to look different from a regular search. The Agent will r
   _If the number of potential leads is high during this initial search, don’t worry. That’s a good thing! This is not the number of candidates it will send you. It’s the size of the pool that it’s going to evaluate against your criteria._
 </Tip>
 
-**Want more help?** Learn more about setting up Agents.
+**Want more help?** Learn more about [setting up Agents](https://docs.juicebox.ai/juicebox-agents#setting-up-an-agent).
 
 ## Calibrate the Agent (one-time setup)
 
@@ -109,30 +113,38 @@ Now here’s the most important part: calibration isn’t finished until you sel
 
 The Agent will keep learning as you accept or reject more candidates down the line, but at this point, the initial calibration is complete. You won’t have to do this again unless you want to re-calibrate it later.
 
-**Want more help?** Learn more about setting up and calibrating Agents.
+**Want more help?** Learn more about [setting up and calibrating Agents](https://docs.juicebox.ai/juicebox-agents#setting-up-an-agent).
 
 ## Decide on settings
 
 After you’ve calibrated the Agent, it will ask you to make three quick decisions:
 
-1. **Volume:** How many net-new leads per day should it send? To decide, think about what number you have time to review every day, while also building a healthy pipeline for the role.
-   1. Our recommendation: If in doubt, start with 25 so you have a good initial pipeline.
-   2. Note: 50 or more candidates per day will use multiple agent seats.
-      <Frame>
-        ![2026 07 31 12 58 05](/images/2026-07-31_12-58-05.png "2026 07 31 12 58 05")
-      </Frame>
-2. **Outreach handling:** The Agent can auto-build a sequence based on the context from the chat or use an existing sequence. Or skip this step if you want the Agent to shortlist candidates without doing any outreach.
-   1. Our recommendation: During your initial chat with the AI, give it real outreach examples and selling points to build an AI sequence, then edit it to reflect how you’d reach out to a candidate.
-   2. Note: Choosing **AI sequence** will use AI to draft a sequence, but you can still edit it yourself. The Agent won’t autonomously send communications or sequences that you haven’t defined here, so you still have control.
-      <Frame>
-        ![2026 07 31 12 58 38](/images/2026-07-31_12-58-38.png "2026 07 31 12 58 38")
-      </Frame>
-3. **Approval type:** Choose **Manual** if you want the Agent to send you a list each day to review and approve. Choose **Automatic** if you want it to approve and reach out on its own.
-   1. Our recommendation: Start with **Manual** for the first few days of a search. Our most successful customers do this for roughly three days or until they’re approving about 75% of candidates.
-   2. Note: If you choose **Manual**, you’re responsible for reviewing leads to keep the Agent running. If leads sit unreviewed for four days, the Agent will auto-pause so you’re not overwhelmed with leads. Make sure to either **review leads at least every three days** in Manual mode, or set the Agent to **Automatic** to avoid this issue.
-      <Frame>
-        ![2026 07 31 12 59 06](/images/2026-07-31_12-59-06.png "2026 07 31 12 59 06")
-      </Frame>
+**Volume:** How many net-new leads per day should it send? To decide, think about what number you have time to review every day, while also building a healthy pipeline for the role.
+
+- Our recommendation: If in doubt, start with 25 so you have a good initial pipeline.
+- Note: 50 or more candidates per day will use multiple agent seats.
+
+<Frame>
+  ![2026 07 31 12 58 05](/images/2026-07-31_12-58-05.png "2026 07 31 12 58 05")
+</Frame>
+
+**Outreach handling:** The Agent can auto-build a sequence based on the context from the chat or use an existing sequence. Or skip this step if you want the Agent to shortlist candidates without doing any outreach.
+
+- Our recommendation: During your initial chat with the AI, give it real outreach examples and selling points to build an AI sequence, then edit it to reflect how you’d reach out to a candidate.
+- Note: Choosing **AI sequence** will use AI to draft a sequence, but you can still edit it yourself. The Agent won’t autonomously send communications or sequences that you haven’t defined here, so you still have control.
+
+<Frame>
+  ![2026 07 31 12 58 38](/images/2026-07-31_12-58-38.png "2026 07 31 12 58 38")
+</Frame>
+
+**Approval type:** Choose **Manual** if you want the Agent to send you a list each day to review and approve. Choose **Automatic** if you want it to approve and reach out on its own.
+
+- Our recommendation: Start with **Manual** for the first few days of a search. Our most successful customers do this for roughly three days or until they’re approving about 75% of candidates.
+- Note: If you choose **Manual**, you’re responsible for reviewing leads to keep the Agent running. If leads sit unreviewed for four days, the Agent will auto-pause so you’re not overwhelmed with leads. Make sure to either **review leads at least every three days** in Manual mode, or set the Agent to **Automatic** to avoid this issue.
+
+<Frame>
+  ![2026 07 31 12 59 06](/images/2026-07-31_12-59-06.png "2026 07 31 12 59 06")
+</Frame>
 
 Once you’ve made these decisions, click **Start sourcing**, and 5-10 minutes later you’ll have your first batch of leads!
 
@@ -145,7 +157,7 @@ Once the agent is running, it sources on a schedule: around 9:00am, your local t
 - If you set approval type to **Manual**, you’ll need to review and approve candidates on a regular basis. Do this from within the Agent by clicking **Review Leads**.
 
 <Tip>
-   _Depending on the search, the Agent may eventually run **out of leads**. That’s because there’s a finite number of relevant candidates for your search, and an Agent won’t compromise the quality bar after that._
+  _Depending on the search, the Agent may eventually run **out of leads**. That’s because there’s a finite number of relevant candidates for your search, and an Agent won’t compromise the quality bar after that._
 </Tip>
 
 As you work with Agents over time, the role requirements may shift, or you may want to broaden the search. Click **Calibrate** to chat with the Agent again and re-calibrate the role over time.
@@ -156,7 +168,7 @@ You may even want to create Agents for existing projects that started with manua
   ![2026 07 31 13 45 05](/images/2026-07-31_13-45-05.png "2026 07 31 13 45 05")
 </Frame>
 
-**Want more help?** Learn more about reviewing leads and recalibrating Agents.
+**Want more help?** Learn more about [reviewing leads](https://docs.juicebox.ai/juicebox-agents#reviewing-leads) and [recalibrating Agents](https://docs.juicebox.ai/juicebox-agents#recalibrating-an-agent).
 
 ## What’s next?
 
