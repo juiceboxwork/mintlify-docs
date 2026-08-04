@@ -249,6 +249,25 @@ This is an Enterprise feature, primarily used when legal or compliance requires 
 
 The related **Force include unsubscribe link** toggle on the same page ensures every sequence email includes an unsubscribe link, which is legally required in most jurisdictions and materially improves deliverability.
 
+#### Available email preferences
+
+Under the **Email Preferences** section at the bottom of the General settings tab, **Available email preferences** lets admins turn off specific email-preference options for the entire organization. Members can only pick from the options that remain enabled when adding contacts to a sequence.
+
+Open: [app.juicebox.ai/account?tab=organization-settings](https://app.juicebox.ai/account?tab=organization-settings)
+
+The four options that can be toggled on or off are:
+
+- Prefer personal emails, fallback to professional emails
+- Prefer professional emails, fallback to personal emails
+- Only use professional emails
+- Only use personal emails
+
+At least one option must stay enabled — the last remaining checkbox is locked so an organization can never disable all four. New organizations start with every option enabled.
+
+Use this to enforce a house policy without asking members to re-select the right preference in every sequence. For example, an organization that only wants outbound going to personal addresses can leave **Only use personal emails** on and switch the other three off. A team that has decided professional-only is safer for their domain can do the reverse.
+
+Disabled options still appear in the sequence enrollment dropdown, greyed out with a tooltip explaining that an admin turned them off. Members can see the option exists and why it's unavailable. Contacts already enrolled in a sequence keep the email address they were enrolled with. If a member's saved default preference has been disabled, new drafts automatically fall back to the first allowed option.
+
 ### What Juicebox does automatically
 
 On top of your settings, Juicebox applies several safeguards regardless of configuration:
