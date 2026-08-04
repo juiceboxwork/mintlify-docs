@@ -21,7 +21,15 @@
             "icon": "rocket",
             "pages": [
               "index",
-              "getting-started",
+              {
+                "group": "getting-started",
+                "pages": [
+                  "getting-started",
+                  "welcome-kit-run-your-first-search",
+                  "welcome-kit-reach-out-to-candidates",
+                  "welcome-kit-automate-with-agents"
+                ]
+              },
               "project-walkthrough",
               "manage-account",
               "all-about-credits"
