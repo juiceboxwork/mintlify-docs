@@ -22,7 +22,7 @@
             "pages": [
               "index",
               {
-                "group": "getting-started",
+                "group": "Getting Started - Users",
                 "pages": [
                   "getting-started",
                   "welcome-kit-run-your-first-search",
