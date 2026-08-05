@@ -98,7 +98,8 @@
             "pages": [
               "exports",
               "ats-integrations",
-              "email-integrations"
+              "email-integrations",
+              "juicebox-for-slack"
             ]
           },
           {
@@ -222,6 +223,10 @@
   },
   "navbar": {
     "links": [
+      {
+        "label": "Juicebox for Slack",
+        "href": "https://docs.juicebox.ai/juicebox-for-slack"
+      },
       {
         "label": "Support",
         "href": "mailto:support@juicebox.ai"
