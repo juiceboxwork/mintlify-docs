@@ -113,29 +113,33 @@ If a Slack channel linked to a Juicebox project or Agent is archived, Juicebox m
 
 When you connect Slack, Juicebox requests the following scopes:
 
-| Permission | Why we need it |
+| Permission | Purpose |
 | --- | --- |
-| `app_mentions:read` | View messages that directly mention @Juicebox in conversations that the app is in |
-| `chat:write` | Send messages as @Juicebox (app action) |
-| `files:write` | Upload, edit, and delete files as "Juicebox" (app action) |
-| `im:write` | Start direct messages with people (app action) |
-| `incoming-webhook` | Post messages to specific channels in Slack (app action) |
-| `links:write` | Show previews of app.juicebox.ai URLs in messages (app action) |
-| `reactions:write` | Add and edit emoji reactions (app action) |
-| `assistant:write` | Allow "Juicebox" to act as an App Agent |
-| `channels:history` | View messages and other content in public channels that "Juicebox" has been added to (app action) |
-| `channels:read` | View basic information about public channels in a workspace (app action) |
-| `files:read` | View files shared in channels and conversations that "Juicebox" has been added to (app action) |
-| `groups:history` | View messages and other content in private channels that "Juicebox" has been added to (app action) |
-| `groups:read` | View basic information about private channels that "Juicebox" has been added to (app action) |
-| `im:history` | View messages and other content in direct messages that "Juicebox" has been added to (app action) |
-| `im:read` | View basic information about direct messages that "Juicebox" has been added to (app action) |
-| `links:read` | View app.juicebox.ai URLs in messages (app action) |
-| `mpim:history` | View messages and other content in group direct messages that "Juicebox" has been added to (app action) |
-| `mpim:read` | View basic information about group direct messages that "Juicebox" has been added to (app action) |
-| `reactions:read` | View emoji reactions and their associated content in channels and conversations that "Juicebox" has been added to (app action) |
-| `users:read` | View people in a workspace (app action) |
-| `users:read.email` | View email addresses of people in a workspace (app action) |
+| `app_mentions:read` | Detect when a user starts a request with @Juicebox, so Juicebox knows when to respond. |
+| `assistant:write` | Show Juicebox as a Slack AI assistant and show progress while it processes a request. |
+| `channels:history` | Read messages in public channels where Juicebox is present, so it can understand and answer requests. |
+| `channels:read` | Identify public channels, so Juicebox can maintain the correct project-to-channel connection. |
+| `channels:manage` | Create a public channel when a user chooses to create one for a Juicebox project or Agent. |
+| `channels:write.invites` | Invite selected project members to a public channel that Juicebox creates. |
+| `chat:write` | Send replies, notifications, and review requests as Juicebox. |
+| `chat:write.public` | Send a message to a connected public channel when Juicebox is not yet a channel member. |
+| `files:read` | Read supported files shared where Juicebox is present, so it can use them when answering a request. |
+| `files:write` | Upload files or images that Juicebox includes in a Slack response. |
+| `groups:history` | Read messages in private channels where Juicebox is present, so it can understand and answer requests. |
+| `groups:read` | Identify private channels where Juicebox is present, so it can maintain the correct project-to-channel connection. |
+| `groups:write` | Create a private channel for a confidential Juicebox project or Agent. |
+| `groups:write.invites` | Invite selected project members to a private channel that Juicebox creates. |
+| `im:history` | Read direct messages with Juicebox, so it can understand the conversation and answer follow-up questions. |
+| `im:read` | Identify direct-message conversations with Juicebox, so it can reply in the correct conversation. |
+| `im:write` | Start a direct message when Juicebox must send a private response. |
+| `links:read` | Detect Juicebox links in messages, so it can determine whether a preview is available. |
+| `links:write` | Show a preview for supported Juicebox links. |
+| `mpim:history` | Read group direct messages where Juicebox is present, so it can understand and answer requests. |
+| `mpim:read` | Identify group direct messages where Juicebox is present, so it can reply in the correct conversation. |
+| `reactions:read` | Read reactions on Juicebox messages, so it can recognize existing feedback or status. |
+| `reactions:write` | Add or remove a reaction to acknowledge a request or show its status. |
+| `users:read` | Identify Slack members, so Juicebox can use the correct names, mentions, assignments, and invitations. |
+| `users:read.email` | Match a Slack member to the correct Juicebox user for access checks, assignments, and invitations. |
 
 ## Best practices
 
