@@ -238,7 +238,7 @@
     ],
     "primary": {
       "type": "button",
-      "label": "Open Juicebox",
+      "label": "Sign in",
       "href": "https://app.juicebox.ai"
     }
   },
