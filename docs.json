@@ -21,7 +21,15 @@
             "icon": "rocket",
             "pages": [
               "index",
-              "getting-started",
+              {
+                "group": "Getting Started - Users",
+                "pages": [
+                  "getting-started",
+                  "welcome-kit-run-your-first-search",
+                  "welcome-kit-reach-out-to-candidates",
+                  "welcome-kit-automate-with-agents"
+                ]
+              },
               "project-walkthrough",
               "manage-account",
               "all-about-credits"
@@ -90,7 +98,8 @@
             "pages": [
               "exports",
               "ats-integrations",
-              "email-integrations"
+              "email-integrations",
+              "juicebox-for-slack"
             ]
           },
           {
@@ -214,6 +223,14 @@
   },
   "navbar": {
     "links": [
+      {
+        "label": "Juicebox for Slack",
+        "href": "https://docs.juicebox.ai/juicebox-for-slack"
+      },
+      {
+        "label": "Slack setup",
+        "href": "https://docs.juicebox.ai/help/integrations/slack-setup"
+      },
       {
         "label": "Support",
         "href": "mailto:support@juicebox.ai"

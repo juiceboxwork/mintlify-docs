@@ -1,0 +1,95 @@
+---
+title: "Juicebox MCP Server "
+hidden: true
+---
+
+The Juicebox Model Context Protocol (MCP) server lets AI models and agents access and interact with your Juicebox data through a standardized interface. Connect it to Claude, ChatGPT, Cursor, or any other MCP-compatible tool to read your recruiting analytics and create or calibrate agents in Juicebox, all without leaving your AI client.
+
+## **Permissions & access**
+
+The Juicebox MCP server is available on all Juicebox paid plans.
+
+## **Authentication**
+
+Our MCP server authenticates each user individually via OAuth. Every user completes their own OAuth flow during setup, so the server only returns data that the user can already see in Juicebox. A user cannot query projects, searches, or candidates they do not otherwise have access to in the app.
+
+## **Set up your MCP client**
+
+The Juicebox MCP server is client-agnostic and works with any MCP-compatible tool.
+
+The server URL is:
+
+[https://mcp.juicebox.ai/v1](https://mcp.juicebox.ai/v1)
+
+_Note: this URL is only used by MCP clients. Opening it directly in a browser will show an error, which is expected._
+
+Select your client below for setup instructions. During setup, you'll see an approval screen listing the permissions the MCP server requests: reading your recruiting analytics and creating or calibrating agents on your behalf. Click Approve to continue.
+
+### **Claude**
+
+1. In Claude, go to **Settings \> Connectors** and search for Juicebox, or go there directly with this link: [<u>claude.ai/directory/connectors</u>](https://claude.ai/directory/connectors/dc1671e0-b14c-47b8-a625-e835ae4067ba)
+2. Select **Juicebox** and click **Connect**.
+3. You'll be prompted to log in to Juicebox (if you aren't already) and select **Approve** in the MCP access window.
+
+Using the Claude CLI (Claude Code)? Add the server with the following command, then complete the OAuth flow when prompted:
+
+claude mcp add --transport http juicebox [https://mcp.juicebox.ai/v1](https://mcp.juicebox.ai/v1)
+
+### **ChatGPT**
+
+1. In ChatGPT, open **Settings \> Apps** and search for Juicebox, or use this link: [<u>chatgpt.com/apps?q=Juicebox</u>](https://chatgpt.com/apps?show_chat_button=true&q=Juicebox)
+2. Select **Juicebox** and click **Connect**.
+3. Follow the authorization prompts to complete setup.
+
+### **Cursor and other IDEs**
+
+1. Open **Cursor Settings \> Tools & MCPs \> New MCP server**.
+2. Paste the following into your configuration:
+
+\{
+
+  "mcpServers": \{
+
+    "juicebox": \{
+
+      "url": "[https://mcp.juicebox.ai/v1](https://mcp.juicebox.ai/v1)"
+
+    \}
+
+  \}
+
+\}
+
+3. Save and restart Cursor. When you use a Juicebox tool for the first time, complete the OAuth flow to connect your workspace.
+
+### **Gemini CLI**
+
+Juicebox's MCP server supports dynamic client registration, so it can be configured with Gemini CLI:
+
+1. Add the server with the command: gemini mcp add --transport http juicebox [https://app.juicebox.ai/api/mcp](https://app.juicebox.ai/api/mcp)
+2. Complete the auth process. For more on Gemini CLI's auth process, check out [<u>their MCP server guide</u>](https://geminicli.com/docs/tools/mcp-server/#automatic-oauth-discovery).
+3. Restart the Gemini CLI (or run /mcp reload if the session is active) and check the status using the built-in command /mcp list. You should see the server listed with a "Connected" status.
+
+### **Tools**
+
+**Analytics tools**
+
+- get\_schema — Shows a catalog of what data you can ask about: the available tables, fields, and example questions. You call this first so you know what you're allowed to query.
+- get\_data — Runs a read-only report and returns rows of data (e.g. counts, breakdowns, activity). It's the actual "answer my analytics question" tool, always limited to your organization's data.
+- resolve — Turns a human name or link into the internal ID the system needs. You give it a project name, a teammate's name/email, a sequence title, or an agent name (and it hands back the matching ID), so other tools can act on the right thing.
+
+**Shortlist tools**
+
+- search\_shortlist — Lists the candidates saved to a project's shortlist, with optional filters (e.g. by title or school). Read-only, and only for projects you're allowed to see.
+- get\_candidate\_details — Pulls richer details on specific shortlisted candidates that the quick list doesn't include—like total years of experience and job tenure—so you can filter or analyze on those.<br />
+
+**Project tool**
+
+- get\_project — Gives a summary of one project: its basic info plus how much is in it (number of saved searches and shortlisted candidates).
+
+**Agent (Eren recruiting agent) tools**
+
+- get\_agent\_schema — Explains how recruiting agents work: what you need to create/configure one, the lifecycle (start, pause, resume, close, reopen), and current limits. You read this first before creating an agent.
+- create\_agent — Creates a new automated recruiting agent for a role (or fine-tunes an existing one). If you give it enough about the role, it sets up and starts searching for candidates in one step; if not, it asks a follow-up question.
+- start\_sourcing — Tells an already-set-up agent to begin actively searching for candidates. Usually not needed since create\_agent starts automatically, but useful for restarting or retrying.
+- manage\_agent — Controls an existing agent's lifecycle: pause, resume, close, or reopen it.
