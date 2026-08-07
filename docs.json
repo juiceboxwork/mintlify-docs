@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
+  "theme": "almond",
   "name": "Juicebox Help Center",
   "colors": {
     "primary": "#6B1CB0",
