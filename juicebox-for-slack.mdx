@@ -62,9 +62,43 @@ You can also chat directly with Juicebox in Slack to get project notifications a
 Tag `@Juicebox` in your Slack Chat to get quick answers without navigating dashboards:
 
 - Pending, approved, or reviewed lead counts at a glance
-- Outreach volume — how many people contacted or added to a sequence
+- Outreach volume, such as how many people were contacted or added to a sequence
 - Pipeline, project, Agent, or sequence health, answered in the thread
 - What happened to a profile after it was approved
+
+#### Who can ask which analytics questions
+
+Slack mirrors the same access checks the in-app **Analytics** page uses, so the questions a teammate can ask in Slack match what they can see in Juicebox.
+
+Open to anyone on a paid plan (any linked project or Agent):
+
+- Pipeline and candidate lists for a specific project
+- Agent-health listings and status for a specific Agent
+- Project-scoped counts, such as shortlisted candidates on this project
+- Outreach analytics, including replies, opens, and emails sent per teammate
+
+Usage analytics require the **Business** plan and an **admin**, **read-only admin**, or **analytics admin** seat:
+
+- Searches run per teammate
+- Profiles viewed per teammate
+- Shortlist volume broken out by teammate
+- Org-wide project or Agent counts, such as "how many Agents do we have"
+
+When a teammate asks a gated question, Juicebox explains what's blocking the answer (plan or permission), points to **Plan and billing** or **Team members** as appropriate, and offers to run an outreach or project-scoped question instead. Free-plan orgs continue to see the free-plan upgrade prompt for analytics questions.
+
+Slack guests are gated the same way as licensed seats, and get a distinct "you don't have access" response that names the missing Juicebox membership and offers to have someone invite them, rather than a plan or permission prompt.
+
+### Ask how Juicebox works
+
+You can ask `@Juicebox` general product questions in Slack, such as "how do Agents work?" or "what's the difference between a search and a project?"
+
+Juicebox answers these questions from the live [Juicebox help center](https://docs.juicebox.ai) so replies stay in sync with the docs as they change. When a question isn't covered by the help center, Juicebox says it's unsure and points to [support@juicebox.ai](mailto:support@juicebox.ai) instead of guessing.
+
+### Follow-ups that reference recent channel messages
+
+When a follow-up depends on something said earlier in the channel (for example, "how many of its approved leads replied?" right after a project update), Juicebox can read a small window of recent top-level messages in the channel to resolve the reference. It then uses the normal project, lead, or analytics tools to answer.
+
+This read follows the same access rules as any other Juicebox read in Slack, so a teammate whose seat can't see a piece of data can't see it via a channel-context follow-up either. Juicebox only reads channel history when the current request has an unresolved reference; for self-contained questions it doesn't touch channel history at all.
 
 ### Manage notifications from Slack
 
