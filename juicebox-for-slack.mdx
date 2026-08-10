@@ -84,7 +84,7 @@ Usage analytics require the **Business** plan and an **admin**, **read-only admi
 - Shortlist volume broken out by teammate
 - Org-wide project or Agent counts, such as "how many Agents do we have"
 
-When a teammate asks a gated question, Juicebox explains what's blocking the answer (plan or permission), points to **Plan and billing** or **Team members** as appropriate, and offers to run an outreach or project-scoped question instead. Free-plan orgs continue to see the free-plan upgrade prompt for analytics questions.
+When a teammate asks a gated question, Juicebox explains what's blocking the answer (plan or permission) and points to **Plan and billing** or **Team members** as appropriate. It also offers to run an outreach or project-scoped question instead. Free-plan orgs continue to see the free-plan upgrade prompt for analytics questions.
 
 Slack guests are gated the same way as licensed seats, and get a distinct "you don't have access" response that names the missing Juicebox membership and offers to have someone invite them, rather than a plan or permission prompt.
 
@@ -98,7 +98,7 @@ Juicebox answers these questions from the live [Juicebox help center](https://do
 
 When a follow-up depends on something said earlier in the channel (for example, "how many of its approved leads replied?" right after a project update), Juicebox can read a small window of recent top-level messages in the channel to resolve the reference. It then uses the normal project, lead, or analytics tools to answer.
 
-This read follows the same access rules as any other Juicebox read in Slack, so a teammate whose seat can't see a piece of data can't see it via a channel-context follow-up either. Juicebox only reads channel history when the current request has an unresolved reference; for self-contained questions it doesn't touch channel history at all.
+This read follows the same access rules as any other Juicebox read in Slack. A teammate whose seat can't see a piece of data can't see it via a channel-context follow-up either. Juicebox only reads channel history when the current request has an unresolved reference. For self-contained questions it doesn't touch channel history at all.
 
 ### Manage notifications from Slack
 
