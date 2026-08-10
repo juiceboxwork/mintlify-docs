@@ -120,6 +120,43 @@ To automatically stop sequences and archive any pending tasks from this mailbox 
 
 ![Screenshot 2026-04-14 at 5.01.57 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/email-integrations/3fba3cf2-4619-46ec-a7b8-a07ee17513ca.png)
 
+## Calendar-only accounts
+
+You can connect a Google or Microsoft account for calendar access only, without granting Juicebox any Gmail or Outlook mail scopes. Calendar-only accounts let features like the intake notetaker find upcoming meetings and send a notetaker bot on your behalf, while keeping your mailbox completely out of the connection.
+
+Use a calendar-only connection when you want Juicebox to see meetings on an account but you don't want it to read, draft, or send email from that address.
+
+### How calendar-only accounts appear on Integrations
+
+Calendar-only accounts show up in the same list as your mailboxes on the **Integrations** page, with a **Calendar only** badge. Because they can't send email, the send-only columns are blanked out:
+
+- **Sender name** — shown as `—`
+- **Daily send limit** — shown as `—`
+- **Signature** — shown as `—`
+
+The row's action menu is also calendar-scoped. Instead of the mailbox actions (sender name, daily limit, signature, aliases), you'll see:
+
+- **Enable email access** — re-runs consent for the same account with full mail scopes and upgrades it to a full mailbox in place. This reuses the existing account slot, so it doesn't count as a new mailbox and no cap check applies.
+- **Disconnect** — ends only the calendar connection for that account. Any separate mailbox you have connected elsewhere is unaffected.
+
+<Note>
+  Calendar-only accounts count against your plan's mailbox limit. When you use **Enable email access** to upgrade one to a full mailbox, the same slot is reused — no additional slot is consumed.
+</Note>
+
+### Calendar-only accounts and sequences
+
+Calendar-only accounts are never offered as sequence senders. They won't appear in the sender picker on the sequence step editor, and they won't be auto-selected as the default sender for new sequences.
+
+If a sequence somehow references a calendar-only account (for example, an account that was downgraded after the sequence was built), Juicebox blocks the send at the API boundary with the error **This account is calendar-only**. To resume sending, either switch the sequence to a different sender or use **Enable email access** on the account to upgrade it to a full mailbox.
+
+### Downgrades from an existing mailbox
+
+Google and Microsoft key OAuth grants by account address, so re-consenting for an address you already had connected as a mailbox will replace the existing grant. If a calendar-only consent accidentally overwrites a mailbox grant for the same address:
+
+- The mailbox is marked expired so it drops out of every sender picker and stops being offered on send paths.
+- The account remains listed on **Integrations** as **Calendar only** with **Enable email access** available.
+- To restore sending, click **Enable email access** on that row and complete consent again with the full mail scopes.
+
 ## Admin Email Settings
 
 Manage email settings for your entire organization from **Settings \> Organization** with your Juicebox account.
