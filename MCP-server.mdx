@@ -17,6 +17,10 @@ Our MCP server authenticates each user individually via OAuth. Every user comple
 
 The Juicebox MCP server is client-agnostic and works with any MCP-compatible tool.
 
+MCP access is gated per organization. An admin must enable MCP for your organization before anyone on the team can complete the OAuth flow and connect a client. If MCP is not enabled, the consent screen shows an `mcp_not_enabled_for_org` error asking you to have an admin turn it on. Contact your Juicebox representative to enable MCP for your organization.
+
+If you invite a new teammate through the connection flow in your MCP client, they'll first go to app.juicebox.ai to finish creating their Juicebox account. They then return to the MCP consent screen to approve access.
+
 The server URL is:
 
 [https://mcp.juicebox.ai/v1](https://mcp.juicebox.ai/v1)
@@ -86,6 +90,10 @@ Juicebox's MCP server supports dynamic client registration, so it can be configu
 **Project tool**
 
 - get\_project — Gives a summary of one project: its basic info plus how much is in it (number of saved searches and shortlisted candidates).
+
+**Knowledge tools**
+
+- answer\_product\_question — Answers general "how does Juicebox work" questions (objects, agents, statuses, capacity, settings, where features live) from Juicebox's canonical product guide. It is read-only and returns no live account data. Unlike the other tools, this one is available to every user connected under an MCP-enabled organization regardless of plan, seat, or OAuth scope. Use the analytics, project, or shortlist tools for live details on specific projects or candidates.
 
 **Agent (Eren recruiting agent) tools**
 
