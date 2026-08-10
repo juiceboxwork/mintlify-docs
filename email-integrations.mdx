@@ -140,14 +140,14 @@ The row's action menu is also calendar-scoped. Instead of the mailbox actions (s
 - **Disconnect** — ends only the calendar connection for that account. Any separate mailbox you have connected elsewhere is unaffected.
 
 <Note>
-  Calendar-only accounts count against your plan's mailbox limit. When you use **Enable email access** to upgrade one to a full mailbox, the same slot is reused — no additional slot is consumed.
+  Calendar-only accounts count against your plan's mailbox limit. When you use **Enable email access** to upgrade one to a full mailbox, the same slot is reused. No additional slot is consumed.
 </Note>
 
 ### Calendar-only accounts and sequences
 
 Calendar-only accounts are never offered as sequence senders. They won't appear in the sender picker on the sequence step editor, and they won't be auto-selected as the default sender for new sequences.
 
-If a sequence somehow references a calendar-only account (for example, an account that was downgraded after the sequence was built), Juicebox blocks the send at the API boundary with the error **This account is calendar-only**. To resume sending, either switch the sequence to a different sender or use **Enable email access** on the account to upgrade it to a full mailbox.
+If a sequence references a calendar-only account (for example, an account that was downgraded after the sequence was built), Juicebox blocks the send with the error **This account is calendar-only**. To resume sending, switch the sequence to a different sender or use **Enable email access** on the account to upgrade it to a full mailbox.
 
 ### Downgrades from an existing mailbox
 
