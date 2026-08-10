@@ -234,6 +234,10 @@
       {
         "label": "Support",
         "href": "mailto:support@juicebox.ai"
+      },
+      {
+        "label": "Sign in",
+        "href": "https://app.juicebox.ai"
       }
     ],
     "primary": {
