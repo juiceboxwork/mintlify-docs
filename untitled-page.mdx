@@ -1,0 +1,138 @@
+---
+title: "Welcome Kit for Admins"
+---
+
+Welcome to Juicebox! As an admin, you’re empowering your team to source and recruit candidates with richer data and more automation that help them find candidates more quickly and effectively. We’ll focus on the most important steps to get your organization set up.
+
+In this guide, you’ll learn how to:
+
+- Integrate your Applicant Tracking System (ATS) with Juicebox
+- Set up Single Sign-On (SSO)
+- Add team members and set their permissions
+- Manage settings and controls for AI Agents
+
+## Integrate your ATS
+
+Juicebox integrates deeply with the Applicant Tracking System (ATS) that your talent acquisition team uses on a day-to-day basis. Put simply, they’ll search for candidates and handle communication outreach in Juicebox. Then once candidates are in the interview process, they’ll be managed in the ATS.
+
+With this integration, your team will be able to:
+
+- Automatically search for candidates using the corresponding job description for the role
+- Search for candidates and save their profiles directly into the ATS, or even auto-export profiles that they shortlist
+- Conduct “rediscovery” searches, where they search for candidates who have already interviewed in the past and exist in your ATS
+- Keep a consistent source of truth for each applicant and role throughout the process
+
+You’ll only need to do the initial integration. Log into Juicebox, go to **Integrations** in the left-hand nav, then find the ATS that your organization uses. Click **Connect** and follow the steps. Once you see the **Connected** checkbox, you’re done.
+
+<Frame>
+  ![Image](/images/image-1.png "Image")
+</Frame>
+
+**Want more help?** Learn more about [ATS integrations](https://docs.juicebox.ai/ats-integrations) or check out our ATS setup guides for [Greenhouse](https://docs.juicebox.ai/help/ats-setup/greenhouse), [Lever](https://docs.juicebox.ai/help/ats-setup/lever), [Ashby](https://docs.juicebox.ai/help/ats-setup/ashby), [Bullhorn](https://docs.juicebox.ai/help/ats-setup/bullhorn), [Recruiterflow](https://docs.juicebox.ai/help/ats-setup/recruiterflow), [SmartRecruiters](https://docs.juicebox.ai/help/ats-setup/smartrecruiters), [Jobvite](https://docs.juicebox.ai/help/ats-setup/jobvite), and [Teamtailor](https://docs.juicebox.ai/help/ats-setup/teamtailor).
+
+## Account Settings
+
+<Note>
+  The next sections can be set up from the **Account Settings** page. To get there, click your name in the bottom of the left sidebar, then **Account Settings**.
+</Note>
+
+<Frame>
+  ![Image](/images/image-2.png "Image")
+</Frame>
+
+In Account Settings, you’ll find your personal settings as well as settings for your whole organization.
+
+## Set up single sign-on (SSO)
+
+Before you invite your team to Juicebox, set up single sign-on (SSO) for them so that they can log in using your SAML/SSO provider.
+
+<Note>
+  SSO is available only to Business plan customers.
+</Note>
+
+1. In **Account Settings → Organization**, click **Configure SSO**. Juicebox will create a one-time setup-portal session and redirect you to it automatically.
+   <Frame>
+     ![Image](/images/image-3.png "Image")
+   </Frame>
+2. Select the Identity Provider that your organization uses for SSO.
+3. Follow the provider-specific instructions to configure and test the connection.
+4. When setup is complete, return to **Account Settings → Organization** in Juicebox (You may be redirected automatically or can [use this link to navigate there directly](https://app.juicebox.ai/account?tab=organization-settings)).
+5. Under **Single sign-on**, confirm that the status is `Active`. If it says `Setup in progress`, try waiting a moment and refreshing the page.
+6. You should also now see a string of text in the **Organization slug** section. Copy that slug.
+7. Open Juicebox in a logged-out or private browser window and select **Sign in with SSO**.
+8. Enter the organization slug you copied when prompted.
+9. If prompted, confirm your previous Juicebox login method (such as email/password or Google) to link your existing Juicebox account to SSO.
+
+<Note>
+  If you experience any issues with the instructions above, reach out to your CSM and they will be happy to help!
+</Note>
+
+## Add team members and set user permissions
+
+Now that you’ve configured the login settings, you’re ready to invite your team. Each member of your team may need different permissions, and you have the ability to set those as an admin in Juicebox.
+
+Go to **Account Settings**, then look under the **Organization** header, and go to the **Team members** section (or [use this link and log directly into Juicebox](https://app.juicebox.ai/account?tab=org)).
+
+<Frame>
+  ![Image](/images/image-4.png "Image")
+</Frame>
+
+From here, enter the email addresses of anyone you’d like to invite, or use **Bulk invite** to add your whole team at once.
+
+<Frame>
+  ![Image](/images/image-5.png "Image")
+</Frame>
+
+As you add members, choose the relevant role. There are two types of roles that use licenses in Juicebox:
+
+- Reserve the **Admin** role for the people who truly need to change organizational settings
+- Use the **Member** role for recruiters and sourcing partners. This is the most common seat you’ll assign. The Member role is able to search, create and manage projects, review and shortlist candidates, and run outreach sequences.
+
+The other roles are essentially read-only, and they aren’t able to source candidates. For example, use the **Hiring manager** role for hiring managers to see search results and evaluate candidate profiles directly in Juicebox.
+
+<Tip>
+  See the [roles and permissions article](https://docs.juicebox.ai/help/account/roles-and-permissions) for a more detailed breakdown of the roles.
+</Tip>
+
+Under the **Permissions** column, there are some common special permissions you’ll want to set. Click the icons in this column to manage the permissions for each user.
+
+- **Analytics**: Typically reserved for anyone who needs to track overall team activity (for example, a recruiting leader). When users have this permission, they will be able to see all users’ Juicebox activity, usage trends, and funnels for each project and outreach sequence.
+- **Agents**: Give this permission to anyone who needs to create Agents to conduct searches and candidate outreach on their behalf. Your plan includes a certain number of Agents, so not everyone may need to create them. Typically Agents are used for high-volume or “evergreen” roles that your company continuously recruits for. You can also control the number of Agents any team member can create. We’ll cover that below.
+
+<Frame>
+  ![Image](/images/image-6.png "Image")
+</Frame>
+
+**Want more help?** Learn more about [roles and permissions](https://docs.juicebox.ai/help/account/roles-and-permissions), [analytics](https://docs.juicebox.ai/analytics), or [Agents](https://docs.juicebox.ai/juicebox-agents).
+
+## Manage Agent controls
+
+As you saw above, you can give any member access to create Juicebox Agents. But you’ll also want to make some decisions about how this works in your organization.
+
+Go to **Account Settings**, then look under the **Organization** header, and go to the **Agents** section (or [use this link and log directly into Juicebox](https://app.juicebox.ai/account?tab=agents)).
+
+<Frame>
+  ![Image](/images/image-7.png "Image")
+</Frame>
+
+In this section, you can see how many Agents are used at any given time, against the total number in your plan.
+
+Then, set your Agent controls. The most important ones are:
+
+- **ATS exclusion:** Using the ATS integration you set up above, Juicebox Agents can include or exclude candidates who are already in your ATS. By default, we recommend including ATS candidates, and letting users exclude them on an Agent-by-Ageny basis. Exclude them globally only if you want all Agents to focus on finding net-new candidates who have never applied to your company.
+- **Pause on weekends**: Helps your recruiters manage their workload and manage candidate experience. Recruiters won’t get new candidates over the weekend, so they won’t be overwhelmed with new candidates on Monday morning. And candidates won’t receive automatic outreach sequences over the weekend and get the impression that recruiters are working over the weekend.
+- **Active agent limit:** Caps the number of active agents each user can run at once. By default, anyone with Agent permissions can create and run as many Agents as they want, but these count against the number of Agents included in your plan. Setting an agent limit prevents any given user from monopolizing your allotted Agents.
+
+## Other settings
+
+We’ve covered the main settings to get you and your team started, but as you continue using Juicebox, it’s helpful to be familiar with:
+
+- **Credits:** Certain actions in Juicebox use credits, such as Contact credits (reveal a candidate’s email or profile), Export credits (export profiles to a CRM or ATS), and Smart reports (generate a smart report). [Learn more about credits](https://docs.juicebox.ai/all-about-credits).
+- **Export history:** See a log of all exports your team has made. [Learn more about export history](https://docs.juicebox.ai/exports#viewing-past-exports) or see it directly in [**Account Settings → Export History**](https://app.juicebox.ai/account?tab=exports).
+- **Enforce footer addendum:** If legal or compliance requirements dictate that you need to add a privacy policy link, regulatory disclosure, or “This email was sent using Juicebox” footer with every email, this setting ensures the footer is attached to every email sent to candidates via Juicebox. Configure it directly in [Account Settings → General → Outreach and sequences](https://app.juicebox.ai/account?tab=organization-settings).
+- **Email limits:** By default, individual users can send up to 100 automated outreach emails per day, but you can raise or lower this limit to between 20 - 200 emails per day (and up to 500 for Business plans). The lower the number, the better the signal to email providers. [Learn more about email limits](https://docs.juicebox.ai/email-integrations#organization-email-sending-limit) or change them directly in [Account Settings → General → Email limits](https://app.juicebox.ai/account?tab=organization-settings).
+- **Monthly user reports:** You can automatically send a Juicebox usage summary to all admins on the 1st of the month, including individual team member activity. Configure this in [Account Settings → General → Reports](https://app.juicebox.ai/account?tab=organization-settings).
+- **Email settings:** 
+  - In [**Account Settings → Mailbox Settings**](https://app.juicebox.ai/account?tab=mailbox-settings), users can enable **Email Strict Mode** to use verified email addresses for sequences and ATS exports. The trade-off: this is better for sender reputation and bounce rates, but it also reduces email data coverage. This is a user-level setting.
+  - At the organization level, you can also use [**Account Settings → General → Email settings**](https://app.juicebox.ai/account?tab=organization-settings) to control whether personal or professional email addresses can be used for candidate outreach. The best practice is to use candidates' personal emails, as this is better for bounce rates. So you may want to check **Prefer personal emails, fallback to professional emails** and **Only use personal emails** and make those the options your team can use.
+  - [Learn more about email deliverability best practices](https://docs.juicebox.ai/email-deliverability).
