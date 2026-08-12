@@ -49,25 +49,14 @@ In Account Settings, you’ll find your personal settings as well as settings fo
 Before you invite your team to Juicebox, set up single sign-on (SSO) for them so that they can log in using your SAML/SSO provider.
 
 <Note>
-  SSO is available only to Business plan customers.
+  SSO is available only to Business plan customers. Ask your CSM to help you get started with a one-time SSO setup portal link and an organization slug to use when signing in.
 </Note>
 
-1. In **Account Settings → Organization**, click **Configure SSO**. Juicebox will create a one-time setup-portal session and redirect you to it automatically.
-   <Frame>
-     ![Image](/images/image-3.png "Image")
-   </Frame>
-2. Select the Identity Provider that your organization uses for SSO.
-3. Follow the provider-specific instructions to configure and test the connection.
-4. When setup is complete, return to **Account Settings → Organization** in Juicebox (You may be redirected automatically or can [use this link to navigate there directly](https://app.juicebox.ai/account?tab=organization-settings)).
-5. Under **Single sign-on**, confirm that the status is `Active`. If it says `Setup in progress`, try waiting a moment and refreshing the page.
-6. You should also now see a string of text in the **Organization slug** section. Copy that slug.
-7. Open Juicebox in a logged-out or private browser window and select **Sign in with SSO**.
-8. Enter the organization slug you copied when prompted.
-9. If prompted, confirm your previous Juicebox login method (such as email/password or Google) to link your existing Juicebox account to SSO.
-
-<Note>
-  If you experience any issues with the instructions above, reach out to your CSM and they will be happy to help!
-</Note>
+1. Ask your CSM to help you get started. They will send a **one-time SSO setup portal link** and an **organization slug** to use when signing in.
+2. From the SSO setup portal, choose the identity provider that you use for SSO and follow the steps.
+3. Open Juicebox in a logged-out or private browser window and select **Sign in with SSO**.
+4. Enter the organization slug when prompted.
+5. If prompted, confirm your previous Juicebox login method (email/password or Google) by signing in with it. This links your existing Juicebox account to SSO.
 
 ## Add team members and set user permissions
 
@@ -134,7 +123,7 @@ We’ve covered the main settings to get you and your team started, but as you c
 - **Enforce footer addendum:** If legal or compliance requirements dictate that you need to add a privacy policy link, regulatory disclosure, or “This email was sent using Juicebox” footer with every email, this setting ensures the footer is attached to every email sent to candidates via Juicebox. Configure it directly in [Account Settings → General → Outreach and sequences](https://app.juicebox.ai/account?tab=organization-settings).
 - **Email limits:** By default, individual users can send up to 100 automated outreach emails per day, but you can raise or lower this limit to between 20 - 200 emails per day (and up to 500 for Business plans). The lower the number, the better the signal to email providers. [Learn more about email limits](https://docs.juicebox.ai/email-integrations#organization-email-sending-limit) or change them directly in [Account Settings → General → Email limits](https://app.juicebox.ai/account?tab=organization-settings).
 - **Monthly user reports:** You can automatically send a Juicebox usage summary to all admins on the 1st of the month, including individual team member activity. Configure this in [Account Settings → General → Reports](https://app.juicebox.ai/account?tab=organization-settings).
-- **Email settings:** 
+- **Email settings:**
   - In [**Account Settings → Mailbox Settings**](https://app.juicebox.ai/account?tab=mailbox-settings), users can enable **Email Strict Mode** to use verified email addresses for sequences and ATS exports. The trade-off: this is better for sender reputation and bounce rates, but it also reduces email data coverage. This is a user-level setting.
   - At the organization level, you can also use [**Account Settings → General → Email settings**](https://app.juicebox.ai/account?tab=organization-settings) to control whether personal or professional email addresses can be used for candidate outreach. The best practice is to use candidates' personal emails, as this is better for bounce rates. So you may want to check **Prefer personal emails, fallback to professional emails** and **Only use personal emails** and make those the options your team can use.
   - [Learn more about email deliverability best practices](https://docs.juicebox.ai/email-deliverability).
