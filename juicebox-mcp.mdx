@@ -6,7 +6,7 @@ title: "Juicebox MCP"
   The Juicebox MCP server is rolling out to users starting August 12th, 2026.
 </Note>
 
-The Juicebox Model Context Protocol (MCP) server lets AI models and agents access and interact with your Juicebox data through a standardized interface. 
+The Juicebox Model Context Protocol (MCP) server lets AI models and agents access and interact with your Juicebox data through a standardized interface.
 
 Connect it to Claude, ChatGPT, Cursor, or any other MCP-compatible tool to read your recruiting analytics and create or calibrate agents in <u>Juicebox</u>, all without leaving your AI client.
 
@@ -17,13 +17,6 @@ The Juicebox MCP server is available on all Juicebox paid plans.
 <Frame>
   ![MCP Permissions](/MCP-Permissions.png "MCP Permissions")
 </Frame>
-
-## **Export limits**
-
-To prevent mass exports, pulls of detailed candidate information count against your plan's monthly export limit.
-
-* **Doesn't count toward your limit:** pulling basic identifiers like a candidate's name and LinkedIn URL.
-* **Counts toward your limit:** pulling full candidate information, such as experience history, alongside a candidate's details.
 
 ## **Authentication**
 
@@ -117,3 +110,10 @@ Juicebox's MCP server supports dynamic client registration, so it can be configu
 - create\_agent — Creates a new automated recruiting agent for a role (or fine-tunes an existing one). If you give it enough about the role, it sets up and starts searching for candidates in one step; if not, it asks a follow-up question.
 - start\_sourcing — Tells an already-set-up agent to begin actively searching for candidates. Usually not needed since create\_agent starts automatically, but useful for restarting or retrying.
 - manage\_agent — Controls an existing agent's lifecycle: pause, resume, close, or reopen it.
+
+## **Export limits**
+
+To keep Juicebox fast and reliable for users, some detailed candidate exports through the MCP Server count toward your plan's monthly export limit.
+
+- **Doesn't count toward your limit:** Lightweight lookups like a candidate's name or LinkedIn URL.
+- **Counts toward your limit:** Full candidate profiles, including experience history and contact details.
