@@ -269,6 +269,10 @@
       "destination": "/juicebox-mcp"
     },
     {
+      "source": "/mcp-server",
+      "destination": "/juicebox-mcp"
+    },
+    {
       "source": "/untitled-page",
       "destination": "/reporting-stale-profiles"
     },
