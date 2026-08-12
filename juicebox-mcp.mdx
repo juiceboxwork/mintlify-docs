@@ -18,6 +18,13 @@ The Juicebox MCP server is available on all Juicebox paid plans.
   ![MCP Permissions](/MCP-Permissions.png "MCP Permissions")
 </Frame>
 
+## **Export limits**
+
+To prevent mass exports, pulls of detailed candidate information count against your plan's monthly export limit.
+
+* **Doesn't count toward your limit:** pulling basic identifiers like a candidate's name and LinkedIn URL.
+* **Counts toward your limit:** pulling full candidate information, such as experience history, alongside a candidate's details.
+
 ## **Authentication**
 
 Our MCP server authenticates each user individually via OAuth. Every user completes their own OAuth flow during setup, so the server only returns data that the user can already see in Juicebox. A user cannot query projects, searches, or candidates they do not otherwise have access to in the app.
