@@ -100,7 +100,8 @@
               "exports",
               "ats-integrations",
               "email-integrations",
-              "juicebox-for-slack"
+              "juicebox-for-slack",
+              "MCP-server"
             ]
           },
           {
