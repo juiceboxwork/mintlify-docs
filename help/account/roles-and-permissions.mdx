@@ -22,7 +22,6 @@ Read-Only Admins can review Agent-backed projects alongside regular projects, wi
 
 - **All Projects list.** Agent-backed projects appear in the list. Row metrics (shortlisted, contacted, interested) and the "leads awaiting review" count are visible but not clickable, and the row-level actions menu is hidden.
 - **Inspect-only project view.** Opening an Agent-backed project shows the project home, agent status, owners, and shortlist and outreach metrics. Juicebox locks composer submissions, configuration edits, and the create, pause, and close agent actions. You cannot start a new search or launch a review from the shortlist.
-- **API enforcement.** The same limits apply to the underlying APIs. Requests from a Read-Only Admin to create or mutate an agent, launch a search, or launch a review return `403 Access denied for view-only admins`. Scripted access follows the same boundary as the UI.
 - **Regular projects.** Projects without an agent are unchanged. Read-Only Admins can open them and use the actions the role already allowed, such as editing collaborators.
 
 ### Projects analytics
