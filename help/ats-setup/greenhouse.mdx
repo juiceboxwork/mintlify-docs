@@ -143,7 +143,7 @@ Activating the v3 connection atomically replaces the v1 connection. The old v1 c
 
 ### What happens to linked projects
 
-When you reconnect, Juicebox snapshots every project that has a linked Greenhouse job or export stage. About an hour after activation, Juicebox looks up the equivalent job in the new v3 connection using each job's native Greenhouse ID and updates the project's linked job and auto-export stage in place. Existing [auto-export](/ats-integrations#auto-export) settings survive the upgrade — you do not need to reconfigure them.
+When you reconnect, Juicebox snapshots every project that has a linked Greenhouse job or export stage. About an hour after activation, Juicebox looks up the equivalent job in the new v3 connection using each job's native Greenhouse ID. It then updates the project's linked job and auto-export stage in place. Existing [auto-export](/ats-integrations#auto-export) settings survive the upgrade, so you do not need to reconfigure them.
 
 - If Greenhouse data has not finished syncing to the new v3 connection when the check runs, Juicebox retries hourly until every project is remapped.
 - If you edit a project's linked job or export stage during the delay, Juicebox leaves your selection alone and skips the automatic remap for that project.
