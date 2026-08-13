@@ -20,6 +20,8 @@ Juicebox for Slack lets you:
 <Steps>
   <Step title="Connect Slack to Juicebox">
     Navigate to the **Integrations** tab and connect the Slack integration to Juicebox. This creates a single workspace connection.
+
+    Each Juicebox organization connects to exactly one Slack workspace, and each Slack workspace connects to exactly one Juicebox organization. Juicebox blocks a connect that would replace an existing pairing. This happens when the workspace already belongs to another Juicebox organization, or when your organization is already connected to a different workspace. Disconnect the existing pairing first, then try again. Re-authorizing the same organization and workspace still works and is safe to run to refresh permissions.
   </Step>
   <Step title="Link a project or Agent">
     From the **Projects** page, connect the relevant project to the Slack channel where the team collaborates on that role.
@@ -120,6 +122,25 @@ Example prompts:
 ```
 
 Saved-search writes are gated on licensed-seat projects.
+
+### Disconnect a project from its Slack channel
+
+If a project was linked to the wrong Slack channel, or you no longer want notifications for it in Slack, you can unlink it from the project's configuration without leaving the flow.
+
+1. Open the project and click the **Slack** row that shows the connected channel name.
+2. In the dialog, click **Disconnect** next to the channel name.
+3. Confirm **Disconnect** in the prompt.
+
+Notifications stop immediately, and Slack guests in that channel lose the ability to ask `@Juicebox` about this project. Disconnecting clears your notification settings for this project, so if you reconnect the project to a channel later, notifications start from the defaults.
+
+To disconnect the entire workspace instead of a single project:
+
+1. Go to **Integrations**.
+2. On the Slack card, click **Manage connections**.
+3. In the dialog, click **Options** > **Remove all connections**.
+4. Confirm **Remove all connections** in the prompt.
+
+This removes the Slack integration from your organization and disconnects it from every project and Agent, so a different workspace can be connected. You can reconnect Slack at any time.
 
 ### Archived Slack channels
 
