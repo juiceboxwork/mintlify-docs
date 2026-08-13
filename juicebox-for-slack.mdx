@@ -101,14 +101,14 @@ Available to any licensed Juicebox user connected to Slack.
 
 - **List searches** — show the saved searches in a project, optionally filtered by a title fragment. Returns each search's title, execution state, last-updated timestamp, and Juicebox link.
 - **Inspect a search** — read one saved search's filter summary, criteria, execution state, and canonical link. Accepts a search ID, exact or partial title, or a canonical Juicebox saved-search URL. Ambiguous titles return candidates so you can confirm which one you meant.
-- **Read cached results** — return up to five candidates from the most recent completed run of a saved search. This never re-runs the search or marks profiles as viewed. If no run has finished yet, Juicebox says the results aren't cached instead of executing one.
+- **See profiles** — return up to five candidates from the most recent completed run of a saved search. This never re-runs the search or marks profiles as viewed. If no run has finished yet, Juicebox says the results aren't cached instead of executing one.
 
-**Create and update (write)**
+**Create and update**
 
 Available to regular and admin licensed seats on non-Agent projects. Hiring-manager, sequence, read-only-admin, and guest accounts get read-only access at most.
 
-- **Create search** — paste a role brief or job description. Juicebox builds Query Builder filters and criteria, saves the search in the project you name, and runs it immediately. The response includes the search link, pool size, first-page count, and up to five candidates. If the source looks like a job description, Juicebox uses JD mode automatically; you can also force `role_brief` or `job_description`.
-- **Update search** — apply a natural-language edit to one existing saved search and re-run it. Exact IDs and canonical URLs win over title matches; ambiguous titles ask for clarification; and a concurrent edit made in the web app is rejected rather than overwritten.
+- **Create search** — paste a role brief or job description. Juicebox builds filters and criteria, saves the search in the project you name, and runs it immediately. The response includes the search link, pool size, first-page count, and up to five candidates. If the source looks like a job description, Juicebox uses JD mode automatically.
+- **Update search** — apply a natural-language edit to one existing saved search and re-run it.
 
 Example prompts:
 
@@ -119,7 +119,7 @@ Example prompts:
 @juicebox, in [Project], update "Staff PM - NYC" to also include product-led-growth experience.
 ```
 
-Saved-search writes are gated on licensed-seat, non-Agent projects. Inside an Agent-backed project, a saved search is separate from the Agent's sourcing configuration, so Juicebox will not use these tools to change how the Agent sources.
+Saved-search writes are gated on licensed-seat projects.
 
 ### Archived Slack channels
 
