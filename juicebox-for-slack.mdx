@@ -21,7 +21,7 @@ Juicebox for Slack lets you:
   <Step title="Connect Slack to Juicebox">
     Navigate to the **Integrations** tab and connect the Slack integration to Juicebox. This creates a single workspace connection.
 
-    Each Juicebox organization connects to exactly one Slack workspace, and each Slack workspace connects to exactly one Juicebox organization. If the workspace already belongs to another Juicebox organization, or your organization is already connected to a different workspace, Juicebox blocks the connect and asks you to disconnect the existing pairing first. Re-authorizing the same organization and workspace still works and is safe to run to refresh permissions.
+    Each Juicebox organization connects to exactly one Slack workspace, and each Slack workspace connects to exactly one Juicebox organization. Juicebox blocks a connect that would replace an existing pairing. This happens when the workspace already belongs to another Juicebox organization, or when your organization is already connected to a different workspace. Disconnect the existing pairing first, then try again. Re-authorizing the same organization and workspace still works and is safe to run to refresh permissions.
   </Step>
   <Step title="Link a project or Agent">
     From the **Projects** page, connect the relevant project to the Slack channel where the team collaborates on that role.
