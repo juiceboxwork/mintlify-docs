@@ -7,7 +7,7 @@ The Juicebox Model Context Protocol (MCP) server lets AI models and agents acces
 
 ## **Permissions & access**
 
-The Juicebox MCP server is available on all Juicebox paid plans.
+The Juicebox MCP server is available on all Juicebox paid plans. Analytics and agent tools work on any paid plan; shortlist tools, `get_project`, and per-candidate identifying fields in `get_data` require the Business plan. The `answer_product_question` knowledge tool is open to any connected user regardless of plan or seat. `get_candidate_details` additionally spends export credits, metered per candidate against your organization's balance.
 
 ## **Authentication**
 
@@ -17,7 +17,7 @@ Our MCP server authenticates each user individually via OAuth. Every user comple
 
 The Juicebox MCP server is client-agnostic and works with any MCP-compatible tool.
 
-MCP access is gated per organization. An admin must enable MCP for your organization before anyone on the team can complete the OAuth flow and connect a client. If MCP is not enabled, the consent screen shows an `mcp_not_enabled_for_org` error asking you to have an admin turn it on. Contact your Juicebox representative to enable MCP for your organization.
+MCP access is gated per organization. MCP is on by default for every organization, so teammates can connect a client as soon as they finish the OAuth flow. If your organization has opted out of MCP, the consent screen shows an `mcp_not_enabled_for_org` error asking you to have an admin turn it back on. Contact your Juicebox representative to toggle MCP access for your organization.
 
 If you invite a new teammate through the connection flow in your MCP client, they'll first go to app.juicebox.ai to finish creating their Juicebox account. They then return to the MCP consent screen to approve access.
 
@@ -79,13 +79,17 @@ Juicebox's MCP server supports dynamic client registration, so it can be configu
 **Analytics tools**
 
 - get\_schema — Shows a catalog of what data you can ask about: the available tables, fields, and example questions. You call this first so you know what you're allowed to query.
-- get\_data — Runs a read-only report and returns rows of data (e.g. counts, breakdowns, activity). It's the actual "answer my analytics question" tool, always limited to your organization's data.
+- get\_data — Runs a read-only report and returns rows of data (e.g. counts, breakdowns, activity). It's the actual "answer my analytics question" tool, always limited to your organization's data. Aggregate metrics (counts, breakdowns) are available on any paid plan; per-candidate identifying fields such as names, titles, companies, locations, and LinkedIn URLs are a Business-plan feature. Starter and Growth callers can still run aggregates over those fields but can't select or filter on them row-by-row. On those plans, `get_schema` hides the gated dimensions and points you at aggregates instead.
 - resolve — Turns a human name or link into the internal ID the system needs. You give it a project name, a teammate's name/email, a sequence title, or an agent name (and it hands back the matching ID), so other tools can act on the right thing.
 
 **Shortlist tools**
 
-- search\_shortlist — Lists the candidates saved to a project's shortlist, with optional filters (e.g. by title or school). Read-only, and only for projects you're allowed to see.
-- get\_candidate\_details — Pulls richer details on specific shortlisted candidates that the quick list doesn't include—like total years of experience and job tenure—so you can filter or analyze on those.<br />
+Shortlist tools are a Business-plan feature and only cover candidates a recruiter has explicitly saved to a project's shortlist — not the full candidate pool, sourced/searched results, or every contact in your organization. Every successful shortlist tool response includes a `disclaimer` field restating this scope so calling agents can't confuse it with a broader search.
+
+- search\_shortlist — Lists candidates saved to a project's shortlist, with optional filters (e.g. by title or school). Returns identity only — contact ID, full name, and LinkedIn URL — for each match. Read-only, and only for projects you're allowed to see. Use `get_candidate_details` to hydrate the rest of a candidate's profile.
+- get\_candidate\_details — Hydrates richer details on specific shortlisted candidates that `search_shortlist` doesn't return, including current title and company, location, skills, total years of experience, job tenure, and full experience and education history. This tool consumes export credits: revealing a candidate who has not already been exported this billing period costs one credit and stamps them as exported (re-reads are free). Candidates already exported this period cost nothing. If your organization doesn't have enough credits for every unexported candidate in the batch, the call is rejected without spending any. Preview the cost with `preview_candidate_details_cost` before calling.
+- preview\_candidate\_details\_cost — Given a batch of contact IDs, reports how many export credits `get_candidate_details` would consume without revealing anything or spending a credit. Use this to size a batch against your remaining balance.
+- get\_export\_credits — Reports your organization's remaining export credits, when the current billing period ends, and when credits next refresh, so you can plan `get_candidate_details` calls against the available budget.<br />
 
 **Project tool**
 
