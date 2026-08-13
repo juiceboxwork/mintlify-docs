@@ -91,6 +91,36 @@ Manage profiles and follow-up straight from Slack:
 - Create a **reminder or task** and assign it to a teammate in the channel — the assignee is tagged in Slack, and the task and note live in Juicebox
 - Share a **LinkedIn URL** and add it straight to a project shortlist
 
+### Work with saved searches from Slack
+
+Ask `@Juicebox` to browse, review, create, or edit the saved searches inside a project without leaving Slack. These tools operate on ordinary saved searches; Agent configuration and recalibration stay on the Agent tools.
+
+**Browse and review (read-only)**
+
+Available to any licensed Juicebox user connected to Slack.
+
+- **List searches** — show the saved searches in a project, optionally filtered by a title fragment. Returns each search's title, execution state, last-updated timestamp, and Juicebox link.
+- **Inspect a search** — read one saved search's filter summary, criteria, execution state, and canonical link. Accepts a search ID, exact or partial title, or a canonical Juicebox saved-search URL. Ambiguous titles return candidates so you can confirm which one you meant.
+- **See profiles** — return up to five candidates from the most recent completed run of a saved search. This never re-runs the search or marks profiles as viewed. If no run has finished yet, Juicebox says the results aren't cached instead of executing one.
+
+**Create and update**
+
+Available to regular and admin licensed seats on non-Agent projects. Hiring-manager, sequence, read-only-admin, and guest accounts get read-only access at most.
+
+- **Create search** — paste a role brief or job description. Juicebox builds filters and criteria, saves the search in the project you name, and runs it immediately. The response includes the search link, pool size, first-page count, and up to five candidates. If the source looks like a job description, Juicebox uses JD mode automatically.
+- **Update search** — apply a natural-language edit to one existing saved search and re-run it.
+
+Example prompts:
+
+```text
+@juicebox, list saved searches in [Project].
+@juicebox, show me the filters on the "Staff PM - NYC" search.
+@juicebox, create a saved search in [Project] for a senior backend engineer with Go and Kubernetes based in the EU.
+@juicebox, in [Project], update "Staff PM - NYC" to also include product-led-growth experience.
+```
+
+Saved-search writes are gated on licensed-seat projects.
+
 ### Archived Slack channels
 
 If a Slack channel linked to a Juicebox project or Agent is archived, Juicebox marks the connection inactive and stops sending notifications to that channel. Your notification preferences and the connection record are preserved. To resume delivery with the same settings, reconnect the project or Agent to a channel from the **Projects** page.
@@ -123,6 +153,10 @@ When a guest tags `@Juicebox`, Juicebox replies that they don't have access and 
 | Shortlist add | `@juicebox, add this LinkedIn profile to the shortlist for [Project].` |
 | Pipeline health | `@juicebox, what is the current health of [Project]?` |
 | Task | `@juicebox, assign [Teammate] a task to follow up with [Profile] by Friday.` |
+| List saved searches | `@juicebox, list saved searches in [Project].` |
+| Inspect a saved search | `@juicebox, show me the filters on the "[Search title]" search in [Project].` |
+| Create a saved search | `@juicebox, create a saved search in [Project] for [role brief or JD].` |
+| Update a saved search | `@juicebox, in [Project], update "[Search title]" to also require [criterion].` |
 
 ## Slack permissions requested
 
