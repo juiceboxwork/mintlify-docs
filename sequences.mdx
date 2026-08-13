@@ -264,3 +264,26 @@ Manual controls are also helpful if you want to delay outreach, make edits, or s
 1. **Pause**: Temporarily halts all remaining steps in the sequence. Use this if you want to resume sending later.
 2. **Resume**: Continues the sequence from the next unsent step for each candidate.
 3. **Stop**: Permanently ends the sequence for the selected candidate(s). No further steps will be sent. Use this when a profile is no longer relevant, has opted out, or has already engaged outside of email.
+
+## Shortlisting candidates to another project
+
+From a sequence run table, you can add selected candidates directly to another project's shortlist. This is useful for re-engagement campaigns, when a past outreach cohort should feed a new role without exporting a CSV and re-importing.
+
+To shortlist candidates from a sequence:
+
+1. Open the sequence from the Sequences page.
+2. Select the candidates you want to shortlist, either individually or in bulk from the header checkbox.
+3. In the selection bar, click **Shortlist**.
+4. In the project picker, search for and select the destination project, then click **Add** to confirm.
+
+<Frame>
+  ![Shortlist button in the sequence selection bar with the project picker open](/images/sequences/shortlist-to-project.png)
+</Frame>
+
+A few notes on the destination picker:
+
+- Deleted projects and Agent-backed projects are not listed as destinations.
+- Any project the selected runs are already enrolled into is excluded, so you can't re-shortlist candidates into their existing project.
+- Closed projects remain available as destinations.
+
+The button label counts unique candidates rather than runs, since a single candidate can hold multiple runs in the same sequence.
