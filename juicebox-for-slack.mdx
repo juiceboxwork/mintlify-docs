@@ -126,7 +126,7 @@ After clicking the button, the user signs in to Juicebox on a standalone confirm
 
 The prompt is skipped in a few cases:
 
-- **Cross-organization guests.** If the Slack user's email belongs to a Juicebox account in a different organization, Juicebox doesn't offer the link — connecting here wouldn't fix which organization they belong to.
+- **Cross-organization guests.** If the Slack user's email belongs to a Juicebox account in a different organization, Juicebox doesn't offer the link. Connecting here wouldn't fix which organization they belong to.
 - **Already linked.** If the Slack user is already resolved to a Juicebox account, `@Juicebox account` confirms who they're connected as instead of offering a new link.
 - **Not configured.** If your deployment doesn't have Slack identity linking enabled, the command and the automatic invite stay silent.
 
