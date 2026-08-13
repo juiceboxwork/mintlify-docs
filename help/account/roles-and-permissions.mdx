@@ -16,6 +16,19 @@ Roles are organized into four permission levels: **Admin, Read-Only Admin, Licen
   The Read-Only Admin and Hiring Manager licenses are view-only, and will not be able to perform any sourcing or outreach activity across candidates or the platform. Learn more about [Hiring Manager seats](/hiring-managers).
 </Note>
 
+## Read-Only Admin access to Agent projects
+
+Read-Only Admins can review Agent-backed projects alongside regular projects, without being able to change them.
+
+- **All Projects list.** Agent-backed projects appear in the list. Row metrics (shortlisted, contacted, interested) and the "leads awaiting review" count are visible but not clickable, and the row-level actions menu is hidden.
+- **Inspect-only project view.** Opening an Agent-backed project shows the project home, agent status, owners, and shortlist and outreach metrics. Composer submissions, configuration edits, and the create/pause/close agent actions are locked. New searches cannot be started and reviews cannot be launched from the shortlist.
+- **API enforcement.** The same limits apply to the underlying APIs. Requests from a Read-Only Admin to create or mutate an agent, launch a search, or launch a review return `403 Access denied for view-only admins`, so scripted access follows the same boundary as the UI.
+- **Regular projects.** Projects without an agent are unchanged. Read-Only Admins can open them and use the actions the role already allowed (for example, editing collaborators).
+
+### Projects analytics
+
+Read-Only Admins with the Analytics permission (see below) also see Agent-backed projects in the Projects analytics tab. When the **Show Agents only** filter is on, the overview total is labelled **Agent-backed projects** and includes open and closed Agent-backed projects for the selected date range. Hover the tile for a reminder that this is a date-based total, not a live agent count.
+
 ## Special permissions: Agents, tags and analytics
 
 An admin license (including read-only) can grant individual team members access to agents and/or analytics. To manage permissions:
