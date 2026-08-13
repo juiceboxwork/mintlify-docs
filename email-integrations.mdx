@@ -149,6 +149,14 @@ Calendar-only accounts are never offered as sequence senders. They won't appear 
 
 If a sequence references a calendar-only account (for example, an account that was downgraded after the sequence was built), Juicebox blocks the send with the error **This account is calendar-only**. To resume sending, switch the sequence to a different sender or use **Enable email access** on the account to upgrade it to a full mailbox.
 
+### Adding calendar access to an existing mailbox
+
+The **Integrations** page also shows a calendar provider card for each provider you've connected (Google, Microsoft). If any of your connected mailboxes on that provider are missing calendar access, the card shows an **Add calendar access** button and names the mailbox that's missing the scope.
+
+Clicking **Add calendar access** re-runs consent for that mailbox and adds calendar to its existing scopes. It doesn't create a new account or consume a slot, and it doesn't affect the mailbox's mail scopes.
+
+The **Connected** pill on a calendar provider card requires every mailbox on that provider to carry the calendar scope. If one mailbox is upgraded but another is still missing calendar access, the card continues to offer **Add calendar access** for the mailbox that's still missing it. This keeps meeting-based sequence stopping working consistently across every sending mailbox on that provider.
+
 ### Downgrades from an existing mailbox
 
 Google and Microsoft key OAuth grants by account address, so re-consenting for an address you already had connected as a mailbox will replace the existing grant. If a calendar-only consent accidentally overwrites a mailbox grant for the same address:
