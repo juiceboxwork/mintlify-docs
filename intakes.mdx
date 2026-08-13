@@ -14,7 +14,7 @@ An **intake** is the hiring-manager brief attached to a project — the notes, m
 - A rich-text notes editor with debounced autosave, so you can capture the kickoff call in real time.
 - An optional **Juicebox notetaker** that joins your calendar meeting (or an ad-hoc meeting URL), records it, and streams a live transcript into the intake.
 - **Smart Notes**: a structured summary generated from the transcript, laid out according to the selected template's sections.
-- A **real-time insights sidebar** that turns the brief into a live candidate preview as you talk — filters, matched profiles, and takeaways refresh whenever the summary meaningfully changes.
+- A **Live Insights** panel that turns the brief into a live candidate preview as you talk — the talent pool, potential matches, and market stats refresh whenever the summary changes.
 - A one-click hand-off that seeds a Juicebox agent from the intake summary so sourcing can start the moment the call ends.
 
 Each project has one intake, and the intake title defaults to the project name so it's easy to find later.
@@ -74,15 +74,11 @@ Each of your own templates can be:
 - **Personal** — visible only to you.
 - **Shared with the organization** — anyone on your team can pick it when creating an intake.
 
-### Import from a Google Doc
+### Editing a template
 
-If your team already has an intake questionnaire in Google Docs, use **Import from Google Doc** in the templates manager. Paste the shareable link and Juicebox will:
+Selecting a template in the manager opens a read view that shows the author, the date it was created, and a preview of the sections it defines. Owners get **Edit** and **Delete** controls; anyone else sees the template as read-only.
 
-1. Fetch the document contents.
-2. Run an **AI Reformat** pass that cleans up formatting, promotes section titles to headings, and bolds sub-field labels so Smart Notes can populate them.
-3. Drop the reformatted template into the editor for you to review before saving.
-
-You can also click **Reformat with AI** at any time on an existing template to re-run the same pass — helpful after pasting in raw text.
+Editing and creating both use the same rich-text editor with a formatting toolbar. Click **Reformat with AI** at any time to have Juicebox clean up formatting, promote section titles to headings, and bold each sub-field label — the shape Smart Notes needs to populate a section correctly.
 
 <Tip>
   For Smart Notes to fill in a section correctly, keep each section title as a heading and each sub-field as a **bold** label followed by a description. The **Reformat with AI** action does this for you automatically.
@@ -90,7 +86,7 @@ You can also click **Reformat with AI** at any time on an existing template to r
 
 ## The intake page
 
-The intake page has three tabs at the top and an insights sidebar on the right.
+The intake page has three tabs at the top and a Live Insights panel that slides in from the side.
 
 The tabs are:
 
@@ -112,6 +108,8 @@ You can also change the template from Manual Notes. Swapping templates preserves
 
 Smart Notes is generated automatically after a notetaker session ends (see [Recording a meeting](#recording-a-meeting)). Juicebox reads the transcript, splits it by the sections defined in your template, and fills in each sub-field with the relevant content from the call.
 
+Off-template facts that come up on the call aren't dropped. Juicebox captures anything relevant that doesn't fit a template section under an **Additional Criteria** catch-all at the bottom of Smart Notes, so a detail the template didn't ask for — an unusual tooling preference, a compensation nuance — is still visible next to the structured sections.
+
 If the notetaker joins a follow-up session on the same intake, Smart Notes is re-run against the combined transcript so it always reflects the full conversation to date.
 
 ### Transcript
@@ -122,26 +120,47 @@ The Transcript tab shows the live speaker-attributed transcript while the noteta
 
 Use `⌘F` (macOS) or `Ctrl+F` (Windows/Linux) on the intake page to open find-in-page. The search box highlights every match across the active tab, and you can cycle forward and backward through matches to jump between them. Press `Esc` to close.
 
-## The insights sidebar
+## Live Insights
 
-The insights sidebar turns the intake into a **live candidate preview**: as the summary fills in, Juicebox calibrates filters, runs a search, and shows the matched candidates and market takeaways next to your notes.
+The **Live Insights** panel turns the intake into a live candidate preview: as the summary fills in, Juicebox calibrates filters, runs a search, and shows the market and matched candidates next to your notes.
+
+The panel is organized into two stacked sections plus a stats row:
+
+- **Talent pool** — the top of the funnel: the total market size for the brief and its distribution on a map, so you can see at a glance how narrow or broad the current search is.
+- **Potential matches** — the previous "Top candidates" list, showing the strongest-ranked candidates for the current brief.
+- **Big-number stats** — a three-across row (for example, total pool size, matches, locations) that summarizes the current generation.
+
+Each generation carries its own freshness header so you always know when the panel last updated.
 
 ### When it opens
 
-The sidebar opens on its own at two key moments so you don't have to remember to check it:
+Live Insights opens on its own at three key moments so you don't have to remember to check it:
 
-- **Shortly after a recorded call starts**, so preview candidates start appearing early in the conversation.
+- **Shortly after a recorded call starts**, once the brief has enough real content to search against.
+- **Periodically during a live call** — a heartbeat regenerates and re-shows insights roughly every five minutes so a call that spends time refining already-populated requirements still gets fresh matches.
 - **Right after the call ends**, once the final Smart Notes are ready.
 
-You can also open or close it manually from the intake page at any time.
+You can also open or close the panel manually at any time. Closing it is treated as a deliberate dismissal: further auto-refreshes stay silent, and the floating action button shakes once per new generation to let you know there's an update waiting. After the meeting ends, Live Insights stays available from the same button — reloading the page won't lose the last preview.
 
 ### When it refreshes
 
-While a call is running, Juicebox regenerates the preview whenever the **shape of the brief meaningfully changes** — for example, when a new field like target seniority or location gets populated or cleared. Refreshes are debounced to at most once every 90 seconds so the sidebar isn't churning as the model streams updates.
+While a call is running, Juicebox regenerates Live Insights **immediately** on any meaningful change to the brief. A refined value for an existing requirement (for example, changing "senior engineer" to "staff engineer") is enough to trigger a new generation — you don't have to add a brand-new field. Refreshes are throttled by the in-flight generation guard, plus a short cool-off after a failed attempt, so the panel doesn't loop on transient errors.
+
+### Live suggestions
+
+When the current brief steers the search into a difficult shape, Live Insights shows a **suggestion banner** at the top of the panel — for example, "the pool is too narrow," "the pool is too broad," or "a key detail hasn't been covered yet" (with a short checklist of what's missing). Dismiss a suggestion with the **×** button. Dismissal is keyed to the specific suggestion text, so a different steer surfaces later if the shape of the pool changes.
+
+### Opening a candidate
+
+Click any candidate row in the Potential matches list to open that person in the Juicebox profile sidebar, right on the intake page — the same profile view you get from cmd+K or a shortlist row. Preview candidates cached before this feature shipped fall back to opening the candidate's LinkedIn profile in a new tab.
+
+### Starting a search from the panel
+
+**Start a Search** at the top of the panel promotes the current preview into a full-fledged project search, using the same calibrated filters. Once a search has been started for a given generation, the button flips to **View search** so you can jump back to it without creating duplicates.
 
 ### Sending previews to the meeting chat
 
-Each preview card in the sidebar has a **Send to meeting chat** action. Click it while a notetaker bot is in the call and the bot posts a link to the previewed candidates (or the takeaway summary) directly into the video call's chat, so the hiring manager can react to real profiles in real time.
+Each section in the panel has a **Send to meeting chat** link. Click it while a notetaker bot is in the call and the bot posts the previewed candidates directly into the video call's chat, so the hiring manager can react to real profiles in real time.
 
 ## Suggested meetings
 
@@ -168,7 +187,7 @@ From the intake page, click **Send notetaker**. You have three options:
 The notetaker supports the video providers Recall.ai supports (Zoom, Google Meet, Microsoft Teams). Once dispatched, the bot's status appears on the intake page: `scheduled`, `joining`, `in call`, `recording`, `done`, or `failed`. You can **remove** a scheduled or in-call bot from its meeting row on the intake page if plans change.
 
 <Note>
-  Live streaming of the transcript is required for the bot to launch — Juicebox uses the live transcript to populate the Transcript tab and the insights sidebar in real time. If your organization's Recall.ai configuration disables live transcription, the bot will refuse to start.
+  Live streaming of the transcript is required for the bot to launch — Juicebox uses the live transcript to populate the Transcript tab and Live Insights in real time. If your organization's Recall.ai configuration disables live transcription, the bot will refuse to start.
 </Note>
 
 ### Recording in the browser
@@ -178,7 +197,7 @@ For quick prep or ad-hoc sessions, you can also record from the browser without 
 ### While the bot is in the call
 
 - The **Transcript** tab fills in live as the bot transcribes the meeting.
-- The **insights sidebar** starts previewing candidates once enough of the brief has taken shape.
+- **Live Insights** starts previewing candidates once enough of the brief has taken shape.
 - The Manual Notes tab remains fully editable — you can take notes while the bot records.
 - Closing the browser tab does not affect the bot; it continues recording until the meeting ends.
 
@@ -188,7 +207,7 @@ Once the meeting ends:
 
 1. The transcript is finalized in the Transcript tab.
 2. Juicebox runs the post-call AI pipeline, walks the template section by section, and populates each sub-field of **Smart Notes**.
-3. The insights sidebar opens with a fresh preview based on the final summary.
+3. Live Insights opens with a fresh preview based on the final summary.
 4. Both Manual Notes (your handwritten notes) and Smart Notes (Juicebox's structured recap) are available side by side.
 
 ### Follow-up sessions
