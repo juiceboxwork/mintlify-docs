@@ -20,6 +20,8 @@ Juicebox for Slack lets you:
 <Steps>
   <Step title="Connect Slack to Juicebox">
     Navigate to the **Integrations** tab and connect the Slack integration to Juicebox. This creates a single workspace connection.
+
+    Each Juicebox organization connects to exactly one Slack workspace, and each Slack workspace connects to exactly one Juicebox organization. If the workspace already belongs to another Juicebox organization, or your organization is already connected to a different workspace, Juicebox blocks the connect and asks you to disconnect the existing pairing first. Re-authorizing the same organization and workspace still works and is safe to run to refresh permissions.
   </Step>
   <Step title="Link a project or Agent">
     From the **Projects** page, connect the relevant project to the Slack channel where the team collaborates on that role.
@@ -90,6 +92,18 @@ Manage profiles and follow-up straight from Slack:
 - Add a **note** or update **tags** on a profile
 - Create a **reminder or task** and assign it to a teammate in the channel — the assignee is tagged in Slack, and the task and note live in Juicebox
 - Share a **LinkedIn URL** and add it straight to a project shortlist
+
+### Disconnect a project from its Slack channel
+
+If a project was linked to the wrong Slack channel, or you no longer want notifications for it in Slack, you can unlink it from the project's Manage dialog without leaving the flow.
+
+1. Open the project and launch **Manage Slack notifications**.
+2. Next to the connected channel name, select the trash icon.
+3. Confirm **Disconnect** in the prompt.
+
+Notifications stop immediately, and Slack guests in that channel lose the ability to ask `@Juicebox` about this project. Your notification preferences are kept, so you can reconnect the project to a Slack channel later from the same dialog or from the **Projects** page.
+
+To disconnect the entire workspace instead of a single project, use the **Integrations** page. Disconnecting the workspace removes every project channel link for the organization and clears the workspace mapping, so a new workspace can be connected.
 
 ### Archived Slack channels
 
