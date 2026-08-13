@@ -95,15 +95,22 @@ Manage profiles and follow-up straight from Slack:
 
 ### Disconnect a project from its Slack channel
 
-If a project was linked to the wrong Slack channel, or you no longer want notifications for it in Slack, you can unlink it from the project's Manage dialog without leaving the flow.
+If a project was linked to the wrong Slack channel, or you no longer want notifications for it in Slack, you can unlink it from the project's configuration without leaving the flow.
 
-1. Open the project and launch **Manage Slack notifications**.
-2. Next to the connected channel name, select the trash icon.
+1. Open the project and click the **Slack** row that shows the connected channel name.
+2. In the dialog, click **Disconnect** next to the channel name.
 3. Confirm **Disconnect** in the prompt.
 
-Notifications stop immediately, and Slack guests in that channel lose the ability to ask `@Juicebox` about this project. Your notification preferences are kept, so you can reconnect the project to a Slack channel later from the same dialog or from the **Projects** page.
+Notifications stop immediately, and Slack guests in that channel lose the ability to ask `@Juicebox` about this project. Disconnecting clears your notification settings for this project, so if you reconnect the project to a channel later, notifications start from the defaults.
 
-To disconnect the entire workspace instead of a single project, use the **Integrations** page. Disconnecting the workspace removes every project channel link for the organization and clears the workspace mapping, so a new workspace can be connected.
+To disconnect the entire workspace instead of a single project:
+
+1. Go to **Integrations**.
+2. On the Slack card, click **Manage connections**.
+3. In the dialog, click **Options** > **Remove all connections**.
+4. Confirm **Remove all connections** in the prompt.
+
+This removes the Slack integration from your organization and disconnects it from every project and Agent, so a different workspace can be connected. You can reconnect Slack at any time.
 
 ### Archived Slack channels
 
