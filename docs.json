@@ -30,6 +30,7 @@
                   "welcome-kit-automate-with-agents"
                 ]
               },
+              "welcome-kit-admins",
               "project-walkthrough",
               "manage-account",
               "all-about-credits"
@@ -99,7 +100,8 @@
               "exports",
               "ats-integrations",
               "email-integrations",
-              "juicebox-for-slack"
+              "juicebox-for-slack",
+              "juicebox-mcp"
             ]
           },
           {
@@ -262,6 +264,10 @@
     }
   },
   "redirects": [
+    {
+      "source": "/MCP-server",
+      "destination": "/juicebox-mcp"
+    },
     {
       "source": "/untitled-page",
       "destination": "/reporting-stale-profiles"

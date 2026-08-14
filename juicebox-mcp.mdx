@@ -1,13 +1,22 @@
 ---
-title: "Juicebox MCP Server "
-hidden: true
+title: "Juicebox MCP"
 ---
 
-The Juicebox Model Context Protocol (MCP) server lets AI models and agents access and interact with your Juicebox data through a standardized interface. Connect it to Claude, ChatGPT, Cursor, or any other MCP-compatible tool to read your recruiting analytics and create or calibrate agents in Juicebox, all without leaving your AI client.
+<Note>
+  The Juicebox MCP server is rolling out to users starting August 12th, 2026.
+</Note>
+
+The Juicebox Model Context Protocol (MCP) server lets AI models and agents access and interact with your Juicebox data through a standardized interface.
+
+Connect it to Claude, ChatGPT, Cursor, or any other MCP-compatible tool to read your recruiting analytics and create or calibrate agents in <u>Juicebox</u>, all without leaving your AI client.
 
 ## **Permissions & access**
 
 The Juicebox MCP server is available on all Juicebox paid plans.
+
+<Frame>
+  ![MCP Permissions](/MCP-Permissions.png "MCP Permissions")
+</Frame>
 
 ## **Authentication**
 
@@ -25,21 +34,29 @@ _Note: this URL is only used by MCP clients. Opening it directly in a browser wi
 
 Select your client below for setup instructions. During setup, you'll see an approval screen listing the permissions the MCP server requests: reading your recruiting analytics and creating or calibrating agents on your behalf. Select **Approve** to continue.
 
-### **Claude**
+### **Claude Connectors**
 
-1. In Claude, go to **Settings \> Connectors** and search for Juicebox, or go there directly with this link: [<u>claude.ai/directory/connectors</u>](https://claude.ai/directory/connectors/dc1671e0-b14c-47b8-a625-e835ae4067ba)
+1. In Claude, go to **Settings \> Connectors** and search for Juicebox, or go there directly with this link: [<u>claude.ai/directory/connectors</u>](https://claude.ai/directory/connectors/e6d9e323-b594-403d-a431-563f4da6712a)
 2. Select **Juicebox**, then select **Connect**.
 3. You'll be prompted to log in to Juicebox (if you aren't already) and select **Approve** in the MCP access window.
+
+<Frame>
+  ![Claude Connectors](/Claude-Connectors.png "Claude Connectors")
+</Frame>
 
 Using the Claude CLI (Claude Code)? Add the server with the following command, then complete the OAuth flow when prompted:
 
 claude mcp add --transport http juicebox [https://mcp.juicebox.ai/v1](https://mcp.juicebox.ai/v1)
 
-### **ChatGPT**
+### **ChatGPT Plugins**
 
-1. In ChatGPT, open **Settings \> Apps** and search for Juicebox, or use this link: [<u>chatgpt.com/apps?q=Juicebox</u>](https://chatgpt.com/apps?show_chat_button=true&q=Juicebox)
+1. In ChatGPT, open **Settings \> Plugins** and search for Juicebox, or use this link: [<u>chatgpt.com/apps?q=Juicebox</u>](https://chatgpt.com/apps?show_chat_button=true&q=Juicebox)
 2. Select **Juicebox**, then select **Connect**.
 3. Follow the authorization prompts to complete setup.
+
+<Frame>
+  ![Chat GPT Plugins](/ChatGPTPlugins.png "Chat GPT Plugins")
+</Frame>
 
 ### **Cursor and other IDEs**
 
@@ -66,7 +83,7 @@ claude mcp add --transport http juicebox [https://mcp.juicebox.ai/v1](https://mc
 
 Juicebox's MCP server supports dynamic client registration, so it can be configured with Gemini CLI:
 
-1. Add the server with the command: gemini mcp add --transport http juicebox [https://app.juicebox.ai/api/mcp](https://app.juicebox.ai/api/mcp)
+1. Add the server with the command: gemini mcp add --transport http juicebox [https://mcp.juicebox.ai/v1/](https://mcp.juicebox.ai/v1/)
 2. Complete the auth process. For more on Gemini CLI's auth process, check out [<u>their MCP server guide</u>](https://geminicli.com/docs/tools/mcp-server/#automatic-oauth-discovery).
 3. Restart the Gemini CLI (or run /mcp reload if the session is active) and check the status using the built-in command /mcp list. You should see the server listed with a "Connected" status.
 
@@ -87,9 +104,16 @@ Juicebox's MCP server supports dynamic client registration, so it can be configu
 
 - get\_project — Gives a summary of one project: its basic info plus how much is in it (number of saved searches and shortlisted candidates).
 
-**Agent (Eren recruiting agent) tools**
+**Agent tools**
 
 - get\_agent\_schema — Explains how recruiting agents work: what you need to create/configure one, the lifecycle (start, pause, resume, close, reopen), and current limits. You read this first before creating an agent.
 - create\_agent — Creates a new automated recruiting agent for a role (or fine-tunes an existing one). If you give it enough about the role, it sets up and starts searching for candidates in one step; if not, it asks a follow-up question.
 - start\_sourcing — Tells an already-set-up agent to begin actively searching for candidates. Usually not needed since create\_agent starts automatically, but useful for restarting or retrying.
 - manage\_agent — Controls an existing agent's lifecycle: pause, resume, close, or reopen it.
+
+## **Export limits**
+
+To keep Juicebox fast and reliable for users, some detailed candidate exports through the MCP Server count toward your plan's monthly export limit.
+
+- **Doesn't count toward your limit:** Lightweight lookups like a candidate's name or LinkedIn URL.
+- **Counts toward your limit:** Full candidate profiles, including experience history and contact details.

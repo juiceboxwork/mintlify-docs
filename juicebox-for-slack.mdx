@@ -20,6 +20,8 @@ Juicebox for Slack lets you:
 <Steps>
   <Step title="Connect Slack to Juicebox">
     Navigate to the **Integrations** tab and connect the Slack integration to Juicebox. This creates a single workspace connection.
+
+    Each Juicebox organization connects to exactly one Slack workspace, and each Slack workspace connects to exactly one Juicebox organization. Juicebox blocks a connect that would replace an existing pairing. This happens when the workspace already belongs to another Juicebox organization, or when your organization is already connected to a different workspace. Disconnect the existing pairing first, then try again. Re-authorizing the same organization and workspace still works and is safe to run to refresh permissions.
   </Step>
   <Step title="Link a project or Agent">
     From the **Projects** page, connect the relevant project to the Slack channel where the team collaborates on that role.
@@ -62,9 +64,29 @@ You can also chat directly with Juicebox in Slack to get project notifications a
 Tag `@Juicebox` in your Slack Chat to get quick answers without navigating dashboards:
 
 - Pending, approved, or reviewed lead counts at a glance
-- Outreach volume — how many people contacted or added to a sequence
+- Outreach volume, such as how many people were contacted or added to a sequence
 - Pipeline, project, Agent, or sequence health, answered in the thread
 - What happened to a profile after it was approved
+
+#### What Slack analytics can answer on your plan
+
+Slack mirrors the same analytics access rules as the Juicebox web app, so what `@Juicebox` will answer depends on your plan and role.
+
+**Open on every paid plan (any Juicebox member in the channel can ask):**
+
+- A project's pipeline by stage, candidate lists, and shortlist activity
+- Agent health listings, such as which Agents are paused or out of leads
+- Project-scoped counts, such as how many candidates were shortlisted for a specific project
+- All outreach analytics, including emails sent per teammate and sequence performance
+
+**Business plan and analytics access required:**
+
+- Searches run per recruiter and profiles viewed
+- Per-teammate leaderboards, such as who shortlisted the most candidates
+- Cross-project shortlist rollups, such as shortlisted candidates per project without naming a project
+- Org-wide project and Agent counts, such as how many Agents you have
+
+To ask these usage questions in Slack, you need a Business plan and one of the following roles: admin, read-only admin, or the `analyticsAdmins` role granted per member from **Settings → Team members**.
 
 ### Manage notifications from Slack
 
@@ -91,15 +113,92 @@ Manage profiles and follow-up straight from Slack:
 - Create a **reminder or task** and assign it to a teammate in the channel — the assignee is tagged in Slack, and the task and note live in Juicebox
 - Share a **LinkedIn URL** and add it straight to a project shortlist
 
+### Work with saved searches from Slack
+
+Ask `@Juicebox` to browse, review, create, or edit the saved searches inside a project without leaving Slack. These tools operate on ordinary saved searches; Agent configuration and recalibration stay on the Agent tools.
+
+**Browse and review (read-only)**
+
+Available to any licensed Juicebox user connected to Slack.
+
+- **List searches** — show the saved searches in a project, optionally filtered by a title fragment. Returns each search's title, execution state, last-updated timestamp, and Juicebox link.
+- **Inspect a search** — read one saved search's filter summary, criteria, execution state, and canonical link. Accepts a search ID, exact or partial title, or a canonical Juicebox saved-search URL. Ambiguous titles return candidates so you can confirm which one you meant.
+- **See profiles** — return up to five candidates from the most recent completed run of a saved search. This never re-runs the search or marks profiles as viewed. If no run has finished yet, Juicebox says the results aren't cached instead of executing one.
+
+**Create and update**
+
+Available to regular and admin licensed seats on non-Agent projects. Hiring-manager, sequence, read-only-admin, and guest accounts get read-only access at most.
+
+- **Create search** — paste a role brief or job description. Juicebox builds filters and criteria, saves the search in the project you name, and runs it immediately. The response includes the search link, pool size, first-page count, and up to five candidates. If the source looks like a job description, Juicebox uses JD mode automatically.
+- **Update search** — apply a natural-language edit to one existing saved search and re-run it.
+
+Example prompts:
+
+```text
+@juicebox, list saved searches in [Project].
+@juicebox, show me the filters on the "Staff PM - NYC" search.
+@juicebox, create a saved search in [Project] for a senior backend engineer with Go and Kubernetes based in the EU.
+@juicebox, in [Project], update "Staff PM - NYC" to also include product-led-growth experience.
+```
+
+Saved-search writes are gated on licensed-seat projects.
+
+### Disconnect a project from its Slack channel
+
+If a project was linked to the wrong Slack channel, or you no longer want notifications for it in Slack, you can unlink it from the project's configuration without leaving the flow.
+
+1. Open the project and click the **Slack** row that shows the connected channel name.
+2. In the dialog, click **Disconnect** next to the channel name.
+3. Confirm **Disconnect** in the prompt.
+
+Notifications stop immediately, and Slack guests in that channel lose the ability to ask `@Juicebox` about this project. Disconnecting clears your notification settings for this project, so if you reconnect the project to a channel later, notifications start from the defaults.
+
+To disconnect the entire workspace instead of a single project:
+
+1. Go to **Integrations**.
+2. On the Slack card, click **Manage connections**.
+3. In the dialog, click **Options** > **Remove all connections**.
+4. Confirm **Remove all connections** in the prompt.
+
+This removes the Slack integration from your organization and disconnects it from every project and Agent, so a different workspace can be connected. You can reconnect Slack at any time.
+
 ### Archived Slack channels
 
 If a Slack channel linked to a Juicebox project or Agent is archived, Juicebox marks the connection inactive and stops sending notifications to that channel. Your notification preferences and the connection record are preserved. To resume delivery with the same settings, reconnect the project or Agent to a channel from the **Projects** page.
+
+### Slack guests
+
+A Slack guest is a channel member Juicebox can't match to a licensed Juicebox user. Guests can see Juicebox messages in the channel and ask project-scoped questions about the channels they're in, but can't run cross-project or usage analytics.
+
+Guests can:
+
+- Read notifications, review requests, and replies Juicebox posts in the channel
+- Ask `@Juicebox` for pipeline, candidate lists, Agent health, and outreach questions about the projects their channel is linked to. Juicebox automatically scopes the answer to those projects.
+- Ask general questions about how Juicebox works (for example, "how does Juicebox work?")
+
+Guests can't:
+
+- Ask `@Juicebox` for usage analytics such as searches run, profiles viewed, per-teammate leaderboards, or org-wide project and Agent counts
+- Take profile actions, add to shortlists, or create tasks
+
+When a guest asks a question that would require a Juicebox seat, Juicebox replies with a guest-specific message that names the missing membership and offers to have someone invite them to Juicebox. The reply also points at the `@Juicebox account` command, so a teammate whose Slack email doesn't match their Juicebox email can connect the two themselves.
+
+### Connect a Slack identity to a Juicebox account
+
+Juicebox matches Slack members to Juicebox users by email. If a teammate's Slack email doesn't match the email on their Juicebox account, they can connect the two identities themselves without an admin.
+
+When Juicebox can't match a Slack user by email, it sends them a private message only they can see, with a **Sign in to Juicebox** button. Anyone can also trigger the same message on demand by typing `@Juicebox account` (or `@Juicebox find my account`) in any channel where Juicebox is present.
+
+After clicking the button, they sign in to Juicebox, confirm which Slack identity and Juicebox account will be connected, and finish the link. Juicebox then treats the two identities as the same person for permissions, assignments, and notifications.
+
+If they're already linked, `@Juicebox account` confirms who they're connected as. The link only works within your Juicebox organization.
 
 ## Actions to try in Slack
 
 | Action | Example prompt |
 | --- | --- |
 | Notification settings | `@juicebox settings` |
+| Connect your Juicebox account | `@juicebox account` |
 | Lead review | `@juicebox, show me the pending leads for [Agent].` |
 | Agent status | `@juicebox, how is [Agent] doing?` |
 | Approvals | `@juicebox, how many leads did we approve this week for [Project]?` |
@@ -108,6 +207,10 @@ If a Slack channel linked to a Juicebox project or Agent is archived, Juicebox m
 | Shortlist add | `@juicebox, add this LinkedIn profile to the shortlist for [Project].` |
 | Pipeline health | `@juicebox, what is the current health of [Project]?` |
 | Task | `@juicebox, assign [Teammate] a task to follow up with [Profile] by Friday.` |
+| List saved searches | `@juicebox, list saved searches in [Project].` |
+| Inspect a saved search | `@juicebox, show me the filters on the "[Search title]" search in [Project].` |
+| Create a saved search | `@juicebox, create a saved search in [Project] for [role brief or JD].` |
+| Update a saved search | `@juicebox, in [Project], update "[Search title]" to also require [criterion].` |
 
 ## Slack permissions requested
 
