@@ -244,6 +244,13 @@ When you connect Slack, Juicebox requests the following scopes:
 | `users:read` | Identify Slack members, so Juicebox can use the correct names, mentions, assignments, and invitations. |
 | `users:read.email` | Match a Slack member to the correct Juicebox user for access checks, assignments, and invitations. |
 
+## Best practices
+
+- The integration creates one workspace connection, but supports unlimited Slack channel to project or Agent mappings. We recommend **one channel per project or Agent**, though some teams put everything in a single channel.
+- Notifications are scoped to the channel — anyone in the channel gets them. Some notifications (project renamed, collaborators added or removed) can't be disabled. The project activity summary has a configurable cadence — it defaults to weekly, and can be set to daily or monthly.
+- You only need to tag `@Juicebox` when starting a new thread, not on every message within the thread.
+- DMing Juicebox directly works for status and analytics questions, and works for users without a Juicebox seat (view-only). Lead review cannot happen in DMs.
+
 ## FAQ
 
 <AccordionGroup>
@@ -304,10 +311,3 @@ When you connect Slack, Juicebox requests the following scopes:
     Slack shows an authorization prompt the first time a member takes an action that needs a scope Juicebox hasn't yet been granted for them. Members who already granted those scopes on a previous action won't see the prompt again. Approving the prompt is safe and only grants the scopes shown on that screen.
   </Accordion>
 </AccordionGroup>
-
-## Best practices
-
-- The integration creates one workspace connection, but supports unlimited Slack channel to project or Agent mappings. We recommend **one channel per project or Agent**, though some teams put everything in a single channel.
-- Notifications are scoped to the channel — anyone in the channel gets them. Some notifications (project renamed, collaborators added or removed) can't be disabled. The project activity summary has a configurable cadence — it defaults to weekly, and can be set to daily or monthly.
-- You only need to tag `@Juicebox` when starting a new thread, not on every message within the thread.
-- DMing Juicebox directly works for status and analytics questions, and works for users without a Juicebox seat (view-only). Lead review cannot happen in DMs.
