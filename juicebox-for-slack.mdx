@@ -168,25 +168,37 @@ If a Slack channel linked to a Juicebox project or Agent is archived, Juicebox m
 
 ### Slack guests
 
-A Slack guest is a channel member who isn't a licensed Juicebox user. Guests can see Juicebox messages in the channel and ask project-scoped questions about the channels they're in, but can't run cross-project or usage analytics.
+A Slack guest is a channel member Juicebox can't match to a licensed Juicebox user. Guests can see Juicebox messages in the channel and ask project-scoped questions about the channels they're in, but can't run cross-project or usage analytics.
 
 Guests can:
 
 - Read notifications, review requests, and replies Juicebox posts in the channel
 - Ask `@Juicebox` for pipeline, candidate lists, Agent health, and outreach questions about the projects their channel is linked to. Juicebox automatically scopes the answer to those projects.
+- Ask general questions about how Juicebox works (for example, "how does Juicebox work?")
 
 Guests can't:
 
 - Ask `@Juicebox` for usage analytics such as searches run, profiles viewed, per-teammate leaderboards, or org-wide project and Agent counts
 - Take profile actions, add to shortlists, or create tasks
 
-When a guest asks a question that would require a Juicebox seat, Juicebox replies with a guest-specific message that names the missing membership and offers to have someone invite them to Juicebox.
+When a guest asks a question that would require a Juicebox seat, Juicebox replies with a guest-specific message that names the missing membership and offers to have someone invite them to Juicebox. The reply also points at the `@Juicebox account` command, so a teammate whose Slack email doesn't match their Juicebox email can connect the two themselves.
+
+### Connect a Slack identity to a Juicebox account
+
+Juicebox matches Slack members to Juicebox users by email. If a teammate's Slack email doesn't match the email on their Juicebox account, they can connect the two identities themselves without an admin.
+
+When Juicebox can't match a Slack user by email, it sends them a private message only they can see, with a **Sign in to Juicebox** button. Anyone can also trigger the same message on demand by typing `@Juicebox account` (or `@Juicebox find my account`) in any channel where Juicebox is present.
+
+After clicking the button, they sign in to Juicebox, confirm which Slack identity and Juicebox account will be connected, and finish the link. Juicebox then treats the two identities as the same person for permissions, assignments, and notifications.
+
+If they're already linked, `@Juicebox account` confirms who they're connected as. The link only works within your Juicebox organization.
 
 ## Actions to try in Slack
 
 | Action | Example prompt |
 | --- | --- |
 | Notification settings | `@juicebox settings` |
+| Connect your Juicebox account | `@juicebox account` |
 | Lead review | `@juicebox, show me the pending leads for [Agent].` |
 | Agent status | `@juicebox, how is [Agent] doing?` |
 | Approvals | `@juicebox, how many leads did we approve this week for [Project]?` |
