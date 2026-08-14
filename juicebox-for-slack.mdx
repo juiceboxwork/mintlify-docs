@@ -250,3 +250,64 @@ When you connect Slack, Juicebox requests the following scopes:
 - Notifications are scoped to the channel — anyone in the channel gets them. Some notifications (project renamed, collaborators added or removed) can't be disabled. The project activity summary has a configurable cadence — it defaults to weekly, and can be set to daily or monthly.
 - You only need to tag `@Juicebox` when starting a new thread, not on every message within the thread.
 - DMing Juicebox directly works for status and analytics questions, and works for users without a Juicebox seat (view-only). Lead review cannot happen in DMs.
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can anyone in my Slack workspace connect Juicebox to a channel?">
+    Connecting the Slack workspace to Juicebox is a one-time setup done from the **Integrations** tab in Juicebox, and requires a Juicebox admin. Linking a specific project or Agent to a channel is done from the **Projects** page in Juicebox by anyone with access to that project.
+
+    Once the workspace is connected, any Slack member of a channel can add the bot to that channel by tagging `@Juicebox`. If your Slack workspace restricts who can add apps to channels, that restriction applies here too.
+  </Accordion>
+
+  <Accordion title="Can I get in touch with Juicebox's team?">
+    Yes. Email [support@juicebox.ai](mailto:support@juicebox.ai) for product and account questions, or [sales@juicebox.work](mailto:sales@juicebox.work) for plan and pricing questions.
+  </Accordion>
+
+  <Accordion title="How can I access additional support for this integration?">
+    Email [support@juicebox.ai](mailto:support@juicebox.ai) with details about your Juicebox organization, the Slack workspace, and what you're seeing.
+  </Accordion>
+
+  <Accordion title="How does the integration collect, manage, and store candidate data?">
+    Juicebox for Slack surfaces candidate data that already lives in your Juicebox organization. It does not collect candidate data from Slack, and it does not use messages in your Slack workspace to build the Juicebox candidate database.
+
+    For details on how Juicebox handles data, see the [Juicebox privacy policy](https://juicebox.ai/privacy-policy) and the [Data Sources](/data-sources) page.
+  </Accordion>
+
+  <Accordion title="Slack notifications aren't showing up in my channel after installing this integration">
+    Check each of the following:
+
+    1. The project or Agent is linked to that specific channel. Open the project and look for the **Slack** row — it should show the channel name.
+    2. Juicebox has been added to the channel. Tag `@Juicebox` in the channel to add it.
+    3. Notifications for the project aren't muted. Run `@Juicebox settings` in the channel and confirm the relevant notification groups are on.
+    4. The channel hasn't been archived. Archiving a linked channel marks the connection inactive and stops delivery.
+
+    If notifications still don't arrive, email [support@juicebox.ai](mailto:support@juicebox.ai).
+  </Accordion>
+
+  <Accordion title="Why doesn't the candidate preview in Slack match what I see in Juicebox?">
+    Slack cards show a compact summary of a candidate. The full profile — including all criteria, sources, and history — lives in Juicebox. Open the profile link in the Slack card to see everything Juicebox has on that candidate.
+  </Accordion>
+
+  <Accordion title="Can I restrict which channels the Juicebox bot is allowed to post in?">
+    Juicebox only posts in a channel after it has been added to that channel and a project or Agent has been linked to it. To stop Juicebox from posting in a specific channel, either disconnect the project from that channel or remove Juicebox from the channel in Slack.
+
+    To disconnect a project from its channel:
+
+    1. Open the project and click the **Slack** row that shows the connected channel name.
+    2. In the dialog, click **Disconnect** next to the channel name.
+    3. Confirm **Disconnect** in the prompt.
+
+    To remove Juicebox from a channel entirely, use Slack's **Remove app** action on the channel.
+  </Accordion>
+
+  <Accordion title="What OAuth scopes does Juicebox request, and can I limit them?">
+    See [Slack permissions requested](#slack-permissions-requested) above for the full list of scopes and what each one is used for. All listed scopes are required for the integration to work as documented — you can't remove individual scopes during install.
+
+    If your organization needs a narrower permission set, email [support@juicebox.ai](mailto:support@juicebox.ai) to discuss what's possible.
+  </Accordion>
+
+  <Accordion title="Why do some workspace members get an &quot;incremental auth&quot; prompt when others don't?">
+    Slack shows an authorization prompt the first time a member takes an action that needs a scope Juicebox hasn't yet been granted for them. Members who already granted those scopes on a previous action won't see the prompt again. Approving the prompt is safe and only grants the scopes shown on that screen.
+  </Accordion>
+</AccordionGroup>
