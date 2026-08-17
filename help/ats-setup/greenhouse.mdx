@@ -4,7 +4,7 @@ sidebarTitle: "Greenhouse"
 description: "Enable the two-way integration between Greenhouse Recruiting and Juicebox."
 ---
 
-This guide covers the Greenhouse Harvest v3 integration.
+This guide covers the Greenhouse Harvest v3 integration. If your organization is still connected through the legacy Harvest v1 integration, see [Upgrading from Harvest v1](#upgrading-from-harvest-v1) for the reconnection flow.
 
 Juicebox's integration with Greenhouse Recruiting allows you to:
 
@@ -124,6 +124,32 @@ Second, you can import a job from Greenhouse Recruiting into the Juicebox platfo
 Third, you can easily verify if a candidate on Juicebox already exists in your Greenhouse account. Simply click on any profile, and if the candidate is already registered in your ATS, a note will appear to inform you.
 
 ![Candidate already in Greenhouse](/images/help/ats-setup/greenhouse-5.png)
+
+## Upgrading from Harvest v1
+
+Greenhouse is deprecating their Harvest v1 API on August 31, 2026. Juicebox now connects to Greenhouse through Harvest v3. If your organization is still on Harvest v1, you need to reconnect before that date to avoid disruption to your ATS sync.
+
+### What you see
+
+The legacy Greenhouse tile is hidden from the ATS grid on the **Integrations** page. Organizations that already have a Harvest v1 connection see an **Action required** banner at the top of the page with a **Connect Greenhouse v3** button. New organizations connect directly to Harvest v3 from the ATS grid.
+
+### How to reconnect
+
+1. Create a Harvest v3 API key in Greenhouse using the steps in [Setting up the integration on Greenhouse](#setting-up-the-integration-on-greenhouse).
+2. On the Juicebox **Integrations** page, click **Connect Greenhouse v3** in the banner.
+3. Complete the connection flow with your new Harvest v3 credentials.
+
+Activating the v3 connection atomically replaces the v1 connection. The old v1 credentials are removed in the same write, so there is no window where both integrations are active.
+
+### What happens to linked projects
+
+When you reconnect, Juicebox snapshots every project that has a linked Greenhouse job or export stage. About an hour after activation, Juicebox looks up the equivalent job in the new v3 connection using each job's native Greenhouse ID. It then updates the project's linked job and auto-export stage in place. Existing [auto-export](/ats-integrations#auto-export) settings survive the upgrade, so you do not need to reconfigure them.
+
+- If Greenhouse data has not finished syncing to the new v3 connection when the check runs, Juicebox retries hourly until every project is remapped.
+- If you edit a project's linked job or export stage during the delay, Juicebox leaves your selection alone and skips the automatic remap for that project.
+- Projects with a linked job that no longer exists in Greenhouse are left unlinked. You can relink them from the project's edit menu.
+
+You can continue using Juicebox normally during the remap window. Exports to already-linked jobs will pick up the new v3 job IDs automatically once the remap completes.
 
 ## Additional resources
 
