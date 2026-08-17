@@ -40,6 +40,35 @@ You can edit Profile and Org Context at any time from the **Memory** tab:
 
 Changes take effect immediately and apply to future searches, sequences, and Agent runs.
 
+### Refreshing Org Context
+
+The **Org Context** narrative can be refreshed on demand from the **Memory** tab, and it also refreshes automatically in a few situations. Every refresh is non-destructive: Juicebox only overwrites the narrative after the new research succeeds. If a run fails, the previous text stays visible so your Org Context is never blank.
+
+Every overwrite (a manual edit, an on-demand refresh, or a scheduled refresh) archives the prior state to a version history on the doc, so admins can see what changed and when.
+
+#### Scheduled refreshes
+
+Organizations on paid plans get a daily scheduled refresh for Org Context narratives whose research is more than about 30 days old. This keeps the org description current without an admin having to remember to click refresh.
+
+- The daily job is capped at 200 organizations per day and is rolled out gradually, so a newly-stale narrative may not refresh on the very first day it becomes eligible.
+- If a narrative hasn't been manually edited, the scheduled refresh runs through the standard enrichment worker and overwrites in place.
+- If an admin has manually edited the narrative, the scheduled refresh runs fresh research and then reconciles the admin's edits with the new content (see below).
+
+#### Reviewing refreshes that conflict with your edits
+
+When a scheduled refresh finds new information that conflicts with a manual edit, Juicebox doesn't silently overwrite your changes. Instead:
+
+- Clean merges (where the admin's edits and the fresh research don't disagree) apply automatically.
+- Real conflicts land as a **pending review** on the Org Context narrative. Admins get a `memory.refreshReview` notification pointing them to the **Memory** tab.
+- The pending review opens as a side-by-side dialog showing your current narrative next to the proposed refresh. Choose **Accept** to apply the new version (the prior narrative is archived to version history), or **Reject** to keep your edits.
+- Rejecting a review is sticky: Juicebox won't propose the same refresh again until the narrative is edited or refreshed. That lets you mark an edit as authoritative without a scheduled job undoing it the next day.
+
+#### Refresh from network sourcing
+
+When you use [network sourcing](/network-sourcing) and confirm a candidate's company through LinkedIn, Juicebox compares the confirmed company to the one stored in Org Context. If they differ, Org Context is automatically refreshed against the confirmed company so future results reflect the right organization.
+
+Re-confirming the same company doesn't trigger a refresh. Confirmations made by skipping the LinkedIn connection step don't trigger one either, because the typed name alone isn't a strong enough signal to reseed org research.
+
 ## Usage Memory
 
 Usage Memory captures preferences Juicebox learns from how you actually use the product, including the searches you run, the criteria you add, the profiles you shortlist or hide, and the feedback you give.
