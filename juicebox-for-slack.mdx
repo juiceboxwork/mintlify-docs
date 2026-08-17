@@ -26,7 +26,7 @@ Juicebox for Slack lets you:
   <Step title="Link a project or Agent">
     From the **Projects** page, open the project's Slack row and pick a channel from the in-app **channel picker**. The dropdown is searchable and lists the Slack channels the signed-in user already belongs to. For channels you aren't in, or private channels the Juicebox bot hasn't been invited to yet, paste a channel link or channel ID into the picker instead. A row appears that connects that channel directly.
 
-    Linking a channel no longer opens a second Slack popup. The connection is saved immediately, and delivery uses the workspace's shared bot token.
+    Linking a channel no longer opens a second Slack popup. Juicebox saves the connection immediately and delivers to it using the workspace's shared bot token.
   </Step>
   <Step title="Tag @Juicebox in the Slack channel">
     Get started by asking Juicebox what it can do in Slack.
@@ -150,8 +150,8 @@ Saved-search writes are gated on licensed-seat projects.
 After you connect a channel, the project's Slack row shows one of three reachability states so you can tell whether Juicebox can actually deliver and respond there:
 
 - **`ok`**: Juicebox is in the channel. Notifications post, and `@Juicebox` mentions and thread follow-ups work. No message is shown.
-- **`needs-invite`**: The channel is resolved, but the Juicebox bot isn't a member yet. Notifications may still post to public channels using `chat:write.public`. The bot has to actually be in the channel to reply to `@Juicebox` mentions and thread follow-ups. Run `/invite @Juicebox` in the channel to fix this.
-- **`unverified`**: Slack couldn't resolve the channel from Juicebox's side. This is almost always a private channel the bot hasn't been invited to yet. Run `/invite @Juicebox` in the channel, then click **Refresh** in the picker to re-probe. The connection stays saved while it's unverified.
+- **`needs-invite`**: Juicebox can see the channel, but the bot isn't a member yet. Notifications may still post to public channels using `chat:write.public`. The bot has to actually be in the channel to reply to `@Juicebox` mentions and thread follow-ups. Run `/invite @Juicebox` in the channel to fix this.
+- **`unverified`**: Slack couldn't resolve the channel for Juicebox. This almost always means a private channel the bot hasn't been invited to yet. Run `/invite @Juicebox` in the channel, then click **Refresh** in the picker to re-probe. Juicebox keeps the connection saved while it's unverified.
 
 The **Refresh** button next to the connected channel re-probes reachability on demand. Juicebox otherwise caches the result briefly and doesn't re-check on every notification toggle.
 
@@ -271,7 +271,7 @@ When you connect Slack, Juicebox requests the following scopes:
   <Accordion title="Can anyone in my Slack workspace connect Juicebox to a channel?">
     Connecting the Slack workspace to Juicebox is a one-time setup done from the **Integrations** tab in Juicebox, and requires a Juicebox admin. Members see the same **Connect to Slack** button in the project dialog, but it's inert with a tooltip naming who can install.
 
-    Once the workspace is connected, linking a specific project or Agent to a channel is done from the **Projects** page in Juicebox by anyone with access to that project. The channel picker lists the channels the signed-in user already belongs to. For channels you aren't in, or private channels the Juicebox bot hasn't been invited to yet, paste a channel link or channel ID into the picker to connect them.
+    Once the workspace is connected, anyone with access to a project can link it to a Slack channel from the **Projects** page. The channel picker lists the channels the signed-in user already belongs to. For channels you aren't in, or private channels the Juicebox bot hasn't been invited to yet, paste a channel link or channel ID into the picker to connect them.
 
     Any Slack member of a channel can add the bot to that channel by tagging `@Juicebox` or running `/invite @Juicebox`. If your Slack workspace restricts who can add apps to channels, that restriction applies here too.
   </Accordion>
