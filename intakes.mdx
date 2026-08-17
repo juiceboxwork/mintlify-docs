@@ -58,6 +58,8 @@ Clicking **+ Create Intake** from either entry point opens the **Add Intake** di
 - **From a template.** Pick from Juicebox's built-in template, your organization's shared templates, or your personal templates. Templates define the section headings and prompts that Smart Notes will fill in.
 - **Create a template first.** Jump into the templates manager from inside the Add Intake flow, author a new template, and come back to create the intake from it without losing context.
 
+Picking **From a template** opens the same two-pane templates dialog you get from **All templates** on the intake page — the Juicebox defaults on one side and your team's templates on the other, with a preview of the selected template on the right. Juicebox remembers your last template selection and pre-selects it the next time you create an intake.
+
 The dialog previews the selected source before you create the intake, so you can confirm you've picked the right template or intake to clone. The new intake's title defaults to the project name — rename it any time from the intake page.
 
 ## Intake templates
@@ -86,25 +88,30 @@ Editing and creating both use the same rich-text editor with a formatting toolba
 
 ## The intake page
 
-The intake page has three tabs at the top and a Live Insights panel that slides in from the side.
+The intake page has the meeting card at the top, a tab bar for the intake body, and a Live Insights panel that slides in from the side.
 
-The tabs are:
+### The tabs
 
-- **Manual Notes** — the rich-text editor where you write the intake by hand. This is the default tab when you open an intake.
-- **Smart Notes** — the structured summary Juicebox generates from the meeting transcript, laid out according to the selected template's sections. Disabled until a meeting has been recorded.
-- **Transcript** — the meeting transcript, updated live while the notetaker is in the call and finalized after the call ends.
+The tab bar has two segments after a recording exists, and one before:
 
-### Manual Notes
+- **Notes** — the intake's written notes. Before the first recording, this is the rich-text editor where you write the intake by hand. Once a recording has been captured and the notes pass has filed its summary, the same segment shows **Smart Notes**: the structured recap Juicebox writes from the transcript. If the summary isn't ready yet — or if a pass failed — Notes falls back to the manual body it was written from, so the segment is never empty and a template someone typed is never unreachable.
+- **Transcript** — the meeting transcript, updated live while the notetaker is in the call and finalized after the call ends. Follow-up sessions are appended to the existing transcript with a timestamp caption at the top of each session (including the first).
 
-Manual Notes is a full Tiptap rich-text editor: headings, lists, bold, italic, and links. Changes autosave with a short debounce, and a **Saved** indicator confirms the latest keystrokes have persisted. There's no manual save button — just keep typing.
+<Note>
+  The manual editor is what you type into *before* a recording. Once a recording has been folded into Smart Notes, the manual body stays behind the summary as the fallback but stops being its own tab — the summary is written from it, and offering both would ask you to choose between a draft and the thing the draft became.
+</Note>
 
-You can also change the template from Manual Notes. Swapping templates preserves your existing notes and only changes the sections that Smart Notes will produce.
+#### Writing the intake by hand
+
+The Notes editor is a full Tiptap rich-text editor: headings, lists, bold, italic, and links. Changes autosave with a short debounce, and a **Saved** indicator confirms the latest keystrokes have persisted. There's no manual save button — just keep typing.
+
+You can also change the template from the Notes tab. Swapping templates preserves your existing notes and only changes the sections that Smart Notes will produce.
 
 <Note>
   The template dropdown **freezes** once you start recording a call, a notetaker bot joins a meeting, or you edit the manual notes. This keeps Smart Notes aligned with the template that was in effect when the content was captured. To change the template after the fact, clone the intake into a new one.
 </Note>
 
-### Smart Notes
+#### Smart Notes
 
 Smart Notes is generated automatically after a notetaker session ends (see [Recording a meeting](#recording-a-meeting)). Juicebox reads the transcript, splits it by the sections defined in your template, and fills in each sub-field with the relevant content from the call.
 
@@ -112,13 +119,11 @@ Off-template facts that come up on the call aren't dropped. Juicebox captures an
 
 If the notetaker joins a follow-up session on the same intake, Smart Notes is re-run against the combined transcript so it always reflects the full conversation to date.
 
-### Transcript
-
-The Transcript tab shows the live speaker-attributed transcript while the notetaker is in the meeting, and the finalized transcript after the call ends. When you send the notetaker into a follow-up meeting on the same intake, the new session is appended to the existing transcript instead of replacing it.
-
 ### Find in page
 
 Use `⌘F` (macOS) or `Ctrl+F` (Windows/Linux) on the intake page to open find-in-page. The search box highlights every match across the active tab, and you can cycle forward and backward through matches to jump between them. Press `Esc` to close.
+
+Find-in-page is only offered when there's content to search: it's disabled on an empty Notes draft, and it's disabled while the notes pass is filling in Smart Notes so you don't search a document that's still arriving.
 
 ## Live Insights
 
@@ -178,13 +183,21 @@ The Juicebox notetaker is a bot (powered by [Recall.ai](https://recall.ai)) that
 
 ### Send the notetaker to a meeting
 
-From the intake page, click **Send notetaker**. You have three options:
+The meeting card at the top of the intake page owns the whole flow. Each intake has a single **capture slot** — one meeting scheduled or in progress at a time — and the card walks you through filling it.
 
-- **Suggested meeting.** Pick from the calendar events Juicebox has flagged as likely intake calls for this project.
-- **Any upcoming meeting.** Juicebox lists all meetings from your connected calendar for the next several hours. Pick one and Juicebox schedules the bot to join at the meeting's start time.
-- **Ad-hoc meeting URL.** Paste a Zoom, Google Meet, or Microsoft Teams link and the bot joins right now.
+You have three ways to fill the slot:
 
-The notetaker supports the video providers Recall.ai supports (Zoom, Google Meet, Microsoft Teams). Once dispatched, the bot's status appears on the intake page: `scheduled`, `joining`, `in call`, `recording`, `done`, or `failed`. You can **remove** a scheduled or in-call bot from its meeting row on the intake page if plans change.
+- **Pick a suggested meeting.** The card lists calendar events Juicebox has flagged as likely intake calls for this project (see [Suggested meetings](#suggested-meetings)). Pick one and Juicebox schedules the bot to join at the meeting's start time.
+- **Pick from the calendar.** Open the event picker to see every upcoming meeting on your connected calendar in the near horizon, and link one to the intake.
+- **Paste a meeting link.** Paste a Zoom, Google Meet, or Microsoft Teams URL. The bot joins right now for a live link, or at the meeting's start time for a scheduled one.
+
+If you haven't connected a calendar yet, the card shows a **Connect calendar** action inline — you can add just a calendar without a full email integration, then keep going.
+
+The notetaker supports the video providers Recall.ai supports (Zoom, Google Meet, Microsoft Teams). Once dispatched, the bot's status appears on the meeting card: `scheduled`, `joining`, `in call`, `recording`, `done`, or `failed`. You can **recall** the notetaker or unlink the event to release the slot before a recording completes.
+
+<Note>
+  Because there's only one capture slot, starting a new capture (paste link, pick from calendar, or start a browser recording) while another is held will refuse with an in-flight conflict. Recall the existing notetaker first, or wait for it to finish.
+</Note>
 
 <Note>
   Live streaming of the transcript is required for the bot to launch — Juicebox uses the live transcript to populate the Transcript tab and Live Insights in real time. If your organization's Recall.ai configuration disables live transcription, the bot will refuse to start.
@@ -197,26 +210,43 @@ For quick prep or ad-hoc sessions, you can also record from the browser without 
 ### While the bot is in the call
 
 - The **Transcript** tab fills in live as the bot transcribes the meeting.
-- **Live Insights** starts previewing candidates once enough of the brief has taken shape.
-- The Manual Notes tab remains fully editable — you can take notes while the bot records.
+- **Live Insights** starts previewing candidates once enough of the brief has taken shape. Its button on the meeting card is neutral and labeled **View Insights** — it opens the panel that's already there, it doesn't fetch on click.
+- The **Notes** tab remains fully editable — you can take notes while the bot records.
 - Closing the browser tab does not affect the bot; it continues recording until the meeting ends.
 
 ### After the call
 
-Once the meeting ends:
+Once the meeting ends, the meeting card swaps into a **notes pass** banner reading *"Filling in details from the conversation"* while Juicebox writes up the summary. In this window:
 
 1. The transcript is finalized in the Transcript tab.
-2. Juicebox runs the post-call AI pipeline, walks the template section by section, and populates each sub-field of **Smart Notes**.
+2. Juicebox walks the template section by section and populates each sub-field of **Smart Notes**.
 3. Live Insights opens with a fresh preview based on the final summary.
-4. Both Manual Notes (your handwritten notes) and Smart Notes (Juicebox's structured recap) are available side by side.
+
+Once the pass finishes, the Notes tab flips over from your manual draft to the written-up **Smart Notes** summary, and the banner is retired. Actions the banner used to carry — start another capture, paste another meeting link — move to a chevron beside **Launch Agent** on the agent row, so a settled intake reads as history rather than a live setting.
 
 ### Follow-up sessions
 
-If a single intake spans multiple meetings — for example, a kickoff call followed by a calibration sync — click **Send notetaker** again from the same intake. The next session's transcript is **appended** to the existing transcript, and Smart Notes is re-run against the combined content so the summary always reflects the whole conversation.
+If a single intake spans multiple meetings — for example, a kickoff call followed by a calibration sync — open the chevron beside **Launch Agent** and choose **Start another capture** or **Paste another meeting link**. The next session's transcript is **appended** to the existing transcript (with a timestamp caption on each session), and Smart Notes is re-run against the combined content so the summary always reflects the whole conversation.
 
 ## Hand off to a Juicebox agent
 
 Once Smart Notes is populated, you can launch a Juicebox agent for the project directly from the intake page. The agent is **seeded from the intake's Smart Notes**, so it starts with the same brief you just captured on the call — no need to retype must-haves or paste in a job description. See [Juicebox Agents](/juicebox-agents) for what the agent does next.
+
+## Link an intake to your ATS
+
+If your project is linked to an ATS job, you can link the intake back to that job so the two live side by side.
+
+Open the actions menu on the intake page and choose **Link in Ashby** (the entry names whichever ATS your org has connected). Juicebox writes a link to the intake onto the job as a **private URL custom field**, so only teammates with access to the job in your ATS see it.
+
+- The action is only offered when your org has an ATS integration connected.
+- If the project doesn't have a linked ATS job yet, the entry opens the **Link ATS job** dialog first; once you link a job, the entry becomes actionable.
+- General-pool projects (no job document to attach to) don't support the ATS link.
+
+When an intake is linked to an ATS job, Live Insights also uses that job's description as extra calibration input alongside your conversation — so the preview reflects both what was said on the call and what the JD asks for.
+
+<Note>
+  Ashby is the currently supported ATS. Reach out to [support@juicebox.work](mailto:support@juicebox.work) if you need another provider.
+</Note>
 
 ## Requirements
 
@@ -231,5 +261,5 @@ To use intakes and the notetaker:
 
 - [Projects](/projects) — the container an intake belongs to.
 - [Juicebox Agents](/juicebox-agents) — the agent you can hand the intake off to after the call.
-- [Smart Notes](/smart-notes) — the separate morning candidate-prep briefing feature. (Not to be confused with the Smart Notes tab inside an intake.)
+- [Smart Notes](/smart-notes) — the separate morning candidate-prep briefing feature. (Not to be confused with the Smart Notes summary inside an intake.)
 - [Hiring Managers](/hiring-managers) — the people whose intake you're capturing.
