@@ -1,0 +1,45 @@
+/*
+ * The maple theme renders navbar.links and navbar.primary in the sidebar
+ * footer and leaves the top bar's right side empty. This pins the
+ * "Open Juicebox" CTA (navbar.primary in docs.json) to the right end of the
+ * fixed top tab bar on desktop, styled like Mintlify's native topbar button.
+ *
+ * The data-title selector mirrors navbar.primary.label in docs.json — if the
+ * label changes, update it here too (otherwise the CTA stays in the sidebar).
+ */
+@media (min-width: 1024px) {
+  /* Lift the sidebar's stacking context above the top bar (z-20, backdrop-blur),
+     which otherwise paints over the repositioned CTA and blocks its clicks.
+     Stays below Mintlify overlays (search modal, assistant bubble at z-45+). */
+  #sidebar {
+    z-index: 30;
+  }
+
+  #sidebar li[data-title="Open Juicebox"] {
+    position: fixed;
+    top: 0.5rem;
+    right: 2rem;
+    z-index: 40;
+    height: 2rem;
+  }
+
+  #sidebar li[data-title="Open Juicebox"] > a {
+    align-items: center;
+    background: rgb(var(--primary-dark));
+    border-radius: 0.75rem;
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.375rem 0.875rem !important;
+    white-space: nowrap;
+  }
+
+  #sidebar li[data-title="Open Juicebox"] > a:hover {
+    background: rgb(var(--primary));
+    color: #fff;
+  }
+
+  #sidebar li[data-title="Open Juicebox"] > a svg {
+    color: rgb(255 255 255 / 0.85);
+  }
+}
