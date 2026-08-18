@@ -152,6 +152,36 @@ To share or export your analytics, please select the arrow icon in the top right
 
 ![Share analytics](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/analytics/Share_analytics.png)
 
+### 📬 Usage Reports
+
+Usage reports email a summary of your team's Juicebox activity to selected admins on a schedule you choose. Turn them on when you want a regular recap of adoption, outreach performance, and agent activity without logging in to look at the analytics dashboards.
+
+Admins configure usage reports in **Account Settings → General → Reports**. Existing organizations see no change until an admin opts in. Juicebox only sends usage reports from the production app.
+
+**Schedule.** Choose weekly or monthly cadence, then pick the delivery day and hour:
+
+- **Weekly:** send on a specific weekday at a specific hour.
+- **Monthly:** send on the first, second, third, or fourth occurrence of a weekday each month (for example, the first Monday) at a specific hour.
+
+Times use your organization's timezone by default. If you're viewing settings from a different timezone, use the **Switch to \[your timezone]** link in the schedule row to store the schedule in your local zone instead. The stored timezone applies to everyone.
+
+Weekly reports cover the previous seven full local days. Monthly reports cover the previous full calendar month.
+
+**Recipients.** Pick which admins receive the report from a searchable list of eligible org admins (up to 20 selections).
+
+- Leave the list empty to send to all owners by default.
+- Read-only admins only receive the report when you explicitly select them.
+- Juicebox re-validates the recipient list on every send, so users who lose admin access automatically stop receiving it.
+
+**Content sections.** Toggle which sections appear in the email. Sections are grouped as:
+
+- **Usage:** metrics and activity by user, leaderboard
+- **Outreach:** overview stats, emails-sent graph, sequences table
+- **Projects:** overview stats, projects table
+- **Agents:** overview stats, leads-approved graph
+
+Only the **Usage** metrics and **Leaderboard** sections are enabled by default, matching the historical report content. Turning off a section skips the underlying analytics queries for that section entirely, so unused sections don't slow down or bloat the report.
+
 ### **Access Analytics**
 
 Analytics are included on the Enterprise plan in an admin-only configuration. Upon request, usage analytics can be added to Team plans. Please reach out to our sales team at [sales@juicebox.work](mailto:sales@juicebox.work) or your CSM for more details.
