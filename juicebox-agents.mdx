@@ -2,112 +2,152 @@
 title: "Agents"
 sidebarTitle: "Juicebox Agents"
 description: "Juicebox Agents are your 24/7 sourcing partner, built to take manual sourcing off your plate and instantly scale your recruiting team’s capacity."
+icon: "robot"
 ---
 
-## **Agent Overview**
+## Agent Overview
 
-Juicebox Agents are automated sourcing assistants that continuously source for talent based on the criteria you define. Every agent lives inside a project alongside searches for the role you're hiring for. 
+Juicebox Agents are automated sourcing assistants that continuously source for talent based on the criteria you define. Every Agent lives inside a project, alongside any manual searches for the role you're hiring for.
+
+<Frame>
+  ![Clean Shot 2026 08 17 At 18 40 56@2x](/images/CleanShot-2026-08-17-at-18.40.56@2x.png "Clean Shot 2026 08 17 At 18 40 56@2x")
+</Frame>
 
 Instead of running the same search manually every day, Agents work in the background to monitor the market and surface new, relevant candidates as they appear.
 
 By setting up an Agent, you can:
 
-- **Calibrate naturally** through conversation and profile feedback that aligns the Agent with your hiring preferences
-- **Autonomously search** based on your calibrated role, location, and team requirements to surface **stronger candidates faster**
-- **Continuously refine results** using learnings from approved and rejected profiles to improve candidate quality over time
-- **Automatically send outreach sequences** from a connected mailbox with customizable messaging and timing (optional based on the Agent’s configuration)
+- **Calibrate with context** — the Agent pulls from your connected tools, your ATS, and your past activity in Juicebox, so you spend less time explaining the role from scratch.
+- **Source smarter** — the Agent maps the talent market, tests multiple versions of the search, and self-corrects before surfacing candidates.
+- **Improve over time** — the Agent learns from the profiles you approve and reject, so lead quality sharpens with every batch.
+- **Automate outreach** — the Agent can send sequences from a connected mailbox, with messaging and timing you control. This is optional and depends on how you configure the Agent.
 
 <Note>
-  Note: Agents are an optional add-on to your Juicebox subscription.
+  Agents are an optional add-on to your paid Juicebox subscription. Agents that are sourcing, paused, or awaiting action each take up an Agent seat. Agents that are calibrating or closed do not.
 </Note>
 
-### Use Cases
+### Context Intelligence
 
-To keep Agents running and drive the most ROI, Agents are best utilized for roles that are repeatable, evergreen, or high-volume. These use cases include but are not limited to:
+Your Agent doesn't work in isolation. Before building a search, it researches the role using context it already has access to:
 
-1. **Streamlined job titles and backgrounds that are consistent across companies / industries**
-   1. Examples: Find Technical Recruiters in the Bay Area; Find Account Executives in NYC
-2. **Rediscovering past ATS talent**
-   1. Examples: Find candidates from my ATS who have 3\+ yoe in LLMs; Find all silver-medalists or candidates who made it to X stage
-3. **Market mapping and competitive intelligence**
-   1. Examples: Find VPs or Directors at X competitors; Find all SWEs who just went through a layoff; Find any candidate skilled in AI/ML within the Bay Area
-4. **Business development or hyper-targeted prospect lists**
-   1. Examples: Find Operation leads at emerging companies; Find VPs of Talent in Healthtech at a company of 200 or less
+- **Connectors**: Connect tools like Google Drive, Notion, Granola, Metaview, and your ATS, and the Agent can pull intake notes, role docs, candidate sheets, and intake call transcripts to inform the search.
+  <Frame>
+    ![Clean Shot 2026 08 17 At 18 37 00@2x](/images/CleanShot-2026-08-17-at-18.37.00@2x.png "Clean Shot 2026 08 17 At 18 37 00@2x")
+  </Frame>
 
-## **Setting up an Agent**
+<Frame>
+  ![Clean Shot 2026 08 17 At 09 09 35@2x](/images/CleanShot-2026-08-17-at-09.09.35@2x.png "Clean Shot 2026 08 17 At 09 09 35@2x")
+</Frame>
 
-Every Agent in Juicebox lives inside a project.
+- **Organizational memory**: The Agent references your past searches, previous Agents for similar roles, and past hires in Juicebox, so learnings carry over instead of being lost when an Agent finishes sourcing. It also uses the company and user context stored in your Knowledge Vault. 
+- **ATS data**: With your ATS connected, the Agent can pull related open roles and past hires to understand what a successful candidate looks like for your team.<br />
 
-To set up an Agent, please follow the below steps:
+<Note>
+  Manage connectors from the **Integrations** tab in Settings. ATS connections are available on the Business plan. Connectors are used by Agents only and they don't feed standalone searches or sequence generation.
+</Note>
 
-1. Navigate to **Create new project** and click **Project**, or open an existing project you'd like to add an Agent to.
-2. Name the project after the role, configure collaborators, and link it to your ATS job (business plans only).
-3. From the project setup page, toggle to **Agent** to hand this role off to an Agent instead of running a manual search. If you're already inside a project without an Agent, you can setup a new Agent by **toggling to Agent** at any time.
+### Market Mapping
 
-<img
-  src="/images/Screenshot-2026-07-30-at-4.38.56-PM.png"
-  alt="Screenshot 2026-05-18 at 3.56.19 PM"
-  lightAlt="Screenshot 2026-05-18 at 3.56.19 PM"
-  darkAlt="Screenshot 2026-05-18 at 3.56.19 PM"
-  className="dark:hidden"
-/>
-<img
-  src="/images/Screenshot-2026-07-30-at-4.38.56-PM-1.png"
-  alt="Screenshot 2026-05-18 at 3.56.19 PM"
-  lightAlt="Screenshot 2026-05-18 at 3.56.19 PM"
-  darkAlt="Screenshot 2026-05-18 at 3.56.19 PM"
-  className="hidden dark:block"
-/>
+Instead of building a search directly from your request, the Agent first maps the talent market. It analyzes the full candidate pool — common employers, job titles, seniority, and years of experience — and tests different iterations of the search criteria to find the strategy that produces the strongest pipeline, not just a few good first profiles. If the data suggests a change in approach, the Agent will proactively adjust its criteria or ask you a clarifying question.
+
+<Frame>
+  ![Clean Shot 2026 08 17 At 09 41 51@2x](/images/CleanShot-2026-08-17-at-09.41.51@2x.png "Clean Shot 2026 08 17 At 09 41 51@2x")
+</Frame>
+
+### Qualified leads estimate
+
+Alongside the total talent pool size (controlled by your filters), the Agent shows a **qualified leads** range: an estimate of profiles that meet your search filters and pass the quality screen against your full requirements. The more you calibrate and give feedback, the more accurate this estimate becomes, giving you a realistic view of how long the Agent can source for the role.
+
+### Chat stays with you while sourcing
+
+The Agent chat remains available throughout the Agent's lifecycle, from calibration through active sourcing, and sourced leads appear in a side panel next to it. You can use the chat at any time to:
+
+- Ask how your pipeline is doing and get recommendations
+- Ask which criteria are limiting your qualified pool
+- Take actions in connected apps, such as pulling a candidate list from Google Sheets to find similar profiles, or writing a talent market map into Notion
+
+<Frame>
+  ![Clean Shot 2026 08 17 At 09 32 07@2x](/images/CleanShot-2026-08-17-at-09.32.07@2x-1.png "Clean Shot 2026 08 17 At 09 32 07@2x")
+</Frame>
+
+## Use Cases
+
+Agents work best on roles that are repeatable, evergreen, or high-volume — the kinds of searches you'd otherwise re-run every week. Common examples include:
+
+- **Streamlined job titles and backgrounds** that are consistent across companies / industries
+  - Examples: Find Technical Recruiters in the Bay Area; Find Account Executives in NYC
+- **Rediscovering past ATS talent**
+  - Examples: Find candidates from my ATS who have 3\+ years of experience in LLMs; Find all silver-medalists or candidates who made it to X stage
+- **Market mapping and competitive intelligence**
+  - Examples: Find VPs or Directors at X competitors; Find all SWEs who just went through a layoff; Find any candidate skilled in AI/ML within the Bay Area
+- **Business development or hyper-targeted prospect lists**
+  - Examples: Find Operation leads at emerging companies; Find VPs of Talent in Healthtech at a company of 200 or less
+
+## Setting up an Agent
+
+To set up an Agent, follow these steps:
+
+1. Navigate to **Create new project** and click **Project**, or open an existing project you'd like to add an Agent to.<br />
+   <Frame>
+     ![Clean Shot 2026 08 17 At 18 48 54@2x](/images/CleanShot-2026-08-17-at-18.48.54@2x.png "Clean Shot 2026 08 17 At 18 48 54@2x")
+   </Frame>
+2. Name the project after the role and configure collaborators. On the Business plan, you can also link the project to your ATS job and enable auto-exports, which keeps a single source of truth across systems.
+   <Frame>
+     ![Clean Shot 2026 08 17 At 18 58 25@2x](/images/CleanShot-2026-08-17-at-18.58.25@2x.png "Clean Shot 2026 08 17 At 18 58 25@2x")
+   </Frame>
+3. From the project setup page, toggle to **Agent** to hand this role off to an Agent instead of running a manual search. 
+4. Tell the Agent what you're looking for, using any of these four methods:
+   - **Describe the type of candidate** using your natural language
+     - Example: I'm looking for a senior product designer with 5\+ years of experience in B2B SaaS, based in SF or NYC, who has worked on design systems
+   - **Input a link to the Job Description** for the Agent to source against
+     - Example: Find candidates for this role: JD link
+   - **Replicate a candidate profile** by inputting the candidate's LinkedIn URL
+     - Example: Find similar candidates to LinkedIn URL
+   - **Select a job from your ATS** to calibrate a new Agent
 
 <Tip>
-  For business plan customers, link the project directly to your ATS job and enable auto-exports to keep a centralized source of truth across systems.
+  The Agent can also use web search. If your job description is public, the Agent may find it on its own based on the role you describe.
 </Tip>
 
-1. Tell the Agent what you are looking for by utilizing one of the four methods below:
-   1. Describe the type of candidate using your natural language
-      1. **Example:** I'm looking for a senior product designer with 5\+ years of experience in B2B SaaS, based in SF or NYC, who has worked on design systems
-   2. Input a link to the Job Description for the Agent to source against
-      1. **Example:** Find candidates for this role: \[insert public JD link\]
-   3. Replicate a candidate profile by inputting the candidate’s LinkedIn URL
-      1. **Example:** Find similar candidates to \[insert candidate’s LinkedIn URL\]
-   4. Select a job from your ATS to calibrate a new Agent
+5. Your connected tools are visible in the **Connectors** panel beside the chat. You can connect additional tools here (or from the Integrations tab in Settings) at any point so the Agent can use them for context.
+6. Once submitted, the Agent will share a plan and begin context research: it reviews your connected tools, organizational memory, and ATS data, then maps the talent market before configuring the initial filters and search criteria. You can follow along with what it found and why in the Agent's activity trace.
+7. Depending on the request, your Agent may provide you with its top picks to review or ask follow-up questions for additional context, similar to how you would typically collaborate with a sourcer.
 
-Once submitted, the Agent will review your request to automatically configure the initial filters and search criteria. 
+<Frame>
+  ![Clean Shot 2026 08 17 At 09 27 47@2x](/images/CleanShot-2026-08-17-at-09.27.47@2x.png "Clean Shot 2026 08 17 At 09 27 47@2x")
+</Frame>
 
-Depending on the request, your Agent may provide you with its top picks to review or ask follow-up questions for additional context, similar to how you would typically collaborate with a sourcer.
+8. Review your filters and criteria to confirm that all requirements are included, or provide the Agent with any additional details. You'll also see your total pool size and a qualified leads estimate here.
 
-![Screenshot 2026-05-19 at 6.04.41 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-19_at_6-04-41_PM.png)
+<Frame>
+  <img
+    src="/images/CleanShot-2026-08-17-at-09.21.59@2x.png"
+    alt="Clean Shot 2026 08 17 At 09 21 59@2x"
+    title="Clean Shot 2026 08 17 At 09 21 59@2x"
+    className="mx-auto"
+    style={{ width:"63%" }}
+  />
+</Frame>
 
-1. Review your filters and criteria to confirm that all requirements are included, or provide the Agent with any additional details
-
-![image](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/image.png)
-
-2. Review the selected profiles to provide feedback and further refine your results
+9. Review the selected profiles to provide feedback and further refine your results.
 
 ![Screenshot 2026-05-18 at 4.36.17 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-18_at_4-36-17_PM.png)
 
-If a profile has the right experience and skills, select Looks Good. If the candidate is misaligned, select Give Feedback, and leave any reasons why the candidate is not a fit (i.e., average tenure should be at least 3 years) within the feedback pop up.
-
-![Screenshot 2026-05-19 at 6.07.57 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-19_at_6-07-57_PM.png)
+If a profile has the right experience and skills, select **Looks Good**. If the candidate is misaligned, select **Give Feedback**, and leave any reasons why the candidate is not a fit (for example, average tenure should be at least three years)
 
 <Warning>
   Please note, approval/rejection feedback is optional but **highly encouraged** as the Agent will take these learnings (good or bad) into consideration for the next batch of profiles provided. In order to move on to the next step, we also recommend reviewing profiles until you can approve 3 candidates in a row.
 </Warning>
 
-1. Continue to configure the Agent based on your workflow by selecting **Outreach Settings**
-2. From here, you will move on to finalize the Agent’s settings, where you can configure how many leads the Agent sources each day and choose whether the Agent should automatically contact those leads or simply send them for further review.
+10. Continue to configure the Agent based on your workflow by selecting **Outreach Settings**.
 
-The first setting available is your **daily sourcing target**, where you can choose how many leads you would like the Agent to source each day. Agents can deliver up to 25 leads per day.
+Select **Outreach settings** to finish configuring the Agent. Here you'll set how many leads it sources each day and whether it contacts those leads automatically or sends them to you for review. 
 
-![Screenshot 2026-05-20 at 8.42.42 AM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-20_at_8-42-42_AM.png)
-
-<Tip>
-  Agents are always running and do not take weekends or PTO. The number of leads selected should represent how many leads you/your team have time to review on a daily or weekly basis.
-</Tip>
+<Note>
+   Agents are always running and do not take weekends or PTO. The number of leads selected should represent how many leads you/your team have time to review on a daily or weekly basis. 
+</Note>
 
 After selecting your daily lead target, click **Next, outreach settings** to configure how your Agent will handle its sourced candidates.
-
-![Screenshot 2026-05-20 at 8.54.07 AM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-20_at_8-54-07_AM.png)
 
 Please note that Agents will only contact candidates using a sequence that has been created and reviewed by you. During setup, you can choose from the following options:
 
@@ -115,9 +155,7 @@ Please note that Agents will only contact candidates using a sequence that has b
 - **Generate AI Sequence** to create a personalized outreach sequence based on your conversation with the Agent and the role requirements
 - **Add to Shortlist** if you would prefer to review and approve candidates before any outreach is sent
 
-After you’ve selected your outreach settings, click **Next, approval type** to control how your leads are processed after sourcing.
-
-![Screenshot 2026-05-20 at 8.56.10 AM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-20_at_8-56-10_AM.png)
+After you've selected your outreach settings, click **Next, approval type** to control how your leads are processed after sourcing
 
 Here, there are two options available which will perform the following actions based on your workflow:
 
@@ -126,7 +164,9 @@ Here, there are two options available which will perform the following actions b
 
 Once all settings are finalized, click **Start sourcing** to activate the Agent and collect your first batch of leads!
 
-![Screenshot 2026-05-20 at 9.00.21 AM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-20_at_9-00-21_AM.png)
+<Frame>
+  ![Clean Shot 2026 08 17 At 19 09 21@2x](/images/CleanShot-2026-08-17-at-19.09.21@2x.png "Clean Shot 2026 08 17 At 19 09 21@2x")
+</Frame>
 
 <Tip>
   Agent settings can be updated at any time. From the **Projects** tab, open the Agent's project and select the **Settings** tab. For example, if you initially choose to manually review your sourced leads, you can later switch to automatic outreach at any point, and vice versa.
@@ -134,132 +174,147 @@ Once all settings are finalized, click **Start sourcing** to activate the Agent 
 
 ## Reviewing Leads
 
-Once your Agent has sourced its daily batch of leads, you can open the Agent to review both pending and approved candidates. 
+Once your Agent has sourced its daily batch of leads, they appear in the panel beside the Agent chat, along with a daily message letting you know a new batch is ready.
 
-To review leads awaiting approval, click **Review Leads** in the top-right corner or select a candidate’s name directly to open their profile and evaluate their fit.
+To review leads awaiting approval, click **Review Leads** or select a candidate's name directly to open their profile and evaluate their fit.
 
-![Screenshot 2026-05-18 at 5.07.51 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-18_at_5-07-51_PM.png)
+During the review process, you can leave additional feedback to help the Agent continue learning and improve the quality of future leads.
 
-During the review process, you can leave additional feedback to help the Agent continue learning and improve the quality of future leads. 
+<Frame>
+  <img
+    src="/images/CleanShot-2026-08-17-at-19.09.50@2x.png"
+    alt="Clean Shot 2026 08 17 At 19 09 50@2x"
+    title="Clean Shot 2026 08 17 At 19 09 50@2x"
+    className="mx-auto"
+  />
+</Frame>
 
-All feedback submitted during reviews is also stored within the **Calibrate** chat, allowing you to reference the Agent’s full history and decision-making context in one place.
+All feedback submitted during reviews is also stored within the chat, and the Agent generates learnings from each reviewed batch, so you can reference its full history and decision-making context in one place. The Agent's reasoning is visible as it works, so you can see how it interpreted your feedback and why it selected each batch.<br />
 
-![Screenshot 2026-05-19 at 6.28.14 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-19_at_6-28-14_PM.png)
+The sourcing panel also shows your daily leads at a glance: how many leads are waiting for approval and how many profiles have been shortlisted, along with when your next batch of leads will arrive.
 
-If you’d like to revisit any previously approved profiles, please select **Profiles Approved** from the top navigation bar within the **Sourcing** tab. From there, you can review each candidate’s match summary or open their Juicebox profile directly.
+If you'd like to revisit any previously approved profiles, select **Profiles shortlisted** in the sourcing panel. From there, you can review each candidate's match summary or open their Juicebox profile directly.
 
-![Screenshot 2026-05-18 at 5.14.07 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-18_at_5-14-07_PM.png)
+<Frame>
+  ![Clean Shot 2026 08 17 At 09 32 07@2x](/images/CleanShot-2026-08-17-at-09.32.07@2x.png "Clean Shot 2026 08 17 At 09 32 07@2x")
+</Frame>
 
-## Contacting Leads
+## Shortlists and outreach
 
-Profile leads you shortlist will be found under your project shortlist alongside profiles found manually through the search.<br /><br />Review the **Owner** column in your shortlist to identify leads you found manually vs. profiles that was sourced through the Agent.
+Leads you shortlist appear in your project shortlist, alongside profiles you found through manual search.
+
+Use the **Owner** column to tell which profiles you sourced yourself and which the Agent surfaced.
 
 <img
-  src="/images/Screenshot-2026-07-30-at-4.44.25-PM.png"
   alt="Screenshot 2026-05-18 at 5.16.54 PM"
   lightAlt="Screenshot 2026-05-18 at 5.16.54 PM"
   darkAlt="Screenshot 2026-05-18 at 5.16.54 PM"
+  src="/images/Screenshot-2026-07-30-at-4.44.25-PM.png"
   className="dark:hidden"
 />
 <img
-  src="/images/Screenshot-2026-07-30-at-4.44.25-PM-1.png"
   alt="Screenshot 2026-05-18 at 5.16.54 PM"
   lightAlt="Screenshot 2026-05-18 at 5.16.54 PM"
   darkAlt="Screenshot 2026-05-18 at 5.16.54 PM"
+  src="/images/Screenshot-2026-07-30-at-4.44.25-PM-1.png"
   className="hidden dark:block"
 />
 
 Whether your Agent is configured for manual review or automatic outreach, the shortlist can help you select candidates to share, export, or follow up with.<br /><br />For more information on shortlists, please view our help article [here](/shortlist-profiles).
 
-## **Recalibrating an Agent**
+## **Managing an Agent's lifecycle**:
 
-When an Agent runs out of leads, the Agent will be tagged as **Action Needed.**
+An Agent's status tells you whether it needs your attention.
+
+When an Agent exhausts its qualified pool, it stops sourcing and is tagged **Action Needed**. Open the Agent and either apply the recommendations it suggests or edit your filters and criteria directly to widen the pool.
 
 <img
-  src="/images/image-(114).png"
   alt="Screenshot 2026-05-18 at 5.20.07 PM"
   lightAlt="Screenshot 2026-05-18 at 5.20.07 PM"
   darkAlt="Screenshot 2026-05-18 at 5.20.07 PM"
+  src="/images/image-(114).png"
   className="dark:hidden"
 />
 <img
-  src="/images/image-(114)-1.png"
   alt="Screenshot 2026-05-18 at 5.20.07 PM"
   lightAlt="Screenshot 2026-05-18 at 5.20.07 PM"
   darkAlt="Screenshot 2026-05-18 at 5.20.07 PM"
+  src="/images/image-(114)-1.png"
   className="hidden dark:block"
 />
 
 If this message occurs you can:
 
-1. Click into your Agent and apply the Agent’s recommendations, or edit your filters and criteria directly.
+- Click into your Agent and apply the Agent’s recommendations, or edit your filters and criteria directly.
 
 <img
-  src="/images/image-(115).png"
   alt="Screenshot 2026-05-18 at 5.22.17 PM"
   lightAlt="Screenshot 2026-05-18 at 5.22.17 PM"
   darkAlt="Screenshot 2026-05-18 at 5.22.17 PM"
+  src="/images/image-(115).png"
   className="dark:hidden"
 />
 <img
-  src="/images/image-(115)-1.png"
   alt="Screenshot 2026-05-18 at 5.22.17 PM"
   lightAlt="Screenshot 2026-05-18 at 5.22.17 PM"
   darkAlt="Screenshot 2026-05-18 at 5.22.17 PM"
+  src="/images/image-(115)-1.png"
   className="hidden dark:block"
 />
 
-## **Closing and Reopening an Agent**
+An Agent pauses automatically after four days without activity, and you can pause one manually at any time.
 
-Closed an Agent within your project? 
-
-Reopen it anytime within the Agent with the button above the Agent's settings.
+Closing an Agent turns it off and frees the seat. You can reopen a closed Agent at any time in the Agents tab and select the three dots in the top right corner \> Reopen agent. 
 
 <Frame>
-  ![Image (113)](/images/image-\(113\).png "Image (113)")
+  ![Clean Shot 2026 08 18 At 17 05 35@2x](/images/CleanShot-2026-08-18-at-17.05.35@2x.png "Clean Shot 2026 08 18 At 17 05 35@2x")
 </Frame>
 
 ## Viewing Insights
 
-Similar to projects, Agents also include an Insights report that provides a breakdown of the Agent’s leads by location, job title, skills, years of experience, and more. 
+Similar to projects, Agents also include an Insights report that provides a breakdown of the Agent’s leads by location, job title, skills, years of experience, and more.
 
-To access your Agent’s Insights report, select **View Insights** from the right-hand side of the Agent’s **Calibrate** screen.
+To open it, select **View Insights** on the right side of the Agent's **Calibrate** screen.
 
-![Screenshot 2026-05-19 at 6.45.42 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/juicebox-agents/Screenshot_2026-05-19_at_6-45-42_PM.png)
+<Frame>
+  ![Clean Shot 2026 08 17 At 19 21 44@2x](/images/CleanShot-2026-08-17-at-19.21.44@2x.png "Clean Shot 2026 08 17 At 19 21 44@2x")
+</Frame>
 
 ## Switching an existing search to an Agent
 
-Already have a project running a manual search that seems like a strong fit for an Agent? 
+If a project is already running a manual search that looks like a good fit for an Agent, click the **Agent** button from your search to calibrate one using your existing filters and criteria.
 
-From your search, click the **Agent button** to use your existing filters and search criteria to calibrate an Agent. 
+From your search, click the **Agent button** to use your existing filters and search criteria to calibrate an Agent.
 
 <Frame>
   ![Clean Shot 2026 07 29 At 21 30 43@2x](/images/CleanShot-2026-07-29-at-21.30.43@2x.png "Clean Shot 2026 07 29 At 21 30 43@2x")
 </Frame>
 
-The Agent lives inside the same project as your search, so any leads it surfaces and any candidates you shortlist stay together with your manual work. 
+The Agent lives inside the same project as your search, so any leads it surfaces and any candidates you shortlist stay together with your manual work.
 
 ## Trying Agents without an Agent seat
 
-If your plan doesn't currently include Agent seats, you can still start an Agent to see exactly how one works before deciding to buy. 
+If your plan doesn't currently include Agent seats, you can still start an Agent to see exactly how one works before deciding to buy.
 
 Here's how to try an Agent:
 
 1. Name the role and describe what you're looking for.
-2. The Agent walks you through calibration -  explaining what it's about to do, and narrating each step so you can see how it thinks.
+2. The Agent walks you through calibration, explaining what it's about to do and narrating each step so you can see how it thinks.
 3. The Agent surfaces a batch of three profiles. You can review each one to get a real feel for the match quality and leave feedback.
-4. Once you successfully approve three leads, you can setup your outreach or shortlist preferences, but only paying Agent users can start automatic daily sourcing.
+4. After you approve three leads, you can set up your outreach or shortlist preferences. Starting automatic daily sourcing requires a paid Agent seat.<br />
 
 {/* TODO [agents-restructure]: Add a new "Pausing or stopping an Agent" section. Meeting confirmed stop/pause lives under "more options" inside the Agent view. Document how to pause, resume, and close an agent from the agent itself. */}
 
 ## Glossary
 
+Understand the key terms associated with an Agent and its current status:
+
+| **Status** | **What it means** | **Takes a seat** |
+| --- | --- | --- |
+| Sourcing | Actively sourcing or contacting leads | Yes |
+| Paused | Paused manually, or after four days of inactivity | Yes |
+| Action Needed | Finished running; needs recalibrating or closing | Yes |
+| Calibrating | Being set up, not yet sourcing | No |
+| Closed | Turned off; can be reopened at any time | No |
+
 {/* TODO [agents-restructure]: These statuses now surface on the redesigned Projects page (with a "Show agents only" filter and status filters), not on a standalone Agents page. Update surrounding context so users know where to find them. */}
-
-Understand the key terms associated to an Agent and its current status:
-
-- **Sourcing:** An Agent that is actively sourcing or contacting leads, and takes up a seat.
-- **Paused:** An Agent that is paused manually or due to four days of inactivity, and takes up a seat.
-- **Action Needed:** An Agent that has finished running and should either be recalibrated or closed, and takes up a seat.
-- **Calibrating:** An Agent that is being set up or calibrated, but has not yet started sourcing, and does **not** take up a seat.
-- **Closed:** An Agent that is turned off and cannot be restarted, and does **not** take up a seat.
