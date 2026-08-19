@@ -24,9 +24,9 @@ Juicebox for Slack lets you:
     Each Juicebox organization connects to exactly one Slack workspace, and each Slack workspace connects to exactly one Juicebox organization. Juicebox blocks a connect that would replace an existing pairing. This happens when the workspace already belongs to another Juicebox organization, or when your organization is already connected to a different workspace. Disconnect the existing pairing first, then try again. Re-authorizing the same organization and workspace still works and is safe to run to refresh permissions.
   </Step>
   <Step title="Link a project or Agent">
-    From the **Projects** page, connect the relevant project to the Slack channel where the team collaborates on that role.
+    From the **Projects** page, click the project's **Slack** row to open the Slack dialog, then pick a channel from the searchable picker. For a channel you aren't in, or a private channel, paste its channel link or ID into the picker instead.
   </Step>
-  <Step title="Tag @Juicebox in the slack channel">
+  <Step title="Tag @Juicebox in the Slack channel">
     Get started by asking Juicebox what it can do in Slack.
 
     Type:
@@ -35,7 +35,7 @@ Juicebox for Slack lets you:
     @Juicebox, what can you do?
     ```
 
-    Juicebox will be added to the Slack channel and will now surface notifications, project updates, and shortlist review requests in that channel.
+    Juicebox is added to the channel and starts surfacing notifications, project updates, and shortlist review requests there. For a private channel, invite `@Juicebox` to the channel first so it can reply to mentions and thread follow-ups.
   </Step>
 </Steps>
 
@@ -142,6 +142,12 @@ Example prompts:
 ```
 
 Saved-search writes are gated on licensed-seat projects.
+
+### Channel reachability
+
+If a linked channel needs Juicebox to be invited before it can reply to mentions and thread follow-ups, the Slack dialog says so under the channel picker. Run `/invite @Juicebox` in the channel, then click the refresh icon next to the picker.
+
+If the channel is archived, the dialog surfaces that instead and asks you to pick another channel. See [Archived Slack channels](#archived-slack-channels).
 
 ### Disconnect a project from its Slack channel
 
@@ -255,9 +261,11 @@ When you connect Slack, Juicebox requests the following scopes:
 
 <AccordionGroup>
   <Accordion title="Can anyone in my Slack workspace connect Juicebox to a channel?">
-    Connecting the Slack workspace to Juicebox is a one-time setup done from the **Integrations** tab in Juicebox, and requires a Juicebox admin. Linking a specific project or Agent to a channel is done from the **Projects** page in Juicebox by anyone with access to that project.
+    Connecting the Slack workspace to Juicebox is a one-time setup done from the **Integrations** tab in Juicebox, and requires a Juicebox admin. Non-admins see the **Connect to Slack** button but can't use it.
 
-    Once the workspace is connected, any Slack member of a channel can add the bot to that channel by tagging `@Juicebox`. If your Slack workspace restricts who can add apps to channels, that restriction applies here too.
+    Once the workspace is connected, anyone with access to a project can link it to a Slack channel from the **Projects** page.
+
+    Any Slack member of a channel can add the bot to that channel by tagging `@Juicebox` or running `/invite @Juicebox`. If your Slack workspace restricts who can add apps to channels, that restriction applies here too.
   </Accordion>
 
   <Accordion title="Can I get in touch with Juicebox's team?">
@@ -278,7 +286,7 @@ When you connect Slack, Juicebox requests the following scopes:
     Check each of the following:
 
     1. The project or Agent is linked to that specific channel. Open the project and look for the **Slack** row — it should show the channel name.
-    2. Juicebox has been added to the channel. Tag `@Juicebox` in the channel to add it.
+    2. Juicebox has been added to the channel. Tag `@Juicebox` or run `/invite @Juicebox` in the channel to add it. See [Channel reachability](#channel-reachability) if the project's Slack row asks you to invite Juicebox.
     3. Notifications for the project aren't muted. Run `@Juicebox settings` in the channel and confirm the relevant notification groups are on.
     4. The channel hasn't been archived. Archiving a linked channel marks the connection inactive and stops delivery.
 
@@ -305,9 +313,5 @@ When you connect Slack, Juicebox requests the following scopes:
     See [Slack permissions requested](#slack-permissions-requested) above for the full list of scopes and what each one is used for. All listed scopes are required for the integration to work as documented — you can't remove individual scopes during install.
 
     If your organization needs a narrower permission set, email [support@juicebox.ai](mailto:support@juicebox.ai) to discuss what's possible.
-  </Accordion>
-
-  <Accordion title="Why do some workspace members get an &quot;incremental auth&quot; prompt when others don't?">
-    Slack shows an authorization prompt the first time a member takes an action that needs a scope Juicebox hasn't yet been granted for them. Members who already granted those scopes on a previous action won't see the prompt again. Approving the prompt is safe and only grants the scopes shown on that screen.
   </Accordion>
 </AccordionGroup>
