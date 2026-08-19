@@ -24,7 +24,7 @@ Juicebox for Slack lets you:
     Each Juicebox organization connects to exactly one Slack workspace, and each Slack workspace connects to exactly one Juicebox organization. Juicebox blocks a connect that would replace an existing pairing. This happens when the workspace already belongs to another Juicebox organization, or when your organization is already connected to a different workspace. Disconnect the existing pairing first, then try again. Re-authorizing the same organization and workspace still works and is safe to run to refresh permissions.
   </Step>
   <Step title="Link a project or Agent">
-    From the **Projects** page, open the project's Slack row and pick a channel from the searchable **channel picker**. For a channel you aren't already in, or a private channel, paste its channel link or ID into the picker instead.
+    From the **Projects** page, click the project's **Slack** row to open the Slack dialog, then pick a channel from the searchable picker. For a channel you aren't in, or a private channel, paste its channel link or ID into the picker instead.
   </Step>
   <Step title="Tag @Juicebox in the Slack channel">
     Get started by asking Juicebox what it can do in Slack.
@@ -145,9 +145,9 @@ Saved-search writes are gated on licensed-seat projects.
 
 ### Channel reachability
 
-If a linked channel needs Juicebox to be invited before it can reply to mentions and thread follow-ups, the project's Slack row says so. Run `/invite @Juicebox` in the channel, then click **Refresh** on the row.
+If a linked channel needs Juicebox to be invited before it can reply to mentions and thread follow-ups, the Slack dialog says so under the channel picker. Run `/invite @Juicebox` in the channel, then click the refresh icon next to the picker.
 
-If the channel is archived, the row surfaces that instead and asks you to pick another channel. See [Archived Slack channels](#archived-slack-channels).
+If the channel is archived, the dialog surfaces that instead and asks you to pick another channel. See [Archived Slack channels](#archived-slack-channels).
 
 ### Disconnect a project from its Slack channel
 
