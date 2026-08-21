@@ -133,6 +133,25 @@ Want to find profiles who were early at certain companies? Enter your preferred 
 
 ![Screenshot 2026-02-13 at 3.57.08 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/filters/Screenshot_2026-02-13_at_3-57-08_PM.png)
 
+### Combining Multiple Company Groups
+
+Some searches need more than a single set of companies with one shared timing rule. For example, you may want people who were at one company during a specific funding stage **and** at another company during a specific date range. You may also want to combine alternative company histories with OR.
+
+To support this, a search can combine up to **4 company groups**. Each group has its own:
+
+- Companies (current, past, or current+past)
+- Tenure or leaving dates
+- Funding-stage timing
+
+Groups are joined with AND/OR connectors using a per-group connector control, and connectors follow AND-before-OR precedence. For example, `Group 1 AND Group 2 OR Group 3 AND Group 4` evaluates as `(Group 1 AND Group 2) OR (Group 3 AND Group 4)`.
+
+You can build company groups two ways:
+
+- **From a natural-language prompt.** Queries like *“worked at Uber during Series A and Airbnb during 2014, or Stripe in 2015 and Databricks in seed”* are routed into the 4-group form automatically, with each company and its timing placed in the correct group.
+- **From the strategy editor.** Add up to four company group cards, configure the companies and timing for each, and pick the AND or OR connector between adjacent cards.
+
+Once configured, filter summaries show each group inline. For example, a group might appear as *“worked at Uber during Series A–C”* instead of separate “Year Left” chips per company.
+
 ### Developer Data
 
 Want to source technical talent using real-world engineering signals like programming languages, frameworks, repositories, open-source activity, and technical experience? Use our Developer Data filter to surface developers based on what they’ve actually built, their tech stack expertise, and the environments they’ve worked in.

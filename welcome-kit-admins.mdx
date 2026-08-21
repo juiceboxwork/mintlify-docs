@@ -2,6 +2,7 @@
 title: "Welcome Kit - Admins"
 keywords: ["Admin", "Admins", "Getting Started"]
 sidebarTitle: "Getting Started - Admins"
+description: "Quick-start guide and initial setup steps for Juicebox admins"
 ---
 
 Welcome to Juicebox! As an admin, you’re empowering your team to source and recruit candidates with richer data and more automation that help them find candidates more quickly and effectively. We’ll focus on the most important steps to get your organization set up.
@@ -12,6 +13,8 @@ In this guide, you’ll learn how to:
 - Set up Single Sign-On (SSO)
 - Add team members and set their permissions
 - Manage settings and controls for AI Agents
+- Set up Juicebox for Slack to enable collaboration with hiring managers
+- Set up the Juicebox MCP to bring insights and data into your AI tool
 
 ## Integrate your ATS
 
@@ -79,7 +82,7 @@ As you add members, choose the relevant role. There are two types of roles that 
 - Reserve the **Admin** role for the people who truly need to change organizational settings
 - Use the **Member** role for recruiters and sourcing partners. This is the most common seat you’ll assign. The Member role is able to search, create and manage projects, review and shortlist candidates, and run outreach sequences.
 
-The other roles are essentially read-only, and they aren’t able to source candidates. For example, use the **Hiring manager** role for hiring managers to see search results and evaluate candidate profiles directly in Juicebox.
+The other roles are essentially read-only, and they aren’t able to source candidates. For example, use the **Hiring manager** role for hiring managers to see search results and evaluate candidate profiles directly in Juicebox. However, many hiring managers may not need Juicebox licenses if you're using Juicebox for Slack, which we'll cover below.
 
 <Tip>
   See the [roles and permissions article](https://docs.juicebox.ai/help/account/roles-and-permissions) for a more detailed breakdown of the roles.
@@ -113,6 +116,42 @@ Then, set your Agent controls. The most important ones are:
 - **ATS exclusion:** Using the ATS integration you set up above, Juicebox Agents can include or exclude candidates who are already in your ATS. By default, we recommend including ATS candidates, and letting users exclude them on an Agent-by-Ageny basis. Exclude them globally only if you want all Agents to focus on finding net-new candidates who have never applied to your company.
 - **Pause on weekends**: Helps your recruiters manage their workload and manage candidate experience. Recruiters won’t get new candidates over the weekend, so they won’t be overwhelmed with new candidates on Monday morning. And candidates won’t receive automatic outreach sequences over the weekend and get the impression that recruiters are working over the weekend.
 - **Active agent limit:** Caps the number of active agents each user can run at once. By default, anyone with Agent permissions can create and run as many Agents as they want, but these count against the number of Agents included in your plan. Setting an agent limit prevents any given user from monopolizing your allotted Agents.
+
+**Want more help?** Learn more about
+
+## Set up Juicebox for Slack
+
+So far, you've set up your team to work productively in Juicebox. In these next sections, you'll help your team bring data and insights from Juicebox into other places that your team works.
+
+If your team uses Slack, Juicebox integrates directly into channels where your recruiters and hiring managers already collaborate. This gives hiring managers visibility into sourcing and recruiting progress without needing to log into Juicebox. It also lets your recruiting team take actions in Juicebox directly from Slack to keep processes moving quickly.
+
+To set it up:
+
+1. Go to **Integrations** in the left-hand nav and connect the Slack integration. The first time you do this, it creates a 1:1 connection between your Juicebox organization and your Slack workspace.
+   <Frame>
+     ![2026 08 17 11 42 18](/images/2026-08-17_11-42-18.png "2026 08 17 11 42 18")
+   </Frame>
+2. Once your organization is connected, you can link individual projects in Juicebox to individual Slack channels. Generally your team will create a project for each role they're recruiting. If no channel exists, you can create a new one from this screen.
+   <Frame>
+     ![2026 08 17 11 47 12](/images/2026-08-17_11-47-12.png "2026 08 17 11 47 12")
+     <Frame>
+       ![2026 08 17 11 48 01](/images/2026-08-17_11-48-01.png "2026 08 17 11 48 01")
+     </Frame>
+   </Frame>
+3. Tag `@juicebox` in the Slack channel to confirm it works. Juicebox will now surface notifications, project updates, and shortlist review requests in that channel and can be tagged to answer questions or provide insights.
+
+**Want more help?** Learn more about [Juicebox for Slack](https://docs.juicebox.ai/juicebox-for-slack).
+
+## Set up Juicebox MCP
+
+With the Juicebox MCP, you can integrate Juicebox data into your AI client such as Claude, ChatGPT, Gemini, or any MCP-compatible platform. This lets your team get self-service custom reporting and insights and take more contextual actions.
+
+With the Juicebox MCP, your team can:
+
+- Self-serve reports or insights about individual roles or overall sourcing activity directly from your AI tool, without admin assistance
+- Kick off an Agent directly from your AI tool, using context from other tools like your ATS and notetaking tools
+
+Depending on which AI tool you use, setup will look a little different. Follow the instructions in our [MCP documentation](https://docs.juicebox.ai/juicebox-mcp) for your specific method, e.g. Claude Connectors, ChatGPT Plugins, Gemini CLI.<br /><br />**Want more help?** Learn about [Juicebox MCP](https://docs.juicebox.ai/juicebox-mcp).
 
 ## Other settings
 
