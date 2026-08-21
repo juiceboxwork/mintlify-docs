@@ -24,7 +24,7 @@ Juicebox for Slack lets you:
     Each Juicebox organization connects to exactly one Slack workspace, and each Slack workspace connects to exactly one Juicebox organization. Juicebox blocks a connect that would replace an existing pairing. This happens when the workspace already belongs to another Juicebox organization, or when your organization is already connected to a different workspace. Disconnect the existing pairing first, then try again. Re-authorizing the same organization and workspace still works and is safe to run to refresh permissions.
   </Step>
   <Step title="Link a project or Agent">
-    From the **Projects** page, click the project's **Slack** row to open the Slack dialog, then pick a channel from the searchable picker. For a channel you aren't in, or a private channel, paste its channel link or ID into the picker instead.
+    From the **Projects** page, select the project's **Slack** row to open the Slack dialog, then pick a channel from the searchable picker. For a channel you aren't in, or a private channel, paste its channel link or ID into the picker instead.
   </Step>
   <Step title="Tag @Juicebox in the Slack channel">
     Get started by asking Juicebox what it can do in Slack.
@@ -145,7 +145,7 @@ Saved-search writes are gated on licensed-seat projects.
 
 ### Channel reachability
 
-If a linked channel needs Juicebox to be invited before it can reply to mentions and thread follow-ups, the Slack dialog says so under the channel picker. Run `/invite @Juicebox` in the channel, then click the refresh icon next to the picker.
+If a linked channel needs Juicebox to be invited before it can reply to mentions and thread follow-ups, the Slack dialog says so under the channel picker. Run `/invite @Juicebox` in the channel, then select the refresh icon next to the picker.
 
 If the channel is archived, the dialog surfaces that instead and asks you to pick another channel. See [Archived Slack channels](#archived-slack-channels).
 
@@ -302,8 +302,8 @@ When you connect Slack, Juicebox requests the following scopes:
 
     To disconnect a project from its channel:
 
-    1. Open the project and click the **Slack** row that shows the connected channel name.
-    2. In the dialog, click **Disconnect** next to the channel name.
+    1. Open the project and select the **Slack** row that shows the connected channel name.
+    2. In the dialog, select **Disconnect** next to the channel name.
     3. Confirm **Disconnect** in the prompt.
 
     To remove Juicebox from a channel entirely, use Slack's **Remove app** action on the channel.
