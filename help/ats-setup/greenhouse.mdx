@@ -4,6 +4,8 @@ sidebarTitle: "Greenhouse"
 description: "Enable the two-way integration between Greenhouse Recruiting and Juicebox."
 ---
 
+This guide covers the Greenhouse Harvest v3 integration.
+
 Juicebox's integration with Greenhouse Recruiting allows you to:
 
 1. **Import Project from ATS**: Import a job description from Greenhouse into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
@@ -25,21 +27,75 @@ In the _Create New Credential_ box, make the following selections:
 
 ### Permissions
 
-Verify that the following permissions are selected for the Juicebox integration:
+Juicebox uses the Greenhouse Harvest v3 API. Verify that the following permissions are selected for the Juicebox integration:
 
-| Resource | Permissions |
-| --- | --- |
-| Users | Get: List Users |
-| Jobs | Get: Retrieve Job · Get: List Jobs |
-| Job Posts | Get: List Job Posts for Job · Get: List Job Posts |
-| Tags | Get: List Candidate Tags |
-| Candidates | Get: Retrieve Candidate · Get: List Candidates · Post: Add Candidate · Post: Add Note · Post: Add Attachment |
-| Scheduled Interviews | Get: List Interviews · Get: List Interviews for Application |
-| Applications | Get: Retrieve Application · Post: Add Attachment to Application · Post: Move Application |
-| Job Stages | Get: List Job Stages |
-| Offers | Get: List Offers |
-| Sources | Get: List Sources |
-| Rejection Reasons | Get: List Rejection Reasons |
+**Applications**
+
+- View applications (`harvest:applications:list`)
+- Create applications (`harvest:applications:create`)
+- Move applications between stages (`harvest:applications:move`)
+- Reject applications (`harvest:applications:reject`)
+- Mark applications as hired (`harvest:applications:hire`)
+
+**Candidates**
+
+- View candidates (`harvest:candidates:list`)
+- Create candidates (`harvest:candidates:create`)
+- Upload candidate attachments (`harvest:attachments:create`)
+- View candidate attachments (`harvest:attachments:list`)
+- Create candidate notes (`harvest:notes:create`)
+- View candidate notes (`harvest:notes:list`)
+
+**Candidate tags**
+
+- View candidate tags (`harvest:candidate_tags:list`)
+- Create candidate tags (`harvest:candidate_tags:create`)
+- Assign tags to candidates (`harvest:applied_candidate_tags:create`)
+- Remove tags from candidates (`harvest:applied_candidate_tags:destroy`)
+- View candidate tag assignments (`harvest:applied_candidate_tags:list`)
+
+**Jobs**
+
+- View jobs (`harvest:jobs:list`)
+- View job posts (`harvest:job_posts:list`)
+- View job hiring managers (`harvest:job_hiring_managers:list`)
+- View job owners (`harvest:job_owners:list`)
+- View job candidate attributes (`harvest:job_candidate_attributes:list`)
+- View job interview stages (`harvest:job_interview_stages:list`)
+- View job interviews (`harvest:job_interviews:list`)
+
+**Interviews and scorecards**
+
+- View interviews (`harvest:interviews:list`)
+- View interviewers (`harvest:interviewers:list`)
+- View scorecards (`harvest:scorecards:list`)
+- View scorecard candidate attributes (`harvest:scorecard_candidate_attributes:list`)
+- View scorecard questions (`harvest:scorecard_questions:list`)
+- View scorecard question options (`harvest:scorecard_question_options:list`)
+- View scorecard answer options (`harvest:scorecard_question_answer_options:list`)
+- View scorecard answers (`harvest:scorecard_question_answers:list`)
+
+**Offers**
+
+- View offers (`harvest:offers:list`)
+
+**Organization**
+
+- View users (`harvest:users:list`)
+- View user roles (`harvest:user_roles:list`)
+- View user job permissions (`harvest:user_job_permissions:list`)
+- View departments (`harvest:departments:list`)
+- View offices (`harvest:offices:list`)
+
+**Configuration and reference data**
+
+- View application stages (`harvest:application_stages:list`)
+- View rejection reasons (`harvest:rejection_reasons:list`)
+- View rejection details (`harvest:rejection_details:list`)
+- View candidate attribute types (`harvest:candidate_attribute_types:list`)
+- View focus candidate attributes (`harvest:focus_candidate_attributes:list`)
+- View sources (`harvest:sources:list`)
+- View pay input ranges (`harvest:pay_input_ranges:list`)
 
 ## Setting up the integration on Juicebox
 
