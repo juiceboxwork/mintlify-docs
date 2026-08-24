@@ -151,7 +151,7 @@ From there, select Create search from overlaps or Create search from connections
 
 When you open an employee's connections or overlaps sidebar from the Network page, a **Download** icon appears next to the count. Selecting it exports the full list to CSV without paging through the UI.
 
-- Each export includes up to 10,000 rows. If the sidebar has more, Juicebox downloads the first 10,000 and surfaces a snackbar noting the file was truncated and how many rows were exported out of the total.
+- Each export includes up to 10,000 rows. If the sidebar has more, Juicebox downloads the first 10,000 and surfaces a snackbar noting the truncation count.
 - Email and phone are included only when they were already revealed for that profile or manually added to it. The download does not consume contact credits or trigger new lookups.
 
 **Connections CSV**
@@ -164,8 +164,8 @@ The Connections CSV matches LinkedIn's `Connections.csv` header format, so you c
 
 The Overlaps CSV adds two columns that summarize why Juicebox thinks the two people know each other:
 
-- **Overlap Strength** — a human-readable label (High, Medium, or Low) derived from the same score used on the profile card.
-- **How they overlap** — a plain-language description built from pairwise company and school date windows between the employee and the candidate. Your own organization's company is excluded so the list focuses on outside overlaps.
+- **Overlap Strength**: a label of High, Medium, or Low, derived from the same score used on the profile card.
+- **How they overlap**: a plain-language description built from pairwise company and school date windows between the employee and the candidate. Juicebox excludes your own organization's company so the list focuses on outside overlaps.
 
 Full column list: `First name`, `Last name`, `Location`, `LinkedIn`, `Email`, `Phone Number`, `Current Title`, `Current Org Name`, `Current Org Website`, `Overlap Strength`, `How they overlap`.
 
