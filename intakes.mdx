@@ -248,11 +248,21 @@ When an intake is linked to an ATS job, Live Insights also uses that job's descr
   Ashby is the currently supported ATS. Reach out to [support@juicebox.work](mailto:support@juicebox.work) if you need another provider.
 </Note>
 
+## Admin controls
+
+On the **Business plan**, an admin can turn the whole intake feature on or off from **Account → Organization settings** with the **Meeting notetaker** toggle. When the switch is off:
+
+- Every intake entry point across the app is hidden — the sidebar entry, the project configuration card, and the intake actions.
+- Any Juicebox notetaker bots currently sitting in a meeting are recalled, so disabling mid-call never strands a live recording.
+- Reads on existing intakes are also blocked, so historical transcripts and Smart Notes are not visible until the switch is turned back on.
+
+Intakes are **on by default** for every plan. Only Business-plan admins see the toggle; other plans have no per-org opt-out. If your org later moves off the Business plan, the switch is cleared and intakes return to the default-on state.
+
 ## Requirements
 
 To use intakes and the notetaker:
 
-- The `project-intake` early-access flag must be enabled for your org.
+- The `project-intake` early-access flag must be enabled for your org, and the org-wide **Meeting notetaker** toggle (Business plan) must be on.
 - To create an intake for a project, you must be the **project owner**.
 - To send the notetaker to an upcoming or suggested meeting, you need a connected Google or Outlook calendar. If you haven't connected one yet, the intake page shows a lightweight **Connect calendar** prompt that lets you connect just the calendar without a full email integration. Full [Email Integrations](/email-integrations) still work if you already have one.
 - Allow microphone permissions in your browser on the intake page if you want to use browser-side transcription features.
