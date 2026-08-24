@@ -143,6 +143,24 @@ AI Commands are custom personalizations for each profile, that will update to in
 
 With AI Commands, you can also choose between pre-set examples, focused on Work Experience or Skills, or write your own. When writing your own AI Command, consider the following: topic, sentence length, and applicability across your candidate pool.
 
+**Using multiple AI Commands in one step**
+
+A single step can include more than one AI Command. Add as many as the step needs, each wrapped in its own `{*...*}` token. Steps with two or more AI Commands are resolved in one generation call that sees the full numbered template, so Juicebox varies structure across sentences instead of writing each one blind to the others. This reduces repetitive openers when a step personalizes several sentences. Steps with a single AI Command are unchanged.
+
+**Editing an AI Command in place**
+
+The AI Command dialog is cursor-aware:
+
+- Place the cursor inside an existing `{*...*}` token and open the dialog to edit that command in place.
+- Place the cursor outside any token to insert a new command at the cursor position.
+
+**Duplicate and empty AI Commands are blocked**
+
+Juicebox prevents shipping AI Commands that would produce broken personalization:
+
+- Attempting to add a duplicate AI Command shows a toast and keeps the dialog open. Duplicate detection ignores HTML entities, straight vs. curly quotes, dashes, whitespace, and case, so visually identical prompts stored in different byte forms still register as duplicates. This is worth knowing when importing templates that were authored elsewhere.
+- Empty `{**}` tokens surface an inline validation error on the step editor before you can send the sequence. Add an instruction to the command or remove the token to clear it.
+
 **Snippets**
 
 Snippets are pre-saved templates created by yourself or your team, so you can pull in reusable content across sequence steps.
