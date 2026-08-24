@@ -45,6 +45,20 @@ Your Agent doesn't work in isolation. Before building a search, it researches th
   Manage connectors from the **Integrations** tab in Settings. ATS connections are available on the Business plan. Connectors are used by Agents only and they don't feed standalone searches or sequence generation.
 </Note>
 
+#### Disabling Connectors Org-wide
+
+Admins can turn off external connectors (Google Drive, Notion, Granola, Metaview, and other MCP integrations) for the entire organization from **Settings → Agents**. Toggle **MCP connectors** off to stop the Agent from loading any MCP connections during chat and context research. The setting is on by default.
+
+When connectors are disabled:
+
+- The connectors dialog still opens, but shows the notice "Connectors are disabled for your organization. Please ask your admin to enable connectors." The **Connect** buttons appear disabled.
+- Juicebox rejects new MCP connection attempts. The connect endpoint returns a `connectors-disabled` error.
+- Existing MCP connections stay in place. The Agent stops loading them until an admin re-enables the setting.
+
+<Note>
+  This control gates Juicebox Agents (Eren) acting as an MCP client. It's separate from the org-level MCP server enablement on the [Juicebox MCP](/juicebox-mcp) page, which controls whether external AI clients can connect to Juicebox as an MCP server.
+</Note>
+
 ### Market Mapping
 
 Instead of building a search directly from your request, the Agent first maps the talent market. It analyzes the full candidate pool — common employers, job titles, seniority, and years of experience — and tests different iterations of the search criteria to find the strategy that produces the strongest pipeline, not just a few good first profiles. If the data suggests a change in approach, the Agent will proactively adjust its criteria or ask you a clarifying question.
