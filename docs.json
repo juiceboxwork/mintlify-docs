@@ -30,6 +30,7 @@
                   "welcome-kit-automate-with-agents"
                 ]
               },
+              "welcome-kit-admins",
               "project-walkthrough",
               "manage-account",
               "all-about-credits"
@@ -58,7 +59,7 @@
             "icon": "robot",
             "pages": [
               "juicebox-agents",
-              "memory"
+              "knowledge-vault"
             ]
           },
           {
@@ -99,7 +100,8 @@
               "exports",
               "ats-integrations",
               "email-integrations",
-              "juicebox-for-slack"
+              "juicebox-for-slack",
+              "juicebox-mcp"
             ]
           },
           {
@@ -224,14 +226,6 @@
   "navbar": {
     "links": [
       {
-        "label": "Juicebox for Slack",
-        "href": "https://docs.juicebox.ai/juicebox-for-slack"
-      },
-      {
-        "label": "Slack setup",
-        "href": "https://docs.juicebox.ai/help/integrations/slack-setup"
-      },
-      {
         "label": "Support",
         "href": "mailto:support@juicebox.ai"
       }
@@ -262,6 +256,10 @@
     }
   },
   "redirects": [
+    {
+      "source": "/MCP-server",
+      "destination": "/juicebox-mcp"
+    },
     {
       "source": "/untitled-page",
       "destination": "/reporting-stale-profiles"
