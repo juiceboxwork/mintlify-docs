@@ -127,6 +127,32 @@ If you included a Funding & Revenue field in your search’s prompt — like 'So
   Remember that  “Current” versus “Current \+ Past” configurations can have major impacts on your search results.
 </Tip>
 
+### Company Type
+
+Company Type is a coarse ownership filter that sits alongside Funding Stages. Use it when you want to constrain results by *how* the employer is owned rather than by a specific round.
+
+Open the filter editor and check one or more of the following:
+
+- **Public** — publicly traded / listed companies.
+- **VC-backed Private** — private companies backed by venture capital.
+- **Private Equity** — companies owned by, or backed by, a PE firm.
+
+How selections combine:
+
+- Multiple Company Type checkboxes are joined with **OR** (e.g. Public + VC-backed Private returns candidates at either).
+- Company Type is joined with any explicit **Funding Stages** selection using **AND**. For example, Company Type = *Public* combined with Funding Stages = *Series B* returns candidates whose employer matches both.
+- Scope (current employer vs. current + past) is controlled by the same Current / Current + Past toggle as Funding Stages.
+
+When to use Company Type vs. Funding Stages:
+
+- Reach for **Company Type** for broad ownership questions like “CFOs at public companies”, “engineers at VC-backed startups”, or “PE-backed CEOs”.
+- Reach for **Funding Stages** when you need specific rounds, like “Series B startup engineers” or “Seed through Series A”.
+- Looking for people who work *at* a VC or PE **firm itself** (e.g. partners at a private equity fund)? That’s a job title + industry search, not a Company Type filter — Company Type describes the *portfolio* employer, not the investor.
+
+Company Type is also the filter written when you click through a slice of the **Company Type** pie on the [Insights](/insights) tab. Clicking a **Funding Stages** slice still writes Funding Stages, unchanged.
+
+The active selection appears as a chip in the filter summary, persists in saved and duplicated searches, and is respected whether the filter was set by the prompt-driven query builder or edited manually. Company Type only supports inclusion — to *exclude* an ownership type, leave Company Type empty and select the other types you do want.
+
 ### Company \+ Funding Stage
 
 Want to find profiles who were early at certain companies? Enter your preferred companies, select the “Funding Stage” drop-down, and configure your desired funding stage. This will show you profiles that were at your selected companies during that specific stage or year.
