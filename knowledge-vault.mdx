@@ -1,0 +1,97 @@
+---
+title: "Knowledge Vault"
+description: "How Juicebox remembers context about you, your organization, and your searches to personalize AI results."
+---
+
+Memory is how Juicebox personalizes AI-generated work (searches, criteria, sequences, and Agents) to the way you and your team actually recruit. You can review everything Juicebox has learned from the **Knowledge Vault** section in your account settings.
+
+To open it, click your name/organization at the bottom of the left-hand menu, select **Account Settings**, then find **Knowledge Vault** in the sidebar.
+
+{/* SCREENSHOT 1: Account Settings sidebar showing the Knowledge Vault section with Company memory and User memory */}
+
+![Clean Shot 2026 08 19 At 10 34 18@2x 1](/images/CleanShot-2026-08-19-at-10.34.18@2x-1.png "Clean Shot 2026 08 19 At 10 34 18@2x 1")
+
+## Types of memory
+
+Juicebox stores two kinds of memory:
+
+- **Company memory**: Everything Juicebox has learned about your company and team, like hiring patterns, feeder companies, and target schools. Agents and projects automatically use this as context when sourcing candidates and writing outreach.
+- **User memory**: Everything Juicebox has learned about you and how you recruit. Agents use this to personalize candidate evaluation and draft outreach that matches your priorities and communication style.
+
+Both feed into your searches, sequences, and Agents so that results reflect what your team is actually looking for, without you having to repeat yourself in every prompt.
+
+## Company memory
+
+Company memory captures how your organization hires. It includes:
+
+- **Organization overview**: what your company does, headcount, growth, and funding, gathered automatically from publicly available sources. It also summarizes where your team is located, which universities they attended, and where they worked before.
+- **Hiring pattern**: who you actually hired in the last 12 months. This is the strongest signal for who to find next. You can filter by role and view talent flow.
+- **Feeder companies and target schools**: the companies and schools your recent hires most commonly come from.
+
+{/* SCREENSHOT 2: Company memory page, top half. Organization card with overview, description, and Locations / Universities / Prior companies columns */}
+
+![Clean Shot 2026 08 19 At 10 36 54@2x](/images/CleanShot-2026-08-19-at-10.36.54@2x.png "Clean Shot 2026 08 19 At 10 36 54@2x")
+
+{/* SCREENSHOT 3: Hiring pattern section with recent hires, Feeder companies, and Target schools */}
+
+You can refresh the organization overview at any time with the **Refresh** button, or click **Edit description** to correct or add details.
+
+### Memory-enhanced criteria generation
+
+Admins can control whether memory is used when generating search criteria for the organization. Toggle **Memory-enhanced criteria generation** on or off from the Company memory page.
+
+{/* SCREENSHOT 4: Criteria generation card with the toggle */}
+
+![Clean Shot 2026 08 19 At 10 43 39@2x](/images/CleanShot-2026-08-19-at-10.43.39@2x.png "Clean Shot 2026 08 19 At 10 43 39@2x")
+
+## User memory
+
+User memory is your personal recruiting context. It includes:
+
+- **About you**: your role and background, gathered automatically from publicly available sources when you sign up. Click **Edit description** to update it.
+- **Search preferences**: the requirements you tend to care about, learned from the searches you run, the criteria you add, the profiles you shortlist or hide, and the feedback you give.
+
+{/* VERIFY: confirm search preferences surface on the User memory page, or whether they are learned in the background only */}
+
+{/* SCREENSHOT 5: User memory page with the About you card */}
+
+![Clean Shot 2026 08 19 At 10 42 31@2x](/images/CleanShot-2026-08-19-at-10.42.31@2x.png "Clean Shot 2026 08 19 At 10 42 31@2x")
+
+## Recent searches
+
+Juicebox retains your past runs and shortlists so they can be reused as context for future work.
+
+{/* VERIFY: confirm where recent searches live in the UI and how they surface. This was on the launch slides but there is no dedicated Knowledge Vault section for it */}
+
+## Connectors
+
+Both memory pages show which connectors are feeding them. Connectors can be enabled at the company level (shared across your team) or the user level (just for you). Click **Manage in Integrations** to add or remove connectors.
+
+{/* SCREENSHOT 6: Connectors bar from the Company memory page (has two connectors enabled, better example than User memory) */}
+
+![Clean Shot 2026 08 19 At 10 40 12@2x](/images/CleanShot-2026-08-19-at-10.40.12@2x.png "Clean Shot 2026 08 19 At 10 40 12@2x")
+
+## Editing memory
+
+You can edit the description on both Company memory and User memory at any time:
+
+- Update or remove details that are out of date or inaccurate.
+- Add context Juicebox may have missed (for example, a new business line, a hiring focus, or a preferred candidate profile).
+
+Changes take effect immediately and apply to future searches, sequences, and Agent runs.
+
+<Note>
+  Hiring patterns, feeder companies, and target schools are generated automatically from your data and aren't directly editable.
+</Note>
+
+{/* VERIFY: confirm whether in-app notifications still fire when memory updates. The old article had a section on this, removed pending confirmation */}
+
+## Criteria
+
+Memory surfaces directly in [criteria](/criteria). When Juicebox adds a criterion based on what it has learned from your past searches, it's labeled **criteria added by memory**.
+
+Hover the memory icon next to a criterion to see the specific memory that influenced it.
+
+{/* SCREENSHOT 7: Reuse the existing criteria-memory-tooltip.png from the old article if the UI hasn't changed */}
+
+![Juicebox Memory tooltip on a criterion explaining why it was suggested](/images/memory/criteria-memory-tooltip.png)

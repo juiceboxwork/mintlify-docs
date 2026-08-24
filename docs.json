@@ -59,7 +59,7 @@
             "icon": "robot",
             "pages": [
               "juicebox-agents",
-              "memory"
+              "knowledge-vault"
             ]
           },
           {
@@ -226,14 +226,6 @@
   },
   "navbar": {
     "links": [
-      {
-        "label": "Juicebox for Slack",
-        "href": "https://docs.juicebox.ai/juicebox-for-slack"
-      },
-      {
-        "label": "Slack setup",
-        "href": "https://docs.juicebox.ai/help/integrations/slack-setup"
-      },
       {
         "label": "Support",
         "href": "mailto:support@juicebox.ai"
