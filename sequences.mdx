@@ -145,7 +145,7 @@ With AI Commands, you can also choose between pre-set examples, focused on Work 
 
 **Using multiple AI Commands in one step**
 
-A single step can include more than one AI Command. Add as many as the step needs, each wrapped in its own `{*...*}` token. Steps with two or more AI Commands are resolved in one generation call that sees the full numbered template, so Juicebox varies structure across sentences instead of writing each one blind to the others. This reduces repetitive openers when a step personalizes several sentences. Steps with a single AI Command are unchanged.
+A single step can include more than one AI Command. Add as many as the step needs, each wrapped in its own `{*...*}` token. When a step has two or more AI Commands, Juicebox resolves them together in one generation call. The model sees the full numbered template and varies sentence structure across the commands. This reduces repetitive openers when you personalize several sentences in the same step. Steps with a single AI Command are unchanged.
 
 **Editing an AI Command in place**
 
@@ -156,10 +156,10 @@ The AI Command dialog is cursor-aware:
 
 **Duplicate and empty AI Commands are blocked**
 
-Juicebox prevents shipping AI Commands that would produce broken personalization:
+Juicebox blocks AI Commands that would produce broken personalization:
 
-- Attempting to add a duplicate AI Command shows a toast and keeps the dialog open. Duplicate detection ignores HTML entities, straight vs. curly quotes, dashes, whitespace, and case, so visually identical prompts stored in different byte forms still register as duplicates. This is worth knowing when importing templates that were authored elsewhere.
-- Empty `{**}` tokens surface an inline validation error on the step editor before you can send the sequence. Add an instruction to the command or remove the token to clear it.
+- If you try to add a duplicate AI Command, Juicebox shows an error message and keeps the dialog open. Duplicate detection ignores HTML entities, straight vs. curly quotes, dashes, whitespace, and case. Visually identical prompts stored in different byte forms still register as duplicates. Keep this in mind when you import templates authored elsewhere.
+- Empty `{**}` tokens show an inline validation error on the step editor before you can send the sequence. Add an instruction to the command or remove the token to clear the error.
 
 **Snippets**
 
