@@ -101,7 +101,8 @@
               "ats-integrations",
               "email-integrations",
               "juicebox-for-slack",
-              "juicebox-mcp"
+              "juicebox-mcp",
+              "intake"
             ]
           },
           {
