@@ -65,6 +65,17 @@ To view past exports, select your account icon in the bottom left corner. Then, 
 
 ![Exports](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/exports/Untitled-5.png)
 
+### Exporting a network from the Network page
+
+From the Network page, opening an employee's connections or overlaps sidebar surfaces a **Download** icon that exports the full list to CSV. This bypasses the standard select-and-export flow above and does not use export or contact credits.
+
+- Each download includes up to 10,000 rows. If more exist, Juicebox exports the first 10,000 and surfaces a snackbar with the truncation count.
+- The Connections CSV uses LinkedIn's `Connections.csv` header format so the file can be re-uploaded for another employee.
+- The Overlaps CSV adds an **Overlap Strength** label and a **How they overlap** description derived from shared company or school date windows.
+- Email and phone appear only when they were already revealed or manually added to that profile.
+
+See [Network Sourcing](/network-sourcing) for the full workflow.
+
 ### Integrate with CRM or ATS
 
 Please view our [Integrations page](/ats-integrations) for more details on CRM and ATS integrations.

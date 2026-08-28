@@ -58,15 +58,44 @@ Similar to any search, you’ll describe the ideal candidate in natural language
 
 The Agent will work with any information you give it, even a quick natural-language blurb, but the best practice for faster, more accurate results is to give some context upfront to help the Agent learn. We recommend providing:
 
-- The job description
-- Notes on anything else that should be considered outside of the job description (for example, key points from the hiring manager kickoff)
-- Optionally, 2-3 profiles of candidates you’ve actually hired for the role
+- The **job description,** pasted in or linked from your ATS
+- Any intake notes you have, or have Juicebox record and store the **intake meeting** to train the agent (see below)
 
 <Tip>
-  _Agents can also search the web, so you can tell them something like_  `Find people currently at a Series B company that raised in the last 12 months.`
+  _Agents can also search the web, so you can tell them something like_  `Find people currently at a Series B company that raised in the last 12 months` _or_ `Find SWEs at competitor companies who recently had layoffs`
 </Tip>
 
-Now, things will start to look different from a regular search. The Agent will reason as it searches, adjusting filters and criteria as it goes, or maybe even asking you for clarification. For example, it might see that the titles are too specific and broaden the search. You’ll still see all the filters and criteria and edit them manually if you need to.
+## Use intake notes to start an Agent (optional)
+
+Juicebox can join your hiring manager intake meetings to record and transcribe, and provide live insights for you and your hiring manager to use as you collaborate. These notes can also give Agents context, so they start with the full picture of the role.
+
+To run an intake through Juicebox, look for **Intake** under your project in the left-nav. You can write your own notes or use a template. Then have Juicebox start recording the meeting, in-person or over Zoom.
+
+![2026 08 27 16 32 50](/images/2026-08-27_16-32-50-1.png "2026 08 27 16 32 50")
+
+After the meeting, the notes will be stored in a transcript along with an AI summary of the meeting. From here, just click **Start agent** and you can kick off an Agent directly from these meeting notes, with full context.
+
+<Frame>
+  ![2026 08 27 16 48 03](/images/2026-08-27_16-48-03.png "2026 08 27 16 48 03")
+</Frame>
+
+After this, the process follows the same steps as if you started it from a natural language search or a job description.
+
+## Initial Agent setup
+
+Once you enter your natural-language description, things will start to look different from a regular search.
+
+Before finding candidates, the Agent will use any tools you've connected, like your ATS, notetaker apps, and drive/docs, to research the role. We call this Contextual Intelligence.
+
+<Frame>
+  ![Image](/images/image-8.png "Image")
+</Frame>
+
+Then it will start to map the talent market for your role. As it goes, it will analyze the full candidate pool and test different variations of the search criteria to make sure you're getting a strong pipeline, not just a few good profiles.
+
+It will adjust filters and criteria as it goes, or even ask you for clarifications. You'll see the Agent's reasoning as it goes, so you can always give it feedback or additional input by chatting with it. You can also see and change the filters or criteria manually from the right-hand nav.
+
+For example, it might see that the titles are too specific and broaden the search, and propose a new approach:
 
 <Frame>
   ![2026 07 31 12 51 25](/images/2026-07-31_12-51-25.png "2026 07 31 12 51 25")
@@ -82,10 +111,10 @@ Now, things will start to look different from a regular search. The Agent will r
 
 The first time you set up an Agent, you’ll need to calibrate it so that it learns your patterns of judgment and consistently sends you good candidates. Think of this like training a new teammate.
 
-The Agent will give you three profiles to evaluate. Click **Review Profiles** to review each of them like you would any candidate, not looking for perfection but for match potential.
+The Agent will give you three profiles to evaluate. Click **Review leads** to review each of them like you would any candidate, not looking for perfection but for match potential.
 
 <Frame>
-  ![2026 07 31 12 52 42](/images/2026-07-31_12-52-42.png "2026 07 31 12 52 42")
+  ![2026 08 20 11 27 04](/images/2026-08-20_11-27-04.png "2026 08 20 11 27 04")
 </Frame>
 
 - If you would take a call with this candidate, click **Looks Good** to approve them.
@@ -128,13 +157,13 @@ After you’ve calibrated the Agent, it will ask you to make three quick decisio
   ![2026 07 31 12 58 05](/images/2026-07-31_12-58-05.png "2026 07 31 12 58 05")
 </Frame>
 
-**Outreach handling:** The Agent can auto-build a sequence based on the context from the chat or use an existing sequence. Or skip this step if you want the Agent to shortlist candidates without doing any outreach.
+**Outreach handling:** The Agent can auto-build an **AI sequence** based on the context from the chat or use an **existing sequence** that works well for this role. Otherwise, you can choose to **Shortlist only**, meaning that candidates sourced by the agent won't receive any outreach unless you manually add them to a sequence later.
 
-- Our recommendation: During your initial chat with the AI, give it real outreach examples and selling points to build an AI sequence, then edit it to reflect how you’d reach out to a candidate.
+- Our recommendation: During your initial chat with the AI, give it real outreach examples and selling points to build an AI sequence. Then edit that sequence to make it your own.
 - Note: Choosing **AI sequence** will use AI to draft a sequence, but you can still edit it yourself. The Agent won’t autonomously send communications or sequences that you haven’t defined here, so you still have control.
 
 <Frame>
-  ![2026 07 31 12 58 38](/images/2026-07-31_12-58-38.png "2026 07 31 12 58 38")
+  ![2026 08 20 11 29 56](/images/2026-08-20_11-29-56.png "2026 08 20 11 29 56")
 </Frame>
 
 **Approval type:** Choose **Manual** if you want the Agent to send you a list each day to review and approve. Choose **Automatic** if you want it to approve and reach out on its own.
@@ -160,7 +189,14 @@ Once the agent is running, it sources on a schedule: around 9:00am, your local t
   _Depending on the search, the Agent may eventually run **out of leads**. That’s because there’s a finite number of relevant candidates for your search, and an Agent won’t compromise the quality bar after that._
 </Tip>
 
-As you work with Agents over time, the role requirements may shift, or you may want to broaden the search. Click **Calibrate** to chat with the Agent again and re-calibrate the role over time.
+Every time you return to the Agent, you'll see what it learned and how it's adapting its search.
+
+You can continue to chat with your Agent. This is especially useful if you have other apps connected to Juicebox. For example, you can ask it to:
+
+- Deliver insights and recommendations on your pipeline
+- Determine which criteria are limiting your qualified candidate pool
+- Pull candidate lists from connected apps, like Google Sheets or your ATS
+- Generate a talent market map into Notion
 
 You may even want to create Agents for existing projects that started with manual searches. That’s as easy as creating a new search from the left sidebar. Just click **Create Agent** to add one to an existing project.
 
@@ -168,7 +204,7 @@ You may even want to create Agents for existing projects that started with manua
   ![2026 07 31 13 45 05](/images/2026-07-31_13-45-05.png "2026 07 31 13 45 05")
 </Frame>
 
-**Want more help?** Learn more about [reviewing leads](https://docs.juicebox.ai/juicebox-agents#reviewing-leads) and [recalibrating Agents](https://docs.juicebox.ai/juicebox-agents#recalibrating-an-agent).
+<br />**Want more help?** Learn more about [reviewing leads](https://docs.juicebox.ai/juicebox-agents#reviewing-leads), [recalibrating Agents](https://docs.juicebox.ai/juicebox-agents#recalibrating-an-agent), or the [Knowledge Vault](https://docs.juicebox.ai/knowledge-vault).
 
 ## What’s next?
 
