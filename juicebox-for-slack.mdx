@@ -113,6 +113,24 @@ Manage profiles and follow-up straight from Slack:
 - Create a **reminder or task** and assign it to a teammate in the channel — the assignee is tagged in Slack, and the task and note live in Juicebox
 - Share a **LinkedIn URL** and add it straight to a project shortlist
 
+### Add collaborators and check project sharing
+
+Ask `@Juicebox` to manage who can access a project without opening Juicebox. A private project is visible only to its owner and collaborators, so adding someone as a collaborator is how you give them access from Slack.
+
+- **Add collaborators** — name one or more teammates to add them as collaborators on a project, including a project with an Agent. Name the project by its title or Juicebox project URL, or omit it to use the channel's connected project. Juicebox resolves teammate names the same way it does for task assignments, so first names usually work. If a name matches more than one teammate or no one, Juicebox asks you to clarify instead of guessing. Each newly added teammate receives the standard collaborator-added notification, and teammates who already have access are reported as already collaborators rather than re-added.
+- **Add collaborators while creating an Agent** — when you ask Juicebox to create an Agent from Slack, name teammates in the same request (for example, "and add [Teammate] so they can review leads"). Juicebox adds them as collaborators on the new Agent's project as part of creation, so they get access to the private project immediately.
+- **See who can access a project** — ask who can see a project, and Juicebox answers with its visibility (private, meaning owner and collaborators only, or visible to the whole organization), its owner, and its named collaborators.
+
+Example prompts:
+
+```text
+@juicebox, add Justice and Luis as collaborators on [Project].
+@juicebox, create an Agent for [role brief] and add [Teammate] so they can review leads.
+@juicebox, who can see [Project]?
+```
+
+For how project visibility and collaborators work in Juicebox, see [Project Collaborators](/projects#project-collaborators).
+
 ### Work with saved searches from Slack
 
 Ask `@Juicebox` to browse, review, create, or edit the saved searches inside a project without leaving Slack. These tools operate on ordinary saved searches; Agent configuration and recalibration stay on the Agent tools.
@@ -213,6 +231,8 @@ If they're already linked, `@Juicebox account` confirms who they're connected as
 | Shortlist add | `@juicebox, add this LinkedIn profile to the shortlist for [Project].` |
 | Pipeline health | `@juicebox, what is the current health of [Project]?` |
 | Task | `@juicebox, assign [Teammate] a task to follow up with [Profile] by Friday.` |
+| Add collaborators | `@juicebox, add [Teammate] as a collaborator on [Project].` |
+| Project sharing | `@juicebox, who can see [Project]?` |
 | List saved searches | `@juicebox, list saved searches in [Project].` |
 | Inspect a saved search | `@juicebox, show me the filters on the "[Search title]" search in [Project].` |
 | Create a saved search | `@juicebox, create a saved search in [Project] for [role brief or JD].` |
