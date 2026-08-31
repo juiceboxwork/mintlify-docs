@@ -89,7 +89,7 @@ If an export fails, Juicebox shows the specific reason in the notification rathe
 
 **Results report**
 
-Each ATS export produces a downloadable results report (CSV) listing every profile with its **Result**, plus a **Reason**, **ATS Response**, and **Error Code** column for any profile that failed. The **ATS Response** column quotes your ATS’s own message, which is useful when contacting support. Profiles your ATS reports as duplicates are marked “Duplicate” and count as successful, since the candidate is already in your ATS.
+Each ATS export produces a downloadable results report (CSV) listing every profile with its **Result**. For any profile that failed, the report also fills in a **Reason**, **ATS Response**, and **Error Code** column. The **ATS Response** column quotes your ATS’s own message, which is useful when contacting support. Profiles your ATS reports as duplicates are marked “Duplicate” and count as successful, since the candidate is already in your ATS.
 
 **Partial exports**
 
@@ -97,9 +97,9 @@ If some profiles fail while others succeed, Juicebox shows a single warning nami
 
 **Large exports**
 
-Exports of more than 50 profiles are sent in batches of 50 to stay within your ATS’s rate limits. A live progress notification shows how far along the export is (e.g. “Exporting to Greenhouse: 150 of 180”).
+Juicebox sends exports of more than 50 profiles in batches of 50 to stay within your ATS’s rate limits. A live progress notification shows how far along the export is (e.g. “Exporting to Greenhouse: 150 of 180”).
 
-Exports also have a time limit. If a large export reaches it, the export completes partially: profiles that were never sent are marked “Not sent” in the results report and are not charged, so you can re-export exactly those profiles without creating duplicates in your ATS.
+Exports also have a time limit. If a large export reaches it, the export completes partially. The results report marks profiles that were never sent as “Not sent” and Juicebox does not charge for them, so you can re-export exactly those profiles without creating duplicates in your ATS.
 
 ### Auto-Export
 
