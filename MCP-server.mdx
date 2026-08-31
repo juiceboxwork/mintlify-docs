@@ -7,7 +7,9 @@ The Juicebox Model Context Protocol (MCP) server lets AI models and agents acces
 
 ## **Permissions & access**
 
-The Juicebox MCP server is available on all Juicebox paid plans. Analytics and agent tools work on any paid plan; shortlist tools, `get_project`, and per-candidate identifying fields in `get_data` require the Business plan. The `answer_product_question` knowledge tool is open to any connected user regardless of plan or seat. `get_candidate_details` additionally spends export credits, metered per candidate against your organization's balance.
+The Juicebox MCP server requires a paid Juicebox plan. Free-plan orgs can't complete the OAuth flow; the consent screen surfaces a `free_plan_not_eligible` error prompting an upgrade. Any MCP token minted before a downgrade to free stops working immediately.
+
+Within paid plans, analytics and agent tools work on any tier; shortlist tools, `get_project`, `get_sequence_run_emails`, and per-candidate identifying fields in `get_data` require the Business plan. `answer_product_question` is open to any connected user on a paid plan regardless of seat or scope. `get_candidate_details` additionally spends export credits, metered per candidate against your organization's balance.
 
 ## **Authentication**
 
@@ -97,14 +99,18 @@ Shortlist tools are a Business-plan feature and only cover candidates a recruite
 
 - get\_project — Gives a summary of one project: its basic info plus how much is in it (number of saved searches and shortlisted candidates).
 
+**Sequence tool**
+
+- get\_sequence\_run\_emails — Reads one sequence run's outreach thread by `sequenceRunId`: outbound step emails plus any candidate replies, in chronological order. Business-plan only, and restricted to sequences you're allowed to see. Two modes: an index mode returns message metadata (subject, from, to, date, status, snippet) with no bodies, and a drill mode returns one message's full plain-text body with cursor-based chunking for long threads. Look up the `sequenceRunId` from `get_data`, which exposes it as a deep-link key on the `sequence_runs` table.
+
 **Knowledge tools**
 
-- answer\_product\_question — Answers general "how does Juicebox work" questions (objects, agents, statuses, capacity, settings, where features live) from Juicebox's canonical product guide. It is read-only and returns no live account data. Unlike the other tools, this one is available to every user connected under an MCP-enabled organization regardless of plan, seat, or OAuth scope. Use the analytics, project, or shortlist tools for live details on specific projects or candidates.
+- answer\_product\_question — Answers general "how does Juicebox work" questions (objects, agents, statuses, capacity, settings, where features live) from Juicebox's canonical product guide. It is read-only and returns no live account data. Available to any connected user on a paid plan regardless of seat or OAuth scope. Use the analytics, project, or shortlist tools for live details on specific projects or candidates.
 
 **Agent (Eren recruiting agent) tools**
 
 - get\_agent\_schema — Explains how recruiting agents work: what you need to create/configure one, the lifecycle (start, pause, resume, close, reopen), and current limits. You read this first before creating an agent.
 - create\_agent — Creates a new automated recruiting agent for a role (or fine-tunes an existing one). Requires a job title, location, and years of experience up front; if any are missing, the call returns immediately with the specific fields to collect. When enough is provided, `create_agent` kicks off calibration in the background and returns a `calibrating` status right away so your MCP client doesn't time out on the multi-second setup turn. Poll `check_agent_status` to find out when the agent starts sourcing. If the agent has already started sourcing, `create_agent` refuses to recalibrate and returns `already_sourcing` — finish the change in the Juicebox web app instead.
-- check\_agent\_status — Read-only status check for an agent kicked off by `create_agent`. Returns `busy` while calibration is running (keep polling), `sourcing` once the agent has started searching, or `action_required` when the agent is idle and needs input it can't collect over MCP (finish setup in the Juicebox web app). Use it after every `create_agent` call to know when the agent is live.
+- check\_agent\_status — Read-only status check for an agent kicked off by `create_agent`. Returns `busy` while calibration is running (keep polling), `sourcing` once the agent has started searching, or `action_required` when the agent is idle and needs input it can't collect over MCP (finish setup in the Juicebox web app). Use it after every `create_agent` call to know when the agent is live. Cap polling at roughly 10 calls per agent; if calibration is still running after that, hand off to the Juicebox web app. A hard limit of about 30 polls per hour per user and agent returns a terminal `poll_limit_reached` result, telling the caller to stop polling and open the agent in the app.
 - start\_sourcing — Tells an already-set-up agent to begin actively searching for candidates. Usually not needed since create\_agent starts automatically, but useful for restarting or retrying.
 - manage\_agent — Controls an existing agent's lifecycle: pause, resume, close, or reopen it.
