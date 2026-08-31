@@ -4,7 +4,7 @@ description: "Capture the hiring-manager intake for each project, record kickoff
 ---
 
 <Note>
-  Intakes are currently in early access behind the `project-intake` feature flag. If you don't see the Intake entry in your project sidebar, reach out to your Juicebox representative or [support@juicebox.work](mailto:support@juicebox.work) to have it enabled for your org.
+  Intakes are available on every paid plan. On the **Free plan**, the Intake entry point is visible but opens a paywall recommending the **Starter plan**. On the **Business plan**, an admin also has an org-wide switch to turn the whole feature on or off (see [Admin controls](#admin-controls)).
 </Note>
 
 ## Overview
@@ -230,7 +230,17 @@ If a single intake spans multiple meetings — for example, a kickoff call follo
 
 ## Hand off to a Juicebox agent
 
-Once Smart Notes is populated, you can launch a Juicebox agent for the project directly from the intake page. The agent is **seeded from the intake's Smart Notes**, so it starts with the same brief you just captured on the call — no need to retype must-haves or paste in a job description. See [Juicebox Agents](/juicebox-agents) for what the agent does next.
+Once Smart Notes is populated, you can launch a Juicebox agent for the project directly from the intake page. The agent is **seeded from the intake's Smart Notes**, so it starts with the same brief you just captured on the call — no need to retype must-haves or paste in a job description.
+
+The agent can also **re-read the intake at any point in the conversation**, not just at launch. Any edits you make to the intake after the agent is running — refined must-haves, new context added after a follow-up call — are picked up on the next turn, and agents created any other way on a project with an intake get the same access. See [Juicebox Agents](/juicebox-agents) for what the agent does next.
+
+## Notes actions menu
+
+The three-dot menu next to the intake title carries a few actions on the notes currently on screen:
+
+- **Download PDF.** Export the notes you're looking at as a PDF. If the read-only Smart Notes view is up, that's what's exported; if you're editing manual notes, the manual document is exported. Citation chips are stripped from the copy first. The action is skipped when the notes are semantically empty.
+- **Launch agent.** Available on notes-only intakes that never captured a meeting — a shortcut for the same hand-off the meeting card offers once Smart Notes is populated. Juicebox judges whether your manual notes are substantive enough to seed an agent; if key concepts are still missing, the item is disabled and names what's worth adding. Hidden while the notes pass is still running or an agent CTA is already showing on the meeting card.
+- **Link in Ashby** (or your connected ATS) — see [Link an intake to your ATS](#link-an-intake-to-your-ats).
 
 ## Link an intake to your ATS
 
@@ -250,7 +260,9 @@ When an intake is linked to an ATS job, Live Insights also uses that job's descr
 
 ## Admin controls
 
-On the **Business plan**, an admin can turn the whole intake feature on or off from **Account → Organization settings** with the **Meeting notetaker** toggle. When the switch is off:
+### Intake meeting notetaker toggle (Business plan)
+
+On the **Business plan**, an admin can turn the whole intake feature on or off from **Account → Organization settings** with the **Intake meeting notetaker** toggle. When the switch is off:
 
 - Every intake entry point across the app is hidden — the sidebar entry, the project configuration card, and the intake actions.
 - Any Juicebox notetaker bots currently sitting in a meeting are recalled, so disabling mid-call never strands a live recording.
@@ -258,11 +270,21 @@ On the **Business plan**, an admin can turn the whole intake feature on or off f
 
 Intakes are **on by default** for every plan. Only Business-plan admins see the toggle; other plans have no per-org opt-out. If your org later moves off the Business plan, the switch is cleared and intakes return to the default-on state.
 
+### Supplemental terms (Business plan)
+
+Business-plan orgs must accept a short set of **supplemental intake terms** before capture can be used. Any admin sees a one-time, non-dismissable dialog on the intake page with two options:
+
+- **Accept.** Turns the Intake meeting notetaker toggle back on for the whole org.
+- **Decline.** The toggle stays off. It can only be turned back on by accepting the terms — flipping the setting won't bypass the prompt.
+
+Once any admin accepts, the org is done — no per-user acceptance is needed. New Business orgs and every non-Business plan carry no prompt.
+
 ## Requirements
 
 To use intakes and the notetaker:
 
-- The `project-intake` early-access flag must be enabled for your org, and the org-wide **Meeting notetaker** toggle (Business plan) must be on.
+- Intakes are available on the **Starter plan** and above. Free-plan users see the Intake entry point but hit an upgrade prompt.
+- On the **Business plan**, an admin must accept the supplemental intake terms, and the org-wide **Intake meeting notetaker** toggle must be on.
 - To create an intake for a project, you must be the **project owner**.
 - To send the notetaker to an upcoming or suggested meeting, you need a connected Google or Outlook calendar. If you haven't connected one yet, the intake page shows a lightweight **Connect calendar** prompt that lets you connect just the calendar without a full email integration. Full [Email Integrations](/email-integrations) still work if you already have one.
 - Allow microphone permissions in your browser on the intake page if you want to use browser-side transcription features.
