@@ -120,6 +120,26 @@ To automatically stop sequences and archive any pending tasks from this mailbox 
 
 ![Screenshot 2026-04-14 at 5.01.57 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/email-integrations/3fba3cf2-4619-46ec-a7b8-a07ee17513ca.png)
 
+## Disconnecting a Mailbox
+
+You can disconnect a mailbox at any time from the **Integrations** tab. Disconnecting immediately stops all sending from that address and disconnects any associated aliases.
+
+### What gets cancelled
+
+Before you confirm, Juicebox lists every sequence with in-progress runs sent from that mailbox, along with the number of runs in each. Confirming the disconnect cancels all of those runs immediately. This includes **paused** runs, not just active ones.
+
+Cancelled runs are recorded with a **Cancelled (email disconnected)** status, which counts toward the sequence's cancelled totals. Contacts from cancelled runs are no longer treated as sequenced, so they become visible in your organization's searches again.
+
+<Warning>
+  Reconnecting the mailbox later will **not** undo the cancellation. A reconnect creates a new mailbox connection, so cancelled sequences stay cancelled and any sequence that used the old mailbox must be updated to send from a new one.
+</Warning>
+
+If Juicebox cannot check which sequences a disconnect would cancel, it blocks the confirmation rather than proceeding without showing you what would be lost.
+
+### Sequences that lost their sender
+
+If you try to add candidates to a sequence whose sender mailbox has been removed, Juicebox will ask you to open the sequence and choose a different sender. Reconnecting the removed mailbox will not restore the sequence.
+
 ## Admin Email Settings
 
 Manage email settings for your entire organization from **Settings \> Organization** with your Juicebox account.
