@@ -33,7 +33,8 @@
               "welcome-kit-admins",
               "project-walkthrough",
               "manage-account",
-              "all-about-credits"
+              "all-about-credits",
+              "hire-for-good"
             ]
           },
           {
@@ -213,7 +214,6 @@
             "pages": [
               "help/faq/free-trial-limits",
               "help/faq/more-export-credits",
-              "hire-for-good",
               "help/faq/ev-charger-support"
             ]
           }
