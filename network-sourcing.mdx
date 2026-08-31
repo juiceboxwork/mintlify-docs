@@ -147,6 +147,30 @@ From there, select Create search from overlaps or Create search from connections
 
 ![Screenshot 2026-04-23 at 4.07.06 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/network-sourcing/Screenshot_2026-04-23_at_4-07-06_PM.png)
 
+#### **5. Download a network as CSV**
+
+When you open an employee's connections or overlaps sidebar from the Network page, a **Download** icon appears next to the count. Selecting it exports the full list to CSV without paging through the UI.
+
+- Each export includes up to 10,000 rows. If the sidebar has more, Juicebox downloads the first 10,000 and surfaces a snackbar noting the truncation count.
+- Email and phone are included only when they were already revealed for that profile or manually added to it. The download does not consume contact credits or trigger new lookups.
+
+**Connections CSV**
+
+The Connections CSV matches LinkedIn's `Connections.csv` header format, so you can re-upload the file for another employee without editing it. Columns:
+
+`First Name`, `Last Name`, `URL`, `Email Address`, `Phone Number`, `Company`, `Position`
+
+**Overlaps CSV**
+
+The Overlaps CSV adds two columns that summarize why Juicebox thinks the two people know each other:
+
+- **Overlap Strength**: a label of High, Medium, or Low, derived from the same score used on the profile card.
+- **How they overlap**: a plain-language description built from pairwise company and school date windows between the employee and the candidate. Juicebox excludes your own organization's company so the list focuses on outside overlaps.
+
+Full column list: `First name`, `Last name`, `Location`, `LinkedIn`, `Email`, `Phone Number`, `Current Title`, `Current Org Name`, `Current Org Website`, `Overlap Strength`, `How they overlap`.
+
+For a broader overview of export methods across Juicebox, see [Exports](/exports).
+
 ## Use network snippets to personalize outreach
 
 When a candidate shares a connection, employer, or school with one of your employees, Juicebox will automatically generate a personalized snippet you can include in your sequence emails.
