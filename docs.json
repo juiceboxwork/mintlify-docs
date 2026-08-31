@@ -33,7 +33,8 @@
               "welcome-kit-admins",
               "project-walkthrough",
               "manage-account",
-              "all-about-credits"
+              "all-about-credits",
+              "hire-for-good"
             ]
           },
           {
@@ -114,8 +115,7 @@
               "hiring-managers",
               "data-sources",
               "reporting-stale-profiles",
-              "dnc",
-              "hire-for-good"
+              "dnc"
             ]
           },
           {
