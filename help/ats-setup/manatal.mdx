@@ -1,0 +1,127 @@
+---
+title: "Manatal Integration Set-up"
+sidebarTitle: "Manatal"
+description: "Enable the two-way integration between Manatal and Juicebox."
+---
+
+## About the integration
+
+The Manatal and Juicebox integration is designed to seamlessly connect both systems in a two-way sync. You can use the integration for three use cases:
+
+1. **Import Project from ATS**: Import a job description from Manatal into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
+2. **Export Profiles to ATS**: Save profiles directly into Manatal, including contact details, current company and job, profile URLs, and more. On some plans, this can be customized further based on your preferred fields. Juicebox also has the ability to auto-export to your ATS, including exporting all shortlisted profiles or exporting only interested profiles.
+3. **Import Candidates**: View profiles already in Manatal within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Manatal integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Manatal jobs and can select the corresponding option.
+
+### Export profiles to Manatal
+
+Follow the regular [export](/exports) steps and select **Export to Manatal** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Manatal account.
+
+### View profiles already in Manatal
+
+Juicebox will tag profiles that already exist in Manatal. You will see the last modified date, as well as the option to view the profile directly in Manatal by clicking the **View in ATS** button.
+
+## Before you start
+
+- You need the **Admin** user role in Manatal. Your Manatal administrator can manage your user role.
+- The Open API feature required for this guide is available and enabled by default on the Manatal **Enterprise Plus** plan.
+
+Log in to Manatal and check that you see the **Administration** tab in the side menu. If you cannot see this tab, ask your Manatal account administrator to take over the setup process or change your user role to **Admin**. Without this, the setup process cannot be completed.
+
+<Frame>
+  ![Administration tab in the Manatal side menu](/images/help/ats-setup/manatal-1.png)
+</Frame>
+
+## Enable API access
+
+1. Log in to Manatal and click the **Administration** tab in the side menu.
+2. Scroll down if necessary and click **Manage features**.
+
+   <Frame>
+     ![Manage features on the Administration page](/images/help/ats-setup/manatal-2.png)
+   </Frame>
+
+3. Scroll down again if needed and click **Open API**.
+
+   <Frame>
+     ![Open API under Manage features](/images/help/ats-setup/manatal-3.png)
+   </Frame>
+
+4. If you see **Open API is not yet active for your account**, click **Contact our support**.
+
+   <Frame>
+     ![Open API not yet active message](/images/help/ats-setup/manatal-4.png)
+   </Frame>
+
+## Generate your API token
+
+1. Go to **Administration** > **Manage features** > **Open API**.
+2. Click **Generate new token**.
+
+   <Frame>
+     ![Generate new token button](/images/help/ats-setup/manatal-5.png)
+   </Frame>
+
+3. Copy the API token shown below **Active API tokens**, then paste it into the connection pop-up.
+
+   <Frame>
+     ![Copying the API token under Active API tokens](/images/help/ats-setup/manatal-6.png)
+   </Frame>
+
+## Obtain the client slug
+
+1. Click the **Administration** tab in the side menu, then click **Manage your career page**.
+
+   <Frame>
+     ![Manage your career page on the Administration page](/images/help/ats-setup/manatal-7.png)
+   </Frame>
+
+2. Toggle the switch next to **Enable Career Page**.
+
+   <Frame>
+     ![Enable Career Page toggle](/images/help/ats-setup/manatal-8.png)
+   </Frame>
+
+3. Click the **Career Page Settings** tab.
+
+   <Frame>
+     ![Career Page Settings tab](/images/help/ats-setup/manatal-9.png)
+   </Frame>
+
+4. Click **General**.
+
+   <Frame>
+     ![General section in Career Page Settings](/images/help/ats-setup/manatal-10.png)
+   </Frame>
+
+5. Click **Career Page URL**.
+
+   <Frame>
+     ![Career Page URL setting](/images/help/ats-setup/manatal-11.png)
+   </Frame>
+
+6. Copy the part after the `https://www.careers-page.com/` prefix, and paste it into the connection pop-up.
+
+   <Frame>
+     ![Copying the client slug from the career page URL](/images/help/ats-setup/manatal-12.png)
+   </Frame>
+
+## Connect Manatal to Juicebox
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Manatal** and click **Activate**. You can also use the search bar at the top.
+3. Enter the API token and client slug from the steps above in the connection pop-up.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Manatal and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Manatal.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

@@ -1,0 +1,127 @@
+---
+title: "Gem ATS Integration Set-up"
+sidebarTitle: "Gem ATS"
+description: "Enable the two-way integration between Gem ATS and Juicebox."
+---
+
+## About the integration
+
+The Gem ATS and Juicebox integration is designed to seamlessly connect both systems in a two-way sync. You can use the integration for three use cases:
+
+1. **Import Project from ATS**: Import a job description from Gem into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
+2. **Export Profiles to ATS**: Save profiles directly into Gem, including contact details, current company and job, profile URLs, and more. On some plans, this can be customized further based on your preferred fields. Juicebox also has the ability to auto-export to your ATS, including exporting all shortlisted profiles or exporting only interested profiles.
+3. **Import Candidates**: View profiles already in Gem within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Gem integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Gem jobs and can select the corresponding option.
+
+### Export profiles to Gem
+
+Follow the regular [export](/exports) steps and select **Export to Gem** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Gem account.
+
+### View profiles already in Gem
+
+Juicebox will tag profiles that already exist in Gem. You will see the last modified date, as well as the option to view the profile directly in Gem by clicking the **View in ATS** button.
+
+## Connect Gem to Juicebox
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Gem** and click **Activate**. You can also use the search bar at the top.
+3. In Gem, click on your profile in the bottom left corner and go to **Admin Settings**.
+
+   <Frame>
+     ![Admin Settings in the Gem profile menu](/images/help/ats-setup/gem-1.png)
+   </Frame>
+
+4. Go to the **Integrations** tab, scroll down to **Third party applications** and click **Add integration**.
+
+   <Frame>
+     ![Add integration under Third party applications](/images/help/ats-setup/gem-2.png)
+   </Frame>
+
+5. Select the company that you want to integrate with and click **Add integration**.
+
+   <Frame>
+     ![Selecting the company to integrate with](/images/help/ats-setup/gem-3.png)
+   </Frame>
+
+6. Copy the **Shareable access key** and paste it into the connection pop-up.
+
+   <Frame>
+     ![Copying the shareable access key in Gem](/images/help/ats-setup/gem-4.png)
+   </Frame>
+
+   <Frame>
+     ![Pasting the access key into the connection pop-up](/images/help/ats-setup/gem-5.png)
+   </Frame>
+
+## Add a new source
+
+This step only needs to be completed if it is shown in your connection pop-up.
+
+1. In Gem, click on your profile in the bottom left corner and go to **Admin Settings**.
+2. Go to the **Gem ATS** tab, click **Applications** and expand the **Sources** list. Then click **New source**.
+
+   <Frame>
+     ![New source under Applications in the Gem ATS tab](/images/help/ats-setup/gem-6.png)
+   </Frame>
+
+3. Copy the **Source name** from the connection pop-up.
+
+   <Frame>
+     ![Source name shown in the connection pop-up](/images/help/ats-setup/gem-7.png)
+   </Frame>
+
+4. Paste it into Gem and select **Other** as the source type. Then click **Save**.
+
+   <Frame>
+     ![Creating the source in Gem with type Other](/images/help/ats-setup/gem-8.png)
+   </Frame>
+
+<Note>
+  It might take 1-2 minutes for the source to appear in the list. Refresh the page until you see it.
+</Note>
+
+## Tracking URL
+
+This step only needs to be completed if it is shown in your connection pop-up.
+
+1. In Gem, click on your profile in the bottom left corner and go to **Admin Settings**.
+2. Go to the **Gem ATS** tab, click **Job boards & posts** and expand the **Tracking link** section. Then click **Create tracking link**.
+
+   <Frame>
+     ![Create tracking link under Job boards & posts](/images/help/ats-setup/gem-9.png)
+   </Frame>
+
+3. Select the same source you created above and click **Create link**.
+
+   <Frame>
+     ![Selecting the source and creating the link](/images/help/ats-setup/gem-10.png)
+   </Frame>
+
+4. Copy the link and paste it into the connection pop-up.
+
+   <Frame>
+     ![Pasting the tracking link into the connection pop-up](/images/help/ats-setup/gem-11.png)
+   </Frame>
+
+## Choose a user for actions
+
+Every action executed in Gem, like adding a comment, uploading a CV, or moving an application to another stage, is attributed to a user. Select the responsible user in the connection pop-up. Optionally, you can create a new user in Gem just for this purpose.
+
+<Frame>
+  ![Selecting the user for actions in the connection pop-up](/images/help/ats-setup/gem-12.png)
+</Frame>
+
+After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Gem and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Gem.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).
