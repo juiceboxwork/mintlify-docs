@@ -71,6 +71,36 @@ _Export profiles from the profile view directly to your previous ATS project._
 
 _Export profiles in bulk directly to your previous ATS project._
 
+### Export Results and Troubleshooting
+
+Every ATS export reports its outcome per profile, so you can see exactly which candidates landed in your ATS and why any didn’t.
+
+**Failure reasons**
+
+If an export fails, Juicebox shows the specific reason in the notification rather than a generic error. Common reasons include:
+
+- Your ATS connection has expired and needs to be reconnected.
+- Your ATS connection isn’t permitted to create the record type (e.g. candidates or applications).
+- The selected job has been closed or archived, or the selected stage is no longer available.
+- Your ATS is rate-limiting requests. The message includes how long to wait before retrying.
+- Your ATS rejected the profile’s details (e.g. an invalid email address), quoted from the ATS response.
+- The profile has no email address on file.
+- Your ATS is temporarily unavailable.
+
+**Results report**
+
+Each ATS export produces a downloadable results report (CSV) listing every profile with its **Result**. For any profile that failed, the report also fills in a **Reason**, **ATS Response**, and **Error Code** column. The **ATS Response** column quotes your ATS’s own message, which is useful when contacting support. Profiles your ATS reports as duplicates are marked “Duplicate” and count as successful, since the candidate is already in your ATS.
+
+**Partial exports**
+
+If some profiles fail while others succeed, Juicebox shows a single warning naming how many profiles didn’t make it, along with the shared reason. Only successfully exported profiles are marked as in your ATS and charged export credits. Download the results report to see which profiles are missing, then re-export just those.
+
+**Large exports**
+
+Juicebox sends exports of more than 50 profiles in batches of 50 to stay within your ATS’s rate limits. A live progress notification shows how far along the export is (e.g. “Exporting to Greenhouse: 150 of 180”).
+
+Exports also have a time limit. If a large export reaches it, the export completes partially. The results report marks profiles that were never sent as “Not sent” and Juicebox does not charge for them, so you can re-export exactly those profiles without creating duplicates in your ATS.
+
 ### Auto-Export
 
 Auto-Export to ATS lets you seamlessly connect your Juicebox projects or AI Agents directly to your ATS jobs or projects.
