@@ -17,6 +17,10 @@ Juicebox for Slack lets you:
 
 ## Set up in three steps
 
+<Note>
+  A paid Slack plan is required to use the Juicebox AI agent in the Slack app container. All other Juicebox for Slack features — channel notifications, lead review carousels, and `@Juicebox` mentions in channels and threads — work on free Slack plans.
+</Note>
+
 <Steps>
   <Step title="Connect Slack to Juicebox">
     Navigate to the **Integrations** tab and connect the Slack integration to Juicebox. This creates a single workspace connection.
@@ -68,25 +72,29 @@ Tag `@Juicebox` in your Slack Chat to get quick answers without navigating dashb
 - Pipeline, project, Agent, or sequence health, answered in the thread
 - What happened to a profile after it was approved
 
+<Note>
+  Juicebox uses LLMs that have the potential to generate inaccurate results.
+</Note>
+
 #### What Slack analytics can answer on your plan
 
 Slack mirrors the same analytics access rules as the Juicebox web app, so what `@Juicebox` will answer depends on your plan and role.
 
-**Open on every paid plan (any Juicebox member in the channel can ask):**
+**Open on every paid Juicebox plan (any Juicebox member in the channel can ask):**
 
 - A project's pipeline by stage, candidate lists, and shortlist activity
 - Agent health listings, such as which Agents are paused or out of leads
 - Project-scoped counts, such as how many candidates were shortlisted for a specific project
 - All outreach analytics, including emails sent per teammate and sequence performance
 
-**Business plan and analytics access required:**
+**Juicebox Business plan and analytics access required:**
 
 - Searches run per recruiter and profiles viewed
 - Per-teammate leaderboards, such as who shortlisted the most candidates
 - Cross-project shortlist rollups, such as shortlisted candidates per project without naming a project
 - Org-wide project and Agent counts, such as how many Agents you have
 
-To ask these usage questions in Slack, you need a Business plan and one of the following roles: admin, read-only admin, or the `analyticsAdmins` role granted per member from **Settings → Team members**.
+To ask these usage questions in Slack, you need a Juicebox Business plan and one of the following roles: admin, read-only admin, or the `analyticsAdmins` role granted per member from **Settings → Team members**.
 
 ### Manage notifications from Slack
 
@@ -280,6 +288,12 @@ When you connect Slack, Juicebox requests the following scopes:
     Juicebox for Slack surfaces candidate data that already lives in your Juicebox organization. It does not collect candidate data from Slack, and it does not use messages in your Slack workspace to build the Juicebox candidate database.
 
     For details on how Juicebox handles data, see the [Juicebox privacy policy](https://juicebox.ai/privacy-policy) and the [Data Sources](/data-sources) page.
+  </Accordion>
+
+  <Accordion title="Can Juicebox's answers in Slack be wrong?">
+    Juicebox uses LLMs that have the potential to generate inaccurate results.
+
+    Slack cards and notifications link back to the profile, project, or Agent in Juicebox. Open the link to confirm anything you plan to act on.
   </Accordion>
 
   <Accordion title="Slack notifications aren't showing up in my channel after installing this integration">
