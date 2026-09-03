@@ -1,0 +1,98 @@
+---
+title: "Odoo Integration Set-up"
+sidebarTitle: "Odoo"
+description: "Enable the two-way integration between Odoo and Juicebox."
+---
+
+## About the integration
+
+The Odoo and Juicebox integration is designed to seamlessly connect both systems in a two-way sync. You can use the integration for three use cases:
+
+1. **Import Project from ATS**: Import a job description from Odoo into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
+2. **Export Profiles to ATS**: Save profiles directly into Odoo, including contact details, current company and job, profile URLs, and more. On some plans, this can be customized further based on your preferred fields. Juicebox also has the ability to auto-export to your ATS, including exporting all shortlisted profiles or exporting only interested profiles.
+3. **Import Candidates**: View profiles already in Odoo within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Odoo integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Odoo jobs and can select the corresponding option.
+
+### Export profiles to Odoo
+
+Follow the regular [export](/exports) steps and select **Export to Odoo** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Odoo account.
+
+### View profiles already in Odoo
+
+Juicebox will tag profiles that already exist in Odoo. You will see the last modified date, as well as the option to view the profile directly in Odoo by clicking the **View in ATS** button.
+
+## Create an API key in Odoo
+
+1. Navigate to your Odoo main menu.
+
+   <Frame>
+     ![Odoo main menu](/images/help/ats-setup/odoo-1.png)
+   </Frame>
+
+2. Click the menu in the top right corner.
+
+   <Frame>
+     ![Menu in the top right corner of Odoo](/images/help/ats-setup/odoo-2.png)
+   </Frame>
+
+3. Click **My Preferences**.
+
+   <Frame>
+     ![My Preferences option in the Odoo menu](/images/help/ats-setup/odoo-3.png)
+   </Frame>
+
+4. On the preferences page, click the **Security** tab.
+
+   <Frame>
+     ![Security tab on the Odoo preferences page](/images/help/ats-setup/odoo-4.png)
+   </Frame>
+
+5. Under API Keys, click **Add API Key**.
+
+   <Frame>
+     ![Add API Key button under API Keys](/images/help/ats-setup/odoo-5.png)
+   </Frame>
+
+6. Give your API key a memorable name.
+
+   <Frame>
+     ![Naming the new API key](/images/help/ats-setup/odoo-6.png)
+   </Frame>
+
+7. Under "Give a duration for the key's validity", select **Persistent Key**.
+
+   <Frame>
+     ![Selecting Persistent Key for the key validity](/images/help/ats-setup/odoo-7.png)
+   </Frame>
+
+8. Click **Generate key**.
+
+   <Frame>
+     ![Generate key button](/images/help/ats-setup/odoo-8.png)
+   </Frame>
+
+9. Copy the API key and keep it somewhere safe. You paste it into the connection pop-up in the next section.
+
+   <Frame>
+     ![Copying the generated API key](/images/help/ats-setup/odoo-9.png)
+   </Frame>
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Odoo** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, pasting your API key when prompted.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Odoo and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Odoo.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

@@ -198,7 +198,20 @@
               "help/ats-setup/homerun",
               "help/ats-setup/jobadder",
               "help/ats-setup/loxo",
-              "help/ats-setup/manatal"
+              "help/ats-setup/manatal",
+              "help/ats-setup/odoo",
+              "help/ats-setup/personio",
+              "help/ats-setup/spott",
+              "help/ats-setup/recruitee",
+              "help/ats-setup/workable",
+              "help/ats-setup/breezy-hr",
+              "help/ats-setup/eploy",
+              "help/ats-setup/fountain",
+              "help/ats-setup/jazzhr",
+              "help/ats-setup/pinpoint",
+              "help/ats-setup/sap-successfactors",
+              "help/ats-setup/spark-hire-recruit",
+              "help/ats-setup/ukg-pro"
             ]
           },
           {

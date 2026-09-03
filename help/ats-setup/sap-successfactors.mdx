@@ -1,0 +1,345 @@
+---
+title: "SAP SuccessFactors Integration Set-up"
+sidebarTitle: "SAP SuccessFactors"
+description: "Enable the two-way integration between SAP SuccessFactors and Juicebox."
+---
+
+## About the integration
+
+The SAP SuccessFactors and Juicebox integration is designed to seamlessly connect both systems in a two-way sync. You can use the integration for three use cases:
+
+1. **Import Project from ATS**: Import a job description from SAP SuccessFactors into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
+2. **Export Profiles to ATS**: Save profiles directly into SAP SuccessFactors, including contact details, current company and job, profile URLs, and more. On some plans, this can be customized further based on your preferred fields. Juicebox also has the ability to auto-export to your ATS, including exporting all shortlisted profiles or exporting only interested profiles.
+3. **Import Candidates**: View profiles already in SAP SuccessFactors within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the SAP SuccessFactors integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your SAP SuccessFactors jobs and can select the corresponding option.
+
+### Export profiles to SAP SuccessFactors
+
+Follow the regular [export](/exports) steps and select **Export to SAP SuccessFactors** on either an individual profile or a bulk export. After exporting, you will see the profile created in your SAP SuccessFactors account.
+
+### View profiles already in SAP SuccessFactors
+
+Juicebox will tag profiles that already exist in SAP SuccessFactors. You will see the last modified date, as well as the option to view the profile directly in SAP SuccessFactors by clicking the **View in ATS** button.
+
+## Before you start
+
+- You must be an **Admin** of your SAP SuccessFactors instance. If you are not an admin, you won't be able to search for and access the configuration pages described below. Alternatively, contact your SuccessFactors admin and have them take over the setup process.
+- The **OData v2 API** must be available and enabled on your SuccessFactors instance. It is enabled by default, so this is usually not something to worry about.
+
+The overall setup takes about 30 minutes and has three main steps:
+
+1. Create a new user and a permission group for that user.
+2. Create a new permission role and assign it to the newly created permission group.
+3. Generate the API credentials for that permission role.
+
+## Find your API domain
+
+Your API domain depends on which region you are based in. To find it:
+
+1. Open the [SuccessFactors API URLs list](https://help.sap.com/docs/SAP_SUCCESSFACTORS_PLATFORM/2abbb39286994389bb0f1f4418773a7c/af2b8d5437494b12be88fe374eba75b6.html?locale=en-US#api-servers).
+2. Filter for production environments, unless you're trying to connect a preview instance.
+
+   <Frame>
+     ![Filtering the API URLs list for production environments](/images/help/ats-setup/sap-successfactors-1.png)
+   </Frame>
+
+3. Once the filter is applied, find your location and select the API domain. If you are based in Germany, for example, your production URL would be `https://api012.successfactors.eu/`.
+
+   <Frame>
+     ![Selecting the API domain for your location](/images/help/ats-setup/sap-successfactors-2.png)
+   </Frame>
+
+<Tip>
+  The resulting API server URL often looks similar to the SuccessFactors domain you log in on. The API for `pmsalesdemo8.successfactors.com`, for example, is located at `apisalesdemo8.successfactors.com`. If you are unsure which data center to use, contact your SAP SuccessFactors representative.
+</Tip>
+
+## Find your Company ID
+
+1. Click the **profile picture in the top right**, then click **Show version information**.
+
+   <Frame>
+     ![Show version information option under the profile picture](/images/help/ats-setup/sap-successfactors-3.png)
+   </Frame>
+
+2. Copy the value right next to **Company ID**.
+
+   <Frame>
+     ![Company ID in the version information dialog](/images/help/ats-setup/sap-successfactors-4.png)
+   </Frame>
+
+## Create a new user
+
+1. In the admin center, go to the search console, type in "Import Employee Data", and click the action that appears.
+
+   <Frame>
+     ![Searching for Import Employee Data](/images/help/ats-setup/sap-successfactors-5.png)
+   </Frame>
+
+2. Click **Import data**, then select **Download Template**.
+
+   <Frame>
+     ![Download Template option](/images/help/ats-setup/sap-successfactors-6.png)
+   </Frame>
+
+3. Click the field next to **Select an entity**, then click **Basic Import**.
+
+   <Frame>
+     ![Selecting Basic Import as the entity](/images/help/ats-setup/sap-successfactors-7.png)
+   </Frame>
+
+4. Click the **Generate Template** button.
+
+   <Frame>
+     ![Generate Template button](/images/help/ats-setup/sap-successfactors-8.png)
+   </Frame>
+
+5. You receive a `.csv` file to download. It likely contains two rows. Add an additional row and fill out at least these fields:
+   - **Status**: active
+   - **User ID**: SFAPI_INTEGRATION (for example; any value possible)
+   - **Username**: SFAPI_INTEGRATION (for example; any value possible)
+   - **First name**: API (for example; any value possible)
+   - **Last name**: Integration (for example; any value possible)
+   - **Email**: `integration+user@example.com` (any value possible; doesn't have to be a valid email)
+   - **Manager**: NO_MANAGER
+   - **HR**: NO_HR
+   - **Default locale**: en_US
+
+   <Frame>
+     ![Example CSV with the integration user row](/images/help/ats-setup/sap-successfactors-9.png)
+   </Frame>
+
+   Generate your own `.csv` template rather than reusing an example file, because your SuccessFactors instance is configured differently.
+
+6. Click **Import Data** to switch back.
+
+   <Frame>
+     ![Switching back to Import Data](/images/help/ats-setup/sap-successfactors-10.png)
+   </Frame>
+
+7. Click the field next to **Select an entity**, then click **Basic Import**.
+
+   <Frame>
+     ![Selecting Basic Import for the upload](/images/help/ats-setup/sap-successfactors-11.png)
+   </Frame>
+
+8. Click **Browse**, select your `.csv` file, then click the **Validate Import File Data** button.
+
+   <Frame>
+     ![Validate Import File Data button](/images/help/ats-setup/sap-successfactors-12.png)
+   </Frame>
+
+9. If you see the **Validation Successful** dialog, click the **Import** button.
+
+   <Frame>
+     ![Validation Successful dialog](/images/help/ats-setup/sap-successfactors-13.png)
+   </Frame>
+
+10. You should now see a success dialog.
+
+    <Frame>
+      ![Import success dialog](/images/help/ats-setup/sap-successfactors-14.png)
+    </Frame>
+
+11. Keep the `.csv` file open in the background; you need to reference it later. You can confirm the creation succeeded by searching for the employee name or username under the **People** section. The new user can take a few minutes to show up in the search.
+
+    <Frame>
+      ![New integration user visible in the People section](/images/help/ats-setup/sap-successfactors-15.png)
+    </Frame>
+
+## Create a permission group
+
+1. Go to your search bar, enter "Manage Permission Groups", and click the action.
+
+   <Frame>
+     ![Searching for Manage Permission Groups](/images/help/ats-setup/sap-successfactors-16.png)
+   </Frame>
+
+2. On the new page, click the **Create New** button.
+
+   <Frame>
+     ![Create New button on the permission groups page](/images/help/ats-setup/sap-successfactors-17.png)
+   </Frame>
+
+3. Give the group a **name** and click **Pick a category**. Select the category option **Username**.
+
+   <Frame>
+     ![Naming the group and picking the Username category](/images/help/ats-setup/sap-successfactors-18.png)
+   </Frame>
+
+4. Search for the user you created earlier by entering its username, tick the box next to it, and click **Done**.
+
+   <Frame>
+     ![Selecting the integration user for the group](/images/help/ats-setup/sap-successfactors-19.png)
+   </Frame>
+
+5. You should now see your user in the people pool. Click **Done**.
+
+   <Frame>
+     ![User shown in the people pool](/images/help/ats-setup/sap-successfactors-20.png)
+   </Frame>
+
+## Create a permission role
+
+1. Go to the search bar, enter "Manage Permission Roles", and click the action with the same name.
+
+   <Frame>
+     ![Searching for Manage Permission Roles](/images/help/ats-setup/sap-successfactors-21.png)
+   </Frame>
+
+2. On the new page, click **Create**.
+
+   <Frame>
+     ![Create button on the permission roles page](/images/help/ats-setup/sap-successfactors-22.png)
+   </Frame>
+
+3. Enter a **Name** for the permission role and click **Next**.
+
+   <Frame>
+     ![Naming the permission role](/images/help/ats-setup/sap-successfactors-23.png)
+   </Frame>
+
+4. Now assign the correct permissions to the role. The needed permissions are listed in the connection pop-up.
+
+   <Frame>
+     ![Example permissions listed in the connection flow](/images/help/ats-setup/sap-successfactors-24.png)
+   </Frame>
+
+   This is just an example. To see the permissions required for you, open the connection pop-up yourself.
+
+5. For each bullet, find the permission category in the sidebar. For example, for "Manage System Properties", find the corresponding permission group in the sidebar of the SuccessFactors UI. You can find these more easily by pressing **Ctrl + F** and pasting the permission name.
+
+   <Frame>
+     ![Finding the permission category in the sidebar](/images/help/ats-setup/sap-successfactors-25.png)
+   </Frame>
+
+   <Frame>
+     ![Permission category selected in the sidebar](/images/help/ats-setup/sap-successfactors-26.png)
+   </Frame>
+
+6. For each sub-bullet, check the matching permission in the category.
+
+   <Frame>
+     ![Checking the individual permissions](/images/help/ats-setup/sap-successfactors-27.png)
+   </Frame>
+
+   <Frame>
+     ![Permissions checked in the category](/images/help/ats-setup/sap-successfactors-28.png)
+   </Frame>
+
+7. When you have checked all necessary permissions, click **Next**. On the next page, click **Save**.
+
+   <Frame>
+     ![Saving the permission role](/images/help/ats-setup/sap-successfactors-29.png)
+   </Frame>
+
+8. In the new window, click **Yes**.
+
+   <Frame>
+     ![Confirmation window](/images/help/ats-setup/sap-successfactors-30.png)
+   </Frame>
+
+9. Add a **Name** to the role assignment and click **Next**.
+
+   <Frame>
+     ![Naming the role assignment](/images/help/ats-setup/sap-successfactors-31.png)
+   </Frame>
+
+10. In the **Grant Access To** tab, click **Select Groups**.
+
+    <Frame>
+      ![Select Groups in the Grant Access To tab](/images/help/ats-setup/sap-successfactors-32.png)
+    </Frame>
+
+11. Enter the name of your permission group, select it, and click **Select**.
+
+    <Frame>
+      ![Selecting the permission group](/images/help/ats-setup/sap-successfactors-33.png)
+    </Frame>
+
+12. You should now see your permission group. Click **Next** again.
+
+    <Frame>
+      ![Permission group listed in the assignment](/images/help/ats-setup/sap-successfactors-34.png)
+    </Frame>
+
+13. At last, click **Save**.
+
+    <Frame>
+      ![Saving the role assignment](/images/help/ats-setup/sap-successfactors-35.png)
+    </Frame>
+
+## Generate OAuth2 client credentials
+
+1. Go to your search bar, enter "Manage OAuth2 Client Applications", and click the action.
+
+   <Frame>
+     ![Searching for Manage OAuth2 Client Applications](/images/help/ats-setup/sap-successfactors-36.png)
+   </Frame>
+
+2. In the new window, click **Register Client Application**.
+
+   <Frame>
+     ![Register Client Application button](/images/help/ats-setup/sap-successfactors-37.png)
+   </Frame>
+
+3. Enter a **name** and a **valid URL** for the application (this can be any URL, as long as it starts with `https://`), check the **Bind to Users** checkbox, and click **OK**.
+
+   <Frame>
+     ![Registering the client application](/images/help/ats-setup/sap-successfactors-38.png)
+   </Frame>
+
+4. Enter the **User ID** of the user you created earlier.
+
+   <Frame>
+     ![Entering the User ID](/images/help/ats-setup/sap-successfactors-39.png)
+   </Frame>
+
+5. Do not click "Generate X.509 Certificate". Instead, **copy** the certificate from the connection pop-up.
+
+   <Frame>
+     ![Certificate provided in the connection flow](/images/help/ats-setup/sap-successfactors-40.png)
+   </Frame>
+
+6. Paste the certificate and click **Register**.
+
+   <Frame>
+     ![Pasting the certificate and registering](/images/help/ats-setup/sap-successfactors-41.png)
+   </Frame>
+
+7. Click **View** in the row at the very top.
+
+   <Frame>
+     ![View link on the registered application](/images/help/ats-setup/sap-successfactors-42.png)
+   </Frame>
+
+8. Get the API key.
+
+   <Frame>
+     ![API key in the application details](/images/help/ats-setup/sap-successfactors-43.png)
+   </Frame>
+
+9. Paste the API key into the connection pop-up and click **Set up integration**.
+
+   <Frame>
+     ![Completing the connection flow](/images/help/ats-setup/sap-successfactors-44.png)
+   </Frame>
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **SAP SuccessFactors** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, entering your API domain, Company ID, and API key from the sections above when prompted.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated SAP SuccessFactors and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and SAP SuccessFactors.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).
