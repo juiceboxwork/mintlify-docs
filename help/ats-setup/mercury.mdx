@@ -1,0 +1,71 @@
+---
+title: "Mercury Integration Set-up"
+sidebarTitle: "Mercury"
+description: "Enable the two-way integration between Mercury and Juicebox."
+---
+
+## About the integration
+
+The Mercury and Juicebox integration is designed to seamlessly connect both systems in a two-way sync. You can use the integration for three use cases:
+
+1. **Import Project from ATS**: Import a job description from Mercury into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
+2. **Export Profiles to ATS**: Save profiles directly into Mercury, including contact details, current company and job, profile URLs, and more. On some plans, this can be customized further based on your preferred fields. Juicebox also has the ability to auto-export to your ATS, including exporting all shortlisted profiles or exporting only interested profiles.
+3. **Import Candidates**: View profiles already in Mercury within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Mercury integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Mercury jobs and can select the corresponding option.
+
+### Export profiles to Mercury
+
+Follow the regular [export](/exports) steps and select **Export to Mercury** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Mercury account.
+
+### View profiles already in Mercury
+
+Juicebox will tag profiles that already exist in Mercury. You will see the last modified date, as well as the option to view the profile directly in Mercury by clicking the **View in ATS** button.
+
+## Get your tenant ID
+
+Before setting up this integration, contact your Mercury Customer Success Manager (CSM) to authorize API access. The CSM raises an internal request and, once approved, provides you with a **Tenant ID**.
+
+<Note>
+  Even if you already know your Tenant ID, the connection fails until Mercury has explicitly granted access.
+</Note>
+
+You can use this email template:
+
+> **Subject:** Mercury Tenant ID Request - [Your Company Name]
+>
+> Hi Mercury team,
+>
+> We are setting up an integration with our Mercury account. As part of this process, we need the Mercury Tenant ID.
+>
+> Could you please provide us with our Tenant ID and authorize this connection on your side so we can complete the setup?
+>
+> Thank you!
+>
+> Best regards,
+
+## Setting up the integration
+
+Before getting started, make sure that you have your **Tenant ID**.
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Mercury** and click **Activate**. You can also use the search bar at the top.
+3. Enter the **Tenant ID** and press **Set up integration**.
+
+   <Frame>
+     ![Entering the Tenant ID in the connection flow](/images/help/ats-setup/mercury-1.png)
+   </Frame>
+
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Mercury and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Mercury.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

@@ -1,0 +1,67 @@
+---
+title: "Recruit CRM Integration Set-up"
+sidebarTitle: "Recruit CRM"
+description: "Enable the two-way integration between Recruit CRM and Juicebox."
+---
+
+## About the integration
+
+The Recruit CRM and Juicebox integration is designed to seamlessly connect both systems in a two-way sync. You can use the integration for three use cases:
+
+1. **Import Project from ATS**: Import a job description from Recruit CRM into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
+2. **Export Profiles to ATS**: Save profiles directly into Recruit CRM, including contact details, current company and job, profile URLs, and more. On some plans, this can be customized further based on your preferred fields. Juicebox also has the ability to auto-export to your ATS, including exporting all shortlisted profiles or exporting only interested profiles.
+3. **Import Candidates**: View profiles already in Recruit CRM within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Recruit CRM integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Recruit CRM jobs and can select the corresponding option.
+
+### Export profiles to Recruit CRM
+
+Follow the regular [export](/exports) steps and select **Export to Recruit CRM** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Recruit CRM account.
+
+### View profiles already in Recruit CRM
+
+Juicebox will tag profiles that already exist in Recruit CRM. You will see the last modified date, as well as the option to view the profile directly in Recruit CRM by clicking the **View in ATS** button.
+
+## Before you start
+
+Only the account owner of the Recruit CRM instance can set up a connection.
+
+## Copy your API token
+
+1. Log in to Recruit CRM.
+2. Go to **Admin Settings**.
+3. Go to **API & Integrations**.
+4. Find the **API Token** section.
+5. Enable the API token if it is not enabled yet, and confirm the page shows **API Token Is Active**.
+6. Click **Copy** next to the API token.
+
+   <Frame>
+     ![Copying the API token in Recruit CRM](/images/help/ats-setup/recruit-crm-1.png)
+   </Frame>
+
+7. Paste the token into the connection pop-up.
+
+   <Frame>
+     ![Pasting the API token into the connection flow](/images/help/ats-setup/recruit-crm-2.png)
+   </Frame>
+
+8. Click **Set up Integration**.
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Recruit CRM** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, pasting your API token when prompted.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Recruit CRM and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Recruit CRM.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

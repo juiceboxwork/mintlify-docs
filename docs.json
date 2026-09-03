@@ -211,7 +211,17 @@
               "help/ats-setup/pinpoint",
               "help/ats-setup/sap-successfactors",
               "help/ats-setup/spark-hire-recruit",
-              "help/ats-setup/ukg-pro"
+              "help/ats-setup/ukg-pro",
+              "help/ats-setup/cornerstone-talentlink",
+              "help/ats-setup/dayforce",
+              "help/ats-setup/hr-works",
+              "help/ats-setup/jobdiva",
+              "help/ats-setup/mercury",
+              "help/ats-setup/oracle-recruiting-cloud",
+              "help/ats-setup/oracle-taleo",
+              "help/ats-setup/phenom",
+              "help/ats-setup/recruit-crm",
+              "help/ats-setup/sage-hr"
             ]
           },
           {

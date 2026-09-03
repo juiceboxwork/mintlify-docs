@@ -1,0 +1,256 @@
+---
+title: "Oracle Recruiting Cloud Integration Set-up"
+sidebarTitle: "Oracle Recruiting Cloud"
+description: "Enable the two-way integration between Oracle Recruiting Cloud and Juicebox."
+---
+
+## About the integration
+
+The Oracle Recruiting Cloud and Juicebox integration is designed to seamlessly connect both systems in a two-way sync. You can use the integration for three use cases:
+
+1. **Import Project from ATS**: Import a job description from Oracle Recruiting Cloud into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
+2. **Export Profiles to ATS**: Save profiles directly into Oracle Recruiting Cloud, including contact details, current company and job, profile URLs, and more. On some plans, this can be customized further based on your preferred fields. Juicebox also has the ability to auto-export to your ATS, including exporting all shortlisted profiles or exporting only interested profiles.
+3. **Import Candidates**: View profiles already in Oracle Recruiting Cloud within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Oracle Recruiting Cloud integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Oracle Recruiting Cloud jobs and can select the corresponding option.
+
+### Export profiles to Oracle Recruiting Cloud
+
+Follow the regular [export](/exports) steps and select **Export to Oracle Recruiting Cloud** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Oracle Recruiting Cloud account.
+
+### View profiles already in Oracle Recruiting Cloud
+
+Juicebox will tag profiles that already exist in Oracle Recruiting Cloud. You will see the last modified date, as well as the option to view the profile directly in Oracle Recruiting Cloud by clicking the **View in ATS** button.
+
+## Before you start
+
+To set up this integration, you must have the necessary permissions (**IT Security Manager**) to access the **Security Console**. The first steps below show how to reach the Security Console. If you don't have access, contact whoever has the necessary permissions in your company before continuing.
+
+<Note>
+  Your connection pop-up is personalized. The roles, privileges, and data security policies shown in your pop-up might differ from the ones shown in the screenshots below. Always use the values from your own connection pop-up.
+</Note>
+
+## Find your Oracle Recruiting Cloud address
+
+1. Log in to your Oracle Recruiting Cloud instance.
+2. Copy the value of the URL and paste it into the connection pop-up. The URL is cut to the right format automatically for your convenience.
+
+   <Frame>
+     ![Copying the instance URL](/images/help/ats-setup/oracle-recruiting-cloud-1.png)
+   </Frame>
+
+   <Frame>
+     ![Pasting the URL into the connection flow](/images/help/ats-setup/oracle-recruiting-cloud-2.png)
+   </Frame>
+
+## Create a new custom role for this integration
+
+1. Click the 3-bar menu in the top left of your Oracle Recruiting Cloud instance.
+
+   <Frame>
+     ![3-bar menu in the top left](/images/help/ats-setup/oracle-recruiting-cloud-3.png)
+   </Frame>
+
+2. Scroll down to **Tools**, open the menu, then go to **Security Console**. If you don't see the **Security Console** setting, you don't have the right permissions to complete the connection.
+
+   <Frame>
+     ![Security Console under Tools](/images/help/ats-setup/oracle-recruiting-cloud-4.png)
+   </Frame>
+
+3. In the Security Console, click **Create Role**.
+
+   <Frame>
+     ![Create Role button in the Security Console](/images/help/ats-setup/oracle-recruiting-cloud-5.png)
+   </Frame>
+
+4. Follow your enterprise's naming and code conventions for custom roles. You cannot change the code or delete the role after creation. For **Role Category**, select **HCM - Job Roles**.
+
+   <Frame>
+     ![Role details with HCM - Job Roles category](/images/help/ats-setup/oracle-recruiting-cloud-6.png)
+   </Frame>
+
+5. Click **Add Function Security Policy** and add the privileges shown in your connection pop-up.
+
+   <Frame>
+     ![Add Function Security Policy button](/images/help/ats-setup/oracle-recruiting-cloud-7.png)
+   </Frame>
+
+   <Frame>
+     ![Adding the privileges from the connection flow](/images/help/ats-setup/oracle-recruiting-cloud-8.png)
+   </Frame>
+
+6. Navigate to the **Role Hierarchy** step and add the roles shown in your connection pop-up.
+
+   <Frame>
+     ![Role Hierarchy step](/images/help/ats-setup/oracle-recruiting-cloud-9.png)
+   </Frame>
+
+   <Frame>
+     ![Adding the roles from the connection flow](/images/help/ats-setup/oracle-recruiting-cloud-10.png)
+   </Frame>
+
+7. Navigate to the **Summary** step and click **Save and Close**.
+
+   <Frame>
+     ![Save and Close on the Summary step](/images/help/ats-setup/oracle-recruiting-cloud-11.png)
+   </Frame>
+
+8. Wait for the custom role to be created. You can monitor the progress in the **Administration** tab of the **Security Console**.
+
+   <Frame>
+     ![Monitoring role creation in the Administration tab](/images/help/ats-setup/oracle-recruiting-cloud-12.png)
+   </Frame>
+
+## Assign a security profile to the custom role
+
+1. In the top right menu, click **Setup and Maintenance**.
+
+   <Frame>
+     ![Setup and Maintenance in the top right menu](/images/help/ats-setup/oracle-recruiting-cloud-13.png)
+   </Frame>
+
+2. Click the box on the right side and click **Search**.
+
+   <Frame>
+     ![Opening the search panel](/images/help/ats-setup/oracle-recruiting-cloud-14.png)
+   </Frame>
+
+   <Frame>
+     ![Search option](/images/help/ats-setup/oracle-recruiting-cloud-15.png)
+   </Frame>
+
+   Or use the global search if you are using Redwood:
+
+   <Frame>
+     ![Global search in Redwood](/images/help/ats-setup/oracle-recruiting-cloud-16.png)
+   </Frame>
+
+3. Search for **Assign Security Profiles to Role** in the search bar, press enter, and select the entry as pictured.
+
+   <Frame>
+     ![Assign Security Profiles to Role search result](/images/help/ats-setup/oracle-recruiting-cloud-17.png)
+   </Frame>
+
+4. Search for the role you created earlier. Select the entry as it appears and select **Edit**.
+
+   <Frame>
+     ![Editing the custom role](/images/help/ats-setup/oracle-recruiting-cloud-18.png)
+   </Frame>
+
+5. Click **Yes** when prompted.
+
+   <Frame>
+     ![Confirmation prompt](/images/help/ats-setup/oracle-recruiting-cloud-19.png)
+   </Frame>
+
+6. Click **Next** to go to step 2.
+
+   <Frame>
+     ![Next button on step 1](/images/help/ats-setup/oracle-recruiting-cloud-20.png)
+   </Frame>
+
+7. The **Security Criteria** shown depend on the roles added in the previous steps. Select the following default criteria if shown:
+   - **Organization Security Profile**: select **View All Organizations**
+   - **Person Security Profile**: select **View All People**
+   - **Position Security Profile**: select **View All Job Positions**
+   - **Country Requisition Security Profile**: select **View All Job Countries**
+   - **Payroll Security Profile**: select **View All Job Payrolls**
+   - **Person Security Profile**: select **View All Job People**
+   - **Job Requisition Security Profile**: select **View All Job Requisitions**
+
+   <Frame>
+     ![Security Criteria selections](/images/help/ats-setup/oracle-recruiting-cloud-21.png)
+   </Frame>
+
+8. Click **Next** until you reach the **Review** step, then click **Submit**.
+
+   <Frame>
+     ![Submit on the Review step](/images/help/ats-setup/oracle-recruiting-cloud-22.png)
+   </Frame>
+
+9. If you click **Search** again, a green check mark appears.
+
+   <Frame>
+     ![Green check mark after submission](/images/help/ats-setup/oracle-recruiting-cloud-23.png)
+   </Frame>
+
+## Add the data security policies
+
+This step covers candidate email addresses, phone numbers, and job offers. If your connection does not require any of these data points, this step might be skipped altogether.
+
+1. Go back to the **Security Console**.
+2. Search for the custom role and click **Edit Role**.
+
+   <Frame>
+     ![Edit Role for the custom role](/images/help/ats-setup/oracle-recruiting-cloud-24.png)
+   </Frame>
+
+3. Navigate to the **Data Security Policies** tab.
+
+   <Frame>
+     ![Data Security Policies tab](/images/help/ats-setup/oracle-recruiting-cloud-25.png)
+   </Frame>
+
+4. Create new policies according to the connection pop-up.
+
+   <Frame>
+     ![Creating a data security policy](/images/help/ats-setup/oracle-recruiting-cloud-26.png)
+   </Frame>
+
+   <Frame>
+     ![Policy details from the connection flow](/images/help/ats-setup/oracle-recruiting-cloud-27.png)
+   </Frame>
+
+5. Click **Summary**, then **Save and Close**.
+
+   <Frame>
+     ![Save and Close on the Summary step](/images/help/ats-setup/oracle-recruiting-cloud-28.png)
+   </Frame>
+
+## Create a new integration user
+
+1. Click the 3-bar menu in the top left of your Oracle Recruiting Cloud instance, scroll down to **Tools**, and go to **Security Console**.
+2. Go to **Users**, then **Add User Account**.
+
+   <Frame>
+     ![Add User Account under Users](/images/help/ats-setup/oracle-recruiting-cloud-29.png)
+   </Frame>
+
+3. Fill in the necessary information, saving the **User Name** and **Password** for later. If you have a custom **User Category** for service users without a password expiration policy, make sure to select it.
+
+   <Frame>
+     ![User account details](/images/help/ats-setup/oracle-recruiting-cloud-30.png)
+   </Frame>
+
+4. Click **Add Role**.
+
+   <Frame>
+     ![Add Role button](/images/help/ats-setup/oracle-recruiting-cloud-31.png)
+   </Frame>
+
+5. Add the custom role you created earlier to the user.
+6. Press **Save and Close**.
+7. Enter the **Username** and **Password** in the connection pop-up, or follow the instructions to set up JWT authentication.
+
+   <Frame>
+     ![Entering the username and password in the connection flow](/images/help/ats-setup/oracle-recruiting-cloud-32.png)
+   </Frame>
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Oracle Recruiting Cloud** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, entering your instance URL and the integration user's credentials from the sections above.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Oracle Recruiting Cloud and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Oracle Recruiting Cloud.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

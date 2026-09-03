@@ -1,0 +1,70 @@
+---
+title: "Oracle Taleo Integration Set-up"
+sidebarTitle: "Oracle Taleo"
+description: "Enable the two-way integration between Oracle Taleo and Juicebox."
+---
+
+## About the integration
+
+The Oracle Taleo and Juicebox integration is designed to seamlessly connect both systems in a two-way sync. You can use the integration for three use cases:
+
+1. **Import Project from ATS**: Import a job description from Oracle Taleo into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
+2. **Export Profiles to ATS**: Save profiles directly into Oracle Taleo, including contact details, current company and job, profile URLs, and more. On some plans, this can be customized further based on your preferred fields. Juicebox also has the ability to auto-export to your ATS, including exporting all shortlisted profiles or exporting only interested profiles.
+3. **Import Candidates**: View profiles already in Oracle Taleo within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Oracle Taleo integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Oracle Taleo jobs and can select the corresponding option.
+
+### Export profiles to Oracle Taleo
+
+Follow the regular [export](/exports) steps and select **Export to Oracle Taleo** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Oracle Taleo account.
+
+### View profiles already in Oracle Taleo
+
+Juicebox will tag profiles that already exist in Oracle Taleo. You will see the last modified date, as well as the option to view the profile directly in Oracle Taleo by clicking the **View in ATS** button.
+
+## Create a service user in Taleo
+
+To connect your Oracle Taleo instance, create a new service user in the Taleo Administration Panel. Follow the screenshots below in order:
+
+1. Open the user accounts section of the Taleo Administration Panel.
+
+   <Frame>
+     ![Step 1: opening the user accounts section in the Taleo Administration Panel](/images/help/ats-setup/oracle-taleo-1.jpg)
+   </Frame>
+
+2. Create the new service user account.
+
+   <Frame>
+     ![Step 2: creating the new service user account](/images/help/ats-setup/oracle-taleo-2.jpg)
+   </Frame>
+
+3. Fill in the account details.
+
+   <Frame>
+     ![Step 3: filling in the account details](/images/help/ats-setup/oracle-taleo-3.jpg)
+   </Frame>
+
+4. Complete the user setup.
+
+   <Frame>
+     ![Step 4: completing the user setup](/images/help/ats-setup/oracle-taleo-4.jpg)
+   </Frame>
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Taleo** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, entering the service user's credentials.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Oracle Taleo and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Oracle Taleo.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

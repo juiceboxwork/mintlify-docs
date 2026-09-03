@@ -1,0 +1,96 @@
+---
+title: "Sage HR Integration Set-up"
+sidebarTitle: "Sage HR"
+description: "Enable the two-way integration between Sage HR and Juicebox."
+---
+
+## About the integration
+
+The Sage HR and Juicebox integration is designed to seamlessly connect both systems in a two-way sync. You can use the integration for three use cases:
+
+1. **Import Project from ATS**: Import a job description from Sage HR into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
+2. **Export Profiles to ATS**: Save profiles directly into Sage HR, including contact details, current company and job, profile URLs, and more. On some plans, this can be customized further based on your preferred fields. Juicebox also has the ability to auto-export to your ATS, including exporting all shortlisted profiles or exporting only interested profiles.
+3. **Import Candidates**: View profiles already in Sage HR within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Sage HR integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Sage HR jobs and can select the corresponding option.
+
+### Export profiles to Sage HR
+
+Follow the regular [export](/exports) steps and select **Export to Sage HR** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Sage HR account.
+
+### View profiles already in Sage HR
+
+Juicebox will tag profiles that already exist in Sage HR. You will see the last modified date, as well as the option to view the profile directly in Sage HR by clicking the **View in ATS** button.
+
+## Before you start
+
+Your account must have the **Settings Administrator** role in your company's Sage HR instance. To check:
+
+1. Log in to Sage HR and click your username in the top right corner.
+
+   <Frame>
+     ![Username drop-down in the top right corner](/images/help/ats-setup/sage-hr-1.png)
+   </Frame>
+
+2. If you cannot see the **Settings** item in the drop-down menu, your account does not have the **Settings Administrator** role. Find out who has the **Settings Administrator** role in your company's Sage HR instance, and ask them to grant your account the role or take over the setup process.
+
+## Find your subdomain
+
+1. Log in to Sage HR.
+2. View your subdomain in the URL bar, in the form of `https://yourdomain.sage.hr`.
+
+   <Frame>
+     ![Subdomain in the URL bar](/images/help/ats-setup/sage-hr-2.png)
+   </Frame>
+
+## Create an API key
+
+1. Log in to Sage HR.
+2. Click your username in the top right corner, then click the **Settings** item.
+
+   <Frame>
+     ![Settings item in the username drop-down](/images/help/ats-setup/sage-hr-1.png)
+   </Frame>
+
+3. Click **Integrations** on the side menu.
+
+   <Frame>
+     ![Integrations on the side menu](/images/help/ats-setup/sage-hr-3.png)
+   </Frame>
+
+4. Click **API** in the drop-down.
+
+   <Frame>
+     ![API in the drop-down](/images/help/ats-setup/sage-hr-4.png)
+   </Frame>
+
+5. Click **Enable API access** under the **API** section.
+
+   <Frame>
+     ![Enable API access button](/images/help/ats-setup/sage-hr-5.png)
+   </Frame>
+
+6. Copy the newly created API key after **Your API key**.
+
+   <Frame>
+     ![Copying the API key](/images/help/ats-setup/sage-hr-6.png)
+   </Frame>
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Sage HR** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, entering your subdomain and API key from the sections above.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Sage HR and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Sage HR.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).
