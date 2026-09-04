@@ -33,7 +33,8 @@
               "welcome-kit-admins",
               "project-walkthrough",
               "manage-account",
-              "all-about-credits"
+              "all-about-credits",
+              "hire-for-good"
             ]
           },
           {
@@ -48,6 +49,7 @@
               "talent-rediscovery",
               "network-sourcing",
               "research-signals",
+              "healthcare-data",
               "profile-view",
               "sharing-searches",
               "search-library",
