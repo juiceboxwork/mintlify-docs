@@ -221,7 +221,9 @@
               "help/ats-setup/oracle-taleo",
               "help/ats-setup/phenom",
               "help/ats-setup/recruit-crm",
-              "help/ats-setup/sage-hr"
+              "help/ats-setup/sage-hr",
+              "help/ats-setup/icims",
+              "help/ats-setup/workday"
             ]
           },
           {

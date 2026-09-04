@@ -1,0 +1,254 @@
+---
+title: "Workday Integration Set-up"
+sidebarTitle: "Workday"
+description: "Enable the two-way integration between Workday and Juicebox."
+---
+
+## About the integration
+
+Juicebox's integration with Workday allows you to:
+
+1. **Export Profiles to Workday**: Save profiles directly into Workday, including contact details, current company and job, profile URLs, and more.
+   1. **[Configurable] Auto-Export:** Juicebox has the ability to auto-export profiles to your ATS with configurable triggers, including after shortlisting, after adding to a sequence, or after an interested response.
+   2. **Custom Integration Fields:** On some plans, integration fields can be customized further based on your preferred fields.
+2. **Link Workday Jobs to Juicebox**
+   1. **Import Job Descriptions**: Import a job description from Workday into Juicebox to automatically kick off a search using the job description.
+   2. **Simplify Exports:** When exporting a profile from Juicebox to the ATS, it will automatically be connected to the correct job in the ATS. More details [here](/projects).
+3. **View Profiles in Workday**: View profiles already in Workday within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Workday integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Workday jobs and can select the corresponding option.
+
+### Export profiles to Workday
+
+Follow the regular [export](/exports) steps and select **Export to Workday** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Workday account.
+
+### View profiles already in Workday
+
+Juicebox will tag profiles that already exist in Workday. You will see the last modified date, as well as the option to view the profile directly in Workday by clicking the **View in ATS** button.
+
+## Before you start
+
+Make sure you are an admin of your Workday account:
+
+1. After logging into Workday, search for "**View API Clients**".
+
+   <Frame>
+     ![Searching for View API Clients in Workday](/images/help/ats-setup/workday-1.jpg)
+   </Frame>
+
+2. If you cannot see this menu item, you are not an admin of the Workday account.
+3. In that case, find out who your Workday Admin is and ask them to give your account sufficient permissions or to take over the integration process.
+
+There are three main steps to set up the integration in Workday:
+
+1. Create a new integration system user (ISU) and a security group for that user.
+2. Assign the required permissions to the security group and activate the changes.
+3. Generate a new API client.
+
+<Note>
+  Estimated, overall setup time: 30 minutes.
+</Note>
+
+## Step 1: Find your Workday service URL
+
+1. Click on the **Search** field at the top and enter "**View API Clients**".
+2. Click on the task **View API Clients** that just appeared.
+3. At the top of the page that just appeared, find and copy the **Workday REST API Endpoint**. The URL should follow this schema: `https://{domain}/ccx/api/v1/{tenant}`
+
+   <Frame>
+     ![The Workday REST API Endpoint on the View API Clients page](/images/help/ats-setup/workday-2.jpg)
+   </Frame>
+
+## Step 2: Add an integration system user (ISU)
+
+1. Click on the **Search** field at the top and enter "**Create Integration System User**".
+2. Click on the task **Create Integration System User** that just appeared.
+
+   <Frame>
+     ![Searching for the Create Integration System User task](/images/help/ats-setup/workday-3.jpg)
+   </Frame>
+
+3. In the dialog that just opened, enter a username and generate a secure password. You can leave the other fields untouched.
+4. At the bottom of the dialog, click **OK**.
+
+   <Frame>
+     ![The Create Integration System User dialog](/images/help/ats-setup/workday-4.jpg)
+   </Frame>
+
+## Step 3: Create a security group and assign the ISU to it
+
+1. Click on the **Search** field at the top and enter "**Create Security Group**".
+2. Click the task **Create Security Group** that just appeared.
+
+   <Frame>
+     ![Searching for the Create Security Group task](/images/help/ats-setup/workday-5.jpg)
+   </Frame>
+
+3. On the page that just appeared, locate the dropdown **Type of Tenanted Security Group** and select **Integration System Security Group (Unconstrained)**.
+4. For the **Name**, enter the value of the **User Name** from when you created the ISU earlier (in this example it is test_isu, but yours will be different).
+5. At the bottom of the page, click **OK**.
+
+   <Frame>
+     ![The Create Security Group dialog with the type and name filled in](/images/help/ats-setup/workday-6.jpg)
+   </Frame>
+
+6. On the edit page that just appeared, add the ISU you created to the **Integration System Users** field.
+7. After that, go ahead and click **OK**.
+
+   <Frame>
+     ![Assigning the ISU to the security group](/images/help/ats-setup/workday-7.jpg)
+   </Frame>
+
+## Step 4: Add the required permissions to the security group
+
+1. Click on the **Search** field at the top and enter "**Maintain Permission for Security Group**".
+2. Click on the task **Maintain Permissions for Security Group** that just appeared.
+
+   <Frame>
+     ![Searching for the Maintain Permissions for Security Group task](/images/help/ats-setup/workday-8.jpg)
+   </Frame>
+
+3. In the window that just appeared, make sure you have the option **Maintain** selected.
+4. Click the field **Source Security Group**, enter the name of the group (in this example test_isu) and hit enter. Then click on the security group to select it.
+5. Click **OK**.
+
+   <Frame>
+     ![The Maintain Permissions for Security Group window](/images/help/ats-setup/workday-9.jpg)
+   </Frame>
+
+6. In the window that just appeared, add the permissions for the ISU. You can find the list of permissions needed in the connection flow.
+
+   <Frame>
+     ![The list of permissions shown in the connection flow](/images/help/ats-setup/workday-10.jpg)
+   </Frame>
+
+   For each permission, repeat the following process:
+
+   1. Make sure the tab **Domain Security Policy Permissions** is selected.
+   2. Click on the icon with the **+** on it.
+
+   <Frame>
+     ![The Domain Security Policy Permissions tab](/images/help/ats-setup/workday-11.jpg)
+   </Frame>
+
+7. As you're setting up the integration, you will be shown an exact list of permissions to grant to the security group. Enter them into the table as follows:
+
+   - The first part is for the column **View/Modify Access**. Select the value (e.g. "Get Only") from the dropdown.
+   - The second part is for the column **Domain Security Policy**. Type in the name of the policy (e.g. "Manage: Location"), hit enter and click on the item that just appeared in a list.
+
+   <Frame>
+     ![Entering a permission's access level and domain security policy](/images/help/ats-setup/workday-12.jpg)
+   </Frame>
+
+<Note>
+  The permissions shown in the screenshots are only an example. The permissions may vary in your case. Use the exact list displayed in your connection flow.
+</Note>
+
+## Step 5: Activate your changes
+
+After making any changes to your Workday security policy settings, apply those changes by executing the **Activate Pending Security Policy Changes** task. Without that, none of your changes will take effect.
+
+1. Click on the **Search** field at the top and enter "**Activate Pending Security Policy Changes**".
+2. Click on the task **Activate Pending Security Policy Changes** that just appeared.
+
+   <Frame>
+     ![Searching for the Activate Pending Security Policy Changes task](/images/help/ats-setup/workday-13.jpg)
+   </Frame>
+
+3. In the window that just appeared, add any comment for applying the changes (for example, "Grant ISU test_isu necessary permissions for integrations").
+4. Click **OK**.
+
+   <Frame>
+     ![Adding a comment in the Activate Pending Security Policy Changes window](/images/help/ats-setup/workday-14.jpg)
+   </Frame>
+
+5. In the new window, check the box **Confirm** and click **OK**.
+
+   <Frame>
+     ![Confirming the pending security policy changes](/images/help/ats-setup/workday-15.jpg)
+   </Frame>
+
+## Step 6: Create an API client
+
+1. Click on the **Search** field at the top and enter "**Register API Client for Integrations**".
+2. Click on the task **Register API Client for Integrations** that just appeared.
+
+   <Frame>
+     ![Searching for the Register API Client for Integrations task](/images/help/ats-setup/workday-16.jpg)
+   </Frame>
+
+3. In the window that just appeared, enter a **Client Name**, for example "test_isu API client".
+4. Make sure the option **Non-Expiring Refresh Tokens** is turned on.
+5. For the field **Scope (Functional Areas)**, enter the values that are displayed to you within the connection flow.
+6. Click **OK**.
+
+   <Frame>
+     ![The Register API Client for Integrations form](/images/help/ats-setup/workday-17.jpg)
+   </Frame>
+
+   <Note>
+     The scopes shown in the screenshot are an example. Use the permissions that are requested inside of your connection flow.
+   </Note>
+
+7. In the new window, copy the **Client ID** and **Client Secret** for later use, then do not click **Done**.
+
+   <Frame>
+     ![The Client ID and Client Secret shown after registering the API client](/images/help/ats-setup/workday-18.jpg)
+   </Frame>
+
+8. Still on the same page, click the three dots at the top, then **API Client** > **Manage Refresh Tokens for Integrations**.
+
+   <Frame>
+     ![Opening Manage Refresh Tokens for Integrations from the API client menu](/images/help/ats-setup/workday-19.jpg)
+   </Frame>
+
+9. In the new window, enter the name of the ISU that you created earlier.
+10. Click **OK**.
+
+    <Frame>
+      ![Selecting the Workday account in the Manage Refresh Tokens for Integrations window](/images/help/ats-setup/workday-20.jpg)
+    </Frame>
+
+11. In the new window, check the box for **Generate New Refresh Token**.
+12. Click **OK**.
+
+    <Frame>
+      ![Generating a new refresh token](/images/help/ats-setup/workday-21.jpg)
+    </Frame>
+
+13. In the new window, copy the refresh token and store it for later use.
+
+    <Frame>
+      ![The regenerated refresh token](/images/help/ats-setup/workday-22.jpg)
+    </Frame>
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Workday** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, entering the values you collected: your Workday service URL, the ISU username and password, the Client ID and Client Secret, and the refresh token.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Workday and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Workday.
+</Note>
+
+## Troubleshooting "Invalid username or password!" issues
+
+If you are experiencing trouble logging in due to an error "**Invalid username or password!**", try the following:
+
+1. Search for "**Manage Authentication Policies**" in the top bar.
+2. Click on **Edit** next to the policy.
+3. Create a new **Authentication Rule** by clicking on the **+** in the top left.
+4. Assign the security group that was made earlier to this new rule, and name the rule something relevant.
+5. Click the **+** next to **Authentication Condition Name**, and name it something relevant.
+6. Ensure that the **Allowed Authentication Types** is either set to **Specific: User Name Password** or **Any**.
+7. Finally, search for "**Activate All Pending Authentication Policy Changes**" in the top bar, then confirm the changes made.
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).
