@@ -1,0 +1,226 @@
+---
+title: "Personio Integration Set-up"
+sidebarTitle: "Personio"
+description: "Enable the two-way integration between Personio and Juicebox."
+---
+
+## About the integration
+
+Juicebox's integration with Personio allows you to:
+
+1. **Export Profiles to Personio**: Save profiles directly into Personio, including contact details, current company and job, profile URLs, and more.
+   1. **[Configurable] Auto-Export:** Juicebox has the ability to auto-export profiles to your ATS with configurable triggers, including after shortlisting, after adding to a sequence, or after an interested response.
+   2. **Custom Integration Fields:** On some plans, integration fields can be customized further based on your preferred fields.
+2. **Link Personio Jobs to Juicebox**
+   1. **Import Job Descriptions**: Import a job description from Personio into Juicebox to automatically kick off a search using the job description.
+   2. **Simplify Exports:** When exporting a profile from Juicebox to the ATS, it will automatically be connected to the correct job in the ATS. More details [here](/projects).
+3. **View Profiles in Personio**: View profiles already in Personio within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Personio integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Personio jobs and can select the corresponding option.
+
+### Export profiles to Personio
+
+Follow the regular [export](/exports) steps and select **Export to Personio** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Personio account.
+
+### View profiles already in Personio
+
+Juicebox will tag profiles that already exist in Personio. You will see the last modified date, as well as the option to view the profile directly in Personio by clicking the **View in ATS** button.
+
+## Before you start
+
+To set up the integration with Personio, your account must at least have access rights to the following roles:
+
+- **Account configuration** > **API** (to create the API key)
+- **Account configuration** > **Marketplace Integration** (to view the credentials of the created API key)
+
+To make sure your account has access to these roles:
+
+1. Click the **Marketplace** button in the sidebar. If you cannot see this button, you are missing permissions.
+
+   <Frame>
+     ![Marketplace button in the Personio sidebar](/images/help/ats-setup/personio-1.png)
+   </Frame>
+
+2. Ensure that you can click **See connected integrations**.
+
+   <Frame>
+     ![See connected integrations option](/images/help/ats-setup/personio-2.png)
+   </Frame>
+
+3. Ensure that you can click **Create custom integration**.
+
+   <Frame>
+     ![Create custom integration option](/images/help/ats-setup/personio-3.png)
+   </Frame>
+
+If you cannot follow these steps, you will not be able to set up this integration. Ask a system administrator to assign these access rights to your account.
+
+## Find your API domain
+
+Your API domain is the same domain that you use to log in to Personio. Open your Personio login page to view your domain.
+
+<Frame>
+  ![Personio login page showing the domain](/images/help/ats-setup/personio-4.png)
+</Frame>
+
+## Ensure the XML feed is enabled
+
+1. Log in to your Personio account.
+2. Open the settings by clicking the gear icon on the bottom left corner of the page.
+
+   <Frame>
+     ![Gear icon on the bottom left corner](/images/help/ats-setup/personio-5.png)
+   </Frame>
+
+3. From the settings page, select **Recruiting** from the **Recruiting** section.
+
+   <Frame>
+     ![Recruiting option in the settings page](/images/help/ats-setup/personio-6.png)
+   </Frame>
+
+4. Click the **Career page** tab on the navigation bar.
+
+   <Frame>
+     ![Career page tab](/images/help/ats-setup/personio-7.png)
+   </Frame>
+
+5. Make sure the **Enable XML feed** setting is toggled on.
+
+   <Frame>
+     ![Enable XML feed toggle](/images/help/ats-setup/personio-8.png)
+   </Frame>
+
+## Get your Recruiting API credentials
+
+1. Log in to your Personio account.
+2. Open the settings by clicking the gear icon on the bottom left corner of the page.
+
+   <Frame>
+     ![Gear icon on the bottom left corner](/images/help/ats-setup/personio-9.png)
+   </Frame>
+
+3. From the settings page, select **API Credentials** from the **Integrations** section.
+
+   <Frame>
+     ![API Credentials option in the Integrations section](/images/help/ats-setup/personio-10.png)
+   </Frame>
+
+4. Personio provides system-generated credentials for ATS APIs, so you do not need to generate new credentials. On the API credentials page, the credentials are listed at the bottom as **Recruiting API key**.
+
+   <Frame>
+     ![Recruiting API key listed on the API credentials page](/images/help/ats-setup/personio-11.png)
+   </Frame>
+
+5. Click the **Recruiting API key** row. A pop-up appears with the credential details.
+
+   <Frame>
+     ![Credential details pop-up](/images/help/ats-setup/personio-12.png)
+   </Frame>
+
+6. Copy the **Company ID** and **Access token** and paste them into the connection pop-up.
+
+   <Frame>
+     ![Pasting the Company ID and Access token into the connection flow](/images/help/ats-setup/personio-13.png)
+   </Frame>
+
+## Set up the Recruiting API channel
+
+1. Open the settings by clicking the gear icon on the bottom left corner of the page.
+2. From the settings page, select **Recruiting** from the **Recruiting** section.
+
+   <Frame>
+     ![Recruiting option in the settings page](/images/help/ats-setup/personio-14.png)
+   </Frame>
+
+3. Under the dropdown on the right, select **Channels**.
+
+   <Frame>
+     ![Channels option in the dropdown](/images/help/ats-setup/personio-15.png)
+   </Frame>
+
+4. Click **Add a new channel**.
+
+   <Frame>
+     ![Add a new channel button](/images/help/ats-setup/personio-16.png)
+   </Frame>
+
+5. Copy the value from the connection pop-up for the **Name of external channel** and set the pricing type to **None**. Then press **Save & Close**.
+
+   <Frame>
+     ![Creating the channel with the provided name](/images/help/ats-setup/personio-17.png)
+   </Frame>
+
+6. Go to the created channel and copy the number underneath **Recruiting API channel ID**.
+
+   <Frame>
+     ![Recruiting API channel ID on the channel page](/images/help/ats-setup/personio-18.png)
+   </Frame>
+
+7. Copy that value into the connection pop-up.
+
+   <Frame>
+     ![Entering the channel ID in the connection flow](/images/help/ats-setup/personio-19.png)
+   </Frame>
+
+## Generate your Personio API credentials
+
+1. Open the **API credential** page. You can follow the link in the connection pop-up or use `https://<your subdomain>.personio.de/configuration/marketplace/connected`.
+
+   <Frame>
+     ![Marketplace connected integrations page](/images/help/ats-setup/personio-20.png)
+   </Frame>
+
+2. Click **Create custom integration** on the marketplace page.
+
+   <Frame>
+     ![Create custom integration button on the marketplace page](/images/help/ats-setup/personio-21.png)
+   </Frame>
+
+3. Copy the integration name from the connection pop-up and paste it into Personio.
+
+   <Frame>
+     ![Integration name shown in the connection flow](/images/help/ats-setup/personio-22.png)
+   </Frame>
+
+   <Frame>
+     ![Pasting the integration name into Personio](/images/help/ats-setup/personio-23.png)
+   </Frame>
+
+4. Enable the access rights in Personio based on the information provided by the connection pop-up, then click **Create integration**.
+
+   <Frame>
+     ![Access rights listed in the connection flow](/images/help/ats-setup/personio-24.png)
+   </Frame>
+
+   <Frame>
+     ![Enabling access rights and creating the integration](/images/help/ats-setup/personio-25.png)
+   </Frame>
+
+5. Copy the **client ID** and **API Secret** from Personio, paste them into the connection pop-up, and click **Set up integration**.
+
+   <Frame>
+     ![Client ID and API Secret in Personio](/images/help/ats-setup/personio-26.png)
+   </Frame>
+
+   <Frame>
+     ![Entering the client ID and API Secret in the connection flow](/images/help/ats-setup/personio-27.png)
+   </Frame>
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Personio** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, entering the credentials from the sections above when prompted.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Personio and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Personio.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

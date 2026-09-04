@@ -1,0 +1,85 @@
+---
+title: "UKG Pro Integration Set-up"
+sidebarTitle: "UKG Pro"
+description: "Enable the two-way integration between UKG Pro and Juicebox."
+---
+
+## About the integration
+
+Juicebox's integration with UKG Pro allows you to:
+
+1. **Export Profiles to UKG Pro**: Save profiles directly into UKG Pro, including contact details, current company and job, profile URLs, and more.
+   1. **[Configurable] Auto-Export:** Juicebox has the ability to auto-export profiles to your ATS with configurable triggers, including after shortlisting, after adding to a sequence, or after an interested response.
+   2. **Custom Integration Fields:** On some plans, integration fields can be customized further based on your preferred fields.
+2. **Link UKG Pro Jobs to Juicebox**
+   1. **Import Job Descriptions**: Import a job description from UKG Pro into Juicebox to automatically kick off a search using the job description.
+   2. **Simplify Exports:** When exporting a profile from Juicebox to the ATS, it will automatically be connected to the correct job in the ATS. More details [here](/projects).
+3. **View Profiles in UKG Pro**: View profiles already in UKG Pro within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the UKG Pro integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your UKG Pro jobs and can select the corresponding option.
+
+### Export profiles to UKG Pro
+
+Follow the regular [export](/exports) steps and select **Export to UKG Pro** on either an individual profile or a bulk export. After exporting, you will see the profile created in your UKG Pro account.
+
+### View profiles already in UKG Pro
+
+Juicebox will tag profiles that already exist in UKG Pro. You will see the last modified date, as well as the option to view the profile directly in UKG Pro by clicking the **View in ATS** button.
+
+## Get your tenant alias
+
+1. Log in to your UKG Pro environment.
+2. Click the **Search bar** and enter "Recruiting Gateway".
+
+   <Frame>
+     ![Searching for Recruiting Gateway in UKG Pro](/images/help/ats-setup/ukg-pro-1.png)
+   </Frame>
+
+3. Copy the URL of your recruiting dashboard and paste it into the connection pop-up.
+
+   <Frame>
+     ![Copying the recruiting dashboard URL](/images/help/ats-setup/ukg-pro-2.png)
+   </Frame>
+
+## Get the remaining credentials from UKG support
+
+The rest of the credentials can only be created by UKG support. Reach out to UKG support or to your success manager with a message like the draft below, including the scopes listed in the connection pop-up:
+
+> Dear UKG Team,
+>
+> For an integration with our UKG Pro Recruiting instance, we'd like to ask you to provide us with a client id and client secret that contain the following scopes:
+>
+> \<copy the scopes from the connection pop-up\>
+>
+> Let us know if there are any questions. Looking forward to your swift reply!
+
+You will receive an OAuth **client id** and **client secret** from UKG support. Enter them into the connection pop-up.
+
+<Frame>
+  ![Entering the client id and client secret in the connection flow](/images/help/ats-setup/ukg-pro-3.png)
+</Frame>
+
+The dynamically generated scopes appear in your connection pop-up and look similar to this:
+
+<Frame>
+  ![Example scopes shown in the connection flow](/images/help/ats-setup/ukg-pro-4.png)
+</Frame>
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **UKG Pro** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, entering your recruiting dashboard URL, client id, and client secret when prompted.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated UKG Pro and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and UKG Pro.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

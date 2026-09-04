@@ -1,0 +1,83 @@
+---
+title: "Homerun Integration Set-up"
+sidebarTitle: "Homerun"
+description: "Enable the two-way integration between Homerun and Juicebox."
+---
+
+## About the integration
+
+Juicebox's integration with Homerun allows you to:
+
+1. **Export Profiles to Homerun**: Save profiles directly into Homerun, including contact details, current company and job, profile URLs, and more.
+   1. **[Configurable] Auto-Export:** Juicebox has the ability to auto-export profiles to your ATS with configurable triggers, including after shortlisting, after adding to a sequence, or after an interested response.
+   2. **Custom Integration Fields:** On some plans, integration fields can be customized further based on your preferred fields.
+2. **Link Homerun Jobs to Juicebox**
+   1. **Import Job Descriptions**: Import a job description from Homerun into Juicebox to automatically kick off a search using the job description.
+   2. **Simplify Exports:** When exporting a profile from Juicebox to the ATS, it will automatically be connected to the correct job in the ATS. More details [here](/projects).
+3. **View Profiles in Homerun**: View profiles already in Homerun within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Homerun integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Homerun jobs and can select the corresponding option.
+
+### Export profiles to Homerun
+
+Follow the regular [export](/exports) steps and select **Export to Homerun** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Homerun account.
+
+### View profiles already in Homerun
+
+Juicebox will tag profiles that already exist in Homerun. You will see the last modified date, as well as the option to view the profile directly in Homerun by clicking the **View in ATS** button.
+
+## Generate an API key
+
+1. Log in to Homerun, then click **Settings** in the left menu.
+
+   <Frame>
+     ![Settings in the Homerun left menu](/images/help/ats-setup/homerun-1.png)
+   </Frame>
+
+2. Click **Integrations** in the left menu on the Settings page.
+
+   <Frame>
+     ![Integrations in the Settings menu](/images/help/ats-setup/homerun-2.png)
+   </Frame>
+
+3. Scroll down to the bottom of the Integration Settings page to the **Homerun API V2** section. Click the **Generate V2 API key** button.
+
+   <Frame>
+     ![Generate V2 API key button](/images/help/ats-setup/homerun-3.png)
+   </Frame>
+
+4. Select all the permissions in the **Scopes** section, and leave **Expiry date** unselected in the popup. Then click the **Generate** button.
+
+   <Frame>
+     ![Scopes and expiry date options in the popup](/images/help/ats-setup/homerun-4.png)
+   </Frame>
+
+5. Copy your newly generated API key.
+
+   <Frame>
+     ![Copying the generated API key](/images/help/ats-setup/homerun-5.png)
+   </Frame>
+
+## Connect Homerun to Juicebox
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Homerun** and click **Activate**. You can also use the search bar at the top.
+3. Paste the API key into the connection pop-up and click continue. This validates that the API key was entered correctly and prompts you with next steps.
+
+   <Frame>
+     ![Pasting the API key into the connection pop-up](/images/help/ats-setup/homerun-6.png)
+   </Frame>
+
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Homerun and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Homerun.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

@@ -1,0 +1,72 @@
+---
+title: "ApplicantStack Integration Set-up"
+sidebarTitle: "ApplicantStack"
+description: "Enable the two-way integration between ApplicantStack and Juicebox."
+---
+
+## About the integration
+
+Juicebox's integration with ApplicantStack allows you to:
+
+1. **Export Profiles to ApplicantStack**: Save profiles directly into ApplicantStack, including contact details, current company and job, profile URLs, and more.
+   1. **[Configurable] Auto-Export:** Juicebox has the ability to auto-export profiles to your ATS with configurable triggers, including after shortlisting, after adding to a sequence, or after an interested response.
+   2. **Custom Integration Fields:** On some plans, integration fields can be customized further based on your preferred fields.
+2. **Link ApplicantStack Jobs to Juicebox**
+   1. **Import Job Descriptions**: Import a job description from ApplicantStack into Juicebox to automatically kick off a search using the job description.
+   2. **Simplify Exports:** When exporting a profile from Juicebox to the ATS, it will automatically be connected to the correct job in the ATS. More details [here](/projects).
+3. **View Profiles in ApplicantStack**: View profiles already in ApplicantStack within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the ApplicantStack integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your ApplicantStack jobs and can select the corresponding option.
+
+### Export profiles to ApplicantStack
+
+Follow the regular [export](/exports) steps and select **Export to ApplicantStack** on either an individual profile or a bulk export. After exporting, you will see the profile created in your ApplicantStack account.
+
+### View profiles already in ApplicantStack
+
+Juicebox will tag profiles that already exist in ApplicantStack. You will see the last modified date, as well as the option to view the profile directly in ApplicantStack by clicking the **View in ATS** button.
+
+## Before you start
+
+- Ensure you have access to the ApplicantStack dashboard as an admin.
+- Verify that the API feature is enabled for your ApplicantStack account.
+
+## Setting up the integration
+
+1. Find your ApplicantStack subdomain. Log in to your ApplicantStack account and look at the URL you use to access it (for example, `https://your-subdomain.applicantstack.com`).
+
+   <Frame>
+     ![Find your subdomain in the ApplicantStack URL](/images/help/ats-setup/applicantstack-1.png)
+   </Frame>
+
+2. Get your API key. In ApplicantStack:
+   1. Log in as an admin.
+   2. Visit **Update Settings** in the right-side panel.
+   3. Locate **API Settings** near the bottom.
+   4. Copy the **API Access Token** and save it somewhere.
+
+   <Frame>
+     ![API Settings in ApplicantStack with the API Access Token](/images/help/ats-setup/applicantstack-2.png)
+   </Frame>
+
+3. Navigate to the **Integrations** tab on the Juicebox platform.
+4. Select **ApplicantStack** and click **Activate**. You can also use the search bar at the top.
+5. Follow the instructions in the connection pop-up, entering your subdomain and API access token when prompted.
+
+   <Frame>
+     ![Connection flow for linking your ApplicantStack account](/images/help/ats-setup/applicantstack-3.png)
+   </Frame>
+
+6. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated ApplicantStack and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and ApplicantStack.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

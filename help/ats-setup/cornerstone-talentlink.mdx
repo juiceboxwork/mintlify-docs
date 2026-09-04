@@ -1,0 +1,106 @@
+---
+title: "Cornerstone TalentLink Integration Set-up"
+sidebarTitle: "Cornerstone TalentLink"
+description: "Enable the two-way integration between Cornerstone TalentLink and Juicebox."
+---
+
+## About the integration
+
+Juicebox's integration with Cornerstone TalentLink allows you to:
+
+1. **Export Profiles to Cornerstone TalentLink**: Save profiles directly into Cornerstone TalentLink, including contact details, current company and job, profile URLs, and more.
+   1. **[Configurable] Auto-Export:** Juicebox has the ability to auto-export profiles to your ATS with configurable triggers, including after shortlisting, after adding to a sequence, or after an interested response.
+   2. **Custom Integration Fields:** On some plans, integration fields can be customized further based on your preferred fields.
+2. **Link Cornerstone TalentLink Jobs to Juicebox**
+   1. **Import Job Descriptions**: Import a job description from Cornerstone TalentLink into Juicebox to automatically kick off a search using the job description.
+   2. **Simplify Exports:** When exporting a profile from Juicebox to the ATS, it will automatically be connected to the correct job in the ATS. More details [here](/projects).
+3. **View Profiles in Cornerstone TalentLink**: View profiles already in Cornerstone TalentLink within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the Cornerstone TalentLink integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your Cornerstone TalentLink jobs and can select the corresponding option.
+
+### Export profiles to Cornerstone TalentLink
+
+Follow the regular [export](/exports) steps and select **Export to Cornerstone TalentLink** on either an individual profile or a bulk export. After exporting, you will see the profile created in your Cornerstone TalentLink account.
+
+### View profiles already in Cornerstone TalentLink
+
+Juicebox will tag profiles that already exist in Cornerstone TalentLink. You will see the last modified date, as well as the option to view the profile directly in Cornerstone TalentLink by clicking the **View in ATS** button.
+
+## Before you start
+
+You need **admin access** to set up this integration. To make sure you have the required permissions, check that you can view both the **User Management** and the **Integrations Marketplace** pages in your TalentLink settings.
+
+<Frame>
+  ![User Management and Integrations Marketplace pages in TalentLink settings](/images/help/ats-setup/cornerstone-talentlink-1.png)
+</Frame>
+
+The setup has two main steps:
+
+1. Create a new user for the **username** and **password**.
+2. Create an integration for the **API key**.
+
+<Note>
+  For sandbox integrations, creating the integration and assigning the user is instant. For production integrations, there is an approval process with Cornerstone TalentLink.
+</Note>
+
+## Create the user
+
+1. Open the **User Management** page in the settings menu.
+
+   <Frame>
+     ![User Management page in the settings menu](/images/help/ats-setup/cornerstone-talentlink-2.png)
+   </Frame>
+
+2. Click **Create User**.
+
+   <Frame>
+     ![Create User button](/images/help/ats-setup/cornerstone-talentlink-3.png)
+   </Frame>
+
+3. Fill out the form. Make sure you select **API access**.
+
+   <Frame>
+     ![Selecting API access on the user form](/images/help/ats-setup/cornerstone-talentlink-4.png)
+   </Frame>
+
+4. Under **Assigned Roles**, assign the following roles for the organization you want to share data for:
+   - **Webservices**
+   - **Basic access**, **Functional manager**, and **Standard Recruiter**
+5. Copy the **username** and **password** into the connection pop-up.
+
+## Create the integration
+
+1. Open the **Integrations Marketplace** page in the settings menu.
+
+   <Frame>
+     ![Integrations Marketplace page in the settings menu](/images/help/ats-setup/cornerstone-talentlink-5.png)
+   </Frame>
+
+2. Click **Add New Integration**.
+
+   <Frame>
+     ![Add New Integration button](/images/help/ats-setup/cornerstone-talentlink-6.png)
+   </Frame>
+
+3. Fill out the form. Under **Integration Prerequisites**, enter a description of what the integration should be able to do. For example: "Reading positions, job adverts, applications, and candidates via the REST API. Posting application submissions and attachments to adverts via the Apply API."
+4. Click **+ assign integration user** to assign the user created in the previous step.
+5. Copy the **API key** into the connection pop-up.
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **Cornerstone TalentLink** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, entering the username, password, and API key from the sections above.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated Cornerstone TalentLink and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and Cornerstone TalentLink.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

@@ -1,0 +1,115 @@
+---
+title: "HR WORKS Integration Set-up"
+sidebarTitle: "HR WORKS"
+description: "Enable the two-way integration between HR WORKS and Juicebox."
+---
+
+## About the integration
+
+Juicebox's integration with HR WORKS allows you to:
+
+1. **Export Profiles to HR WORKS**: Save profiles directly into HR WORKS, including contact details, current company and job, profile URLs, and more.
+   1. **[Configurable] Auto-Export:** Juicebox has the ability to auto-export profiles to your ATS with configurable triggers, including after shortlisting, after adding to a sequence, or after an interested response.
+   2. **Custom Integration Fields:** On some plans, integration fields can be customized further based on your preferred fields.
+2. **Link HR WORKS Jobs to Juicebox**
+   1. **Import Job Descriptions**: Import a job description from HR WORKS into Juicebox to automatically kick off a search using the job description.
+   2. **Simplify Exports:** When exporting a profile from Juicebox to the ATS, it will automatically be connected to the correct job in the ATS. More details [here](/projects).
+3. **View Profiles in HR WORKS**: View profiles already in HR WORKS within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the HR WORKS integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your HR WORKS jobs and can select the corresponding option.
+
+### Export profiles to HR WORKS
+
+Follow the regular [export](/exports) steps and select **Export to HR WORKS** on either an individual profile or a bulk export. After exporting, you will see the profile created in your HR WORKS account.
+
+### View profiles already in HR WORKS
+
+Juicebox will tag profiles that already exist in HR WORKS. You will see the last modified date, as well as the option to view the profile directly in HR WORKS by clicking the **View in ATS** button.
+
+## Before you start
+
+You must be an admin of your HRworks instance, or have an admin share their access with you. This is necessary for retrieving the API credentials.
+
+## Find your API credentials
+
+1. Log in to your HRworks instance (or that of the admin account that was shared with you).
+2. On the sidebar, go to **Administrator \<Company name\>**.
+3. In the view that appears, click the **Basics** tile.
+
+   <Frame>
+     ![Basics tile in the administrator view](/images/help/ats-setup/hr-works-1.png)
+   </Frame>
+
+4. Click the **Integrations** tile.
+
+   <Frame>
+     ![Integrations tile](/images/help/ats-setup/hr-works-2.png)
+   </Frame>
+
+5. Click the **HRworks API** tile.
+
+   <Frame>
+     ![HRworks API tile](/images/help/ats-setup/hr-works-3.png)
+   </Frame>
+
+6. On the new page, click the **New key pair** button.
+
+   <Frame>
+     ![New key pair button](/images/help/ats-setup/hr-works-4.png)
+   </Frame>
+
+7. Click the **Download** button that appears.
+
+   <Frame>
+     ![Download button for the key pair](/images/help/ats-setup/hr-works-5.png)
+   </Frame>
+
+8. Your API credentials download as a `.txt` file. Open the file. You will see an **Access Key** and a **Secret Access Key**.
+9. Enter the credentials into the connection pop-up and press **continue**.
+
+   <Frame>
+     ![Entering the credentials in the connection flow](/images/help/ats-setup/hr-works-6.png)
+   </Frame>
+
+## Select the required scopes
+
+1. The connection pop-up displays the required scopes for the integration.
+
+   <Frame>
+     ![Required scopes shown in the connection flow](/images/help/ats-setup/hr-works-7.png)
+   </Frame>
+
+2. In HRworks, select the key you just generated, check the required permissions at the bottom of the page, and press **save**.
+
+   <Frame>
+     ![Checking the required permissions on the key](/images/help/ats-setup/hr-works-8.png)
+   </Frame>
+
+   The scopes shown above are just an example. Your required scopes might look different, so always use the scopes shown in your own connection pop-up.
+
+3. If source attribution is desired, a final screen appears describing how to set up jobs in HRworks.
+
+   <Frame>
+     ![Source attribution setup screen](/images/help/ats-setup/hr-works-9.png)
+   </Frame>
+
+4. Finally, click **Set up integration** in the connection pop-up.
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **HR WORKS** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, entering the credentials from the sections above.
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated HR WORKS and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and HR WORKS.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).
