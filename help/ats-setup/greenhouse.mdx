@@ -103,15 +103,45 @@ Juicebox uses the Greenhouse Harvest v3 API. Verify that the following permissio
 
 ## Setting up the integration on Juicebox
 
-Once you have completed the previous steps and received your Harvest API key, head to the Juicebox platform. On the left-hand sidebar, navigate to the **Integrations** tab and select **Greenhouse**.
+Once you have completed the previous steps and received your Harvest API key, head to the Juicebox platform.
 
-![Greenhouse in the Integrations tab](/images/help/ats-setup/greenhouse-1.png)
+1. On the left-hand sidebar, navigate to the **Integrations** tab and click **Connect Greenhouse (V3)**.
 
-Once you click **Activate**, a pop-up window will appear which guides you through the integration steps. Next to reviewing data permissions, the most important step is to enter your Harvest API key.
+   <Frame>
+     ![Greenhouse (V3) card in the Integrations tab](/images/help/ats-setup/greenhouse-6.png)
+   </Frame>
 
-![Enter your Harvest API key](/images/help/ats-setup/greenhouse-2.png)
+2. A pop-up window appears and guides you through the integration steps. Review the data permissions, then click **Continue**.
 
-Once the API key has been accepted, continue to follow the instructions provided by Juicebox to set up the correct permissions, audit log user, source, Job Board token, and Greenhouse webhooks.
+   <Frame>
+     ![Data permissions in the Greenhouse (V3) connection pop-up](/images/help/ats-setup/greenhouse-7.png)
+   </Frame>
+
+3. Click **Sign in with Greenhouse (V3)**. An authorization window opens.
+
+   <Frame>
+     ![Sign in with Greenhouse (V3) step in the connection pop-up](/images/help/ats-setup/greenhouse-8.png)
+   </Frame>
+
+4. Enter the email address connected to your Greenhouse account and click **Log in to Greenhouse**.
+
+   <Frame>
+     ![Greenhouse authorization window asking for your email](/images/help/ats-setup/greenhouse-9.png)
+   </Frame>
+
+5. Check the **Authorize using a service account** box and click **Authorize**.
+
+   <Frame>
+     ![Authorize using a service account option in the Greenhouse authorization window](/images/help/ats-setup/greenhouse-10.png)
+   </Frame>
+
+6. Juicebox then asks you to set up a source. In your Greenhouse dashboard, go to **Settings** > **Custom Options** > **Sources**, click **Create New Source**, select **Other** for the Sourcing Strategy, and name the source **Juicebox**. This step is important: it makes every candidate exported from Juicebox show up in Greenhouse with the right source.
+
+   <Frame>
+     ![Create a source step in the Greenhouse (V3) connection pop-up](/images/help/ats-setup/greenhouse-11.png)
+   </Frame>
+
+7. Click **Set up integration** and you're all set.
 
 ## Using the Juicebox integration with Greenhouse Recruiting
 
