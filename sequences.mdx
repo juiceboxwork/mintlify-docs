@@ -268,7 +268,19 @@ Sequences can be paused or stopped in a few different ways:
   If either condition is not met, Juicebox cannot detect the reply. Check both for each connected mailbox.
 </Note>
 
-If Juicebox finds an InMail or LinkedIn message reply that it cannot match to a sequence, the reply still appears in the candidate's profile activity. The sequence does not stop, and the candidate's status does not change.
+When Juicebox matches an InMail reply to a sequence, it applies the same outcomes as an email reply:
+
+- The run finishes with the status **Finished (Reply)**, and Juicebox cancels any remaining steps.
+- Juicebox archives any pending LinkedIn tasks from that sequence.
+- The reply appears in the sequence thread as a **LinkedIn Message** card.
+- Juicebox classifies the reply and updates the candidate's status to **Interested** or **Not Interested**.
+- If your ATS integration has auto-export enabled, Juicebox exports the candidate to your ATS.
+
+Juicebox matches LinkedIn Recruiter InMail replies only. Sales Navigator InMail replies are not supported. Notifications about regular LinkedIn messages add an activity to the candidate's profile, but they never stop a sequence.
+
+If Juicebox finds an InMail reply that it cannot match to a sequence, the reply still appears in the candidate's profile activity. The sequence does not stop, and the candidate's status does not change.
+
+You control reply detection per mailbox. To turn it off for a mailbox, uncheck **Detect replies from LinkedIn notifications** in that mailbox's settings. See [Email Integrations](/email-integrations#linkedin-reply-detection) for details.
 
 Manual controls are also helpful if you want to delay outreach, make edits, or stop follow-ups after receiving a response through another channel (like a phone call).
 
