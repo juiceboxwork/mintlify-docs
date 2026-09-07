@@ -260,7 +260,12 @@ Sequences can be paused or stopped in a few different ways:
   - You can manually **pause**, **resume**, or **stop** a sequence at any time, either for a single or all candidate.
 
 <Note>
-  Juicebox detects InMail replies through LinkedIn's email notifications, which LinkedIn sends to the mailbox connected to Juicebox. LinkedIn turns these notifications on by default. If you turned off email notifications for InMail responses in LinkedIn, Juicebox cannot detect the reply. Check the setting for each connected mailbox.
+  Juicebox detects InMail replies through the email notifications LinkedIn sends when a candidate responds to an InMail. Detection works only if both of the following are true:
+
+  1. The mailbox connected to Juicebox is the same mailbox where you receive LinkedIn's InMail reply notifications.
+  2. Email notifications for InMail responses are turned on in your LinkedIn settings.
+
+  If either condition is not met, Juicebox cannot detect the reply. Check both for each connected mailbox.
 </Note>
 
 If Juicebox finds an InMail or LinkedIn message reply that it cannot match to a sequence, the reply still appears in the candidate's profile activity. The sequence does not stop, and the candidate's status does not change.
