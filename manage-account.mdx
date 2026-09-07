@@ -57,6 +57,9 @@ Under **Settings → Search**, the **Show profile photos** toggle controls wheth
 - The toggle only appears when profile photos are enabled for your organization. If you do not see it, ask your admin whether the feature is available on your plan.
 - Turning the setting off hides photos from your view only. Juicebox continues to fetch and store photos in the background so exports and teammates who have the setting on are unaffected.
 - Photos appear only on the search results page and the profile sidebar. Other surfaces show candidate details without a photo, including the Add-to-Sequence dialog, Agent All Leads, Shortlist Kanban cards, and the Contacts and Shortlist tables.
+- Click a candidate photo on the profile sidebar to open it in an expanded view. Press Enter or Space when the photo is focused to open the same view with the keyboard.
+- If your organization has photos available but you have not turned yours on, Juicebox may show a one-time card on the search results page prompting you to enable the setting. Dismissing the card or turning photos off in settings prevents it from appearing again.
+- If your admin has disabled profile photos for the workspace, the **Show profile photos** toggle is locked off. A note under the toggle explains that the workspace override is in effect, and no photos load anywhere in Juicebox regardless of your personal setting.
 
 ## Your Invitations
 
@@ -83,6 +86,9 @@ View and update organizational settings. These settings affect all users in the 
 - Enforced footer addendum
 - Organization email sending limit
 - Monthly usage reports (available on the business plan)
+- Disable profile photos for the whole workspace
+
+The **Disable profile photos** toggle is a workspace-wide kill switch for candidate photos. When it is on, Juicebox never returns photo URLs to anyone in the workspace and hides existing avatars immediately across every surface, regardless of each member's personal **Show profile photos** setting. Use it when your organization needs to remove candidate images from the hiring workflow to reduce bias. When the workspace disables photos, each member's personal toggle locks off with a note explaining the workspace override.
 
 ![Screenshot 2026-07-07 at 3.51.31 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/manage-account/Screenshot_2026-07-07_at_3-51-31_PM.png)
 
