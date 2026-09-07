@@ -1,17 +1,21 @@
 ---
-title: "Greenhouse Integration Set-up"
+title: "Greenhouse Integration"
 sidebarTitle: "Greenhouse"
 description: "Enable the two-way integration between Greenhouse Recruiting and Juicebox."
 ---
 
-This guide covers the Greenhouse Harvest v3 integration.
+This guide covers the Greenhouse Harvest **v3** integration.
 
 Juicebox's integration with Greenhouse Recruiting allows you to:
 
-1. **Import Project from ATS**: Import a job description from Greenhouse into Juicebox to automatically kick off a search using the job description. This also includes linking your Juicebox project to an ATS job, which makes exporting profiles to your ATS easier. More details [here](/projects).
-2. **Export Profiles to ATS**: Save profiles directly into Greenhouse, including contact details, current company and job, profile URLs, and more. On some plans, this can be customized further based on your preferred fields. Juicebox also has the ability to auto-export to your ATS, including exporting all shortlisted profiles or exporting only interested profiles.
-3. **Import Candidates**: View profiles already in Greenhouse within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
-4. **Rediscovery**: Filter for and view profiles already in Greenhouse within Juicebox, including filtering by tags, jobs, and stage. Learn more about [Talent Rediscovery](/talent-rediscovery).
+1. **Export Profiles to Greenhouse**: Save profiles directly into Greenhouse, including contact details, current company and job, profile URLs, source, and more. 
+   1. **[Configurable] Auto-Export:** Juicebox has the ability to auto-export profiles to your ATS with configurable triggers, including: After Shortlist, After Outreach [default], After Interested Response
+   2. **Custom Integration Fields:** On some plans, integration fields can be customized further based on your preferred fields. 
+2. **Rediscover Talent**: Filter for and view profiles already in Greenhouse within Juicebox, including filtering by tags, jobs, and stage. Learn more about [Talent Rediscovery](/talent-rediscovery).
+3. **Link Greenhouse Jobs to Juicebox**
+   1. **Import Job Descriptions**: Import a job description from Greenhouse into Juicebox to automatically kick off a search using the job description.
+   2. **Simplify Exports:** When exporting a profile from Juicebox to the ATS, it will automatically be connected to the correct job in the ATS. More details [here](/projects).
+4. **View Profile in Greenhouse**: View profiles already in Greenhouse within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
 
 ## Setting up the integration on Greenhouse
 
@@ -99,15 +103,45 @@ Juicebox uses the Greenhouse Harvest v3 API. Verify that the following permissio
 
 ## Setting up the integration on Juicebox
 
-Once you have completed the previous steps and received your Harvest API key, head to the Juicebox platform. On the left-hand sidebar, navigate to the **Integrations** tab and select **Greenhouse**.
+Once you have completed the previous steps and received your Harvest API key, head to the Juicebox platform.
 
-![Greenhouse in the Integrations tab](/images/help/ats-setup/greenhouse-1.png)
+1. On the left-hand sidebar, navigate to the **Integrations** tab and click **Connect Greenhouse (V3)**.
 
-Once you click **Activate**, a pop-up window will appear which guides you through the integration steps. Next to reviewing data permissions, the most important step is to enter your Harvest API key.
+   <Frame>
+     ![Greenhouse (V3) card in the Integrations tab](/images/help/ats-setup/greenhouse-6.png)
+   </Frame>
 
-![Enter your Harvest API key](/images/help/ats-setup/greenhouse-2.png)
+2. A pop-up window appears and guides you through the integration steps. Review the data permissions, then click **Continue**.
 
-Once the API key has been accepted, continue to follow the instructions provided by Juicebox to set up the correct permissions, audit log user, source, Job Board token, and Greenhouse webhooks.
+   <Frame>
+     ![Data permissions in the Greenhouse (V3) connection pop-up](/images/help/ats-setup/greenhouse-7.png)
+   </Frame>
+
+3. Click **Sign in with Greenhouse (V3)**. An authorization window opens.
+
+   <Frame>
+     ![Sign in with Greenhouse (V3) step in the connection pop-up](/images/help/ats-setup/greenhouse-8.png)
+   </Frame>
+
+4. Enter the email address connected to your Greenhouse account and click **Log in to Greenhouse**.
+
+   <Frame>
+     ![Greenhouse authorization window asking for your email](/images/help/ats-setup/greenhouse-9.png)
+   </Frame>
+
+5. Check the **Authorize using a service account** box and click **Authorize**.
+
+   <Frame>
+     ![Authorize using a service account option in the Greenhouse authorization window](/images/help/ats-setup/greenhouse-10.png)
+   </Frame>
+
+6. Juicebox then asks you to set up a source. In your Greenhouse dashboard, go to **Settings** > **Custom Options** > **Sources**, click **Create New Source**, select **Other** for the Sourcing Strategy, and name the source **Juicebox**. This step is important: it makes every candidate exported from Juicebox show up in Greenhouse with the right source.
+
+   <Frame>
+     ![Create a source step in the Greenhouse (V3) connection pop-up](/images/help/ats-setup/greenhouse-11.png)
+   </Frame>
+
+7. Click **Set up integration** and you're all set.
 
 ## Using the Juicebox integration with Greenhouse Recruiting
 
