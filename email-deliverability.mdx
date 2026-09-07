@@ -144,6 +144,20 @@ Both features rely on inserting tracking mechanics into your emails, which is on
 - **For maximum deliverability:** turn both off. This is the recommendation for brand-new domains or when you are actively repairing sender reputation.
 - **In practice:** most Juicebox users leave both on, because open and click data is useful for tuning sequences and scaling volume as their domain proves reliable. Once your domain has a strong reputation and your reply rates are healthy, the deliverability cost of tracking is small.
 
+##### Automatic tracking exclusion for France and Italy
+
+Some countries restrict per-recipient email tracking by law. France (under Article 82 of the French Data Protection Act) and Italy (under Garante guidance) both require the recipient's consent for a tracking pixel, which sourced candidates have no way to give. To keep your outreach compliant, Juicebox automatically turns off open tracking and link-click tracking for recipients located in **France (including its overseas territories, such as Guadeloupe, Martinique, Réunion, and French Polynesia)** and **Italy**. This applies even when both tracking toggles are on, and requires no configuration.
+
+How it works:
+
+- Juicebox resolves each recipient's country from their profile when they are enrolled in a sequence.
+- The exclusion is applied at send time, so it also covers sequences that are already in flight.
+- Contacts without a resolvable country (for example, uploaded contacts with no location data) keep your configured tracking settings.
+
+Because excluded recipients can never register an open or a click but still count toward the sequence's totals, **open and click rates will undercount on sequences that include recipients in France or Italy**. Reply and bounce tracking are unaffected, so reply rate remains the most reliable engagement metric for those sequences.
+
+The mailbox settings under both tracking toggles note this exclusion.
+
 <Note>
   The "strictest possible" deliverability configuration in Juicebox is: **strict mode on, open tracking off, click tracking off, and a low per-day limit**. This maximizes inbox placement at the cost of engagement data and throughput. It is worth using while you warm up a new domain, and then relaxing as your reputation stabilizes.
 </Note>
