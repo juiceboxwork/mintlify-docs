@@ -23,7 +23,7 @@ When a company is added to your DNC List, Juicebox will do two things:
 **1) Prevent Emails from being Sent**
 
 - Juicebox will prevent users from adding profiles currently working at this company to their email sequences.
-- Note: this setting _cannot_ be overridden by any user. The only way to change it is by the admin adjusting the DNC list.
+- Note: this setting cannot be overridden by individual users. The only ways to change it are for an admin to adjust the DNC list, or to add specific people to the [DNC override list](#3-contact-level-dnc-overrides).
 
 **2) Exclude in Search**
 
@@ -59,3 +59,27 @@ By removing the “Do not contact” tag for a given profile, the user will be a
 ### Reasons for using DNC tags
 
 Contacts may be excluded due to profile opt-out requests, internal company policies, or other relevant considerations.
+
+## 3. Contact-level DNC overrides
+
+Admins can add specific people to a DNC override list. An overridden person still appears in search results and can be added to email sequences, even if their current company or country is on the DNC list.
+
+This is useful when a profile still lists a DNC employer that the person no longer works at, or when you have permission to contact a specific person at a DNC company. Instead of removing the whole company from the DNC list, add just that person as an override.
+
+### How to manage the DNC override list
+
+1. In the left-hand navigation panel, click **Settings** and open the **DNC override** section
+2. Search for a person by name or LinkedIn URL and select them to add them to the override list
+3. To bulk add people, click **Upload CSV** and upload a CSV of LinkedIn URLs
+4. You can also export the override list to a CSV, remove individual people, or clear the entire list
+
+Only admins can manage the DNC override list.
+
+### DNC Enforcement
+
+- Overrides apply to both the company DNC list and the country DNC list.
+- The individual “Do not contact” tag takes precedence. If a person has the tag, they remain blocked from sequences even if they are on the override list.
+
+<Note>
+  Contact-level DNC overrides are being rolled out gradually. If you don’t see the DNC override section in your Settings yet, reach out to your Juicebox account manager.
+</Note>
