@@ -29,7 +29,9 @@ By setting up an Agent, you can:
 
 Your Agent doesn't work in isolation. Before building a search, it researches the role using context it already has access to:
 
-- **Connectors**: Connect tools like Google Drive, Notion, Granola, Metaview, and your ATS, and the Agent can pull intake notes, role docs, candidate sheets, and intake call transcripts to inform the search.
+- **Connectors**: Connect tools like Google Drive, Microsoft 365, Notion, Granola, Metaview, Wispr Flow, and your ATS, and the Agent can pull intake notes, role docs, candidate sheets, and intake call transcripts to inform the search.
+  - **Microsoft 365**: The Agent can search and read Word, Excel, and PowerPoint files from your OneDrive and SharePoint sites during chat and context research, and it cites the source file when it uses one. Access is read-only and limited to files you can already see.
+  - **Wispr Flow**: The Agent can search and read your Wispr Flow meeting transcripts and scratchpad notes to gather role context.
   <Frame>
     ![Clean Shot 2026 08 17 At 18 37 00@2x](/images/CleanShot-2026-08-17-at-18.37.00@2x.png "Clean Shot 2026 08 17 At 18 37 00@2x")
   </Frame>
@@ -43,6 +45,10 @@ Your Agent doesn't work in isolation. Before building a search, it researches th
 
 <Note>
   Manage connectors from the **Integrations** tab in Settings. ATS connections are available on the Business plan. Connectors are used by Agents only and they don't feed standalone searches or sequence generation.
+</Note>
+
+<Note>
+  In Microsoft tenants with default settings, the first time a non-admin connects Microsoft 365, Microsoft shows a **Need admin approval** prompt. The connector's read permissions require a one-time approval from your tenant admin. After the admin approves, anyone in your organization can connect without a prompt.
 </Note>
 
 ### Market Mapping
