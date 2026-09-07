@@ -1,20 +1,25 @@
 ---
 title: "Welcome Kit - Admins"
-keywords: ["Admin", "Admins", "Getting Started"]
+keywords:
+  - "Admin"
+  - "Admins"
+  - "Getting Started"
 sidebarTitle: "Getting Started - Admins"
 description: "Quick-start guide and initial setup steps for Juicebox admins"
 ---
 
 Welcome to Juicebox! As an admin, you’re empowering your team to source and recruit candidates with richer data and more automation that help them find candidates more quickly and effectively. We’ll focus on the most important steps to get your organization set up.
 
-In this guide, you’ll learn how to:
+<Check>
+  In this guide, you’ll learn how to:
 
-- Integrate your Applicant Tracking System (ATS) with Juicebox
-- Set up Single Sign-On (SSO)
-- Add team members and set their permissions
-- Manage settings and controls for AI Agents
-- Set up Juicebox for Slack to enable collaboration with hiring managers
-- Set up the Juicebox MCP to bring insights and data into your AI tool
+  - Integrate your Applicant Tracking System (ATS) with Juicebox
+  - Set up Single Sign-On (SSO)
+  - Add team members and set their permissions
+  - Manage settings and controls for AI Agents
+  - Set up Juicebox for Slack to enable collaboration with hiring managers
+  - Set up the Juicebox MCP to bring insights and data into your AI tool
+</Check>
 
 ## Integrate your ATS
 
@@ -34,6 +39,16 @@ You’ll only need to do the initial integration. Log into Juicebox, go to **Int
 </Frame>
 
 **Want more help?** Learn more about [ATS integrations](https://docs.juicebox.ai/ats-integrations) or check out our ATS setup guides for [Greenhouse](https://docs.juicebox.ai/help/ats-setup/greenhouse), [Lever](https://docs.juicebox.ai/help/ats-setup/lever), [Ashby](https://docs.juicebox.ai/help/ats-setup/ashby), [Bullhorn](https://docs.juicebox.ai/help/ats-setup/bullhorn), [Recruiterflow](https://docs.juicebox.ai/help/ats-setup/recruiterflow), [SmartRecruiters](https://docs.juicebox.ai/help/ats-setup/smartrecruiters), [Jobvite](https://docs.juicebox.ai/help/ats-setup/jobvite), and [Teamtailor](https://docs.juicebox.ai/help/ats-setup/teamtailor).
+
+## Connect Docs and Notes for Agent Context
+
+Juicebox has connectors to apps like Granola, Notion, Google Drive, and Metaview. These let Juicebox Agents use the context captured in these apps to learn more about the specific needs for each role, and specific preferences for each individual in the hiring process. They also allow users to export talent maps and other summaries directly from a conversation with an Agent.
+
+Set these up from the **Integrations** tab, just like you did with the ATS integrations.
+
+Over time, as each user uses Juicebox, the information and preferences get stored in Juicebox's Knowlege Vault, letting Agents run more targeted and personalized searches.
+
+**Want more help?** Learn more about [Connectors](https://docs.juicebox.ai/knowledge-vault#connectors).
 
 ## Account Settings
 
@@ -121,13 +136,13 @@ Then, set your Agent controls. The most important ones are:
 
 ## Set up Juicebox for Slack
 
-So far, you've set up your team to work productively in Juicebox. In these next sections, you'll help your team bring data and insights from Juicebox into other places that your team works. 
+So far, you've set up your team to work productively in Juicebox. In these next sections, you'll help your team bring data and insights from Juicebox into other places that your team works.
 
 If your team uses Slack, Juicebox integrates directly into channels where your recruiters and hiring managers already collaborate. This gives hiring managers visibility into sourcing and recruiting progress without needing to log into Juicebox. It also lets your recruiting team take actions in Juicebox directly from Slack to keep processes moving quickly.
 
 To set it up:
 
-1. Go to **Integrations** in the left-hand nav and connect the Slack integration. The first time you do this, it creates a 1:1 connection between your Juicebox organization and your Slack workspace
+1. Go to **Integrations** in the left-hand nav and connect the Slack integration. The first time you do this, it creates a 1:1 connection between your Juicebox organization and your Slack workspace.
    <Frame>
      ![2026 08 17 11 42 18](/images/2026-08-17_11-42-18.png "2026 08 17 11 42 18")
    </Frame>
@@ -166,3 +181,4 @@ We’ve covered the main settings to get you and your team started, but as you c
   - In [**Account Settings → Mailbox Settings**](https://app.juicebox.ai/account?tab=mailbox-settings), users can enable **Email Strict Mode** to use verified email addresses for sequences and ATS exports. The trade-off: this is better for sender reputation and bounce rates, but it also reduces email data coverage. This is a user-level setting.
   - At the organization level, you can also use [**Account Settings → General → Email settings**](https://app.juicebox.ai/account?tab=organization-settings) to control whether personal or professional email addresses can be used for candidate outreach. The best practice is to use candidates' personal emails, as this is better for bounce rates. So you may want to check **Prefer personal emails, fallback to professional emails** and **Only use personal emails** and make those the options your team can use.
   - [Learn more about email deliverability best practices](https://docs.juicebox.ai/email-deliverability).
+- **Knowledge Vault:** Juicebox stores what it learns from your team's usage to personalize searches, tailor results, and give Agents more context for their searches. In **Account Settings → Knowledge Vault** you can see both the [Company Memory](https://app.juicebox.ai/account?tab=company-memory) and [User Memory](https://app.juicebox.ai/account?tab=user-memory). You can enable, disable, or edit these at any time. We recommend checking and updating this periodically to make sure the information is up to date and accurate. [Learn more about the Knowledge Vault](https://docs.juicebox.ai/knowledge-vault).

@@ -101,6 +101,17 @@ The **Auto-Export Trigger** setting determines when to export a candidate(s) for
 
 ![Screenshot 2026-01-09 at 3.19.56 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/ats-integrations/Screenshot_2026-01-09_at_3-19-56_PM.png)
 
+### Automatically Apply Project Configuration Suggestions
+
+When you name a new project, Juicebox matches the title against your synced ATS jobs. It can then pre-fill the project configuration card with the linked ATS job, collaborators, and (if Automated ATS Exports is on) the export stage and auto-export toggle. The **Automatically apply project configuration suggestions** setting in [Organization-level ATS settings](https://app.juicebox.ai/account?tab=ats) controls whether those matches are written to the project silently or held back for the owner to review.
+
+The setting is only visible when your org is on the Business plan and has an ATS integration with job sync enabled. It defaults to on, matching the previous behavior.
+
+- **On (default):** As soon as Juicebox finds a match, the project configuration card fills in the linked job, collaborators, and (where applicable) the auto-export stage. The card shows an **Auto configured your project** banner with an **Undo** button for 15 seconds so the owner can revert the change.
+- **Off:** Naming the project still runs the match, but nothing is written to the project. The project configuration card shows a **Suggested a configuration** banner with the proposed job title, collaborators, and export stage rendered as dashed preview values. The suggestion only persists after the owner clicks **Apply**. Ignore the suggestion and the project stays in whatever state the owner set manually.
+
+Turn this off when your team wants to review Juicebox's guesses before they flow into an ATS auto-export pipeline. Only organization admins can change the setting.
+
 ### Activating an Integration
 
 Most integrations can be set up in a self-serve capacity. To do so, please select the “Activate Integration” field and follow the steps in the pop-up window. After successfully connecting your ATS or CRM, your account manager will reach out to you with next steps, if necessary.
