@@ -1,0 +1,124 @@
+---
+title: "Connexys By Bullhorn Integration Set-up"
+description: "Connect Connexys By Bullhorn to Juicebox."
+sidebarTitle: "Connexys By Bullhorn"
+---
+
+<img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/logo.png" alt="Connexys By Bullhorn logo" width="64" height="64" />
+
+## About the integration
+
+Connect Connexys By Bullhorn to Juicebox to import jobs and start searches from their job descriptions. You can also export profiles to a selected job. Existing candidates can be identified in Juicebox and used for rediscovery, subject to the access granted to the connection.
+
+## Before you start
+
+Use a Salesforce **System Administrator** account for Connexys. The setup menu should include **Administration** and **Platform Tools**. Keep the Juicebox permission list open throughout setup.
+
+Open **Integrations** in Juicebox, select **Connexys By Bullhorn**, and choose **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
+
+<Note>
+The screenshots show vendor settings or the connection window provided by Kombo. Use the credentials, source labels, permissions, and URLs from your own connection; screenshot values are examples.
+</Note>
+
+## Find the instance URL
+
+In Salesforce Setup, open **Platform Tools > User Interface > Sites and Domains > Custom URLs**. Enter the Connexys URL from that page in Juicebox. If no Custom URL is available, ask your Connexys administrator or Juicebox Support to confirm the correct endpoint.
+
+<Frame caption="Locate Custom URLs in Connexys Setup.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-04.png" alt="Locate Custom URLs in Connexys Setup." width="760" />
+</Frame>
+
+## Prepare the integration user
+
+Open **Users > Users > New User**. Create a recognizable integration user using your organization’s contact details, with the **Salesforce Platform** license and the **Webservice profiel** profile where available. If that license or profile is unavailable, ask your administrator and Juicebox Support to confirm the appropriate user before proceeding.
+
+<Frame caption="Configure the integration user and its Salesforce license.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-08.png" alt="Configure the integration user and its Salesforce license." width="760" />
+</Frame>
+
+## Create a connected app
+
+1. Open **Apps > App Manager > New Connected App** and enter the app name and contact information.
+2. Enable **OAuth Settings** and **Device Flow**.
+3. Add **Manage user data via APIs (api)** to the selected scopes.
+4. Enable **Client Credentials Flow**, accept the confirmation, and save the app.
+5. Under **Apps > Connected Apps > Manage Connected Apps**, edit the app and select your integration user under **Client Credentials Flow**.
+
+<Frame caption="Select the API OAuth scope.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-13.png" alt="Select the API OAuth scope." width="760" />
+</Frame>
+
+<Frame caption="Enable Client Credentials Flow.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-14.png" alt="Enable Client Credentials Flow." width="760" />
+</Frame>
+
+<Frame caption="Assign the integration user to the client-credentials flow.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-19.png" alt="Assign the integration user to the client-credentials flow." width="760" />
+</Frame>
+
+## Retrieve client credentials
+
+In **App Manager**, open the app’s **View** page and select **Manage Consumer Details**. Complete Salesforce’s identity check, then copy the **Consumer Key** and **Consumer Secret** into Juicebox.
+
+<Frame caption="Open Manage Consumer Details for the connected app.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-21.png" alt="Open Manage Consumer Details for the connected app." width="760" />
+</Frame>
+
+## Configure the permission set
+
+1. Open **Users > Permission Sets**, create a named permission set, and open **Object Settings**.
+2. For each object named in Juicebox, open its object settings, choose **Edit**, and enable the permissions requested by your connection window.
+3. Open the integration user’s **Permission Set Assignments > Edit Assignments**, add the new permission set, and save.
+4. Continue in Juicebox and resolve any reported missing permissions.
+
+<Frame caption="Open Object Settings in the new permission set.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-28.png" alt="Open Object Settings in the new permission set." width="760" />
+</Frame>
+
+<Frame caption="Set the permissions requested for each object.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-32.png" alt="Set the permissions requested for each object." width="760" />
+</Frame>
+
+<Frame caption="Assign the permission set to the integration user.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-38.png" alt="Assign the permission set to the integration user." width="760" />
+</Frame>
+
+## Add source values if prompted
+
+In **Object Manager**, open **Candidate > Fields and Relationships > Bron**. Under **Values**, add the source supplied by Juicebox and make it available to the requested record types. Repeat for **Job Application > Fields and Relationships > Bron** if requested, save, and finish setup.
+
+<Frame caption="Locate the Candidate source field, Bron.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-44.png" alt="Locate the Candidate source field, Bron." width="760" />
+</Frame>
+
+<Frame caption="Add the exact source value from your connection window.">
+  <img src="/images/help/ats-setup/new-2026-09/connexys-by-bullhorn/setup-27683919131025-48.png" alt="Add the exact source value from your connection window." width="760" />
+</Frame>
+
+## Confirm the integration
+
+Finish the connection window and return to Juicebox. Confirm that the connection has completed, then allow the initial sync to populate your data.
+
+- Check that the expected jobs appear in Juicebox.
+- Find a known candidate and confirm that the information available matches your configured access.
+- Export a test profile to a selected job, then verify the application in Connexys By Bullhorn.
+
+If validation fails, check the credentials, account or region, and permission list shown in the connection window. Contact Juicebox Support if the expected data is still missing.
+
+## Limitations
+
+Resume attachments are not supported by the documented connector.
+
+## Using the integration
+
+Start from an imported job on the [Projects](/projects) page to create a search linked to that job.
+
+To send a profile to Connexys By Bullhorn, follow the [export steps](/exports) and select the connected ATS and intended job.
+
+Learn how to work with existing candidates in [Talent Rediscovery](/talent-rediscovery).
+
+## Support
+
+For help, contact [support@juicebox.ai](mailto:support@juicebox.ai). For an overview of available workflows, see [ATS Integrations](/ats-integrations).
+
+ATS-side setup reference: [Kombo’s Connexys By Bullhorn connection guide](https://help.kombo.dev/hc/en-us/articles/27683919131025-Connexys-by-Bullhorn-How-do-I-link-my-account).

@@ -1,0 +1,66 @@
+---
+title: "rexx systems Integration Set-up"
+description: "Connect rexx systems to Juicebox."
+sidebarTitle: "rexx systems"
+---
+
+<img src="/images/help/ats-setup/new-2026-09/rexx-systems/logo.png" alt="rexx systems logo" width="64" height="64" />
+
+## About the integration
+
+Connect rexx systems to Juicebox to import jobs and start searches from their job descriptions. You can also export profiles with resumes to a selected job. This connector does not provide full-database candidate reading for rediscovery.
+
+## Before you start
+
+Find the URL that directly lists your company’s public jobs. Source configuration requires a rexx administrator.
+
+Open **Integrations** in Juicebox, select **rexx systems**, and choose **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
+
+<Note>
+The screenshots show vendor settings or the connection window provided by Kombo. Use the credentials, source labels, permissions, and URLs from your own connection; screenshot values are examples.
+</Note>
+
+## Enter the public job-list URL
+
+Paste the URL of the actual job-list page into Juicebox, rather than the careers homepage, and continue.
+
+<Frame caption="Use the public page that lists your jobs.">
+  <img src="/images/help/ats-setup/new-2026-09/rexx-systems/setup-20045641445521-01.png" alt="Use the public page that lists your jobs." width="760" />
+</Frame>
+
+## Create the candidate source
+
+1. Copy the source label displayed by your Juicebox connection window.
+2. In rexx, open **Admin Services > Admin, Ticket** and search for **Wie haben Sie uns gefunden?**.
+3. Open that setting, use its dropdown, and select **Neu**.
+4. Enter the copied label in **Bezeichnung [de]**, set **Art** to **intern, extern**, and choose **Speichern**.
+5. Return to Juicebox and complete setup.
+
+<Frame caption="Create a new source value in rexx.">
+  <img src="/images/help/ats-setup/new-2026-09/rexx-systems/setup-20465866548113-03.png" alt="Create a new source value in rexx." width="760" />
+</Frame>
+
+<Frame caption="Enter the exact source label and select intern, extern.">
+  <img src="/images/help/ats-setup/new-2026-09/rexx-systems/setup-20465866548113-05.png" alt="Enter the exact source label and select intern, extern." width="760" />
+</Frame>
+
+## Confirm the integration
+
+Finish the connection window and return to Juicebox. Confirm that the connection has completed, then allow the initial sync to populate your data.
+
+- Check that the expected jobs appear in Juicebox.
+- Export a test profile with a resume to a selected job, then verify the application in rexx systems.
+
+If validation fails, check the credentials, account or region, and permission list shown in the connection window. Contact Juicebox Support if the expected data is still missing.
+
+## Using the integration
+
+Start from an imported job on the [Projects](/projects) page to create a search linked to that job.
+
+To send a profile to rexx systems, follow the [export steps](/exports) and select the connected ATS and intended job.
+
+## Support
+
+For help, contact [support@juicebox.ai](mailto:support@juicebox.ai). For an overview of available workflows, see [ATS Integrations](/ats-integrations).
+
+ATS-side setup reference: [Kombo’s rexx systems connection guide](https://help.kombo.dev/hc/en-us/articles/20045641445521-rexx-ATS-How-do-I-link-my-account).
