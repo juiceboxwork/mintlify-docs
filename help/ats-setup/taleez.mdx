@@ -1,0 +1,56 @@
+---
+title: "taleez"
+description: "Connect Taleez to Juicebox."
+sidebarTitle: "Taleez"
+---
+
+## About the integration
+
+Connect Taleez to Juicebox to import job descriptions into your searches and identify profiles that already exist in your ATS.
+
+You can also export profiles to a selected Taleez job.
+
+If Taleez is not visible in your Juicebox Integrations tab, contact [Juicebox Support](mailto:support@juicebox.ai) to confirm availability for your account.
+
+## Before you start
+
+You need access to **API & Webhooks** in your Taleez account settings. If you cannot manage API keys, ask your Taleez administrator to help.
+
+Taleez provides two kinds of key: a **Public Key** for public resources such as job listings, and a **Secret Key** for access to private API resources. Candidate access requires an appropriately scoped secret key.
+
+## Prepare your Taleez API credentials
+
+1. In Juicebox, open **Integrations**, select **Taleez**, and click **Activate**. Review the credentials and permissions requested in the connection pop-up.
+2. In Taleez, open your account settings and select **API & Webhooks**.
+3. Generate the API credentials requested by your connection flow. Configure each key's scopes to match the access required for the integration.
+4. Copy the requested key values and keep the secret key confidential.
+
+## Setting up the integration
+
+1. Return to the Juicebox connection pop-up and paste the requested credentials into their matching fields.
+2. Complete the remaining prompts.
+3. Return to Juicebox and confirm that the integration shows **Connected**.
+
+## Confirm the integration
+
+After the initial sync, check that the expected jobs appear and an existing Taleez candidate is identified in Juicebox.
+
+If jobs appear but private candidate records do not, check the key type and its scopes. A public key alone does not provide access to private candidate data. Contact [Taleez technical support](mailto:tech.support@taleez.com) if you cannot generate the required credentials, or Juicebox Support for help with the connection fields.
+
+## Using the integration
+
+To start a search from a job, open **Projects** and select **Import Job from ATS / CRM**, then choose the relevant Taleez job.
+
+Juicebox identifies profiles that already exist in Taleez, helping your team check for existing records before reaching out.
+
+To send a profile to Taleez, follow the [export steps](/exports) and choose the Taleez export option for the linked job. Confirm that the profile appears in Taleez after the export completes.
+
+<Note>
+The initial sync can take time. Data may continue to appear after the connection is established. If you do not see the expected records, contact Juicebox Support.
+</Note>
+
+## Support
+
+For an overview of integration features, see [ATS Integrations](/ats-integrations). If you need help, contact [support@juicebox.ai](mailto:support@juicebox.ai).
+
+For more about Taleez API keys, see [Taleez's API documentation](https://api.taleez.com/).

@@ -1,0 +1,66 @@
+---
+title: "flatchr"
+description: "Connect Flatchr to Juicebox."
+sidebarTitle: "Flatchr"
+---
+
+## About the integration
+
+Connect Flatchr to Juicebox to import job descriptions into your searches and identify profiles that already exist in your ATS.
+
+You can also export profiles to a selected Flatchr job.
+
+If Flatchr is not visible in your Juicebox Integrations tab, contact [Juicebox Support](mailto:support@juicebox.ai) to confirm availability for your account.
+
+## Before you start
+
+You need the **Administrator** role in Flatchr. Confirm that the top-right cog opens settings and that **Advanced settings** is visible.
+
+Prepare three values: your **subdomain**, **Company key**, and **API key**.
+
+## Find your subdomain
+
+1. Sign in to Flatchr and click the top-right cog.
+2. Open **Advanced settings > Advanced**, or go to [Advanced settings](https://app.flatchr.io/board/settings/advanced/general).
+3. Find **Subdomain configuration** and copy the subdomain shown there.
+
+## Find your Company key
+
+1. Open **Advanced settings > Advanced > API**, or go to [API settings](https://app.flatchr.io/board/settings/advanced/api).
+2. Under **List of keys**, find and copy the **Company key**.
+
+## Create an API key
+
+1. On the same API settings page, click **Add a key**.
+2. Name the key **Juicebox**, then click **Add**.
+3. Find the new key in the list and click **Copy**.
+
+## Setting up the integration
+
+1. In Juicebox, open **Integrations**, select **Flatchr**, and click **Activate**.
+2. Enter the subdomain, Company key, and API key in the corresponding connection fields.
+3. Complete the remaining prompts, then return to Juicebox and confirm that the integration shows **Connected**.
+
+## Confirm the integration
+
+After the initial sync, check that the expected jobs appear and that an existing Flatchr candidate is identified in Juicebox.
+
+If the connection is rejected, confirm that the Company key and API key are in the correct fields and that the subdomain belongs to the same Flatchr company.
+
+## Using the integration
+
+To start a search from a job, open **Projects** and select **Import Job from ATS / CRM**, then choose the relevant Flatchr job.
+
+Juicebox identifies profiles that already exist in Flatchr, helping your team check for existing records before reaching out.
+
+To send a profile to Flatchr, follow the [export steps](/exports) and choose the Flatchr export option for the linked job. Confirm that the profile appears in Flatchr after the export completes.
+
+<Note>
+The initial sync can take time. Data may continue to appear after the connection is established. If you do not see the expected records, contact Juicebox Support.
+</Note>
+
+## Support
+
+For an overview of integration features, see [ATS Integrations](/ats-integrations). If you need help, contact [support@juicebox.ai](mailto:support@juicebox.ai).
+
+For illustrated ATS-side instructions, see [the Flatchr connection guide from Kombo](https://help.kombo.dev/hc/en-us/articles/18567822877457).
