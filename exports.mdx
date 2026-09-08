@@ -65,6 +65,17 @@ To view past exports, select your account icon in the bottom left corner. Then, 
 
 ![Exports](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/exports/Untitled-5.png)
 
+If your organization has a connected ATS integration, the Export history page shows two tabs:
+
+- **Exports**: the existing table of all file and ATS exports, with a download link for each.
+- **ATS activity**: a per-candidate log of every ATS export. Each row shows the candidate, the result, a failure reason when the export didn’t land, the integration, the project, the exporter, and the date. You can filter by project, exporter, result, and date range.
+
+To inspect a single export, select **View records** next to an ATS export in the Exports tab. This opens the ATS activity tab showing only that export’s candidates. Select **Show all** or change any filter to return to the full log.
+
+The failure reason column shows the same classified reasons as the [export results report](/ats-integrations#export-results-and-troubleshooting), including the ATS’s own error message, so you can see why a specific candidate wasn’t created without downloading the report.
+
+Per-candidate records start from when your organization’s history begins. The tab notes the earliest available date, and older exports don’t offer the **View records** drill-through.
+
 ### Exporting a network from the Network page
 
 From the Network page, opening an employee's connections or overlaps sidebar surfaces a **Download** icon that exports the full list to CSV. This bypasses the standard select-and-export flow above and does not use export or contact credits.
@@ -78,4 +89,4 @@ See [Network Sourcing](/network-sourcing) for the full workflow.
 
 ### Integrate with CRM or ATS
 
-Please view our [Integrations page](/ats-integrations) for more details on CRM and ATS integrations.
+Please view our [Integrations page](/ats-integrations) for more details on CRM and ATS integrations. For per-profile export results, failure reasons, and how large exports are batched, see [Export Results and Troubleshooting](/ats-integrations#export-results-and-troubleshooting).
