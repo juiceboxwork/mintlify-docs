@@ -148,7 +148,8 @@
                   "help/account/change-admin-user",
                   "help/account/remove-users",
                   "help/account/delete-account"
-                ]
+                ],
+                "expanded": true
               },
               {
                 "group": "Billing",
@@ -160,7 +161,8 @@
                   "help/billing/switch-billing-frequency",
                   "help/billing/cancel-subscription",
                   "help/billing/resume-paused-account"
-                ]
+                ],
+                "expanded": true
               },
               {
                 "group": "Plans & Seats",
@@ -172,7 +174,8 @@
                   "help/plans/merge-team-subscriptions",
                   "help/plans/subscription-not-appearing",
                   "help/plans/business-plan"
-                ]
+                ],
+                "expanded": true
               },
               {
                 "group": "Data Import & Migration",
@@ -181,7 +184,8 @@
                   "help/data-migration/migrate-starter-growth",
                   "help/data-migration/migrate-business",
                   "help/data-migration/linkedin-connections"
-                ]
+                ],
+                "expanded": true
               },
               {
                 "group": "Email Deliverability",
@@ -191,7 +195,8 @@
                   "help/deliverability/minimize-bounces",
                   "help/deliverability/re-enroll-bounced-emails",
                   "help/deliverability/suspended-email-account"
-                ]
+                ],
+                "expanded": true
               },
               {
                 "group": "FAQ",
@@ -200,7 +205,8 @@
                   "help/faq/free-trial-limits",
                   "help/faq/more-export-credits",
                   "help/faq/ev-charger-support"
-                ]
+                ],
+                "expanded": true
               },
               {
                 "group": "ATS Setup Guides",
@@ -309,7 +315,8 @@
                   "help/ats-setup/workday",
                   "help/ats-setup/zoho-recruit",
                   "help/ats-setup/zvoove-recruit"
-                ]
+                ],
+                "expanded": true
               }
             ]
           }
