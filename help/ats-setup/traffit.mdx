@@ -1,5 +1,5 @@
 ---
-title: "traffit"
+title: "TRAFFIT Integration Set-up"
 description: "Connect TRAFFIT to Juicebox."
 sidebarTitle: "TRAFFIT"
 ---
@@ -19,15 +19,33 @@ Use a TRAFFIT account that can manage **Integration API** settings. Open the cog
 ## Create a TRAFFIT API client
 
 1. In Juicebox, open **Integrations**, select **TRAFFIT**, and click **Activate**. Keep the required scope list in the connection pop-up available.
+   <Frame caption="Example scope list from a TRAFFIT connection pop-up. Use the scopes shown in your own pop-up.">
+     ![Example of required scopes in a TRAFFIT connection pop-up](/images/help/ats-setup/traffit-04-required-scopes-example.png)
+   </Frame>
 2. In TRAFFIT, click the bottom-left cog, select **Integration API**, and click **Add client**.
+   <Frame>
+     ![TRAFFIT Settings menu with Integration API selected](/images/help/ats-setup/traffit-01-integration-api-menu.png)
+   </Frame>
+   <Frame>
+     ![Add client button in TRAFFIT Integration API](/images/help/ats-setup/traffit-02-add-api-client.png)
+   </Frame>
 3. Enter a recognizable **Client name**, such as **Juicebox**.
 4. Select the scopes listed in your Juicebox connection pop-up, then click **Save**.
+   <Frame>
+     ![TRAFFIT Add client form with Client name and Scope fields](/images/help/ats-setup/traffit-03-client-name-and-scopes.png)
+   </Frame>
 5. Copy the saved client's **Client name** and **Client secret**.
+   <Frame>
+     ![Saved TRAFFIT API client showing Client name, Client Secret, and Scope](/images/help/ats-setup/traffit-05-generated-client-credentials.png)
+   </Frame>
 
 ## Setting up the integration
 
 1. Return to the Juicebox connection pop-up.
 2. Enter the Client name and Client secret in their corresponding fields, along with any instance details requested by the flow.
+   <Frame caption="Example TRAFFIT credential fields in a connection pop-up.">
+     ![Example TRAFFIT Client name and Client Secret fields in a connection pop-up](/images/help/ats-setup/traffit-06-enter-client-credentials.png)
+   </Frame>
 3. Click **Set up integration** and finish the remaining prompts.
 4. Return to Juicebox and check that the integration shows **Connected**.
 
