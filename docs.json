@@ -112,6 +112,7 @@
             "icon": "building",
             "pages": [
               "projects",
+              "intakes",
               "hiding-profiles",
               "hiring-managers",
               "data-sources",
