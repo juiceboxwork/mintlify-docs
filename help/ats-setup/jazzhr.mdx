@@ -1,0 +1,123 @@
+---
+title: "JazzHR Integration Set-up"
+sidebarTitle: "JazzHR"
+description: "Enable the two-way integration between JazzHR and Juicebox."
+---
+
+## About the integration
+
+Juicebox's integration with JazzHR allows you to:
+
+1. **Export Profiles to JazzHR**: Save profiles directly into JazzHR, including contact details, current company and job, profile URLs, and more.
+   1. **[Configurable] Auto-Export:** Juicebox has the ability to auto-export profiles to your ATS with configurable triggers, including after shortlisting, after adding to a sequence, or after an interested response.
+   2. **Custom Integration Fields:** On some plans, integration fields can be customized further based on your preferred fields.
+2. **Link JazzHR Jobs to Juicebox**
+   1. **Import Job Descriptions**: Import a job description from JazzHR into Juicebox to automatically kick off a search using the job description.
+   2. **Simplify Exports:** When exporting a profile from Juicebox to the ATS, it will automatically be connected to the correct job in the ATS. More details [here](/projects).
+3. **View Profiles in JazzHR**: View profiles already in JazzHR within Juicebox. Avoid reaching out to the same profile twice, and instantly view your relationship history.
+
+### Start a project via the JazzHR integration
+
+Open the projects page and select **Import Job from ATS / CRM**. You will then see your JazzHR jobs and can select the corresponding option.
+
+### Export profiles to JazzHR
+
+Follow the regular [export](/exports) steps and select **Export to JazzHR** on either an individual profile or a bulk export. After exporting, you will see the profile created in your JazzHR account.
+
+### View profiles already in JazzHR
+
+Juicebox will tag profiles that already exist in JazzHR. You will see the last modified date, as well as the option to view the profile directly in JazzHR by clicking the **View in ATS** button.
+
+## Before you start
+
+Your account must have at least the **Recruiting Administrator** role in your company's JazzHR instance. To check:
+
+1. Log in to JazzHR and click **SETTINGS** at the top of the screen.
+
+   <Frame>
+     ![SETTINGS link at the top of JazzHR](/images/help/ats-setup/jazzhr-1.png)
+   </Frame>
+
+2. Check that you can see the **INTEGRATIONS** link on the Settings page.
+
+   <Frame>
+     ![INTEGRATIONS link on the Settings page](/images/help/ats-setup/jazzhr-2.png)
+   </Frame>
+
+If you cannot see the **SETTINGS** link on the home page, or the **INTEGRATIONS** link on the Settings page, your account does not have enough permissions. Find out who has the **Recruiting Administrator** or **Super Administrator** role in your company's JazzHR instance, and ask them to promote you or take over the setup process.
+
+## Find your API key
+
+1. Log in to JazzHR and click **SETTINGS** at the top of the screen.
+
+   <Frame>
+     ![SETTINGS link at the top of JazzHR](/images/help/ats-setup/jazzhr-1.png)
+   </Frame>
+
+2. Click the **INTEGRATIONS** link on the Settings page.
+
+   <Frame>
+     ![INTEGRATIONS link on the Settings page](/images/help/ats-setup/jazzhr-2.png)
+   </Frame>
+
+3. Copy the **API Key** shown on the page.
+
+   <Frame>
+     ![API Key on the Integrations page](/images/help/ats-setup/jazzhr-3.png)
+   </Frame>
+
+4. Paste your API key into the connection pop-up.
+
+   <Frame>
+     ![Pasting the API key into the connection flow](/images/help/ats-setup/jazzhr-4.png)
+   </Frame>
+
+## Find your career page URL
+
+1. Click the **CAREER PAGE** link on the Settings page.
+
+   <Frame>
+     ![CAREER PAGE link on the Settings page](/images/help/ats-setup/jazzhr-5.png)
+   </Frame>
+
+2. Click the **VIEW CAREER PAGE** button under the **Career Page Layout** section.
+
+   <Frame>
+     ![VIEW CAREER PAGE button](/images/help/ats-setup/jazzhr-6.png)
+   </Frame>
+
+3. Copy the URL from your browser's address bar and paste it into the connection pop-up.
+
+   <Frame>
+     ![Career page URL in the browser address bar](/images/help/ats-setup/jazzhr-7.png)
+   </Frame>
+
+   <Frame>
+     ![Pasting the career page URL into the connection flow](/images/help/ats-setup/jazzhr-8.png)
+   </Frame>
+
+## Setting up the integration
+
+1. Navigate to the **Integrations** tab on the Juicebox platform.
+2. Select **JazzHR** and click **Activate**. You can also use the search bar at the top.
+3. Follow the instructions in the connection pop-up, entering your API key and career page URL, then click **Set up integration**.
+
+   <Frame>
+     ![Set up integration button in the connection flow](/images/help/ats-setup/jazzhr-9.png)
+   </Frame>
+
+   <Frame>
+     ![Completed JazzHR connection](/images/help/ats-setup/jazzhr-10.png)
+   </Frame>
+
+4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+
+Congratulations! You have successfully integrated JazzHR and Juicebox.
+
+<Note>
+  It may take a few minutes for all data to sync between Juicebox and JazzHR.
+</Note>
+
+## Support
+
+For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).

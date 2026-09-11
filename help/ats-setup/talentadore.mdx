@@ -1,0 +1,62 @@
+---
+title: "TalentAdore Integration Set-up"
+description: "Connect TalentAdore to Juicebox."
+sidebarTitle: "TalentAdore"
+---
+
+<img src="/images/help/ats-setup/new-2026-09/talentadore/logo.png" alt="TalentAdore logo" width="64" height="64" />
+
+## About the integration
+
+Connect TalentAdore to Juicebox to import jobs and start searches from their job descriptions. You can also export profiles with resumes to a selected job. This connector does not provide full-database candidate reading for rediscovery.
+
+## Before you start
+
+Ask TalentAdore support for an **API key** if you intend to export candidates. Job import also requires an **RSS feed URL** from your Positions page.
+
+Open **Integrations** in Juicebox, select **TalentAdore**, and choose **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
+
+<Note>
+The screenshots show vendor settings or the connection window provided by Kombo. Use the credentials, source labels, permissions, and URLs from your own connection; screenshot values are examples.
+</Note>
+
+## Generate the jobs RSS feed
+
+On the **Positions** page, select **RSS feed**. In the dialog, choose the positions under **Filters** and the information to expose under **Contents**. Copy the resulting feed URL.
+
+<Frame caption="Open the RSS feed dialog from Positions.">
+  <img src="/images/help/ats-setup/new-2026-09/talentadore/setup-25405971093009-01.png" alt="Open the RSS feed dialog from Positions." width="760" />
+</Frame>
+
+## Connect the feed and API key
+
+Paste the RSS feed URL into Juicebox. On the next step, enter the API key issued by TalentAdore and finish setup.
+
+<Frame caption="Enter the generated RSS feed URL.">
+  <img src="/images/help/ats-setup/new-2026-09/talentadore/setup-25405971093009-03.png" alt="Enter the generated RSS feed URL." width="760" />
+</Frame>
+
+<Frame caption="Enter the API key for application creation.">
+  <img src="/images/help/ats-setup/new-2026-09/talentadore/setup-25405971093009-04.png" alt="Enter the API key for application creation." width="760" />
+</Frame>
+
+## Confirm the integration
+
+Finish the connection window and return to Juicebox. Confirm that the connection has completed, then allow the initial sync to populate your data.
+
+- Check that the expected jobs appear in Juicebox.
+- Export a test profile with a resume to a selected job, then verify the application in TalentAdore.
+
+If validation fails, check the credentials, account or region, and permission list shown in the connection window. Contact Juicebox Support if the expected data is still missing.
+
+## Using the integration
+
+Start from an imported job on the [Projects](/projects) page to create a search linked to that job.
+
+To send a profile to TalentAdore, follow the [export steps](/exports) and select the connected ATS and intended job.
+
+## Support
+
+For help, contact [support@juicebox.ai](mailto:support@juicebox.ai). For an overview of available workflows, see [ATS Integrations](/ats-integrations).
+
+ATS-side setup reference: [Kombo’s TalentAdore connection guide](https://help.kombo.dev/hc/en-us/articles/25405971093009-TalentAdore-How-do-I-link-my-account).

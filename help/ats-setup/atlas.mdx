@@ -1,0 +1,87 @@
+---
+title: "Atlas Integration Set-up"
+description: "Connect Atlas to Juicebox."
+sidebarTitle: "Atlas"
+---
+
+<img src="/images/help/ats-setup/new-2026-09/atlas/logo.png" alt="Atlas logo" width="64" height="64" />
+
+## About the integration
+
+Connect Atlas to Juicebox to import jobs and start searches from their job descriptions. You can also export profiles with resumes to a selected job. Existing candidates can be identified in Juicebox and used for rediscovery, subject to the access granted to the connection.
+
+## Before you start
+
+An Atlas administrator must create the API key. Choose the Atlas user who will own the key and be associated with candidates created by the integration.
+
+Open **Integrations** in Juicebox, select **Atlas**, and choose **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
+
+<Note>
+The screenshots show vendor settings or the connection window provided by Kombo. Use the credentials, source labels, permissions, and URLs from your own connection; screenshot values are examples.
+</Note>
+
+## Create an API key
+
+1. In Atlas, open **Settings > Company settings > Developers > API keys**.
+2. Create a key named **Juicebox** and select its owner.
+3. Match the permissions to the scope list in your Juicebox connection window, including write access where requested.
+4. Create and copy the key. If scope changes do not take effect later, create a replacement key with the correct scope.
+
+<Frame caption="Open Developers in Atlas company settings.">
+  <img src="/images/help/ats-setup/new-2026-09/atlas/setup-50393356136081-03.png" alt="Open Developers in Atlas company settings." width="760" />
+</Frame>
+
+<Frame caption="Choose scopes that match the current connection requirements.">
+  <img src="/images/help/ats-setup/new-2026-09/atlas/setup-50393356136081-08.png" alt="Choose scopes that match the current connection requirements." width="760" />
+</Frame>
+
+## Set the key and candidate-creation user
+
+Enter the API key in Juicebox. When asked for a default user email for created people, enter the email of the Atlas user selected as the key owner.
+
+<Frame caption="Provide an Atlas user email for candidate creation.">
+  <img src="/images/help/ats-setup/new-2026-09/atlas/setup-50393356136081-14.png" alt="Provide an Atlas user email for candidate creation." width="760" />
+</Frame>
+
+## Configure webhooks when prompted
+
+1. Copy the webhook endpoint from Juicebox.
+2. In Atlas developer settings, open **Webhooks**, select **Add Endpoint**, and paste the endpoint.
+3. Subscribe to the events listed in your connection window and create the endpoint.
+4. Reveal and copy its signing secret, paste it into the requested field in Juicebox, and complete setup.
+
+<Frame caption="Add the webhook endpoint in Atlas.">
+  <img src="/images/help/ats-setup/new-2026-09/atlas/setup-50393356136081-18.png" alt="Add the webhook endpoint in Atlas." width="760" />
+</Frame>
+
+<Frame caption="Select the events requested by your connection.">
+  <img src="/images/help/ats-setup/new-2026-09/atlas/setup-50393356136081-20.png" alt="Select the events requested by your connection." width="760" />
+</Frame>
+
+## Confirm the integration
+
+Finish the connection window and return to Juicebox. Confirm that the connection has completed, then allow the initial sync to populate your data.
+
+- Check that the expected jobs appear in Juicebox.
+- Find a known candidate and confirm that the information available matches your configured access.
+- Export a test profile with a resume to a selected job, then verify the application in Atlas.
+
+If validation fails, check the credentials, account or region, and permission list shown in the connection window. Contact Juicebox Support if the expected data is still missing.
+
+## Limitations
+
+An existing person with the same email, phone, or LinkedIn is reused without updating the profile. Closed or on-hold projects reject writes. Attachments are stored on the person.
+
+## Using the integration
+
+Start from an imported job on the [Projects](/projects) page to create a search linked to that job.
+
+To send a profile to Atlas, follow the [export steps](/exports) and select the connected ATS and intended job.
+
+Learn how to work with existing candidates in [Talent Rediscovery](/talent-rediscovery).
+
+## Support
+
+For help, contact [support@juicebox.ai](mailto:support@juicebox.ai). For an overview of available workflows, see [ATS Integrations](/ats-integrations).
+
+ATS-side setup reference: [Kombo’s Atlas connection guide](https://help.kombo.dev/hc/en-us/articles/50393356136081-Atlas-ATS-How-do-I-link-my-account).
