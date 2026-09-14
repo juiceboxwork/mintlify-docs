@@ -72,6 +72,8 @@ If your organization has a connected ATS integration, the Export history page sh
 
 To inspect a single export, select **View records** next to an ATS export in the Exports tab. This opens the ATS activity tab showing only that export’s candidates. Select **Show all** or change any filter to return to the full log.
 
+ATS exports that are [queued behind a job sync](/ats-integrations#exporting-to-a-job-that-hasnt-synced-yet) show a **Pending** status until they run. If the job never finishes syncing, the row reads “Job did not finish syncing”.
+
 The failure reason column shows the same classified reasons as the [export results report](/ats-integrations#export-results-and-troubleshooting), including the ATS’s own error message, so you can see why a specific candidate wasn’t created without downloading the report.
 
 Per-candidate records start from when your organization’s history begins. The tab notes the earliest available date, and older exports don’t offer the **View records** drill-through.

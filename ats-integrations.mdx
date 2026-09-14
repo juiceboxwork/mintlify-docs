@@ -51,6 +51,20 @@ _Contact your Juicebox Account Executive to determine whether your integration s
 
 ![ATS Integrations](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/ats-integrations/Untitled.png)
 
+#### Exporting to a Job That Hasn’t Synced Yet
+
+On supported integrations, the job picker shows a **New in ATS** section alongside your synced jobs. It lists jobs recently added in your connected platform that Juicebox hasn’t finished syncing. You can select one of these jobs without waiting for the next sync. The job card notes “Will export when syncing finishes”.
+
+When you export to a job that hasn’t synced yet, Juicebox queues the export instead of running it immediately:
+
+- A notification confirms “Export to [your ATS] submitted”, with a **View status** action that opens the export in the [ATS activity tab](/exports#viewing-past-exports) and a **Dismiss** action.
+- Juicebox runs the export automatically once the job finishes syncing, then replaces the notification with the completed, partial, or failed outcome.
+- Queued exports appear as **Pending** in your export history until they settle.
+- If the job closes in your ATS before it syncs, the export fails with “The selected ATS job is no longer open.”
+- If the job doesn’t finish syncing in time, the export fails with “Job did not finish syncing”. You can export again once the job appears in your synced jobs.
+
+Exports to already-synced jobs, including quick exports and auto-exports, still run immediately.
+
 ### One-Click Re-Export
 
 Once you've exported at least one profile to an ATS integration, you’ll see a “1-Click Export” button with the ATS icon appear on subsequent profiles. This allows you to export new profiles in bulk directly to your job/project without needing to reselect it each time.
@@ -86,6 +100,8 @@ If an export fails, Juicebox shows the specific reason in the notification rathe
 - Your ATS rejected the profile’s details (e.g. an invalid email address), quoted from the ATS response.
 - The profile has no email address on file.
 - Your ATS is temporarily unavailable.
+
+Failures that don’t match a known cause are grouped under **Other**, with the ATS’s response included where available.
 
 **Results report**
 
