@@ -153,7 +153,7 @@ Saved-search writes are gated on licensed-seat projects.
 
 ### Manage an Agent from Slack
 
-From any project you can reach in Slack, ask `@Juicebox` to change an existing Agent's lifecycle or its sourcing settings. Juicebox always tells you exactly what it's about to change and waits for your confirmation before making the change, because these actions affect state the whole team sees and can trigger real outreach.
+From any project you can reach in Slack, ask `@Juicebox` to change an existing Agent's lifecycle or its sourcing settings. These actions affect state the whole team sees and can trigger real outreach. Juicebox always tells you exactly what it's about to change and waits for your confirmation before making the change.
 
 If the project isn't clear from the channel, name it in the prompt (`for [Project]`) or paste its Juicebox link.
 
@@ -161,20 +161,20 @@ If the project isn't clear from the channel, name it in the prompt (`for [Projec
 
 - **Pause** — stop sourcing and contacting new leads, keeping the Agent's slot. Candidates already enrolled in an outreach sequence still receive their remaining steps.
 - **Resume** — un-pause a paused Agent.
-- **Close** — stop the Agent and free its agent slot. Close is reversible — you can reopen the Agent later. Optionally stop the Agent's in-flight sequence runs at the same time, so candidates part-way through outreach receive no further steps.
+- **Close** — stop the Agent and free its agent slot. Close is reversible; you can reopen the Agent later. Optionally stop the Agent's in-flight sequence runs at the same time, so candidates part-way through outreach receive no further steps.
 - **Reopen** — bring a closed Agent back to calibrating. It won't start sourcing again until you start it from Juicebox.
 
 **Sourcing settings**
 
 - **Approval type** — switch between manual (you review every lead before any outreach) and automatic (leads are contacted or shortlisted with no review).
-- **Destination for approved leads** — send approved leads into an outreach sequence (name the sequence and Juicebox resolves it), or send them to the shortlist with no outreach. A destination change also governs leads already waiting for review, but candidates already enrolled in a sequence keep receiving their remaining steps until the Agent is closed with in-flight outreach cancelled.
+- **Destination for approved leads** — send approved leads into an outreach sequence (name the sequence and Juicebox resolves it), or send them to the shortlist with no outreach. A destination change also governs leads already waiting for review. Candidates already enrolled in a sequence keep receiving their remaining steps until you close the Agent and cancel its in-flight outreach.
 - **Daily leads** — set the Agent to source 5, 15, or 25 leads a day. Higher cadences (50 and 75) take extra agent slots and are set from the Agent's Settings page in Juicebox.
 
 Only current Agents are supported. Projects without an Agent and legacy agentic projects are managed in the Juicebox app. To create a new Agent from Slack, ask `@Juicebox` to create one for a project — that's a separate action from the changes above.
 
 **Who can change an Agent from Slack**
 
-Changing an Agent's lifecycle or sourcing settings requires a licensed Juicebox seat in your organization, the same rule the web Agent settings apply. In a channel linked to a project, non-licensed hiring managers can still add notes and approve leads, but Agent changes are refused with a message that names the missing seat. Reopening a closed Agent also requires the Agents permission, since it puts an Agent back in play.
+Changing an Agent's lifecycle or sourcing settings requires a licensed Juicebox seat in your organization, the same rule the web Agent settings apply. In a channel linked to a project, non-licensed hiring managers can still add notes and approve leads. Juicebox refuses an Agent change from a non-licensed seat with a message that names the missing seat. Reopening a closed Agent also requires the Agents permission, since it puts an Agent back in play.
 
 **Example prompts**
 
