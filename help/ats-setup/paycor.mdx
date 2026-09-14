@@ -1,0 +1,83 @@
+---
+title: "Paycor Integration Set-up"
+description: "Connect Paycor to Juicebox."
+sidebarTitle: "Paycor"
+---
+
+## About the integration
+
+Connect Paycor to Juicebox to import job descriptions into your searches and identify profiles that already exist in your ATS.
+
+You can also export profiles to a selected Paycor job.
+
+If Paycor is not visible in your Juicebox Integrations tab, contact [Juicebox Support](mailto:support@juicebox.ai) to confirm availability for your account.
+
+## Before you start
+
+You need a **Paycor Perform HR, Payroll, or Company administrator** account to authorize the connection.
+
+Open **Integrations** in Juicebox, select **Paycor**, and click **Activate**. Keep the connection pop-up open throughout setup.
+
+<Note>
+Some Paycor connections go directly to **Sign in with Paycor**. Complete the developer-portal steps below only if your connection pop-up requests them.
+</Note>
+
+## Create a Developer Portal account, if requested
+
+1. Open [Paycor Developer Portal](https://developers.paycor.com/). For a sandbox connection, use [the sandbox portal](https://developers-sandbox.paycor.com/).
+2. If you do not already have a portal account, choose **Sign Up** for existing Paycor clients, then **Get Started**.
+3. Sign in with your Paycor account, select the portal administrator, and click **Request Access**. Paycor sends an email to that administrator.
+4. Once you have access, return to the connection pop-up and continue.
+
+## Create an application, if requested
+
+1. In the Developer Portal, open **Applications** and click **+ Application**.
+2. Give the application a recognizable name, such as **Juicebox**. Select **Standard Application**, then create it.
+3. Copy the application OAuth **Client ID** and **Client Secret** into the corresponding fields in the Juicebox connection pop-up.
+
+## Configure the return URL and subscription key, if requested
+
+1. Open the application's **Security Connections** tab.
+2. Under **Approved Return OAuth URL**, add the personalized redirect URL shown in your connection pop-up. Save the change.
+3. Copy the **APIm Subscription Key** from Security Connections into the connection pop-up and continue.
+
+## Configure data access, if requested
+
+1. Open the application's **Data Access** tab.
+2. Enable the access scopes listed in your connection pop-up and save. The required list depends on your connection.
+3. On the **General** tab, copy the **Scope Name** into the connection pop-up and continue.
+
+## Authorize Paycor
+
+1. In the connection pop-up, click **Sign in with Paycor**.
+2. Sign in and authorize access to the legal entities and ATS accounts you intend to connect.
+3. Finish the authorization window and return to Juicebox. Confirm that the integration shows **Connected**.
+   <Frame caption="Example success screen from a Paycor connection.">
+     ![Example Paycor connection success screen](/images/help/ats-setup/paycor-25-connection-success-example.png)
+   </Frame>
+
+## Confirm the integration
+
+After the initial sync, check that the expected jobs and existing candidates appear. Export a test profile to a selected Paycor job and confirm that it is associated with the intended job.
+
+If authorization fails, check the return URL, selected entities, and requested scopes against your current connection pop-up.
+
+## Using the integration
+
+To start a search from a job, open **Projects** and select **Import Job from ATS / CRM**, then choose the relevant Paycor job.
+
+Juicebox identifies profiles that already exist in Paycor, helping your team check for existing records before reaching out.
+
+To send a profile to Paycor, follow the [export steps](/exports) and choose the Paycor export option for the linked job. Confirm that the profile appears in Paycor after the export completes.
+
+Resume attachments and exports without a job are not currently supported.
+
+<Note>
+The initial sync can take time. Data may continue to appear after the connection is established. If you do not see the expected records, contact Juicebox Support.
+</Note>
+
+## Support
+
+For an overview of integration features, see [ATS Integrations](/ats-integrations). If you need help, contact [support@juicebox.ai](mailto:support@juicebox.ai).
+
+For illustrated ATS-side instructions, see [the Paycor connection guide from Kombo](https://help.kombo.dev/hc/en-us/articles/39176831015953-Paycor-ATS-How-do-I-link-my-account).

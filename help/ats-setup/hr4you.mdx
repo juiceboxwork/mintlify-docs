@@ -1,0 +1,72 @@
+---
+title: "HR4YOU Integration Set-up"
+description: "Connect HR4YOU to Juicebox."
+sidebarTitle: "HR4YOU"
+---
+
+<img src="/images/help/ats-setup/new-2026-09/hr4you/logo.png" alt="HR4YOU logo" width="64" height="64" />
+
+## About the integration
+
+Connect HR4YOU to Juicebox to import jobs and start searches from their job descriptions. You can also export profiles with resumes to a selected job. Existing candidates can be identified in Juicebox and used for rediscovery, subject to the access granted to the connection.
+
+## Before you start
+
+Ask your HR4YOU representative to enable the API. API access may be paid. An HR4YOU administrator must create the integration user and arrange its API assignment.
+
+Open **Integrations** in Juicebox, select **HR4YOU**, and choose **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
+
+<Note>
+The screenshots show vendor settings or the connection window provided by Kombo. Use the credentials, source labels, permissions, and URLs from your own connection; screenshot values are examples.
+</Note>
+
+## Enter your subdomain
+
+Find your HR4YOU subdomain in the browser address bar and enter it in the Juicebox connection window.
+
+<Frame caption="Identify the subdomain of your HR4YOU instance.">
+  <img src="/images/help/ats-setup/new-2026-09/hr4you/setup-27216771733393-01.png" alt="Identify the subdomain of your HR4YOU instance." width="652" />
+</Frame>
+
+## Create and enable the API user
+
+1. Create a new HR4YOU user.
+2. Set its level to **Berater** and select the appropriate user group.
+3. Fill in the required fields, set **Zugangsstatus** to **Aktiv**, and select **Geschäftsführer** under **Rolle (Zugriffsrechte)**, as required by the documented connection procedure.
+4. Select **Registrieren** and enter the user credentials in the connection window.
+
+<Frame caption="Set the integration user’s level and group.">
+  <img src="/images/help/ats-setup/new-2026-09/hr4you/setup-27216771733393-04.png" alt="Set the integration user’s level and group." width="760" />
+</Frame>
+
+<Frame caption="Complete the required access settings.">
+  <img src="/images/help/ats-setup/new-2026-09/hr4you/setup-27216771733393-05.png" alt="Complete the required access settings." width="760" />
+</Frame>
+
+## Ask HR4YOU to assign API access
+
+Contact your HR4YOU representative to assign the new user to the API. This assignment must be performed by HR4YOU. After they confirm it, complete the connection in Juicebox.
+
+## Confirm the integration
+
+Finish the connection window and return to Juicebox. Confirm that the connection has completed, then allow the initial sync to populate your data.
+
+- Check that the expected jobs appear in Juicebox.
+- Find a known candidate and confirm that the information available matches your configured access.
+- Export a test profile with a resume to a selected job, then verify the application in HR4YOU.
+
+If validation fails, check the credentials, account or region, and permission list shown in the connection window. Contact Juicebox Support if the expected data is still missing.
+
+## Using the integration
+
+Start from an imported job on the [Projects](/projects) page to create a search linked to that job.
+
+To send a profile to HR4YOU, follow the [export steps](/exports) and select the connected ATS and intended job.
+
+Learn how to work with existing candidates in [Talent Rediscovery](/talent-rediscovery).
+
+## Support
+
+For help, contact [support@juicebox.ai](mailto:support@juicebox.ai). For an overview of available workflows, see [ATS Integrations](/ats-integrations).
+
+ATS-side setup reference: [Kombo’s HR4YOU connection guide](https://help.kombo.dev/hc/en-us/articles/27216771733393-HR4YOU-Wie-verbinde-ich-meinen-Account).

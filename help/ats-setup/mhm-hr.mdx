@@ -1,0 +1,58 @@
+---
+title: "MHM HR Integration Set-up"
+description: "Connect MHM HR to Juicebox."
+sidebarTitle: "MHM HR"
+---
+
+<img src="/images/help/ats-setup/new-2026-09/mhm-hr/logo.png" alt="MHM HR logo" width="64" height="64" />
+
+## About the integration
+
+Connect MHM HR to Juicebox to import jobs and start searches from their job descriptions. You can also export profiles with resumes to a selected job. This connector does not provide full-database candidate reading for rediscovery.
+
+## Before you start
+
+Request an **API Key** and **API Secret** from [MHM HR service](mailto:service@mhm-hr.com). Include your company name and explain that the integration is through Kombo.
+
+Open **Integrations** in Juicebox, select **MHM HR**, and choose **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
+
+<Note>
+The screenshots show vendor settings or the connection window provided by Kombo. Use the credentials, source labels, permissions, and URLs from your own connection; screenshot values are examples.
+</Note>
+
+## Enter your domain and credentials
+
+Enter your **Customer Domain**, **API Key**, and **API Secret** in the Juicebox connection window, then select **Set up integration**.
+
+<Frame caption="Enter the MHM HR domain and API credentials.">
+  <img src="/images/help/ats-setup/new-2026-09/mhm-hr/setup-42595732234385-01.png" alt="Enter the MHM HR domain and API credentials." width="606" />
+</Frame>
+
+## Confirm the supported workflow
+
+Test job import and candidate export. MHM HR requires applicants to be explicitly exported before its API can read them, and newly created candidates cannot be read back. Do not use this connection as a complete existing-candidate database.
+
+## Confirm the integration
+
+Finish the connection window and return to Juicebox. Confirm that the connection has completed, then allow the initial sync to populate your data.
+
+- Check that the expected jobs appear in Juicebox.
+- Export a test profile with a resume to a selected job, then verify the application in MHM HR.
+
+If validation fails, check the credentials, account or region, and permission list shown in the connection window. Contact Juicebox Support if the expected data is still missing.
+
+## Limitations
+
+Reading existing candidates requires an explicit export inside MHM HR; newly created candidates cannot be read back.
+
+## Using the integration
+
+Start from an imported job on the [Projects](/projects) page to create a search linked to that job.
+
+To send a profile to MHM HR, follow the [export steps](/exports) and select the connected ATS and intended job.
+
+## Support
+
+For help, contact [support@juicebox.ai](mailto:support@juicebox.ai). For an overview of available workflows, see [ATS Integrations](/ats-integrations).
+
+ATS-side setup reference: [Kombo’s MHM HR connection guide](https://help.kombo.dev/hc/en-us/articles/42595732234385-MHM-HR-How-do-I-link-my-account).
