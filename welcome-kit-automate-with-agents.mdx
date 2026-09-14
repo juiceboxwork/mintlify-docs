@@ -144,9 +144,13 @@ You can also provide “yes, but…” feedback when you approve candidates, suc
 
 The Agent is learning from all this feedback and getting better at pattern-matching, so _more feedback is always better._
 
-Now here’s the most important part: calibration isn’t finished until you select **Looks Good** for a set of three candidates in a row. If you select **Not a Fit**, it will keep calibrating until you’re more confident in the candidates it’s finding.
+<Warning>
+  Keep approving or rejecting candidates that the Agent provides until it's done calibrating. The Agent will ask you to keep calibrating until you're consistently approving candidates (roughly two out of every three in a batch).
 
-The Agent will keep learning as you accept or reject more candidates down the line, but at this point, the initial calibration is complete. You won’t have to do this again unless you want to re-calibrate it later.
+  You'll know it's done when it moves on to the settings questions (e.g. how many leads to find per day). **If you haven't gotten to the settings questions yet, the agent isn't done calibrating and will not run.**
+</Warning>
+
+The Agent will keep learning as you accept or reject more candidates down the line, but you won't need to do a full calibration again unless you significantly change the parameters of the search.
 
 **Want more help?** Learn more about [setting up and calibrating Agents](https://docs.juicebox.ai/juicebox-agents#setting-up-an-agent).
 
