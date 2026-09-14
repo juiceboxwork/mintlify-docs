@@ -123,7 +123,7 @@ Manage profiles and follow-up straight from Slack:
 
 ### Work with saved searches from Slack
 
-Ask `@Juicebox` to browse, review, create, or edit the saved searches inside a project without leaving Slack. These tools operate on ordinary saved searches; Agent configuration and recalibration stay on the Agent tools.
+Ask `@Juicebox` to browse, review, create, or edit the saved searches inside a project without leaving Slack. These tools operate on ordinary saved searches; Agent search criteria and calibration stay on the Agent's calibration page in Juicebox. Agent lifecycle and sourcing settings can be changed from Slack — see [Manage an Agent from Slack](#manage-an-agent-from-slack).
 
 **Browse and review (read-only)**
 
@@ -150,6 +150,44 @@ Example prompts:
 ```
 
 Saved-search writes are gated on licensed-seat projects.
+
+### Manage an Agent from Slack
+
+From any project you can reach in Slack, ask `@Juicebox` to change an existing Agent's lifecycle or its sourcing settings. Juicebox always tells you exactly what it's about to change and waits for your confirmation before making the change, because these actions affect state the whole team sees and can trigger real outreach.
+
+If the project isn't clear from the channel, name it in the prompt (`for [Project]`) or paste its Juicebox link.
+
+**Lifecycle**
+
+- **Pause** — stop sourcing and contacting new leads, keeping the Agent's slot. Candidates already enrolled in an outreach sequence still receive their remaining steps.
+- **Resume** — un-pause a paused Agent.
+- **Close** — stop the Agent and free its agent slot. Close is reversible — you can reopen the Agent later. Optionally stop the Agent's in-flight sequence runs at the same time, so candidates part-way through outreach receive no further steps.
+- **Reopen** — bring a closed Agent back to calibrating. It won't start sourcing again until you start it from Juicebox.
+
+**Sourcing settings**
+
+- **Approval type** — switch between manual (you review every lead before any outreach) and automatic (leads are contacted or shortlisted with no review).
+- **Destination for approved leads** — send approved leads into an outreach sequence (name the sequence and Juicebox resolves it), or send them to the shortlist with no outreach. A destination change also governs leads already waiting for review, but candidates already enrolled in a sequence keep receiving their remaining steps until the Agent is closed with in-flight outreach cancelled.
+- **Daily leads** — set the Agent to source 5, 15, or 25 leads a day. Higher cadences (50 and 75) take extra agent slots and are set from the Agent's Settings page in Juicebox.
+
+Only current Agents are supported. Projects without an Agent and legacy agentic projects are managed in the Juicebox app. To create a new Agent from Slack, ask `@Juicebox` to create one for a project — that's a separate action from the changes above.
+
+**Who can change an Agent from Slack**
+
+Changing an Agent's lifecycle or sourcing settings requires a licensed Juicebox seat in your organization, the same rule the web Agent settings apply. In a channel linked to a project, non-licensed hiring managers can still add notes and approve leads, but Agent changes are refused with a message that names the missing seat. Reopening a closed Agent also requires the Agents permission, since it puts an Agent back in play.
+
+**Example prompts**
+
+```text
+@juicebox, pause the Agent for [Project].
+@juicebox, resume [Project]'s Agent.
+@juicebox, close the Agent for [Project] and stop the in-flight outreach.
+@juicebox, reopen the [Project] Agent.
+@juicebox, switch [Project]'s Agent to manual approval.
+@juicebox, send approved leads for [Project] into the "Senior Eng Outreach" sequence.
+@juicebox, put approved leads for [Project] on the shortlist instead of a sequence.
+@juicebox, set [Project]'s Agent to 15 leads a day.
+```
 
 ### Channel reachability
 
@@ -215,6 +253,11 @@ If they're already linked, `@Juicebox account` confirms who they're connected as
 | Connect your Juicebox account | `@juicebox account` |
 | Lead review | `@juicebox, show me the pending leads for [Agent].` |
 | Agent status | `@juicebox, how is [Agent] doing?` |
+| Pause an Agent | `@juicebox, pause the Agent for [Project].` |
+| Close an Agent | `@juicebox, close the Agent for [Project] and stop the in-flight outreach.` |
+| Change approval type | `@juicebox, switch [Project]'s Agent to manual approval.` |
+| Assign an outreach sequence | `@juicebox, send approved leads for [Project] into "[Sequence]".` |
+| Change daily lead volume | `@juicebox, set [Project]'s Agent to 15 leads a day.` |
 | Approvals | `@juicebox, how many leads did we approve this week for [Project]?` |
 | Outreach | `@juicebox, how many people have we contacted in [Sequence]?` |
 | Profile history | `@juicebox, what happened to [Profile] after we approved them?` |
