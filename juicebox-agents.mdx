@@ -64,10 +64,31 @@ The Agent chat remains available throughout the Agent's lifecycle, from calibrat
 - Ask how your pipeline is doing and get recommendations
 - Ask which criteria are limiting your qualified pool
 - Take actions in connected apps, such as pulling a candidate list from Google Sheets to find similar profiles, or writing a talent market map into Notion
+- Pause, resume, or stop a candidate's sequence run without leaving the chat (see [Managing sequence runs from chat](#managing-sequence-runs-from-chat))
 
 <Frame>
   ![Clean Shot 2026 08 17 At 09 32 07@2x](/images/CleanShot-2026-08-17-at-09.32.07@2x-1.png "Clean Shot 2026 08 17 At 09 32 07@2x")
 </Frame>
+
+#### Managing sequence runs from chat
+
+The Agent can pause, resume, or stop a candidate's sequence run directly from chat, so you no longer have to open the sequence page for these actions. Enrolling or re-enrolling a candidate, and editing the sequence copy or timing, remain UI work on the sequence page.
+
+The chat mirrors the same rules as the sequence page, applied per run:
+
+- **Pause** — only an active run can be paused. Pausing holds every unsent step; nothing goes out until the run is resumed.
+- **Resume** — only a paused run can be resumed. The remaining schedule is recalculated from the moment it resumes, keeping the original gaps between steps. A run paused for two weeks does not fire a backlog; it restarts the remaining cadence from now.
+- **Stop** — permanent. Every unsent step is cancelled and there is no un-stop. The only way back is to re-enroll the candidate from the sequence page, which starts them over at step one. The Agent asks you to confirm before stopping.
+
+If a run has already ended, is on a sequence you don't have access to, or otherwise can't accept the action, the chat says so for that specific run and continues with the rest.
+
+Ask the Agent in natural language, for example:
+
+- "Pause Jamie Chen's sequence."
+- "Resume the runs you paused for me yesterday."
+- "Stop outreach for everyone in the Recruiter search who hasn't replied."
+
+The Agent identifies the affected runs from the pipeline, confirms a stop before acting, and reports each run's outcome individually.
 
 ## Use Cases
 
