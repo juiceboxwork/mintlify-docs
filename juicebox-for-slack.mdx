@@ -33,11 +33,11 @@ Juicebox for Slack lets you:
     Two things must be true about the person doing the linking:
 
     - Their Juicebox account is linked to their Slack account. Run `@Juicebox account` in any channel Juicebox is in to link them. See [Connect a Slack identity to a Juicebox account](#connect-a-slack-identity-to-a-juicebox-account).
-    - They're a member of the channel they're connecting. Inviting the Juicebox bot alone doesn't unlock delivery — the person who connected the channel must be in it.
+    - They're a member of the channel they're connecting. Inviting the Juicebox bot alone doesn't unlock delivery. The person who connected the channel must be in it.
 
     For a public channel Juicebox already knows about, pick it from the searchable list. For a private channel Juicebox isn't in yet, paste its channel link or ID. The paste row is hidden until your Slack account is linked, since a paste from an unlinked user would be refused.
 
-    If Slack can't confirm your membership at connect time (typical for a private channel the bot hasn't been invited to yet), the connection saves as **unverified** and stays muted — nothing posts to the channel — until Slack can verify you're in it. See [Unverified channel connections](#unverified-channel-connections).
+    If Slack can't confirm your membership at connect time (typical for a private channel the bot hasn't been invited to yet), the connection saves as **unverified** and stays muted. Nothing posts to the channel until Slack can verify you're in it. See [Unverified channel connections](#unverified-channel-connections).
   </Step>
   <Step title="Tag @Juicebox in the Slack channel">
     Get started by asking Juicebox what it can do in Slack.
@@ -168,7 +168,7 @@ If the channel is archived, the dialog surfaces that instead and asks you to pic
 
 ### Unverified channel connections
 
-When you connect a project to a private channel Juicebox isn't in yet, Slack can't confirm that you're a member. Juicebox saves the connection but keeps it **muted** — no notifications, review requests, or activity summaries post — until Slack can verify the connector's membership.
+When you connect a project to a private channel Juicebox isn't in yet, Slack can't confirm that you're a member. Juicebox saves the connection but keeps it **muted** until Slack can verify the connector's membership. While muted, no notifications, review requests, or activity summaries post to the channel.
 
 The Slack notifications dialog surfaces this with a warning that names the connector and explains what to do next:
 
