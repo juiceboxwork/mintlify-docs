@@ -98,7 +98,26 @@ Juicebox's MCP server supports dynamic client registration, so it can be configu
 **Shortlist tools**
 
 - search\_shortlist — Lists the candidates saved to a project's shortlist, with optional filters (e.g. by title or school). Read-only, and only for projects you're allowed to see.
-- get\_candidate\_details — Pulls richer details on specific shortlisted candidates that the quick list doesn't include—like total years of experience and job tenure—so you can filter or analyze on those.<br />
+- get\_candidate\_details — Pulls richer details on specific shortlisted candidates that the quick list doesn't include—like total years of experience and job tenure—so you can filter or analyze on those. Optionally returns an AI compensation estimate for each candidate (see below).<br />
+
+**Compensation estimates**
+
+get\_candidate\_details can include the same AI compensation estimate shown on the candidate profile in Juicebox. Set includeCompensation to true in the tool call, or ask your AI client to include compensation when pulling candidate details:
+
+```json
+{
+  "contactIds": ["<candidate-id>"],
+  "includeCompensation": true
+}
+```
+
+Each estimate returns a minimum and maximum salary range with a short explanation. Estimates are usually grounded in multiple market datapoints; when limited data is available, the tool returns an approximation based on fewer datapoints in the same shape.
+
+A few things to know:
+
+- **No extra credit.** The estimate uses the export credit get\_candidate\_details already charges, and it's free for candidates you've already exported. If a candidate has no estimate available, the tool still returns their details, and the paid export is never refunded or failed.
+- **Batch cap of 10.** When includeCompensation is set, you can request at most 10 candidates per call.
+- **Pending estimates.** Some estimates take longer to compute. Those candidates return a "pending" compensation status while the estimate finishes in the background. Call the tool again for the same candidates to collect the finished estimate at no charge, since those candidates are already exported.
 
 **Project tool**
 
