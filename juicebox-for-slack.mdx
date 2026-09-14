@@ -140,6 +140,17 @@ Available to regular and admin licensed seats on non-Agent projects. Hiring-mana
 - **Create search** — paste a role brief or job description. Juicebox builds filters and criteria, saves the search in the project you name, and runs it immediately. The response includes the search link, pool size, first-page count, and up to five candidates. If the source looks like a job description, Juicebox uses JD mode automatically.
 - **Update search** — apply a natural-language edit to one existing saved search and re-run it.
 
+Both tools accept an optional `ats_scope` parameter to scope a saved search against your [connected ATS](/ats-integrations) for [talent rediscovery](/talent-rediscovery). It's only offered when your organization has an ATS connected, and takes one of:
+
+| Value | Behavior |
+| --- | --- |
+| `auto` | Default. On create, Juicebox infers scope from the role brief or JD. On update, Juicebox keeps the search's current scope unless the instruction itself changes it. |
+| `ats-only` | Return only candidates already in the connected ATS. Use this for talent rediscovery, for example "find people in my ATS who fit this role" or "who's already applied". |
+| `exclude-ats` | Return only candidates *not* in the connected ATS. Use this to surface net-new candidates and skip anyone who's already applied. |
+| `none` | Ignore ATS membership entirely and search everyone. On update, this clears any ATS scoping already on the search. |
+
+Ask in plain language and Juicebox picks the right scope, or name the scope explicitly if you want to override the default.
+
 Example prompts:
 
 ```text
@@ -147,6 +158,8 @@ Example prompts:
 @juicebox, show me the filters on the "Staff PM - NYC" search.
 @juicebox, create a saved search in [Project] for a senior backend engineer with Go and Kubernetes based in the EU.
 @juicebox, in [Project], update "Staff PM - NYC" to also include product-led-growth experience.
+@juicebox, in [Project], create a saved search for a senior backend engineer, only people already in my ATS.
+@juicebox, in [Project], update "Staff PM - NYC" to skip anyone already in my ATS.
 ```
 
 Saved-search writes are gated on licensed-seat projects.
