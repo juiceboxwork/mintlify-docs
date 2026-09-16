@@ -197,13 +197,17 @@ These affect your workflow rather than deliverability directly, but keeping **Au
 
 #### Calendar
 
-Under **Account → Calendar**, **Allow disabling calendar integration** lets members connect a mailbox without granting calendar access. Mailboxes connected without calendar access can still send email normally, but lose calendar-based features (AI-suggested meeting times, daily briefing summaries, sequence auto-stop when a meeting is booked).
+Under **Account → Calendar**, **Don't request calendar access** stops Juicebox from asking for calendar permission when members connect a mailbox. While the setting is on, Juicebox drops the calendar scope from every Google and Microsoft mailbox connect and reconnect. Mailboxes connected under it can still send email normally, but they lose calendar-based features: AI-suggested meeting times, daily briefing summaries, and sequence auto-stop when a meeting is booked. Turning the setting off does not restore calendar access on existing mailboxes. A member has to reconnect the mailbox to regain the scope.
 
 Open: [app.juicebox.ai/account?tab=calendar](https://app.juicebox.ai/account?tab=calendar)
 
 <Frame>
-  <img src="/images/deliverability/calendar-section.png" alt="Calendar section with toggle to allow disabling calendar integration" />
+  <img src="/images/deliverability/calendar-section.png" alt="Calendar section with toggle to disable calendar access" />
 </Frame>
+
+#### Email drafts
+
+Under **Account → Email Drafts**, **Don't request draft access** stops Juicebox from asking for draft-compose permission when members connect a mailbox. While the setting is on, Juicebox drops the compose scope from every Google and Microsoft mailbox connect and reconnect. Mailboxes connected under it can still send and receive email, but Juicebox won't create response drafts in them. The **Create drafts in my mailbox** option is hidden on both the mailbox settings dialog and the sequence onboarding card. A member cannot re-enable drafts by reconnecting an affected mailbox while the setting is on.
 
 ### Admin settings for deliverability
 
