@@ -3,12 +3,12 @@ title: "Juicebox MCP"
 ---
 
 <Note>
-  The Juicebox MCP server is rolling out to users starting August 12th, 2026.
+  The Juicebox MCP server is rolling out starting August 12, 2026.
 </Note>
 
 The Juicebox Model Context Protocol (MCP) server lets AI models and agents access and interact with your Juicebox data through a standardized interface.
 
-Connect it to Claude, ChatGPT, Cursor, or any other MCP-compatible tool to read your recruiting analytics and create or calibrate agents in <u>Juicebox</u>, all without leaving your AI client.
+Connect it to Claude, ChatGPT, Cursor, or any other MCP-compatible tool to read your recruiting analytics and create or calibrate agents in Juicebox, all without leaving your AI client.
 
 ## **Permissions & access**
 
@@ -20,7 +20,7 @@ The Juicebox MCP server is available on all Juicebox paid plans. Access levels v
 
 ## **Authentication**
 
-Our MCP server authenticates each user individually via OAuth. Every user completes their own OAuth flow during setup, so the server only returns data that the user can already see in Juicebox. A user cannot query projects, searches, or candidates they do not otherwise have access to in the app.
+Our MCP server authenticates each user individually via OAuth. You complete your own OAuth flow during setup, so the server only returns data you can already see in Juicebox. You cannot query projects, searches, or candidates you do not otherwise have access to in the app.
 
 ## **Set up your MCP client**
 
@@ -32,12 +32,12 @@ The server URL is:
 
 _Note: this URL is only used by MCP clients. Opening it directly in a browser will show an error, which is expected._
 
-Select your client below for setup instructions. During setup, you'll see an approval screen listing the permissions the MCP server requests: reading your recruiting analytics and creating or calibrating agents on your behalf. Click Approve to continue.
+Select your client below for setup instructions. During setup, you'll see an approval screen listing the permissions the MCP server requests: reading your recruiting analytics and creating or calibrating agents on your behalf. Select **Approve** to continue.
 
 ### **Claude Connectors**
 
-1. In Claude, go to **Settings \> Connectors** and search for Juicebox, or go there directly with this link: [<u>claude.ai/directory/connectors</u>](https://claude.ai/directory/connectors/e6d9e323-b594-403d-a431-563f4da6712a)
-2. Select **Juicebox** and click **Connect**.
+1. In Claude, go to **Settings \> Connectors** and search for Juicebox, or go there directly with this link: [claude.ai/directory/connectors](https://claude.ai/directory/connectors/e6d9e323-b594-403d-a431-563f4da6712a)
+2. Select **Juicebox** and select **Connect**.
 3. You'll be prompted to log in to Juicebox (if you aren't already) and select **Approve** in the MCP access window.
 
 <Frame>
@@ -50,8 +50,8 @@ claude mcp add --transport http juicebox [https://mcp.juicebox.ai/v1](https://mc
 
 ### **ChatGPT Plugins**
 
-1. In ChatGPT, open **Settings \> Plugins** and search for Juicebox, or use this link: [<u>chatgpt.com/apps?q=Juicebox</u>](https://chatgpt.com/apps?show_chat_button=true&q=Juicebox)
-2. Select **Juicebox** and click **Connect**.
+1. In ChatGPT, open **Settings \> Plugins** and search for Juicebox, or use this link: [chatgpt.com/apps?q=Juicebox](https://chatgpt.com/apps?show_chat_button=true&q=Juicebox)
+2. Select **Juicebox** and select **Connect**.
 3. Follow the authorization prompts to complete setup.
 
 <Frame>
@@ -81,10 +81,10 @@ claude mcp add --transport http juicebox [https://mcp.juicebox.ai/v1](https://mc
 
 ### **Gemini CLI**
 
-Juicebox's MCP server supports dynamic client registration, so it can be configured with Gemini CLI:
+Juicebox's MCP server supports dynamic client registration, so you can configure it with Gemini CLI:
 
 1. Add the server with the command: gemini mcp add --transport http juicebox [https://mcp.juicebox.ai/v1/](https://mcp.juicebox.ai/v1/)
-2. Complete the auth process. For more on Gemini CLI's auth process, check out [<u>their MCP server guide</u>](https://geminicli.com/docs/tools/mcp-server/#automatic-oauth-discovery).
+2. Complete the auth process. For more on Gemini CLI's auth process, check out [their MCP server guide](https://geminicli.com/docs/tools/mcp-server/#automatic-oauth-discovery).
 3. Restart the Gemini CLI (or run /mcp reload if the session is active) and check the status using the built-in command /mcp list. You should see the server listed with a "Connected" status.
 
 ### **Tools**
@@ -113,7 +113,7 @@ Juicebox's MCP server supports dynamic client registration, so it can be configu
 
 ## **Export limits**
 
-To keep Juicebox fast and reliable for users, some detailed candidate exports through the MCP Server count toward your plan's monthly export limit.
+To keep Juicebox fast and reliable, some detailed candidate exports through the MCP Server count toward your plan's monthly export limit.
 
 - **Doesn't count toward your limit:** Lightweight lookups like a candidate's name or LinkedIn URL.
 - **Counts toward your limit:** Full candidate profiles, including experience history and contact details.

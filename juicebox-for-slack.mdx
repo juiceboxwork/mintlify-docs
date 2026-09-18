@@ -7,13 +7,13 @@ description: "Bring Juicebox notifications and profile actions into the Slack ch
 
 Recruiters and hiring managers already coordinate on roles in Slack, but candidate profiles live in other tabs.
 
-Juicebox for Slack closes that gap: connect a Project or Agent to the channel where the team works, and updates show up at the right time — right in the thread, ready to act on.
+Juicebox for Slack closes that gap: connect a Project or Agent to the channel where the team works, and updates show up at the right time, right in the thread, ready to act on.
 
 Juicebox for Slack lets you:
 
 - **Notify, answer, and act** on existing projects, sequences, and Agents
 - **Review and surface leads** produced by an existing Agent or shortlist
-- **Act faster** on common actions — especially on mobile
+- **Act faster** on common actions, especially on mobile
 
 ## Set up in three steps
 
@@ -28,7 +28,7 @@ Juicebox for Slack lets you:
     Each Juicebox organization connects to exactly one Slack workspace, and each Slack workspace connects to exactly one Juicebox organization. Juicebox blocks a connect that would replace an existing pairing. This happens when the workspace already belongs to another Juicebox organization, or when your organization is already connected to a different workspace. Disconnect the existing pairing first, then try again. Re-authorizing the same organization and workspace still works and is safe to run to refresh permissions.
   </Step>
   <Step title="Link a project or Agent">
-    From the **Projects** page, click the project's **Slack** row to open the Slack dialog, then pick a channel from the searchable picker. For a channel you aren't in, or a private channel, paste its channel link or ID into the picker instead.
+    From the **Projects** page, select the project's **Slack** row to open the Slack dialog, then pick a channel from the searchable picker. For a channel you aren't in, or a private channel, paste its channel link or ID into the picker instead.
   </Step>
   <Step title="Tag @Juicebox in the Slack channel">
     Get started by asking Juicebox what it can do in Slack.
@@ -107,7 +107,7 @@ Configure which Juicebox notifications a channel receives without leaving Slack.
 Juicebox posts a launcher that opens an in-Slack configuration modal for the projects and Agents linked to that channel. From the modal you can:
 
 - **Mute all notifications** for the project or Agent in this channel
-- **Choose which notification groups fire** — for example, new leads, sequence replies, or project activity
+- **Choose which notification groups fire**, for example, new leads, sequence replies, or project activity
 
 Changes made in Slack stay in sync with the notification settings on the web, so you can manage the same connection from either surface. Muting keeps your group selections intact, so unmuting restores your previous choices. The project activity summary schedule (daily, weekly, or monthly digest) is unchanged and continues to follow the cadence set in Juicebox.
 
@@ -118,7 +118,7 @@ Before the modal opens or a change is saved, Juicebox checks that your Slack acc
 Manage profiles and follow-up straight from Slack:
 
 - Add a **note** or update **tags** on a profile
-- Create a **reminder or task** and assign it to a teammate in the channel — the assignee is tagged in Slack, and the task and note live in Juicebox
+- Create a **reminder or task** and assign it to a teammate in the channel. The assignee is tagged in Slack, and the task and note live in Juicebox
 - Share a **LinkedIn URL** and add it straight to a project shortlist
 
 ### Work with searches from Slack
@@ -163,7 +163,7 @@ Ask `@Juicebox` to pause, resume, close, or reopen an existing Agent, and to cha
 
 ### Channel reachability
 
-If a linked channel needs Juicebox to be invited before it can reply to mentions and thread follow-ups, the Slack dialog says so under the channel picker. Run `/invite @Juicebox` in the channel, then click the refresh icon next to the picker.
+If a linked channel needs Juicebox to be invited before it can reply to mentions and thread follow-ups, the Slack dialog says so under the channel picker. Run `/invite @Juicebox` in the channel, then select the refresh icon next to the picker.
 
 If the channel is archived, the dialog surfaces that instead and asks you to pick another channel. See [Archived Slack channels](#archived-slack-channels).
 
@@ -171,8 +171,8 @@ If the channel is archived, the dialog surfaces that instead and asks you to pic
 
 If a project was linked to the wrong Slack channel, or you no longer want notifications for it in Slack, you can unlink it from the project's configuration without leaving the flow.
 
-1. Open the project and click the **Slack** row that shows the connected channel name.
-2. In the dialog, click **Disconnect** next to the channel name.
+1. Open the project and select the **Slack** row that shows the connected channel name.
+2. In the dialog, select **Disconnect** next to the channel name.
 3. Confirm **Disconnect** in the prompt.
 
 Notifications stop immediately, and Slack guests in that channel lose the ability to ask `@Juicebox` about this project. Disconnecting clears your notification settings for this project, so if you reconnect the project to a channel later, notifications start from the defaults.
@@ -180,8 +180,8 @@ Notifications stop immediately, and Slack guests in that channel lose the abilit
 To disconnect the entire workspace instead of a single project:
 
 1. Go to **Integrations**.
-2. On the Slack card, click **Manage connections**.
-3. In the dialog, click **Options** > **Remove all connections**.
+2. On the Slack card, select **Manage connections**.
+3. In the dialog, select **Options** > **Remove all connections**.
 4. Confirm **Remove all connections** in the prompt.
 
 This removes the Slack integration from your organization and disconnects it from every project and Agent, so a different workspace can be connected. You can reconnect Slack at any time.
@@ -213,7 +213,7 @@ Juicebox matches Slack members to Juicebox users by email. If a teammate's Slack
 
 When Juicebox can't match a Slack user by email, it sends them a private message only they can see, with a **Sign in to Juicebox** button. Anyone can also trigger the same message on demand by typing `@Juicebox account` (or `@Juicebox find my account`) in any channel where Juicebox is present.
 
-After clicking the button, they sign in to Juicebox, confirm which Slack identity and Juicebox account will be connected, and finish the link. Juicebox then treats the two identities as the same person for permissions, assignments, and notifications.
+After selecting the button, they sign in to Juicebox, confirm which Slack identity and Juicebox account will be connected, and finish the link. Juicebox then treats the two identities as the same person for permissions, assignments, and notifications.
 
 If they're already linked, `@Juicebox account` confirms who they're connected as. The link only works within your Juicebox organization.
 
@@ -272,7 +272,7 @@ When you connect Slack, Juicebox requests the following scopes:
 ## Best practices
 
 - The integration creates one workspace connection, but supports unlimited Slack channel to project or Agent mappings. We recommend **one channel per project or Agent**, though some teams put everything in a single channel.
-- Notifications are scoped to the channel — anyone in the channel gets them. Some notifications (project renamed, collaborators added or removed) can't be disabled. The project activity summary has a configurable cadence — it defaults to weekly, and can be set to daily or monthly.
+- Notifications are scoped to the channel. Anyone in the channel gets them. Some notifications (project renamed, collaborators added or removed) can't be disabled. The project activity summary has a configurable cadence. It defaults to weekly, and can be set to daily or monthly.
 - You only need to tag `@Juicebox` when starting a new thread, not on every message within the thread.
 - DMing Juicebox directly works for status and analytics questions, and works for users without a Juicebox seat (view-only). Lead review cannot happen in DMs.
 
@@ -304,7 +304,7 @@ When you connect Slack, Juicebox requests the following scopes:
   <Accordion title="Slack notifications aren't showing up in my channel after installing this integration">
     Check each of the following:
 
-    1. The project or Agent is linked to that specific channel. Open the project and look for the **Slack** row — it should show the channel name.
+    1. The project or Agent is linked to that specific channel. Open the project and look for the **Slack** row. It should show the channel name.
     2. Juicebox has been added to the channel. Tag `@Juicebox` or run `/invite @Juicebox` in the channel to add it. See [Channel reachability](#channel-reachability) if the project's Slack row asks you to invite Juicebox.
     3. Notifications for the project aren't muted. Run `@Juicebox settings` in the channel and confirm the relevant notification groups are on.
     4. The channel hasn't been archived. Archiving a linked channel marks the connection inactive and stops delivery.
@@ -313,7 +313,7 @@ When you connect Slack, Juicebox requests the following scopes:
   </Accordion>
 
   <Accordion title="Why doesn't the candidate preview in Slack match what I see in Juicebox?">
-    Slack cards show a compact summary of a candidate. The full profile — including all criteria, sources, and history — lives in Juicebox. Open the profile link in the Slack card to see everything Juicebox has on that candidate.
+    Slack cards show a compact summary of a candidate. The full profile, including all criteria, sources, and history, lives in Juicebox. Open the profile link in the Slack card to see everything Juicebox has on that candidate.
   </Accordion>
 
   <Accordion title="Can I restrict which channels the Juicebox bot is allowed to post in?">
@@ -321,15 +321,15 @@ When you connect Slack, Juicebox requests the following scopes:
 
     To disconnect a project from its channel:
 
-    1. Open the project and click the **Slack** row that shows the connected channel name.
-    2. In the dialog, click **Disconnect** next to the channel name.
+    1. Open the project and select the **Slack** row that shows the connected channel name.
+    2. In the dialog, select **Disconnect** next to the channel name.
     3. Confirm **Disconnect** in the prompt.
 
     To remove Juicebox from a channel entirely, use Slack's **Remove app** action on the channel.
   </Accordion>
 
   <Accordion title="What OAuth scopes does Juicebox request, and can I limit them?">
-    See [Slack permissions requested](#slack-permissions-requested) above for the full list of scopes and what each one is used for. All listed scopes are required for the integration to work as documented — you can't remove individual scopes during install.
+    See [Slack permissions requested](#slack-permissions-requested) above for the full list of scopes and what each one is used for. All listed scopes are required for the integration to work as documented. You can't remove individual scopes during install.
 
     If your organization needs a narrower permission set, email [support@juicebox.ai](mailto:support@juicebox.ai) to discuss what's possible.
   </Accordion>
