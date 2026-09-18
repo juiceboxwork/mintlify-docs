@@ -226,7 +226,7 @@ Under **Email limits**, **Organization email sending limit** sets the maximum da
 - **Business plan:** up to 500/day
 - **Self-serve plans:** up to 200/day
 
-Lowering this org-wide ceiling is the fastest way to enforce a conservative sending posture across the whole team, and is useful when you are warming a new domain, or recovering from a deliverability incident and want to cap volume before individual members can push it back up.
+Lowering this org-wide ceiling is the fastest way to enforce a conservative sending posture across the whole team. It's useful when you are warming a new domain, or recovering from a deliverability incident and want to cap volume before individual members can push it back up.
 
 #### Default mailbox access
 
@@ -239,7 +239,7 @@ Under **Mailboxes**, **Default mailbox access** controls the privacy setting app
 - **Public**: everyone in the organization can send from new mailboxes (useful for SOBO workflows).
 - **Private**: only mailbox owners and users the owner shares with can send from new mailboxes.
 
-This does not directly change deliverability, but it shapes how many people can send from any given mailbox, which affects how easy it is to keep per-mailbox volume within a healthy range. Existing mailboxes are not affected; owners can change their own privacy settings from the Integrations tab.
+This does not directly change deliverability, but it shapes how many people can send from any given mailbox. That affects how easy it is to keep per-mailbox volume within a healthy range. This setting does not affect existing mailboxes; owners can change their own privacy settings from the Integrations tab.
 
 #### Enforced footer addendum (Enterprise)
 
@@ -266,7 +266,7 @@ The four options that can be toggled on or off are:
 - Only use professional emails
 - Only use personal emails
 
-At least one option must stay enabled — the last remaining checkbox is locked so an organization can never disable all four. New organizations start with every option enabled.
+At least one option must stay enabled. The last remaining checkbox is locked so an organization can never disable all four. New organizations start with every option enabled.
 
 Use this to enforce a house policy without asking members to re-select the right preference in every sequence. For example, an organization that only wants outbound going to personal addresses can leave **Only use personal emails** on and switch the other three off. A team that has decided professional-only is safer for their domain can do the reverse.
 
