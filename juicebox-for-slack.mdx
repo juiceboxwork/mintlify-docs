@@ -151,6 +151,40 @@ Example prompts:
 
 Search writes are gated on licensed-seat projects.
 
+### Export a candidate to your ATS from Slack
+
+Ask `@Juicebox` to send a candidate straight into your connected ATS without leaving the channel. This is available in any channel where Juicebox is present, once your organization has an ATS integration connected from the **Integrations** tab. See [ATS Integrations](/ats-integrations) for the list of supported providers.
+
+Give Juicebox the candidate's Juicebox profile URL or LinkedIn URL and the job you want them on. Juicebox proposes the specific candidate, job, and stage before writing to your ATS, so you can confirm before the export runs.
+
+```text
+@juicebox, add https://www.linkedin.com/in/ada-lovelace to our "Staff Backend Engineer" role in Ashby.
+@juicebox, export [Candidate] to the Senior PM req in Greenhouse, at the Recruiter Screen stage.
+@juicebox, put https://www.linkedin.com/in/ada-lovelace in our general talent pool.
+```
+
+Behind the scenes, Juicebox uses three tools to complete the export:
+
+- **Find a job** — Juicebox searches your ATS's open jobs by the title or requisition code you mentioned. If more than one job matches, it lists the options and asks which one; if nothing matches, it says so and offers to browse.
+- **Find a stage (optional)** — if you asked for a specific pipeline stage, Juicebox lists the stages on the chosen job in pipeline order and confirms which one you meant. Skip this to let the candidate land in the job's default first stage. Stages for jobs you can't see in the ATS are hidden.
+- **Export the candidate** — Juicebox writes the candidate to the ATS on the confirmed job and stage, and links back to their record in the ATS when the export finishes.
+
+A candidate who isn't in Juicebox yet can still be exported. If you share a LinkedIn URL that Juicebox doesn't have on file, Juicebox creates the contact as part of the export and tells you it added them.
+
+Where the ATS supports it, you can also export to a general talent pool with no specific job. Say so explicitly (for example, "add to the general pool"). If the connected ATS requires a job, Juicebox tells you and asks you to pick one.
+
+#### Guards that apply to Slack exports
+
+Slack exports reuse the same export pipeline as the Juicebox web app, so the same rules apply:
+
+- **Export credits** — each successful export spends an org export credit. Exports fail with a clear message when the org has used up its credits for the billing period.
+- **Contact-info policy** — if your organization requires an email or phone number before exporting, Juicebox blocks the export when neither is on file for the candidate.
+- **Restricted-domain policy** — candidates whose contact email is on a domain your organization has restricted are blocked.
+- **Duplicate detection** — if the candidate is already in the ATS (matched by LinkedIn URL), Juicebox says so and links to their existing record instead of exporting again.
+- **Plan and seat gating** — Slack exports require a paid Juicebox plan and a licensed seat. Free-plan users, unlicensed seats, and Slack guests are blocked with an explanation.
+
+Every Slack export shows up in your normal **Profile Export History** in Juicebox, tagged as coming from Slack. See [Exports](/exports) for the full export workflow, credit behavior, and history view.
+
 ### Manage an Agent from Slack
 
 Ask `@Juicebox` to pause, resume, close, or reopen an existing Agent, and to change its approval type, destination for approved leads, or daily lead volume. Juicebox confirms the change before applying it. Requires a licensed Juicebox seat. Agent search criteria and calibration stay in Juicebox.
@@ -230,6 +264,7 @@ If they're already linked, `@Juicebox account` confirms who they're connected as
 | Outreach | `@juicebox, how many people have we contacted in [Sequence]?` |
 | Profile history | `@juicebox, what happened to [Profile] after we approved them?` |
 | Shortlist add | `@juicebox, add this LinkedIn profile to the shortlist for [Project].` |
+| Export to ATS | `@juicebox, add [Candidate] to our "[Job title]" role in [ATS].` |
 | Pipeline health | `@juicebox, what is the current health of [Project]?` |
 | Task | `@juicebox, assign [Teammate] a task to follow up with [Profile] by Friday.` |
 | List searches | `@juicebox, list searches in [Project].` |
