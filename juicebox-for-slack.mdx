@@ -130,35 +130,45 @@ Manage profiles and follow-up straight from Slack:
 - Create a **reminder or task** and assign it to a teammate in the channel — the assignee is tagged in Slack, and the task and note live in Juicebox
 - Share a **LinkedIn URL** and add it straight to a project shortlist
 
-### Work with saved searches from Slack
+### Work with searches from Slack
 
-Ask `@Juicebox` to browse, review, create, or edit the saved searches inside a project without leaving Slack. These tools operate on ordinary saved searches; Agent configuration and recalibration stay on the Agent tools.
+Ask `@Juicebox` to browse, review, create, or edit the searches inside a project without leaving Slack. These tools operate on ordinary searches; for Agents, see [Manage an Agent from Slack](#manage-an-agent-from-slack).
 
 **Browse and review (read-only)**
 
 Available to any licensed Juicebox user connected to Slack.
 
-- **List searches** — show the saved searches in a project, optionally filtered by a title fragment. Returns each search's title, execution state, last-updated timestamp, and Juicebox link.
-- **Inspect a search** — read one saved search's filter summary, criteria, execution state, and canonical link. Accepts a search ID, exact or partial title, or a canonical Juicebox saved-search URL. Ambiguous titles return candidates so you can confirm which one you meant.
-- **See profiles** — return up to five candidates from the most recent completed run of a saved search. This never re-runs the search or marks profiles as viewed. If no run has finished yet, Juicebox says the results aren't cached instead of executing one.
+- **List searches** — show the searches in a project, optionally filtered by a title fragment. Returns each search's title, execution state, last-updated timestamp, and Juicebox link.
+- **Inspect a search** — read one search's filter summary, criteria, execution state, and canonical link. Accepts a search ID, exact or partial title, or a canonical Juicebox search URL. Ambiguous titles return candidates so you can confirm which one you meant.
+- **See profiles** — return up to five candidates from the most recent completed run of a search. This never re-runs the search or marks profiles as viewed. If no run has finished yet, Juicebox says the results aren't cached instead of executing one.
 
 **Create and update**
 
 Available to regular and admin licensed seats on non-Agent projects. Hiring-manager, sequence, read-only-admin, and guest accounts get read-only access at most.
 
 - **Create search** — paste a role brief or job description. Juicebox builds filters and criteria, saves the search in the project you name, and runs it immediately. The response includes the search link, pool size, first-page count, and up to five candidates. If the source looks like a job description, Juicebox uses JD mode automatically.
-- **Update search** — apply a natural-language edit to one existing saved search and re-run it.
+- **Update search** — apply a natural-language edit to one existing search and re-run it.
 
 Example prompts:
 
 ```text
-@juicebox, list saved searches in [Project].
+@juicebox, list searches in [Project].
 @juicebox, show me the filters on the "Staff PM - NYC" search.
-@juicebox, create a saved search in [Project] for a senior backend engineer with Go and Kubernetes based in the EU.
+@juicebox, create a search in [Project] for a senior backend engineer with Go and Kubernetes based in the EU.
 @juicebox, in [Project], update "Staff PM - NYC" to also include product-led-growth experience.
 ```
 
-Saved-search writes are gated on licensed-seat projects.
+Search writes are gated on licensed-seat projects.
+
+### Manage an Agent from Slack
+
+Ask `@Juicebox` to pause, resume, close, or reopen an existing Agent, and to change its approval type, destination for approved leads, or daily lead volume. Juicebox confirms the change before applying it. Requires a licensed Juicebox seat. Agent search criteria and calibration stay in Juicebox.
+
+```text
+@juicebox, pause the Agent for [Project].
+@juicebox, switch [Project]'s Agent to manual approval.
+@juicebox, set [Project]'s Agent to 15 leads a day.
+```
 
 ### Channel reachability
 
@@ -237,16 +247,17 @@ If they're already linked, `@Juicebox account` confirms who they're connected as
 | Connect your Juicebox account | `@juicebox account` |
 | Lead review | `@juicebox, show me the pending leads for [Agent].` |
 | Agent status | `@juicebox, how is [Agent] doing?` |
+| Manage an Agent | `@juicebox, pause the Agent for [Project].` |
 | Approvals | `@juicebox, how many leads did we approve this week for [Project]?` |
 | Outreach | `@juicebox, how many people have we contacted in [Sequence]?` |
 | Profile history | `@juicebox, what happened to [Profile] after we approved them?` |
 | Shortlist add | `@juicebox, add this LinkedIn profile to the shortlist for [Project].` |
 | Pipeline health | `@juicebox, what is the current health of [Project]?` |
 | Task | `@juicebox, assign [Teammate] a task to follow up with [Profile] by Friday.` |
-| List saved searches | `@juicebox, list saved searches in [Project].` |
-| Inspect a saved search | `@juicebox, show me the filters on the "[Search title]" search in [Project].` |
-| Create a saved search | `@juicebox, create a saved search in [Project] for [role brief or JD].` |
-| Update a saved search | `@juicebox, in [Project], update "[Search title]" to also require [criterion].` |
+| List searches | `@juicebox, list searches in [Project].` |
+| Inspect a search | `@juicebox, show me the filters on the "[Search title]" search in [Project].` |
+| Create a search | `@juicebox, create a search in [Project] for [role brief or JD].` |
+| Update a search | `@juicebox, in [Project], update "[Search title]" to also require [criterion].` |
 
 ## Slack permissions requested
 

@@ -30,7 +30,7 @@ Click **Add Intake** to add intake notes to your project. You can start from scr
 - **Clone an existing intake.** Duplicate an intake note you have already written and make edits.
 - **Choose a template.** Start your new intake note with a template from Juicebox or from your organization.
 
-Templates guide what Intake listens for and how notes are structured. You can use a Juicebox template or build your own so every intake covers the data points your team needs. Templates can come from Juicebox or be built by anyone on your team, and they are shared across your organization so everyone can work from the same structure
+Templates guide what Intake listens for and how notes are structured. You can use a Juicebox template or build your own so every intake covers the data points your team needs. Templates can come from Juicebox or be built by anyone on your team, and they are shared across your organization so everyone can work from the same structure.
 
 ![Clean Shot 2026 08 24 At 14 36 02@2x](/images/CleanShot-2026-08-24-at-14.36.02@2x.png "Clean Shot 2026 08 24 At 14 36 02@2x")
 
@@ -89,11 +89,49 @@ When the call ends, everything lands in one place: an AI summary of the conversa
 From there you can:
 
 - **Start an agent** to begin sourcing with the hiring manager's requirements already built in, or calibrate an agent you have already set up
-- **Start another recording** if the conversation continues on a follow up call
+- **Start another recording** if the conversation continues on a follow-up call
 - **Reference the notes from Ashby, if the role already exists there**
 - **Delete the intake** if you no longer need it
 
 Because the intake already holds the context from the call, you can move from the agent into search and sequences without re-entering what the hiring manager told you.
+
+## Draft a job description from the intake
+
+Once the intake has notes, you can turn them into a job description without leaving Juicebox. Open the agent menu on the intake and choose **Draft job description**. Juicebox streams a JD from the intake's notes into an editor you can revise before you copy it, export it as a PDF, or push it to Ashby.
+
+If your Ashby workspace is connected, Juicebox also seeds the draft with your recent Ashby postings so the tone and structure match the JDs your team already publishes.
+
+### Edit, copy, or export the draft
+
+The draft opens in a rich-text editor. Wait for the typewriter to finish, then edit it inline like any other document. From the footer you can:
+
+- **Copy** the JD as rich text (with a plain-text fallback) to paste into another tool.
+- **Export as PDF** to download a formatted copy.
+- **Create in ATS** to push the draft to Ashby (see below).
+
+If a draft fails partway through, use **Try again** to regenerate. You can also close the dialog to cancel generation.
+
+### Push the draft to Ashby
+
+With Ashby connected, click **Create in ATS** to create a draft job in Ashby in one step. Juicebox:
+
+- Uses the project name as the posting title.
+- Maps the intake notes to one of your existing Ashby departments and offices. Juicebox never creates new departments or offices; it picks from what is already synced.
+- Creates the job as a draft and links the intake to the new Ashby posting.
+
+Once the intake is linked, the menu action becomes **Update job description** and the dialog's primary button becomes **Update job description**, which overwrites the linked posting's description with your latest draft. A **View job in your ATS** link in the footer opens the linked posting in Ashby.
+
+<Note>
+  Job creation and updates are Ashby-only today. Other ATS integrations still support import, export, and rediscovery — see [ATS Integrations](/ats-integrations).
+</Note>
+
+### Who can draft and push a JD
+
+- **Admins and full-seat recruiters** can draft, copy, export, and push to Ashby.
+- **Hiring managers** and other restricted collaborators can draft, copy, and export a PDF, but cannot create or update an Ashby job.
+- **Read-only admins** and **sequence-only seats** do not see the Draft job description action.
+- Empty or template-only intakes are refused — add notes or run the meeting first.
+- Free-plan users are routed to the upgrade paywall when they try to draft a JD.
 
 ## Permissions
 

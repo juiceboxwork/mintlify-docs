@@ -197,13 +197,17 @@ These affect your workflow rather than deliverability directly, but keeping **Au
 
 #### Calendar
 
-Under **Account → Calendar**, **Allow disabling calendar integration** lets members connect a mailbox without granting calendar access. Mailboxes connected without calendar access can still send email normally, but lose calendar-based features (AI-suggested meeting times, daily briefing summaries, sequence auto-stop when a meeting is booked).
+Under **Account → Calendar**, **Don't request calendar access** stops Juicebox from asking for calendar permission when members connect a mailbox. While the setting is on, Juicebox drops the calendar scope from every Google and Microsoft mailbox connect and reconnect. Mailboxes connected under it can still send email normally, but they lose calendar-based features: AI-suggested meeting times, daily briefing summaries, and sequence auto-stop when a meeting is booked. Turning the setting off does not restore calendar access on existing mailboxes. A member has to reconnect the mailbox to regain the scope.
 
 Open: [app.juicebox.ai/account?tab=calendar](https://app.juicebox.ai/account?tab=calendar)
 
 <Frame>
-  <img src="/images/deliverability/calendar-section.png" alt="Calendar section with toggle to allow disabling calendar integration" />
+  <img src="/images/deliverability/calendar-section.png" alt="Calendar section with toggle to disable calendar access" />
 </Frame>
+
+#### Email drafts
+
+Under **Account → Email Drafts**, **Don't request draft access** stops Juicebox from asking for draft-compose permission when members connect a mailbox. While the setting is on, Juicebox drops the compose scope from every Google and Microsoft mailbox connect and reconnect. Mailboxes connected under it can still send and receive email, but Juicebox won't create response drafts in them. The **Create drafts in my mailbox** option is hidden on both the mailbox settings dialog and the sequence onboarding card. A member cannot re-enable drafts by reconnecting an affected mailbox while the setting is on.
 
 ### Admin settings for deliverability
 
@@ -248,6 +252,25 @@ Under the org-wide sequence controls, **Enforced footer addendum** appends defau
 This is an Enterprise feature, primarily used when legal or compliance requires that a specific notice (privacy policy link, regulatory disclosure, unsubscribe wording) appears on every message regardless of who sends it. When enabled, the addendum is force-appended to every sequence email, and members can't turn it off, edit it, or omit it on individual sends.
 
 The related **Force include unsubscribe link** toggle on the same page ensures every sequence email includes an unsubscribe link, which is legally required in most jurisdictions and materially improves deliverability.
+
+#### Available email preferences
+
+Under the **Email Preferences** section at the bottom of the General settings tab, **Available email preferences** lets admins turn off specific email-preference options for the entire organization. Members can only pick from the options that remain enabled when adding contacts to a sequence.
+
+Open: [app.juicebox.ai/account?tab=organization-settings](https://app.juicebox.ai/account?tab=organization-settings)
+
+The four options that can be toggled on or off are:
+
+- Prefer personal emails, fallback to professional emails
+- Prefer professional emails, fallback to personal emails
+- Only use professional emails
+- Only use personal emails
+
+At least one option must stay enabled — the last remaining checkbox is locked so an organization can never disable all four. New organizations start with every option enabled.
+
+Use this to enforce a house policy without asking members to re-select the right preference in every sequence. For example, an organization that only wants outbound going to personal addresses can leave **Only use personal emails** on and switch the other three off. A team that has decided professional-only is safer for their domain can do the reverse.
+
+Disabled options still appear in the sequence enrollment dropdown, greyed out with a tooltip explaining that an admin turned them off. Members can see the option exists and why it's unavailable. Contacts already enrolled in a sequence keep the email address they were enrolled with. If a member's saved default preference has been disabled, new drafts automatically fall back to the first allowed option.
 
 ### What Juicebox does automatically
 
