@@ -130,6 +130,8 @@ Open: [app.juicebox.ai/account?tab=email-settings](https://app.juicebox.ai/accou
 
 Turn strict mode **on** if you are on a new domain, recovering from a deliverability issue, or seeing bounce rates above ~3%.
 
+If an org admin has turned on **Enforce Email strict mode** (see [Enforce Email strict mode across the organization](#enforce-email-strict-mode-across-the-organization)), your toggle stays on and disabled. A tooltip explains that your admin has enforced strict mode for everyone. You can't turn it off until the admin turns the org setting off.
+
 #### Open and click tracking
 
 The same **Email** panel controls open tracking and link-click tracking.
@@ -252,6 +254,23 @@ Under the org-wide sequence controls, **Enforced footer addendum** appends defau
 This is an Enterprise feature, primarily used when legal or compliance requires that a specific notice (privacy policy link, regulatory disclosure, unsubscribe wording) appears on every message regardless of who sends it. When enabled, the addendum is force-appended to every sequence email, and members can't turn it off, edit it, or omit it on individual sends.
 
 The related **Force include unsubscribe link** toggle on the same page ensures every sequence email includes an unsubscribe link, which is legally required in most jurisdictions and materially improves deliverability.
+
+#### Enforce Email strict mode across the organization
+
+Under **Outreach and sequences**, **Enforce Email strict mode** turns on Email strict mode for every user in the organization and prevents them from turning it back off. Only org admins can change this setting.
+
+Open: [app.juicebox.ai/account?tab=organization-settings](https://app.juicebox.ai/account?tab=organization-settings)
+
+When it's on:
+
+- Sequences, agent outreach, and ATS exports only send to email addresses Juicebox has independently verified. This applies to everyone in the organization, regardless of each user's personal **Email strict mode** setting under **Account → Email settings**.
+- The per-user **Email strict mode** toggle stays on and disabled, with a tooltip explaining that an admin has enforced strict mode for everyone.
+- Agents and other automated workers that would otherwise pass a non-strict flag are also forced to strict mode, so their outreach follows the same verified-only rule.
+- The API rejects any attempt to turn a user's strict mode off with a `403 locked-by-admin` response until the org setting is turned back off.
+
+Use this when you want a single, enforced verification standard across the whole team. It's the strongest deliverability guarantee Juicebox offers, because it removes the possibility of any individual member sending to unverified addresses. The tradeoff is the same as strict mode at the user level. Bounce rates and sender reputation improve, but total email coverage drops because unverified addresses are excluded.
+
+When you turn the org setting back off, each user's individual **Email strict mode** setting takes effect again. Users who never explicitly turned strict mode off remain in strict mode by default.
 
 #### Available email preferences
 
