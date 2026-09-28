@@ -115,12 +115,35 @@ Configure which Juicebox notifications a channel receives without leaving Slack.
 
 Juicebox posts a launcher that opens an in-Slack configuration modal for the projects and Agents linked to that channel. From the modal you can:
 
-- **Mute all notifications** for the project or Agent in this channel
-- **Choose which notification groups fire** — for example, new leads, sequence replies, or project activity
+- **Mute all notifications** for the project or Agent in this channel.
+- **Choose which notification groups fire**, for example new leads, sequence replies, or project activity.
+- **Disconnect** the project from this channel. Muting stops notifications but keeps the link and your group selections; disconnect removes the link entirely. After you confirm, Juicebox posts a message to the thread so the rest of the channel sees why updates stopped, and the project's Slack row on the web clears.
 
 Changes made in Slack stay in sync with the notification settings on the web, so you can manage the same connection from either surface. Muting keeps your group selections intact, so unmuting restores your previous choices. The project activity summary schedule (daily, weekly, or monthly digest) is unchanged and continues to follow the cadence set in Juicebox.
 
 Before the modal opens or a change is saved, Juicebox checks that your Slack account is linked to a Juicebox user and that you have permission to manage the project or Agent. If you don't, Juicebox posts a private message in the channel explaining why instead of opening the modal.
+
+If you run `@Juicebox settings` in a channel with no project connected, Juicebox tells you to ask it to connect a project instead. See [Connect or move a project from Slack](#connect-or-move-a-project-from-slack).
+
+### Connect or move a project from Slack
+
+You can wire a project's notifications to a channel without opening the web dialog. Ask `@Juicebox` about a project's Slack channel from any channel where the bot is present:
+
+```text
+@juicebox, where does [Project] post its updates?
+@juicebox, connect [Project] to this channel.
+@juicebox, change the Slack notifications for [Project].
+```
+
+Juicebox replies with a **project channel card** that shows the project's current connection and the actions available from where you're asking:
+
+- **Not connected anywhere** — the card offers **Connect to this channel**. The button opens the settings modal in connect mode with the default notification groups (activity digest and Agent needs action). Press **Connect** to link the project to the channel you're in.
+- **Already posts to this channel** — the card offers **Notification settings**, which opens the settings modal for this project with no picker step. Mute, adjust groups, or disconnect from here.
+- **Posts to a different channel** — the card offers **Move to this channel**, which opens the settings modal in move mode with the project's current group selections preserved. A second button links to the other channel's settings on the web if you'd rather manage it there.
+
+Connect and Move go through the same rules as [linking a channel from the web](#set-up-in-three-steps): your Juicebox account must be linked to your Slack account, and you must be a member of the channel you're connecting to. If the project has moved since you opened the modal, Juicebox refuses the change and asks you to reopen the card. On success, Juicebox posts a confirmation to the thread so the rest of the channel sees the change.
+
+The card is only offered in a regular channel. Ask from a DM or group DM and Juicebox will point you to a channel instead.
 
 ### Take profile actions and create tasks
 
@@ -212,11 +235,19 @@ Connections made before this behavior existed are treated as verified and keep d
 
 If a project was linked to the wrong Slack channel, or you no longer want notifications for it in Slack, you can unlink it from the project's configuration without leaving the flow.
 
+From Juicebox:
+
 1. Open the project and click the **Slack** row that shows the connected channel name.
 2. In the dialog, click **Disconnect** next to the channel name.
 3. Confirm **Disconnect** in the prompt.
 
-Notifications stop immediately, and Slack guests in that channel lose the ability to ask `@Juicebox` about this project. Disconnecting clears your notification settings for this project, so if you reconnect the project to a channel later, notifications start from the defaults.
+From Slack:
+
+1. In the connected channel, run `@Juicebox settings` and open the project's configuration modal.
+2. Click **Disconnect** and confirm.
+3. Juicebox posts a message to the thread so the rest of the channel sees updates have stopped.
+
+Both paths do the same thing. Notifications stop immediately, and Slack guests in that channel lose the ability to ask `@Juicebox` about this project. Disconnecting clears your notification settings for this project, so if you reconnect the project to a channel later, notifications start from the defaults.
 
 To disconnect the entire workspace instead of a single project:
 
@@ -263,6 +294,7 @@ If they're already linked, `@Juicebox account` confirms who they're connected as
 | Action | Example prompt |
 | --- | --- |
 | Notification settings | `@juicebox settings` |
+| Connect or move a project's channel | `@juicebox, connect [Project] to this channel.` |
 | Connect your Juicebox account | `@juicebox account` |
 | Lead review | `@juicebox, show me the pending leads for [Agent].` |
 | Agent status | `@juicebox, how is [Agent] doing?` |
