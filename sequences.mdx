@@ -1,221 +1,176 @@
 ---
 title: "Sequences"
-description: "A step-by-step guide on how to set up sequences, reach out to candidates, and track your success."
+description: "Create and refine outreach with the Composer agent, personalize each step, and preview your sequence before enrolling candidates."
 ---
 
 ## Introduction
 
-In Juicebox, you can send emails via a connected email address, or create tasks to integrate a multi-channel outreach strategy with steps like LinkedIn Connection Request, LinkedIn InMail, or a phone call.
+Use sequences to send emails from a connected mailbox and organize outreach across LinkedIn and phone calls. Email steps send automatically. LinkedIn and call steps create tasks for you to complete.
 
-If you'd like to utilize sequences across Juicebox, please ensure an email is integrated via the **Integrations** tab on the left-hand menu. For additional information on how to connect an email, plus our email configuration settings, please refer to our [Email Integrations](/email-integrations) article.
+Connect a mailbox from **Integrations** before sending email. See [Email Integrations](/email-integrations) for setup and mailbox access.
 
 ## Sequences overview
 
-To navigate to sequences, select the **Sequences** tab on the left-hand menu.
-
-<Frame>
-  ![Sequences tab highlighted in the left-hand menu of Juicebox](/images/sequences/sequences-page.png)
-</Frame>
-
-From the Sequences page, you can create a new sequence, track overall or individual sequence performance, and view the total number of scheduled steps queued for a certain day.
+Open **Sequences** from the left-hand menu. This page shows your sequences, outreach performance, and scheduled activity. Select a sequence to view its candidates and results, or select **New sequence** to create one.
 
 ## Creating a sequence
 
-To create a sequence, select the **New sequence** button in the top-right corner of the Sequences page.
+1. Open **Sequences** and select **New sequence**.
+2. Choose how to start:
+   - Select a suggested project, or use **Choose project**, to generate outreach from that project's context.
+   - Select **Build from scratch** to start with a blank sequence.
+   - Use **Clone existing sequence** to start from a sequence you already have.
+3. Review and edit the sequence in the composer.
 
-<Frame>
-  ![New sequence button in the top-right corner of the Sequences page](/images/sequences/new-sequence-button.png)
-</Frame>
+{/* TODO: screenshot needed — new sequence project picker with Build from scratch and Clone existing sequence, using sample projects. */}
 
-When creating a sequence, you can choose to generate one with AI, start from scratch, clone an existing sequence, or use one of the Juicebox provided templates below.
+The composer brings together two ways to edit:
 
-<Frame>
-  ![Sequence creation options including AI generation, starting from scratch, cloning, and templates](/images/sequences/sequence-templates.png)
-</Frame>
+- **Composer agent:** use the chat panel to draft or revise your outreach in natural language. Answer its questions when more context is needed.
+- **Sequence canvas:** edit the title, messages, senders, step types, and timing directly. Use the numbered step rail to move between steps.
 
-No matter which method you choose, all emails are fully customizable, and within the sequence editor, you'll be able to:
+You can minimize the agent chat to make more room for the sequence.
 
-1. Title the sequence
-2. Edit the number of steps and each step's schedule cadence
-3. Select the step type
-4. Choose the sequence sender
-5. Customize the subject line
-6. Customize the email text
-7. Include a signature
-8. Include a candidate unsubscribe link
-9. Preview and test your sequence
+<Note>
+  Changes save automatically. Check the **Last saved at** indicator, then select **Done** to close the composer. Creating a sequence does not enroll candidates; [add profiles](/add-profiles) when you are ready to start outreach.
+</Note>
 
-<Frame>
-  ![Sequence editor with numbered callouts for each customization option](/images/sequences/sequence-editor.png)
-</Frame>
-
-More information on each one of these features is outlined below.
+{/* TODO: screenshot needed — Composer agent beside the sequence canvas, with sample sender information, step rail, autosave status, and Done. */}
 
 ### Title the sequence
 
-After selecting the template you'd like to use, you can click the pencil icon in the top-right corner to give your sequence a name. For example, if you are using the sequence for a specific project, you can title the sequence after the project for ease of access!
-
-<Frame>
-  ![Pencil icon for renaming a sequence](/images/sequences/title-sequence.png)
-</Frame>
+Click the sequence title at the top of the composer and enter a name. Use a name that helps your team recognize the role or project.
 
 ### Edit the number of steps and each step's schedule cadence
 
-From the sequence overview on the left-hand side, you can add or remove a step. In the editor, you can also set each step's schedule cadence to determine when that step should be sent out.
+Select **Add step** in the step rail or below the sequence to add a step. Use **Delete step** on a step's card to remove it.
 
-**Add or remove a step**
+Use the timing control above each step to set its schedule:
 
-Click **Add step** to add another step, or hover over a step to reveal the trash can icon and remove.
-
-<Frame>
-  ![Add step button and trash can icon for removing a step](/images/sequences/add-remove-step.png)
-</Frame>
-
-**Schedule a step**
-
-Above each step, you will be able to schedule the date and time at which that step will be sent out. Step 1 can be sent immediately or scheduled for another date and time. Steps 2\+ can be scheduled for X amount of days, business days, weeks, months after.
-
-<Frame caption="Step 1">
-  ![Scheduling options for step 1: send immediately or at a specific date and time](/images/sequences/schedule-step-1.png)
-</Frame>
-
-<Frame caption="Steps 2+">
-  ![Scheduling options for steps 2 and beyond: days, business days, weeks, or months after the previous step](/images/sequences/schedule-steps-2-plus.png)
-</Frame>
+- **First step:** open **Start immediately** to choose **immediately**, **next business day**, **soonest at**, or **after**. Configure the timing for the option you select.
+- **Later email steps:** open the **Wait** control. Set the delay in days, business days, weeks, or months, then review **Send at** and **Timezone**.
+- **Manual tasks:** use the **Create** timing control to choose when the task is created.
 
 ### Select the step type
 
-Next to the step number, you can select the type of step you would like to use. Each step can be set up as an email, LinkedIn Connection Request, LinkedIn Message, or Call.
-
-<Frame>
-  ![Step type dropdown showing email, LinkedIn Connection Request, LinkedIn Message, and Call options](/images/sequences/step-type.png)
-</Frame>
+Open the step-type dropdown beside the step number. Choose **Email**, **Connection Request**, **LinkedIn Message**, or **Call**.
 
 <Warning>
-  **Please note:** Only emails will be automated by Juicebox. Any other step will create a task in Juicebox, and when it's time, the sequence will pause until it is marked as completed.
+  Only email steps send automatically. Other step types create a task, and the sequence pauses until you complete or skip that task.
 </Warning>
 
 ### Choose the sequence sender
 
-Any mailbox integrated across your team's account can be selected from the **From** dropdown in order to identify which email the sequence will come from. For more information on mailboxes, and mailbox access levels, please refer to our [Email Integrations](/email-integrations) article.
+Use **From** on each email step to choose a connected mailbox. Mailboxes without access are identified in the dropdown. You need permission to send from a mailbox before starting outreach; see [Email Integrations](/email-integrations) for mailbox permissions.
 
-<Frame>
-  ![From dropdown for selecting the sequence sender mailbox](/images/sequences/sequence-sender.png)
-</Frame>
+You can use a different sender for each step, such as a recruiter for the first email and a hiring manager for a follow-up. When a sequence uses multiple senders, review the **Single thread** and **Multi thread** options:
 
-To configure multi-sender for a sequence, you can select different mailboxes at the individual step level. For example, if I want step 1 to come from my mailbox and step 2 to come from my Hiring Manager's email, I would select my mailbox for step 1, and my Hiring Manager's mailbox for step 2.
+- **Single thread:** senders participate in the same conversation. Additional senders are CC'd for awareness.
+- **Multi thread:** each sender starts a separate thread. Review the subject for each new email.
 
-<Frame>
-  ![Selecting different sender mailboxes for individual sequence steps](/images/sequences/multi-sender.png)
-</Frame>
-
-Once the sender's mailbox has been switched, you can choose whether emails sent from each individual mailbox should continue within the same thread or start a new one.
-
-If you choose the same thread, all senders will participate in the same email thread and each additional sender in the sequence will be CC'd for awareness. If you choose a new thread, each unique sender will start their own separate email thread with a unique subject line that you can customize.
+A follow-up in an existing thread shows **Reply to Step** and the step number instead of a new subject field.
 
 ### Customize the subject line
 
-Change the subject line, and/or add in a CC / BCC email address next to **Subject**.
+Edit **Subject** on an email that starts a thread. Use the **Cc** and **Bcc** control beside the subject to show those fields.
 
-<Frame>
-  ![Subject line field with CC and BCC options](/images/sequences/subject-line.png)
-</Frame>
-
-<Tip>
-  Personalized subject lines tend to receive higher open rates, so be sure to utilize a variable, like `{{First Name}}`, to grab the candidate's attention!
-</Tip>
+You can insert a candidate variable, such as **First Name**, to personalize the subject. Review the resolved subject in the email preview before sending.
 
 ### Customize the email text
 
-Craft your outreach message by using AI commands, variables, and project details. Templates can also be edited to fit your own tone of voice or formatted to include any bold text, hyperlinks (e.g., scheduling links) and images.
+Edit the message directly on its step card. The formatting toolbar supports bold, italic, lists, links, images, and other text formatting. Add a scheduling link as a hyperlink when you want candidates to book time with you.
 
-<Frame>
-  ![Email editor with AI commands, variables, and formatting options](/images/sequences/email-text.png)
-</Frame>
+Use the quick-add controls above the body to insert an **AI command**, a **Network mention**, or a variable. Open **Show all variables** for more choices. The [inline composer](#inline-composer-slash-menu) also makes these tools available while you type.
 
-**AI Commands**
-
-AI Commands are custom personalizations for each profile, that will update to include a one or two sentence overview on the candidate's work experience, skills, etc when sent. In the image above, `{Brief mention of the candidate's relevant skills.}` is the AI Command used to help personalize all outreach efforts in bulk.
-
-<Frame>
-  ![AI Command options with pre-set examples for work experience and skills](/images/sequences/ai-commands.png)
-</Frame>
-
-With AI Commands, you can also choose between pre-set examples, focused on Work Experience or Skills, or write your own. When writing your own AI Command, consider the following: topic, sentence length, and applicability across your candidate pool.
-
-**Snippets**
-
-Snippets are pre-saved templates created by yourself or your team, so you can pull in reusable content across sequence steps.
-
-<Frame>
-  ![Snippets menu for inserting pre-saved templates](/images/sequences/snippets.png)
-</Frame>
+Select **Snippet** below the message to reuse saved text. Select **Add attachment** to attach a file to an email step.
 
 ### Include a signature
 
-At the bottom of your step, select a saved signature to further personalize your message. To learn how to create a signature in Juicebox, refer to our [Manage Account](/manage-account) article.
+Use the sender signature dropdown on an email that starts a thread. Choose a saved signature, or select **Add sender signature** when none is selected. Review the signature in the email preview, especially after changing the sender.
 
-<Frame>
-  ![Signature dropdown at the bottom of a sequence step](/images/sequences/signature.png)
-</Frame>
+To create a signature, see [Manage Account](/manage-account).
 
 ### Include a candidate unsubscribe link
 
-Across from Signature, you can select whether or not you want to include an unsubscribe link for the candidate to use when they receive an email and no longer want to be contacted.
+Enable **Include unsubscribe** at the bottom of an email step to include an opt-out link for the recipient.
 
 ### Preview and test your sequence
 
-Across from the step number, you can preview what the sequence will look like. From here, you can also input your own email, or a teammate's, to officially test the sequence before sending.
+1. Select **Preview** on the step you want to review.
+2. Use **Preview contact** to check the message for a sample contact. Review the subject, resolved variables, AI personalization, signature, and any footer.
+3. To send yourself a test, enter an address in **Test email address** and select **Send Test**. Test messages include **[TEST EMAIL]** in the subject.
+4. Select **Close preview** to return to editing.
 
-<Frame>
-  ![Preview button across from the step number](/images/sequences/preview-sequence.png)
-</Frame>
+{/* TODO: screenshot needed — Email preview with fictional contact and sender details, Preview contact, and Send Test controls. */}
 
-<Frame>
-  ![Test email input for sending a test sequence to yourself or a teammate](/images/sequences/test-sequence.png)
-</Frame>
-
-When you are happy with your sequence, select **Save** at the top of the sequence to exit the screen, and begin your outreach!
+Review each step before enrolling candidates. When the sequence is ready and the latest changes are saved, select **Done**. Then follow [Add Profiles](/add-profiles) to review recipient-specific messages and start outreach.
 
 ## Generate with AI
 
-If you choose to generate your sequence with AI, you can provide the job description, your company or client information, and your scheduling link to create a fully tailored sequence for the role.
+Choose a project when creating a sequence to open the Composer agent. It uses the available project context, such as a linked job, intake notes, or search criteria, and asks questions when it needs more information.
+
+Answer the questions or describe what you want in the chat. Useful details include:
+
+- The role, company, and reasons a candidate might be interested.
+- The number and type of steps, and the spacing between them.
+- The tone, length, and language of the messages.
+- Whether to ask for a reply or include a scheduling link.
+
+For example: "Draft three short emails for this role in a friendly tone. Space the follow-ups three business days apart and ask candidates to reply if they are interested."
+
+The agent updates the sequence canvas. Review its work, then keep refining through chat or edit the cards yourself. You can ask it to shorten a message, change the tone, or revise a particular step.
+
+<Note>
+  Review generated copy for accuracy before sending, including claims about your company and the candidate's experience. Generating a sequence is separate from adding candidates to it.
+</Note>
+
+## Inline composer (slash menu)
+
+Type **/** in a message body to open quick adds. The menu includes:
+
+| Option | What it does |
+| --- | --- |
+| **Ask AI** | Opens the AI command picker to insert personalized copy at the cursor. |
+| **Generate step** | Opens the Composer agent for work on the entire step. Review the result because this action is intended to replace the step's copy. |
+| **Network Mention** | Adds a mention of a relevant mutual connection. See [Network Sourcing](/network-sourcing#use-network-snippets-to-personalize-outreach). |
+| **Snippets** | Inserts saved text, with options to show all snippets or create one. |
+| **Variables** | Inserts candidate or sender details, such as **First Name**, **Current Company**, or **Sender First Name**. |
+
+Press **/** again if you want to insert a literal slash.
+
+### AI commands
+
+Select **AI command** above the message, or choose **Ask AI** from the slash menu. Choose the **Work experience** or **Skills** preset, or write a clear, concise command and select **Done**.
+
+For example: "Write one sentence connecting the candidate's relevant engineering experience to this role."
 
 <Frame>
-  ![AI sequence generation form with fields for job description, company information, and scheduling link](/images/sequences/generate-with-ai.png)
+  ![AI command picker with Work experience and Skills presets and a field for a custom command](/images/sequences/composer-ai-command.jpg)
 </Frame>
 
-AI-generated sequences can also be created in different languages, allowing you to further tailor your outreach to specific regions.
+An AI command is an instruction for per-candidate personalization at the place you insert it. It differs from asking the Composer agent to rewrite the shared sequence text. Use **Preview** to inspect the resulting copy for a sample contact.
+
+Keep commands specific about the topic and desired length. Make sure the instruction works across the candidates you plan to contact.
 
 ## Editing an existing sequence
 
-Once a sequence is created, it can be starred or pinned for easy access, edited, cloned, or archived at any time. To edit an existing sequence, select "…" to the right of the sequence \> Edit.
+From **Sequences**, open the sequence's **…** menu and select **Edit**. Use the same Composer agent and step cards to revise the sequence.
 
-<Frame>
-  ![Sequence options menu with edit, clone, and archive actions](/images/sequences/edit-sequence.png)
-</Frame>
-
-After your sequence has been edited, you can then choose to apply those changes to the candidates already in the sequence or delay those edits for net-new candidates enrolled only.
-
-<Frame>
-  ![Dialog for applying sequence edits to existing candidates or only new candidates](/images/sequences/apply-edits.png)
-</Frame>
-
-Please note, only the edits made on a candidate's outstanding steps will update. If you made edits to step 1, but step 1 has already been sent out to 5 candidates, those 5 candidates will only receive the edits made to steps 2\+.
+If Juicebox prompts you to apply edits to candidates already enrolled, review the choice before applying them. Only outstanding steps can change; a message that has already been sent is not rewritten. To make an edit for one candidate, see [Add Profiles](/add-profiles#view-email-history).
 
 ## Non-email steps
 
-If you use the Connection Request, LinkedIn InMail, or Call step type, you can only choose the task owner and pre-write the message you want to send to the candidate within the step.
+Choose **Connection Request**, **LinkedIn Message**, or **Call** from the step-type dropdown. Use **From** to choose the task owner. For a connection request, enable **Include custom note with connection request** if you want to prepare a note.
 
-As a reminder, these steps are treated as tasks and **will not** be automated by Juicebox. When it is time to complete a task, the task owner will receive a notification from Juicebox and will then need to complete it manually via LinkedIn or phone.
+These steps create manual tasks. Juicebox does not send the LinkedIn message or make the call for you. When a task is due, the owner receives a notification and completes the action on LinkedIn or by phone.
 
-When a task has been triggered, it will appear on your home page. From here, you can execute your task or filter by status, task type, or project!
+When a task has been triggered, it appears on your home page. From here, you can execute your task or filter by status, task type, or project.
 
 <Frame>
   ![Home page task list with filters for status, task type, and project](/images/sequences/tasks-home.png)
 </Frame>
 
-After completing the task, you can **Mark as completed** or **Skip** to resume the sequence for any remaining steps. Note that when a task is pending, the sequence will be paused until the task is completed.
+After completing the task, select **Mark as completed** or **Skip** to resume the sequence for any remaining steps. While the task is pending, the sequence stays paused.
 
 <Frame>
   ![Mark as completed and Skip options for a pending task](/images/sequences/complete-task.png)
@@ -223,17 +178,11 @@ After completing the task, you can **Mark as completed** or **Skip** to resume t
 
 ## Creating a sequence from your shortlist
 
-From your project's shortlist, you can create a sequence from the drop down after you select your candidates and hit **Add to Sequence**.
+Select candidates in your project's shortlist and choose **Add to Sequence**. From the sequence picker, you can select an existing sequence or create a new one.
 
-<Frame>
-  ![Add to Sequence dropdown on the project shortlist](/images/sequences/add-to-sequence-shortlist.png)
-</Frame>
+Review the sequence in the composer, then return to enrollment to choose contact preferences and check each candidate's personalized messages. See [Add Profiles](/add-profiles) for the full enrollment flow.
 
-If your mailbox is not yet connected, Juicebox will prompt you to integrate your email before being able to create a sequence.
-
-<Frame>
-  ![Prompt to connect a mailbox before creating a sequence](/images/sequences/connect-mailbox-prompt.png)
-</Frame>
+If a connected mailbox is required, follow the prompt to connect one before sending email.
 
 ## Pausing, resuming, or stopping a sequence
 
