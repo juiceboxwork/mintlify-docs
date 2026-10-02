@@ -71,6 +71,9 @@ View and update organizational settings. These settings affect all users in the 
 - Auto-enroll with fallback after email bounce
 - Force include unsubscribe link
 - Enforced footer addendum
+- Enforce Email strict mode (locks Email strict mode on for every user in the organization)
+- Enforce Email strict mode (locks Email strict mode on for every user in the organization)
+- Enforce Email strict mode (locks Email strict mode on for every user in the organization)
 - Available email preferences
 - Organization email sending limit
 - Monthly usage reports (available on the business plan)
@@ -116,6 +119,18 @@ View a log of your previous exports along with the fields configured in your [ex
 
 Manage existing agent limits or add new agents to your organization from this section. [_Learn more about what agents can do in your workflows._](/juicebox-agents)
 
+#### Recent ATS activity window
+
+The **Recent ATS activity window** setting under **Agent controls** defines which ATS candidates count as recent for your whole organization. Only admins can change it. Choose **Any time** to turn it off, or pick 90, 180, 270, or 365 days.
+
+A candidate counts as recent when their ATS application is Active, or is Archived or Hired with a last interaction inside the window. When you set a window:
+
+- The [Exclude recent ATS candidates](/talent-rediscovery#exclude-recent-ats-candidates) search filter becomes available.
+- Agents that exclude ATS profiles across all stages exclude only recent ATS candidates. Older ATS candidates stay in the Agent's pool.
+- Agents warn you about an ATS match before outreach only when that candidate is recent.
+
+The setting is unavailable if your ATS doesn't sync application activity to Juicebox. In that case, Juicebox keeps excluding everyone your ATS knows about.
+
 ![Screenshot 2026-07-07 at 4.05.09 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/manage-account/Screenshot_2026-07-07_at_4-05-09_PM.png)
 
 ## Data & sourcing
@@ -129,6 +144,8 @@ Add companies to your organization's DNC list to exclude contacts working at sel
 ### **DNC countries (do not contact country settings)**
 
 Add selected countries to exclude them from email sequences and search results. Enable auto exclude to automatically filter out profiles from these countries for the entire team.
+
+Admins can also add specific people as exceptions to the company and country DNC lists. [_Learn more about contact-level DNC overrides._](/dnc#3-contact-level-dnc-overrides)
 
 ![Screenshot 2026-07-07 at 4.40.10 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/manage-account/Screenshot_2026-07-07_at_4-40-10_PM.png)
 

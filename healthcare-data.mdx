@@ -43,11 +43,30 @@ Open the **Healthcare** filter group in Search to filter on:
 | **Subspecialty** | Pediatric Neurosurgery, Interventional Radiology |
 | **Clinical credentials** | Board certified, ACLS, CCRN |
 | **Affiliated with** | Mayo Clinic, UCSF, Cleveland Clinic |
-| **Requirements** | Hospital privileges, private practice background, travel or contract background |
+| **Requirements** | Hospital privileges, nursing compact license, private practice background, travel or contract background |
 
 <Note>
   **Licensed in** and **Practicing in** are different filters. Licensed in is where a provider holds a state license to practice. Practicing in is where they actually work. A provider can be licensed in a state where they do not currently practice.
 </Note>
+
+### Match any or all license states
+
+When you select more than one state in **Licensed in**, use the toggle next to the filter to choose how Juicebox matches them:
+
+- **Any (OR)**: Matches providers licensed in at least one of the selected states. This is the default.
+- **All (AND)**: Matches only providers with license evidence in every selected state.
+
+Use **All (AND)** when a role requires coverage across several states, such as a telehealth nurse who must be licensed in Texas, Florida, and Georgia. When **All (AND)** is on, the search summary shows the filter as **Licensed in (all)**.
+
+You can also ask for this in plain language, for example: "RNs licensed in both Texas and Florida."
+
+### Filter on nursing compact licenses
+
+Select **Has nursing compact license** under **Requirements** to find RNs and LPN/LVNs who hold an active, unencumbered Nurse Licensure Compact (NLC) multistate license. Juicebox excludes compact privileges that are expired, inactive, suspended, restricted, or otherwise encumbered.
+
+Use this filter when you need nurses who can practice across participating NLC states without a separate license in each one. You can also ask for it in plain language, for example: "Travel RNs with a multistate compact license."
+
+When you filter by **Licensed in**, Juicebox also counts an active nursing compact license as an alternate way to match any selected state that participates in the NLC. For example, a search for RNs licensed in Texas also returns RNs who hold a compact license from another NLC state.
 
 <Frame>
   ![Clean Shot 2026 08 31 At 16 21 52@2x](/images/CleanShot-2026-08-31-at-16.21.52@2x.png "Clean Shot 2026 08 31 At 16 21 52@2x")
@@ -60,7 +79,7 @@ Every healthcare professional's record includes a **Healthcare** tab with a bird
 - Specialty
 - Credentials and certifications
 - Specialties and training
-- Practice authorization, including license status and expiration
+- Practice authorization, including license status and expiration. Nurses with an active NLC multistate license show a **Multi-state compact privilege** badge, which links to the [Nurse Licensure Compact website](https://www.nursecompact.com/).
 - Practice relationships, such as hospital privileges
 
 <Frame caption="The Healthcare tab on a provider's profile.">
