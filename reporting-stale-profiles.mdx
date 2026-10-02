@@ -5,7 +5,7 @@ description: "Flag stale, inaccurate, or suspicious profiles from Juicebox so yo
 
 Juicebox flags profiles that look suspicious, and anyone on your team can also report a profile that looks stale, inaccurate, or fake. Both paths go through the same **Flagged profile** dialog.
 
-### Flagged Badge
+### Flagged badge
 
 When Juicebox's verification scorer marks a profile as suspicious, a red **Flagged** badge appears wherever the profile shows up:
 
@@ -16,9 +16,9 @@ When Juicebox's verification scorer marks a profile as suspicious, a red **Flagg
 
 The scorer runs server-side, so the badge is consistent across every surface. Once someone in your org has acted on the flag, hovering the badge shows **Flagged by \{user\} on \{date\}**, and the flag icon fills in.
 
-### Reviewing a Flagged Profile
+### Reviewing a flagged profile
 
-Click any **Flagged** badge to open the flag dialog. The dialog lists the customer-facing reasons the scorer surfaced, for example:
+Select any **Flagged** badge to open the flag dialog. The dialog lists the customer-facing reasons the scorer surfaced, for example:
 
 - **Recently created profile** — profile was created within the past year
 - **Possible profile mismatch** — the URL may belong to a different person
@@ -32,33 +32,33 @@ From the dialog you can:
 - **Confirm flag** — you agree the profile looks suspicious. The badge fills in and is credited to you.
 - **Remove flag** — you've reviewed the profile and it looks legitimate. The badge is hidden for your whole org.
 
-Both actions accept an optional note. Your org stores one decision per contact, and every change is recorded as a **profile\_flag** activity in the contact's timeline.
+Both actions accept an optional note. Your org stores one decision per contact, and Juicebox records every change as a **profile\_flag** activity in the contact's timeline.
 
-### Reporting a Profile
+### Reporting a profile
 
-You can report any profile, whether or not the scorer has flagged it. Reporting a profile triggers a data check and, in most cases, the profile is automatically updated within 24 hours (some cases can take longer).
+You can report any profile, whether or not the scorer has flagged it. Reporting a profile triggers a data check. In most cases, Juicebox automatically updates the profile within 24 hours, though some cases can take longer.
 
 To report a profile:
 
 1. Open the profile in the contact sidebar.
-2. Click the **•••** (more options) menu at the top of the sidebar.
-3. Select **Report profile** (or click the **Flagged** badge if one is showing and choose **Report** in the dialog).
+2. Select the **•••** (more options) menu at the top of the sidebar.
+3. Select **Report profile** (or select the **Flagged** badge if one is showing and choose **Report** in the dialog).
 4. Choose the issue that best describes the problem:
    - **Incorrect information** — profile details look wrong or outdated
    - **Broken link** — a profile link doesn't work (e.g. a 404 error)
    - **Fake profile** — the person or profile does not look real
    - **Other** — something else about the profile needs review
 5. Add details to help us investigate. For incorrect information, mention the specific field (e.g. name, job title, location).
-6. Click **Submit report**. A toast confirms the report and the **Flagged** badge appears on the profile across your org.
+6. Select **Submit report**. A toast confirms the report and the **Flagged** badge appears on the profile across your org.
 
-A standing report is preserved even if the scorer later flags the profile, so confirm or remove won't overwrite it. To clear a report, open the flag dialog again and choose **Retract report**. This removes the badge in one step.
+Juicebox preserves a standing report even if the scorer later flags the profile, so confirm or remove won't overwrite it. To clear a report, open the flag dialog again and choose **Retract report**. This removes the badge in one step.
 
-### Who Can Flag or Report
+### Who can flag or report
 
 - Anyone on your team can flag, confirm, remove, or report a profile.
 - Read-only admins can view the badge and reasons but can't take action on it.
 
-### How Often Data Is Refreshed
+### How often data is refreshed
 
 Juicebox refreshes data on an ongoing basis to keep profiles as current as possible:
 
@@ -67,6 +67,6 @@ Juicebox refreshes data on an ongoing basis to keep profiles as current as possi
 
 Profiles are also refreshed on demand whenever the Agent sources a profile, and whenever you report a profile.
 
-### AI Trust
+### AI trust
 
 Please visit our [AI Trust Center](https://juicebox.ai/trust) for more details.
