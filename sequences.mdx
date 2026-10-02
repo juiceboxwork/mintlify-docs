@@ -47,7 +47,7 @@ Click the sequence title at the top of the composer and enter a name. Use a name
 
 ### Edit the number of steps and each step's schedule cadence
 
-Select **Add step** in the step rail or below the sequence to add a step. Use **Delete step** on a step's card to remove it.
+Select **Add step** in the step rail or below the sequence to add a step. Use **Delete step** on a step's card to remove it. You can also ask Composer chat to add or remove a step; it asks you to confirm before removing one.
 
 Use the timing control above each step to set its schedule:
 
@@ -109,6 +109,8 @@ Enable **Include unsubscribe** at the bottom of an email step to include an opt-
 3. Under **Send yourself a test email**, enter your email address and select **Send Test**. Test messages include **[TEST EMAIL]** in the subject.
 4. Close the preview to return to editing.
 
+You can also ask Composer chat, "Send me a test of step 2." Specify the email step you want to check. The test uses the current message, including your latest edits.
+
 <Frame>
   ![Email preview with the contact selector and test email controls highlighted](/images/sequences/composer-email-preview.svg)
 </Frame>
@@ -117,9 +119,11 @@ Review each step before enrolling candidates. When the sequence is ready and the
 
 ## Generate with AI
 
-To create an AI-generated sequence, choose a project when creating a sequence. Juicebox uses the available project context, such as a linked job, intake notes, or search criteria. Use **Composer chat**, the side panel on the left, to provide more details and refine the result.
+To create an AI-generated sequence, choose a project when creating a sequence. Use **Composer chat**, the side panel on the left, to provide details and refine the result.
 
-Answer the questions or describe what you want in the chat. Useful details include:
+When available, AI uses your project's intake notes, linked job, and search criteria, along with company information, your writing style, and relevant past team sequences. Search results and shortlisted profiles can help it understand the target audience. It can also consult the web and tools you have connected for additional context.
+
+Describe what you want in the chat. Useful details include:
 
 - The role, company, and reasons a candidate might be interested.
 - The number and type of steps, and the spacing between them.
@@ -128,11 +132,38 @@ Answer the questions or describe what you want in the chat. Useful details inclu
 
 For example: "Draft three short emails for this role in a friendly tone. Space the follow-ups three business days apart and ask candidates to reply if they are interested."
 
-Review the AI-generated sequence in the canvas, then refine it through Composer chat or edit the cards yourself. You can ask it to shorten a message, change the tone, or revise a particular step.
+Composer chat may ask for missing details or suggest changes, such as adding follow-ups, a LinkedIn step, or a hiring-manager sender. Choose an option, type your own answer, or select **Skip** to move on.
+
+Review the AI-generated sequence in the canvas. Use Composer chat to revise the copy or change steps, senders, signatures, and timing. You can also update sequence settings such as its title, timezone, and email threading. For example:
+
+- "Make the first email more concise."
+- "Wait three business days before step 2."
+- "Send the final email from our hiring manager's mailbox."
+
+Changes appear directly in the canvas, where you can also edit them yourself. Use the stop button in Composer chat to interrupt a request, then review any changes already made. The conversation stays with the sequence so you can continue when you reopen it.
 
 <Note>
   Review generated copy for accuracy before sending, including claims about your company and the candidate's experience. Generating a sequence is separate from adding candidates to it.
 </Note>
+
+### Revise selected text
+
+Select a passage in a message to open its editing menu:
+
+- **Proofread** fixes the selected copy.
+- **Make concise** shortens it.
+- **Adjust tone** offers **Casual**, **Direct**, and **Warmer**.
+- **Ask the Composer** lets you give custom instructions in Composer chat.
+
+The **Selected text · Step N** indicator shows which passage your chat request will change. Select its **×** to clear the selection before making a broader request.
+
+## Create or edit a sequence with a sourcing Agent
+
+You can also work on outreach in your [Juicebox Agent](/juicebox-agents) conversation. Ask the Agent to create a sequence for the role or revise an existing one—for example, "Create a three-email sequence for this role" or "Make the first email shorter."
+
+The sequence opens in a **Sequence** side pane beside your existing Agent chat. Give feedback in that conversation or edit the messages, senders, and timing directly in the pane. Changes save automatically; review each step with **Preview** before using the sequence for outreach.
+
+This workflow uses your sourcing Agent conversation. **Composer chat** is the side panel you use when opening the standalone composer from **Sequences**. See [Juicebox Agents](/juicebox-agents) for outreach setup and sourcing settings.
 
 ## Inline composer (slash menu)
 

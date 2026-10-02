@@ -60,11 +60,15 @@ Click **Sequences** in the left-hand menu, then **New sequence**. Choose how to 
   ![New sequence creation options with project choices, Build from scratch, and Clone existing sequence highlighted](/images/sequences/composer-create-sequence.svg)
 </Frame>
 
-Selecting a project opens the composer to generate a sequence with AI using your project’s context. **Composer chat** is the side panel on the left; your sequence canvas is on the right. Use the chat to answer questions and provide the role and company details, the tone you want, the number and type of steps, the language, and whether to include a scheduling link.
+Selecting a project opens the composer to generate a sequence with AI. When available, it draws on your project’s intake notes, linked job, search criteria, company information, writing style, and past team sequences. It can also consult the web and tools you have connected.
 
-You can keep refining the sequence in Composer chat or edit the canvas directly. Click the title at the top to rename it. In each email card, choose the **From** mailbox, edit the **Subject** and message, or use **Cc** and **Bcc** to add recipients. Use **Add step** in the steps rail to extend the sequence, the step-type dropdown to choose the channel, and **Delete step** to remove a step.
+**Composer chat** is the side panel on the left; your sequence canvas is on the right. Describe the role and company, tone, number and type of steps, language, and whether to include a scheduling link. When the chat asks for details or suggests a change, choose an option, type your own answer, or select **Skip**.
 
-Changes save automatically. Check the **Last saved at** indicator, then select **Done** to close the composer when you’re finished. Creating and saving the sequence prepares it for use; you’ll add candidates separately below.
+Use Composer chat to change the copy, steps, senders, or timing—for example, "Wait three business days before step 2." Changes appear directly in the canvas. If you ask it to remove a step, confirm the removal in the question card.
+
+You can also edit the canvas directly. Click the title at the top to rename it. In each email card, choose the **From** mailbox, edit the **Subject** and message, or use **Cc** and **Bcc** to add recipients. Use **Add step** in the steps rail to extend the sequence, the step-type dropdown to choose the channel, and **Delete step** to remove a step.
+
+Changes save automatically. Check the **Last saved at** indicator, then select **Done** to close the composer when you’re finished. Your chat conversation stays with the sequence when you reopen it. Use the stop button in Composer chat to interrupt a request and review any changes already made. Creating and saving the sequence prepares it for use; you’ll add candidates separately below.
 
 <Frame caption="1: Title · 2: Steps · 3: Step type · 4: Sender · 5: Subject · 6: Message · 7: Signature · 8: Unsubscribe · 9: Preview. Example outreach for a fictional company.">
   ![Sequence composer with Composer chat highlighted and numbered controls for title, steps, step type, sender, subject, message, signature, unsubscribe, and preview](/images/sequences/composer-canvas.svg)
@@ -73,6 +77,8 @@ Changes save automatically. Check the **Last saved at** indicator, then select *
 <Note>
   You can add steps to a sequence that take place outside of email, such as LinkedIn or phone calls. But please note that these aren’t automated. You’ll have to take those actions outside of Juicebox, even though you can still use Juicebox to track them alongside candidate progress.
 </Note>
+
+If you are working with a [Juicebox Agent](/juicebox-agents), you can ask it to create or edit a sequence in the same Agent conversation. Review the sequence in the **Sequence** side pane and keep giving feedback in the Agent chat. See [creating or editing a sequence with a sourcing Agent](/sequences#create-or-edit-a-sequence-with-a-sourcing-agent).
 
 **Want more help?** Learn more about [creating a sequence](/sequences#creating-a-sequence).
 
@@ -118,7 +124,7 @@ For the available quick-add actions, see [Inline composer](/sequences#inline-com
 - Using SOBO, send the final emails in a sequence **on behalf of** a hiring manager, founder, or team lead for **a 50% boost in reply rates**
 
 <Tip>
-  Use **Composer chat** to refine your sequence. For example, message `Make the first email more concise` and review the result in the canvas. To work on an entire step, choose **Generate step** from its slash menu to focus Composer chat on that step.
+  Select a passage in a message to **Proofread**, **Make concise**, or **Adjust tone**. Choose **Ask the Composer** to give your own instructions in Composer chat. Check the **Selected text · Step N** indicator, or clear it with **×** before making a broader request. To work on an entire step, choose **Generate step** from its slash menu. See [revising selected text](/sequences#revise-selected-text).
 </Tip>
 
 **Want more help?** Learn more about [maximizing reply rates](https://docs.juicebox.ai/maximize-replies).
@@ -127,7 +133,7 @@ For the available quick-add actions, see [Inline composer](/sequences#inline-com
 
 Before adding candidates, select **Preview** on an email card to open **Email preview**. Use the contact selector next to **To** to choose a sample contact and check the resolved variables, AI personalization, signature, and footer. Repeat this review for each email step.
 
-Under **Send yourself a test email**, enter your email address and select **Send Test** to check the email in your inbox. Test emails have **[TEST EMAIL]** in the subject.
+Under **Send yourself a test email**, enter your email address and select **Send Test** to check the email in your inbox. You can also ask Composer chat, "Send me a test of step 2." Test emails have **[TEST EMAIL]** in the subject and use the current message, including your latest edits.
 
 <Frame>
   ![Email preview with the contact selector and test email controls highlighted](/images/sequences/composer-email-preview.svg)
