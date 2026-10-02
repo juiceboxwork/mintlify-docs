@@ -12,7 +12,7 @@ In this guide, we’ll create and add candidates to outreach sequences, where yo
   You’ll learn how to:
 
   - Set up your email and send-on-behalf-of (SOBO) to send sequences
-  - Create a new sequence using AI or templates
+  - Create a new sequence with AI, from scratch, or by cloning an existing sequence
   - Edit and personalize the content, including AI commands
   - Tailor your sequences and content to maximize reply rates
   - Add shortlisted candidates to a sequence and track their responses
@@ -48,64 +48,46 @@ While you're in the Integrations section, click the three dots on the right side
 
 ## Create a sequence
 
-<iframe src="https://www.youtube.com/embed/WhoxQBMbP2g" title="YouTube video player" frameborder="0" className="w-full aspect-video rounded-xl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen />
-
 Juicebox lets you create and run automated sequences to reach out to candidates. This also means you can continue to contact candidates even when you’re out of the office, and you can easily follow up with candidates who replied when you return.
 
-Click **Sequences** in the left-hand menu. From here, you can create a new email sequence and check in on existing sequences.
+Click **Sequences** in the left-hand menu, then **New sequence**. Choose how to begin:
 
-Let’s create one by clicking **new sequence**.
+- **Generate a sequence with AI for one of your projects:** select a project shown in the dialog, or use **Choose project** to find another one.
+- **Build from scratch:** start with a blank sequence and write the steps yourself.
+- **Clone existing sequence:** reuse a sequence you or your team already created.
 
-![Clean Shot 2026 08 03 At 14 41 37@2x](/images/CleanShot-2026-08-03-at-14.41.37@2x.png "Clean Shot 2026 08 03 At 14 41 37@2x")
+<Frame>
+  ![New sequence creation options with project choices, Build from scratch, and Clone existing sequence highlighted](/images/sequences/composer-create-sequence.svg)
+</Frame>
 
-Juicebox gives you several ways to create sequences. You can write them from scratch, but you can also generate sequences with AI or use templates that we’ve already provided.
+Selecting a project opens the composer to generate a sequence with AI. When available, it draws on your project’s intake notes, linked job, search criteria, company information, writing style, and past team sequences. It can also consult the web and tools you have connected.
 
-<img
-  src="/images/CleanShot-2026-08-03-at-14.42.44@2x.png"
-  alt="Clean Shot 2026 08 03 At 14 42 44@2x"
-  title="Clean Shot 2026 08 03 At 14 42 44@2x"
-  className="mx-auto"
-  style={{ width:"73%" }}
-/>
+**Composer chat** is the side panel on the left; your sequence canvas is on the right. Describe the role and company, tone, number and type of steps, language, and whether to include a scheduling link. When the chat asks for details or suggests a change, choose an option, type your own answer, or select **Skip**.
 
-AI sequences make sequence writing much easier. They pull in details from your project and job description, so that you’ll already have a more personalized and tailored outreach. Don’t worry, you can always edit and give it a personal touch.
+Use Composer chat to change the copy, steps, senders, or timing—for example, "Wait three business days before step 2." Changes appear directly in the canvas. If you ask it to remove a step, confirm the removal in the question card.
 
-<img
-  src="/images/CleanShot-2026-08-03-at-14.43.37@2x-1.png"
-  alt="Clean Shot 2026 08 03 At 14 43 37@2x 1"
-  title="Clean Shot 2026 08 03 At 14 43 37@2x 1"
-  className="mx-auto"
-  style={{ width:"57%" }}
-/>
+You can also edit the canvas directly. Click the title at the top to rename it. In each email card, choose the **From** mailbox, edit the **Subject** and message, or use **Cc** and **Bcc** to add recipients. Use **Add step** in the steps rail to extend the sequence, the step-type dropdown to choose the channel, and **Delete step** to remove a step.
 
-Any option will take you to the sequence editor where you can edit the title, sender, and content of each email. You can also add or remove steps directly from this page.
+Changes save automatically. Check the **Last saved at** indicator, then select **Done** to close the composer when you’re finished. Your chat conversation stays with the sequence when you reopen it. Use the stop button in Composer chat to interrupt a request and review any changes already made. Creating and saving the sequence prepares it for use; you’ll add candidates separately below.
 
-<img
-  src="/images/CleanShot-2026-08-03-at-14.47.02@2x.png"
-  alt="Clean Shot 2026 08 03 At 14 47 02@2x"
-  title="Clean Shot 2026 08 03 At 14 47 02@2x"
-  className="mx-auto"
-  style={{ width:"45%" }}
-/>
+<Frame caption="1: Title · 2: Steps · 3: Step type · 4: Sender · 5: Subject · 6: Message · 7: Signature · 8: Unsubscribe · 9: Preview. Example outreach for a fictional company.">
+  ![Sequence composer with Composer chat highlighted and numbered controls for title, steps, step type, sender, subject, message, signature, unsubscribe, and preview](/images/sequences/composer-canvas.svg)
+</Frame>
 
 <Note>
   You can add steps to a sequence that take place outside of email, such as LinkedIn or phone calls. But please note that these aren’t automated. You’ll have to take those actions outside of Juicebox, even though you can still use Juicebox to track them alongside candidate progress.
 </Note>
 
-**Want more help?** Learn more about [sequences](https://docs.juicebox.ai/sequences).
+If you are working with a [Juicebox Agent](/juicebox-agents), you can ask it to create or edit a sequence in the same Agent conversation. Review the sequence in the **Sequence** side pane and keep giving feedback in the Agent chat. See [creating or editing a sequence with a sourcing Agent](/sequences#create-or-edit-a-sequence-with-a-sourcing-agent).
+
+**Want more help?** Learn more about [creating a sequence](/sequences#creating-a-sequence).
 
 ## Schedule your sequence
 
-Below the email draft, you’ll see the scheduling options for each email in the sequence. The first step can be sent immediately or scheduled for later.
+Use the scheduling pill above the first step to choose whether it starts immediately or at a later date and time. Set the delay for subsequent steps to control how long Juicebox waits before each follow-up.
 
 <Frame>
-  ![Clean Shot 2026 08 03 At 14 51 06@2x](/images/CleanShot-2026-08-03-at-14.51.06@2x.png "Clean Shot 2026 08 03 At 14 51 06@2x")
-</Frame>
-
-Subsequent steps can be scheduled for a certain time afterward.
-
-<Frame>
-  ![Clean Shot 2026 08 03 At 14 51 47@2x](/images/CleanShot-2026-08-03-at-14.51.47@2x.png "Clean Shot 2026 08 03 At 14 51 47@2x")
+  ![Follow-up delay, send time, and timezone controls highlighted in blue](/images/sequences/composer-step-schedule.svg)
 </Frame>
 
 <Tip>
@@ -119,24 +101,19 @@ Let’s make sure your sequence delivers high reply rates and attracts high-qual
 ### Subject lines
 
 - Keep subject lines between 5-9 words to capture the candidate’s attention
-- Personalize the subject line with a variable (for example: `{{First Name}}, interested in a new opportunity?` )
+- Personalize the subject line with a variable, such as the candidate’s first name
 
 ### Email body
 
-- Personalize with variables, AI commands, and snippets
-  - Example of variable: `I noticed your experience at {{Current Company}} and would like to invite you to…`
-  - Example of AI command: `{*Brief mention of the candidate's relevant skills.*}`
-  - Snippets are pre-saved examples of reusable content that you or your team create
-- Include **bold text** and emojis 💪 to make your email stand out
+- Use the quick-add chips above the message or type **`/`** in the body to insert variables and personalization. Choose the **AI command** chip, or **Ask AI** in the slash menu, to ask for a brief mention of the candidate’s relevant skills.
+- Use **Snippet** to insert reusable content that you or your team have saved.
+- Use the formatting toolbar to add **bold text** and links, and include emojis 💪 where they fit your tone
 - Include **details and benefits of the job or company** to provide context
-- Include an **email signature** to reinforce your credibility
-- Use **Network Mentions** (available on the Business plan) to reference specific mutual connections in their network to add personalization
+- Select the sender’s **signature** to reinforce your credibility
+- Use **Network mention**, when available, to reference a shared connection
+- Review the **Include unsubscribe** option before sending
 
-Here’s what that might look like, put together in an example intro email:
-
-<Frame>
-  ![Clean Shot 2026 08 03 At 14 53 32@2x](/images/CleanShot-2026-08-03-at-14.53.32@2x.png "Clean Shot 2026 08 03 At 14 53 32@2x")
-</Frame>
+For the available quick-add actions, see [Inline composer](/sequences#inline-composer-slash-menu).
 
 ### Other ways to increase reply rates
 
@@ -147,28 +124,26 @@ Here’s what that might look like, put together in an example intro email:
 - Using SOBO, send the final emails in a sequence **on behalf of** a hiring manager, founder, or team lead for **a 50% boost in reply rates**
 
 <Tip>
-  Use AI to help rewrite messages. For example, click **Edit with AI** and type `make this email more concise` to have Juicebox rewrite the email.
-
-  ![2026 09 14 14 10 45](/images/2026-09-14_14-10-45.png "2026 09 14 14 10 45")
+  Select a passage in a message to **Proofread**, **Make concise**, or **Adjust tone**. Choose **Ask the Composer** to give your own instructions in Composer chat. Check the **Selected text · Step N** indicator, or clear it with **×** before making a broader request. To work on an entire step, choose **Generate step** from its slash menu. See [revising selected text](/sequences#revise-selected-text).
 </Tip>
 
 **Want more help?** Learn more about [maximizing reply rates](https://docs.juicebox.ai/maximize-replies).
 
 ## Test the sequence
 
-Before going live, test the sequence to make sure it looks as you expect. For each email in the sequence, you’ll see a **Preview and test** button. Here, you’ll find the option to send yourself (or a colleague) a test email before you set the sequence live with candidates.
+Before adding candidates, select **Preview** on an email card to open **Email preview**. Use the contact selector next to **To** to choose a sample contact and check the resolved variables, AI personalization, signature, and footer. Repeat this review for each email step.
+
+Under **Send yourself a test email**, enter your email address and select **Send Test** to check the email in your inbox. You can also ask Composer chat, "Send me a test of step 2." Test emails have **[TEST EMAIL]** in the subject and use the current message, including your latest edits.
 
 <Frame>
-  ![Clean Shot 2026 08 03 At 14 54 54@2x](/images/CleanShot-2026-08-03-at-14.54.54@2x.png "Clean Shot 2026 08 03 At 14 54 54@2x")
+  ![Email preview with the contact selector and test email controls highlighted](/images/sequences/composer-email-preview.svg)
 </Frame>
 
-<Frame>
-  ![Clean Shot 2026 08 03 At 14 55 05@2x](/images/CleanShot-2026-08-03-at-14.55.05@2x.png "Clean Shot 2026 08 03 At 14 55 05@2x")
-</Frame>
+See [previewing and testing your sequence](/sequences#preview-and-test-your-sequence) for the full workflow.
 
 ## Add candidates to a sequence
 
-Once the sequence is live, you can start adding your shortlisted candidates to the sequence. From a project’s shortlist, you can select any number of candidates and click **Add to Sequence**.
+Once the sequence is saved and reviewed, you can start adding your shortlisted candidates to it. From a project’s shortlist, select the candidates you want to contact and click **Add to Sequence**.
 
 <Frame>
   ![Clean Shot 2026 08 03 At 14 55 59@2x](/images/CleanShot-2026-08-03-at-14.55.59@2x.png "Clean Shot 2026 08 03 At 14 55 59@2x")
@@ -207,7 +182,7 @@ From this dashboard, use **Mark as Replied** to label replies as **Interested** 
 Congratulations! By following this guide, you:
 
 - Set up your email and SOBO to automate the sending of sequences
-- Created a new sequence using AI or templates
+- Created a new sequence with AI, from scratch, or by cloning an existing sequence
 - Edited and personalized the content
 - Used best practices to maximize reply rates
 - Added shortlisted candidates to a sequence and tracked their responses
