@@ -28,7 +28,10 @@ When a company is added to your DNC List, Juicebox will do two things:
 **2) Exclude in Search**
 
 - Juicebox will exclude contacts from that company in your searches — so you don’t accidentally reach out to current or past employees.
-- Note: this can be set to “Auto Exclude Enabled” in the DNC settings page by the admin. However, individual users can still override this by unchecking the option while searching.
+- **Auto exclude DNC companies in searches** is on by default for every organization, including existing organizations that never changed the setting. New searches, Agents, intakes, and searches started from Slack automatically exclude profiles from companies on your DNC list.
+- To turn auto exclusion off for your whole organization, an admin can switch off **Auto exclude DNC companies in searches** in **Settings** \> **DNC Companies**. Once an admin turns it off, it stays off until an admin turns it back on.
+- Individual users can still turn off DNC exclusion for a single search by unchecking the option while searching.
+- Country auto exclusion works differently. **Auto exclude DNC countries in searches** is off by default, and an admin must turn it on.
 
 ![DNC - 2](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/dnc/DNC_-_2.png)
 
