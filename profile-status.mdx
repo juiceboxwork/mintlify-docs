@@ -5,9 +5,24 @@ description: "Use the status feature to update the current setting of any given 
 
 ### Introduction
 
-Profile statuses are used to indicate the current stage a contact is in. By default, Juicebox includes the following statuses: Not Contacted, Contacted, InMail Sent, Interested, Interviewing, Hired, Rejected, Not Interested. You can customize the status list to your preferences.
+Profile statuses are used to indicate the current stage a contact is in. By default, Juicebox includes the following statuses: Not Contacted, Pending, Contacted, InMail Sent, Interested, Interviewing, Hired, Rejected, Not Interested. You can customize the status list to your preferences.
 
 The Contacted status was previously named Email Sent. Juicebox now shows it as Contacted everywhere, including status cells, the Kanban view, CSV exports, the activity feed, and Slack notifications. The status keeps the same underlying ID, so existing profiles, reports, and integrations that use it keep working without changes.
+
+### Pending status
+
+When you add a candidate to a sequence, Juicebox sets their status to **Pending** instead of Contacted. Pending means outreach is scheduled but nothing has gone out yet.
+
+Juicebox moves a Pending candidate forward only after outreach actually happens:
+
+- **First email sends**: the status changes to Contacted.
+- **LinkedIn connection task is completed**: the status changes to Contacted.
+- **LinkedIn message task is completed**: the status changes to InMail Sent. If your status list doesn't include InMail Sent, it changes to Contacted.
+- **Call task is completed**: the status stays Pending. A completed call on its own doesn't mark a candidate as Contacted.
+
+If you re-enroll a candidate whose status is Not Contacted, Rejected, or Not Interested, Juicebox sets them to Pending. If the sequence is cancelled before anything sends, Juicebox restores the candidate's previous status.
+
+Pending is a built-in status. You can't delete or rename it, and you can't give a custom status the name “Pending.” Candidates enrolled in sequences before Pending was introduced keep their existing status.
 
 ### Viewing Profile Status
 
@@ -39,4 +54,5 @@ A few points to consider as you edit and customize your statuses:
 - Use easily understandable labels, like “Not Contacted,” for each status.
 - If you add a new status in one project, it will also be accessible in other projects.
 - Only account admins are able to edit profile statuses.
-- You can't name a new custom status “Contacted” or “Email Sent.”
+- You can't delete the built-in Not Contacted, Pending, Contacted, Interested, and Not Interested statuses.
+- You can't name a new custom status “Contacted,” “Email Sent,” or “Pending.”
