@@ -22,6 +22,12 @@ The Juicebox MCP server is available on all Juicebox paid plans. Access levels v
 
 Our MCP server authenticates each user individually via OAuth. Every user completes their own OAuth flow during setup, so the server only returns data that the user can already see in Juicebox. A user cannot query projects, searches, or candidates they do not otherwise have access to in the app.
 
+### **Re-authentication every 30 days**
+
+Each MCP connection stays signed in for 30 days from the time you first approve it. Your AI client refreshes access automatically during that window, but refreshing does not extend the session past 30 days. After 30 days, your client prompts you to complete the OAuth flow again. Sign in and click Approve to reconnect.
+
+If your client's registration with the Juicebox MCP server is missing, the client registers again automatically when you sign in. You don't need to remove and re-add the server.
+
 ## **Set up your MCP client**
 
 The Juicebox MCP server is client-agnostic and works with any MCP-compatible tool.
@@ -97,12 +103,12 @@ Juicebox's MCP server supports dynamic client registration, so it can be configu
 
 **Shortlist tools**
 
-- search\_shortlist — Lists the candidates saved to a project's shortlist, with optional filters (e.g. by title or school). Read-only, and only for projects you're allowed to see.
-- get\_candidate\_details — Pulls richer details on specific shortlisted candidates that the quick list doesn't include—like total years of experience and job tenure—so you can filter or analyze on those.<br />
+- search\_shortlist — Lists the candidates saved to a project's shortlist, with optional filters (e.g. by title or school). Read-only, and only for projects you're allowed to see. Available on the Business plan.
+- get\_candidate\_details — Pulls richer details on specific shortlisted candidates that the quick list doesn't include—like total years of experience and job tenure—so you can filter or analyze on those. Available on the Business plan.<br />
 
 **Project tool**
 
-- get\_project — Gives a summary of one project: its basic info plus how much is in it (number of saved searches and shortlisted candidates).
+- get\_project — Gives a summary of one project: its basic info plus how much is in it (number of saved searches and shortlisted candidates). Available on the Business plan.
 
 **Agent tools**
 

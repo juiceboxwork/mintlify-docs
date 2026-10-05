@@ -1,0 +1,76 @@
+---
+title: "Softgarden Integration Set-up"
+description: "Connect Softgarden to Juicebox."
+sidebarTitle: "Softgarden"
+---
+
+<img src="/images/help/ats-setup/new-2026-09/softgarden/logo.png" alt="Softgarden logo" width="64" height="64" />
+
+## About the integration
+
+Connect Softgarden to Juicebox to import jobs and start searches from their job descriptions. You can also export profiles with resumes to a selected job. This connector does not provide full-database candidate reading for rediscovery.
+
+## Before you start
+
+This guide covers the standard Softgarden connector and its newer interface. Use an account with **JUST-HIRE ADMINISTRATOR** or **SUPER-ADMINISTRATOR** access. Check **Settings > User Management > User** if you need to confirm your role.
+
+Open **Integrations** in Juicebox, select **Softgarden**, and choose **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
+
+<Note>
+The screenshots show vendor settings or the connection window provided by Kombo. Use the credentials, source labels, permissions, and URLs from your own connection; screenshot values are examples.
+</Note>
+
+## Create the API client
+
+1. Open **Settings > Additional Features > Integrations**.
+2. Find **Softgarden API**. Enter a name under **Add API client** and choose **Create**.
+3. Copy the new API client value into Juicebox.
+
+<Frame caption="Open the Softgarden integrations settings.">
+  <img src="/images/help/ats-setup/new-2026-09/softgarden/setup-30574515999249-05.png" alt="Open the Softgarden integrations settings." width="760" />
+</Frame>
+
+<Frame caption="Create a named API client.">
+  <img src="/images/help/ats-setup/new-2026-09/softgarden/setup-30574515999249-06.png" alt="Create a named API client." width="760" />
+</Frame>
+
+## Configure source writing if prompted
+
+Open **Settings > Individualisierung > Bewerbungsformulare**. Under **Kanäle für Kandidat/in anpassen**, choose **Kanäle zur Auswahl**, then **Kanal hinzufügen**. Add the source label shown by Juicebox and save. If validation errors appear, have your administrator resolve the highlighted form configuration before saving.
+
+<Frame caption="Open the candidate-channel selection.">
+  <img src="/images/help/ats-setup/new-2026-09/softgarden/setup-30574515999249-11.png" alt="Open the candidate-channel selection." width="760" />
+</Frame>
+
+<Frame caption="Add the source provided by your connection window.">
+  <img src="/images/help/ats-setup/new-2026-09/softgarden/setup-30574515999249-12.png" alt="Add the source provided by your connection window." width="760" />
+</Frame>
+
+## Finish the connection
+
+Return to Juicebox and complete setup. If your Softgarden menus differ, use the [older-interface connection guide](https://help.kombo.dev/hc/en-us/articles/17889584793745) or ask Juicebox Support to help with your version.
+
+## Confirm the integration
+
+Finish the connection window and return to Juicebox. Confirm that the connection has completed, then allow the initial sync to populate your data.
+
+- Check that the expected jobs appear in Juicebox.
+- Export a test profile with a resume to a selected job, then verify the application in Softgarden.
+
+If validation fails, check the credentials, account or region, and permission list shown in the connection window. Contact Juicebox Support if the expected data is still missing.
+
+## Limitations
+
+The standard connector only reads applications created through Kombo. It does not expose the full existing candidate database for rediscovery.
+
+## Using the integration
+
+Start from an imported job on the [Projects](/projects) page to create a search linked to that job.
+
+To send a profile to Softgarden, follow the [export steps](/exports) and select the connected ATS and intended job.
+
+## Support
+
+For help, contact [support@juicebox.ai](mailto:support@juicebox.ai). For an overview of available workflows, see [ATS Integrations](/ats-integrations).
+
+ATS-side setup reference: [Kombo’s Softgarden connection guide](https://help.kombo.dev/hc/en-us/articles/30574515999249-Softgarden-How-do-I-link-my-account-New-Design).

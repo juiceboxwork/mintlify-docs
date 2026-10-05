@@ -14,7 +14,11 @@ Since the strongest candidates for your open roles may already be in your ATS, T
 
 1. Open a Juicebox project and edit your filters
 2. Within Edit Your Search Filters, click on ATS
-3. Select Include, Exclude, or Only show ATS candidates based on your use case
+3. Select an ATS mode based on your use case:
+   - **Include ATS candidates**: search across all candidates.
+   - **Exclude ATS candidates**: hide everyone in your ATS.
+   - **Exclude recent ATS candidates**: hide only candidates who are active in your ATS. Older ATS candidates stay searchable. See [Exclude recent ATS candidates](#exclude-recent-ats-candidates).
+   - **Only show ATS candidates**: search only candidates in your ATS.
    1. If you are only showing ATS candidates, fine-tune your results using Juicebox’s ATS-based filters such as:
       1. Jobs
       2. Tags
@@ -28,6 +32,28 @@ Since the strongest candidates for your open roles may already be in your ATS, T
   alt="Screenshot 2026-02-16 at 4.35.30 PM"
   style={{ width:"88%" }}
 />
+
+### Exclude recent ATS candidates
+
+Use **Exclude recent ATS candidates** when you want to skip people your team is actively talking to, but still rediscover older ATS candidates. For example, a candidate archived three years ago can show up in your results, while someone with an open application stays hidden.
+
+Juicebox hides a candidate in this mode when their application in your ATS is:
+
+- **Active**, or
+- **Archived** or **Hired**, and the candidate's last interaction falls inside your organization's recent ATS activity window.
+
+Everyone else in your ATS stays searchable. To hide every ATS candidate regardless of activity, use **Exclude ATS candidates** instead.
+
+The **Exclude recent ATS candidates** option is available only when both of these are true:
+
+- An admin has set a **Recent ATS activity window** in **Settings → Agents**. The window can be 90, 180, 270, or 365 days. **Any time** turns the window off.
+- Your connected ATS syncs applications to Juicebox.
+
+If either condition isn't met, the option is disabled and Juicebox excludes every ATS candidate instead.
+
+<Note>
+  The **Last Interaction** date includes the most recent update your ATS made to the candidate's application.
+</Note>
 
 Already in your search? Use the ATS filter next to “Review” in the top left corner for quick access!
 
@@ -62,4 +88,5 @@ Recruiting teams often overlook past applicants who were:
 
 1. **Want to revisit past talent?** Use the “Include ATS candidates” or “Only show ATS candidates” filters
 2. **Want to only source net-new talent?** Use the “Exclude ATS candidates” to avoid duplicate outreach and keep ATS exports clean
-3. **Want to re-engage talent strategically?** Use the additional ATS filters under “Only show ATS candidates” to review candidates from certain stages, jobs, or tags within your ATS
+3. **Want to skip only candidates in an active process?** Use “Exclude recent ATS candidates” to hide open applications and recently closed ones, while keeping older ATS candidates in your results
+4. **Want to re-engage talent strategically?** Use the additional ATS filters under “Only show ATS candidates” to review candidates from certain stages, jobs, or tags within your ATS

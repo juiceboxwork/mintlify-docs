@@ -130,3 +130,22 @@ You can then select between bulk imports or individual imports. For bulk imports
 ![Shortlist Profiles](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/shortlist-profiles/Untitled-1.png)
 
 After bulk importing a list of profiles, you can use the checkmark to select which profiles to import. If any profiles aren’t successfully matched, they’ll be flagged for you as well.
+
+#### Add tags and notes from your CSV
+
+Your bulk import CSV can include two optional columns to annotate profiles as you import them:
+
+- **Tags**: One or more tag names for the profile. Separate multiple tags with commas, semicolons, or pipes. Juicebox matches each name to an existing tag in your organization. If a tag doesn't exist yet, Juicebox creates it.
+- **Notes**: Text that Juicebox adds as a contact note on the imported profile.
+
+The column headers must be named `Tags` and `Notes`. Headers aren't case-sensitive. Juicebox ignores other headers, such as `Label` or `Comments`, for tags and notes.
+
+```csv
+LinkedIn URL,Tags,Notes
+https://www.linkedin.com/in/janedoe,Backend; Referral,Met at the SF meetup in June
+https://www.linkedin.com/in/johnsmith,Frontend|Silver medalist,
+```
+
+If the same profile appears in multiple rows, Juicebox combines the tags and notes from those rows.
+
+If Juicebox imports the profiles but can't apply some tags or notes, the import still completes. Juicebox shows a warning so you can add the missing tags or notes manually.

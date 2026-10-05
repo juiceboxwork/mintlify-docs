@@ -1,0 +1,54 @@
+---
+title: "Jobylon Integration Set-up"
+description: "Connect Jobylon to Juicebox."
+sidebarTitle: "Jobylon"
+---
+
+<img src="/images/help/ats-setup/new-2026-09/jobylon/logo.png" alt="Jobylon logo" width="64" height="64" />
+
+## About the integration
+
+You can import jobs and export profiles with resumes. Existing-candidate visibility is limited to the configured Partner API workflow and does not cover the full database.
+
+## Before you start
+
+Ask Jobylon support or your customer success manager for the **job feed hash**, **App ID**, and **App Secret** needed to read jobs and create applications.
+
+Open **Integrations** in Juicebox, select **Jobylon**, and choose **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
+
+<Note>
+The screenshots show vendor settings or the connection window provided by Kombo. Use the credentials, source labels, permissions, and URLs from your own connection; screenshot values are examples.
+</Note>
+
+## Enter the feed and application credentials
+
+Paste the job feed hash, App ID, and App Secret into their matching fields in Juicebox and select **Set up integration**.
+
+<Frame caption="Use the job feed and application credentials supplied by Jobylon.">
+  <img src="/images/help/ats-setup/new-2026-09/jobylon/setup-25383642309265-01.png" alt="Use the job feed and application credentials supplied by Jobylon." width="760" />
+</Frame>
+
+## Confirm your candidate-reading scope
+
+If you need to identify existing candidates, ask Juicebox Support to confirm the Partner API workflow configured for your account. That workflow does not expose the entire existing candidate database. Jobylon support may also need to configure application-event webhooks if application-stage updates are required.
+
+## Confirm the integration
+
+Finish the connection window and return to Juicebox. Confirm that the connection has completed, then allow the initial sync to populate your data.
+
+- Check that the expected jobs appear in Juicebox.
+- Export a test profile with a resume to a selected job, then verify the application in Jobylon.
+
+If validation fails, check the credentials, account or region, and permission list shown in the connection window. Contact Juicebox Support if the expected data is still missing.
+
+## Using the integration
+
+Start from an imported job on the [Projects](/projects) page to create a search linked to that job.
+
+To send a profile to Jobylon, follow the [export steps](/exports) and select the connected ATS and intended job.
+
+## Support
+
+For help, contact [support@juicebox.ai](mailto:support@juicebox.ai). For an overview of available workflows, see [ATS Integrations](/ats-integrations).
+
+ATS-side setup reference: [Kombo’s Jobylon connection guide](https://help.kombo.dev/hc/en-us/articles/25383642309265-Jobylon-How-do-I-link-my-account).

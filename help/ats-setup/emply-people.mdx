@@ -1,0 +1,67 @@
+---
+title: "Emply People Integration Set-up"
+description: "Connect Emply People to Juicebox."
+sidebarTitle: "Emply People"
+---
+
+<img src="/images/help/ats-setup/new-2026-09/emply-people/logo.png" alt="Emply People logo" width="64" height="64" />
+
+## About the integration
+
+Connect Emply People to Juicebox to import jobs and start searches from their job descriptions. You can also export profiles with resumes to a selected job. Existing candidates can be identified in Juicebox and used for rediscovery, subject to the access granted to the connection.
+
+## Before you start
+
+This integration is in **Closed Beta**. Ask Juicebox Support to enable access before setup. An Emply administrator must create or edit the API key.
+
+Open **Integrations** in Juicebox, select **Emply People**, and choose **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
+
+<Note>
+The screenshots show vendor settings or the connection window provided by Kombo. Use the credentials, source labels, permissions, and URLs from your own connection; screenshot values are examples.
+</Note>
+
+## Create an API v2 key
+
+1. Open **Settings > Integrations > API** in Emply People.
+2. Select **API v2**; a v1 key will not work.
+3. Enable the permission areas listed in your Juicebox connection window, save, and copy the API key.
+
+<Frame caption="Use API v2 and the permissions listed in your own connection window.">
+  <img src="/images/help/ats-setup/new-2026-09/emply-people/setup-49946596275217-02.png" alt="Use API v2 and the permissions listed in your own connection window." width="760" />
+</Frame>
+
+## Connect and check permissions
+
+Paste the key into Juicebox and select **Set up integration**. If a permission area fails validation, enable that area on the same key in Emply and retry; you do not need to generate a new key.
+
+<Frame caption="Enter the Emply API v2 key.">
+  <img src="/images/help/ats-setup/new-2026-09/emply-people/setup-49946596275217-03.png" alt="Enter the Emply API v2 key." width="760" />
+</Frame>
+
+## Confirm the integration
+
+Finish the connection window and return to Juicebox. Confirm that the connection has completed, then allow the initial sync to populate your data.
+
+- Check that the expected jobs appear in Juicebox.
+- Find a known candidate and confirm that the information available matches your configured access.
+- Export a test profile with a resume to a selected job, then verify the application in Emply People.
+
+If validation fails, check the credentials, account or region, and permission list shown in the connection window. Contact Juicebox Support if the expected data is still missing.
+
+## Limitations
+
+Only the first 50 vacancies and their applications sync because the vendor’s vacancy pagination is currently limited. Candidate details beyond name and email live on application forms. Confirm expected coverage before using the data.
+
+## Using the integration
+
+Start from an imported job on the [Projects](/projects) page to create a search linked to that job.
+
+To send a profile to Emply People, follow the [export steps](/exports) and select the connected ATS and intended job.
+
+Learn how to work with existing candidates in [Talent Rediscovery](/talent-rediscovery).
+
+## Support
+
+For help, contact [support@juicebox.ai](mailto:support@juicebox.ai). For an overview of available workflows, see [ATS Integrations](/ats-integrations).
+
+ATS-side setup reference: [Kombo’s Emply People connection guide](https://help.kombo.dev/hc/en-us/articles/49946596275217-Emply-People-ATS-How-do-I-link-my-account).
