@@ -97,6 +97,16 @@ The **Auto-Export Trigger** setting determines when to export a candidate(s) for
 
 **Include Contact Information** (Enabled by default) will automatically reveal candidate emails and phone numbers, and export with them included. We recommend keeping this setting active to avoid duplicate profiles in your ATS.
 
+**Contact fields to export** lets you choose which contact fields automated exports reveal and send to your ATS. Use it if your team only wants emails or only phone numbers in the ATS, so you don't spend contact credits on fields you never use. The options are:
+
+- **Emails and phone numbers** (Default): Juicebox reveals and exports every available email and phone number.
+- **Emails only**: Juicebox reveals and exports emails. Phone numbers are not revealed or added to the ATS record.
+- **Phone numbers only**: Juicebox reveals and exports phone numbers. Emails are not revealed or added to the ATS record.
+
+When you narrow the selection, Juicebox only looks up the selected field, so contact credits are spent only on that field. If strict filtering is on, Juicebox skips a candidate who has none of the selected contact info instead of exporting them with only a name.
+
+**Phone numbers only** is not available for SmartRecruiters or Pinpoint, which require an email to create a candidate. The setting is disabled when **Include Contact Information** or **Automated ATS Exports** is turned off.
+
 ![Screenshot 2026-01-09 at 3.18.43 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/ats-integrations/Screenshot_2026-01-09_at_3-18-43_PM.png)
 
 **Project-level Job Linking** allows for the ability to link to an ATS job, as well as an interview stage, when creating or editing projects or agents. For Ashby, you can also link to a sourcing project instead.
