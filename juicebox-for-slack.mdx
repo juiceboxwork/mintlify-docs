@@ -149,6 +149,22 @@ Manage profiles and follow-up straight from Slack:
 - Create a **reminder or task** and assign it to a teammate in the channel — the assignee is tagged in Slack, and the task and note live in Juicebox
 - Share a **LinkedIn URL** and add it straight to a project shortlist
 
+### Read notes on a contact
+
+Ask `@Juicebox` about a candidate's notes to see what your team has written about them:
+
+```text
+@juicebox, what notes do we have on [Candidate]?
+@juicebox, any recruiter notes on https://www.linkedin.com/in/ada-lovelace?
+```
+
+Juicebox returns written notes only, not activity such as profile views, exports, or sequence adds. Notes come from two sources, merged into one list with the newest first:
+
+- **Juicebox notes** your team added in Juicebox, from the projects you can access. Name a project to narrow these to that project.
+- **ATS notes** recruiters wrote in your connected ATS. This applies to Ashby and to ATSes connected through Kombo. See [ATS Integrations](/ats-integrations). ATS notes are org-wide, so naming a project doesn't filter them.
+
+Each note shows its source and author, for example "In Ashby, Jordan wrote…". Juicebox doesn't show private ATS notes, or any ATS notes on candidates who are hired or marked private in the ATS. If Juicebox can't reach your ATS, it still returns your Juicebox notes.
+
 ### Work with searches from Slack
 
 Ask `@Juicebox` to browse, review, create, or edit the searches inside a project without leaving Slack. These tools operate on ordinary searches; for Agents, see [Manage an Agent from Slack](#manage-an-agent-from-slack).
@@ -216,6 +232,13 @@ Every Slack export shows up in your normal **Profile Export History** in Juicebo
 ### Create an Agent from Slack
 
 Ask `@Juicebox` to create an Agent from the thread you're in. Include the role, seniority, and location, or paste a job description. Juicebox creates the Agent, starts calibration in the thread, and links the channel so updates post there. If you don't meet the [requirements to link a channel](#set-up-in-three-steps), or you ask from a DM, Juicebox still creates the Agent. Link the channel later from the project's **Slack** row. Requires a licensed Juicebox seat.
+
+If the channel is linked to one project that doesn't have an Agent yet, Juicebox asks whether to add the Agent to that project or create a new project. Reply with your choice, and Juicebox creates the Agent there.
+
+- **Existing project:** Juicebox adds the Agent to the linked project. The channel is already linked, so Juicebox doesn't re-link it or post another welcome message. If Juicebox can't add the Agent to that project, for example because it got an Agent in the meantime, Juicebox creates a new project instead.
+- **New project:** Juicebox creates a new project for the Agent and links the channel to it.
+
+If the channel's linked project already has an Agent, or the channel is linked to more than one project, Juicebox creates a new project without asking. Each project holds one Agent.
 
 ```text
 @juicebox, create an Agent for a senior backend engineer with Go and Kubernetes in the EU.
@@ -315,6 +338,7 @@ If they're already linked, `@Juicebox account` confirms who they're connected as
 | Approvals | `@juicebox, how many leads did we approve this week for [Project]?` |
 | Outreach | `@juicebox, how many people have we contacted in [Sequence]?` |
 | Profile history | `@juicebox, what happened to [Profile] after we approved them?` |
+| Contact notes | `@juicebox, what notes do we have on [Profile]?` |
 | Shortlist add | `@juicebox, add this LinkedIn profile to the shortlist for [Project].` |
 | Export to ATS | `@juicebox, add [Candidate] to our "[Job title]" role in [ATS].` |
 | Pipeline health | `@juicebox, what is the current health of [Project]?` |
