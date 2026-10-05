@@ -152,8 +152,9 @@ Some countries restrict per-recipient email tracking by law. France (under Artic
 
 How it works:
 
-- Juicebox resolves each recipient's country from their profile when they are enrolled in a sequence.
-- Juicebox applies the exclusion at send time, so it also covers sequences that are already in flight.
+- Juicebox resolves each recipient's country from their profile when they are enrolled in a sequence, and checks it again at each send. If a profile's location updates to France or Italy after enrollment, later sends in the sequence stop tracking.
+- Juicebox applies the exclusion at send time, so it also covers sequences that are already in flight, including those started before a country was added to the exclusion list.
+- A later profile change never re-enables tracking for a recipient who was excluded at enrollment.
 - Contacts without a resolvable country (for example, uploaded contacts with no location data) keep your configured tracking settings.
 
 Excluded recipients can never register an open or a click, but they still count toward the sequence's totals. As a result, **open and click rates will undercount on sequences that include recipients in France or Italy**. Reply and bounce tracking are unaffected, so reply rate remains the most reliable engagement metric for those sequences.
