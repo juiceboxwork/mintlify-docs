@@ -142,6 +142,7 @@
                 "icon": "user",
                 "pages": [
                   "help/account/login-issues",
+                  "help/account/sso-setup",
                   "help/account/change-password",
                   "help/account/change-email-address",
                   "help/account/change-organization-name",
