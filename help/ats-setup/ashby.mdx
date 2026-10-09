@@ -32,6 +32,21 @@ Open the projects page and select **Import Job from ATS / CRM**. You will then s
 
 Follow the regular [export](/exports) steps and select **Export to Ashby** on either an individual profile or a bulk export. After exporting to Ashby, you will see the profile created in your Ashby account.
 
+#### Sourcing tags
+
+Juicebox tags each candidate it exports to Ashby with who sourced them:
+
+| Tag | Applied when |
+| --- | --- |
+| `Juicebox-Agent` | A Juicebox Agent sourced the candidate. For example, the Agent found or previewed the profile, or started the export. |
+| `Juicebox-Recruiter` | A recruiter sourced the candidate in Juicebox. |
+
+Tags apply to manual exports, auto-exports, and exports from sequences, shortlists, and Slack. Use them in Ashby to filter candidates or report on Agent-sourced versus recruiter-sourced hires.
+
+<Note>
+  Sourcing tags require the **Hiring Process Metadata: Write** permission on your Ashby API key. Without it, exports still succeed, but Juicebox doesn't tag the candidates.
+</Note>
+
 ### View profiles already in Ashby
 
 Juicebox will tag profiles that already exist in Ashby. You will see the last modified date, as well as the option to view the profile directly in Ashby by clicking the **View in ATS** button.
@@ -62,9 +77,13 @@ Juicebox will tag profiles that already exist in Ashby. You will see the last mo
 
    ![Ashby integration demo](/images/help/ats-setup/ashby-5.png)
 
-4. Note the suggested minimum scopes below.
+4. When you create the API key in Ashby, turn on the permissions shown below.
 
-   ![Suggested minimum API scopes](/images/help/ats-setup/ashby-6.png)
+   <Frame>
+     ![API Scopes step of the Create an API Credential modal in Ashby with the required Read and Write permissions selected](/images/help/ats-setup/ashby-api-scopes-1.png)
+   </Frame>
+
+   **API Keys: Read** lets Juicebox check which permissions your key has. **Hiring Process Metadata: Write** is required for [sourcing tags](#sourcing-tags). To link intakes to Ashby jobs, also turn on **Allow access to non-offer private fields**.
 
 5. After you have signed in, the window will close and you will be redirected to Juicebox. Refresh your page — if successful, you will see a green **Connected** button.
 
@@ -76,6 +95,31 @@ Congratulations! You have successfully integrated Ashby and Juicebox.
 
 <Note>
   It may take a few minutes for all data to sync between Juicebox and Ashby. Wait up to 10 minutes to ensure all data has been synced.
+</Note>
+
+## Check your API key permissions
+
+After you connect Ashby, Juicebox checks your API key's permissions each time you open the **Integrations** page. If something is missing, the Ashby card shows a warning instead of the plain **Connected** status:
+
+- **N limited**: The key is missing permissions that N Juicebox features need.
+- **Check permissions**: Juicebox can't read the key's permissions, usually because **API Keys: Read** is off.
+
+Click the warning to open the **Ashby permissions** modal. It has two tabs:
+
+- **By feature**: Lists each Juicebox feature as **Available**, **Limited**, or **Unknown**, with the permissions it's missing.
+- **Ashby checklist**: Shows a Read/Write grid for each Ashby module and marks the permissions to turn on.
+
+### Fix missing permissions
+
+You don't need to reconnect Ashby. An Ashby admin can add the missing permissions to the existing key:
+
+1. In Ashby, open **Admin → Integrations → API Credentials**.
+2. Edit the key you connected to Juicebox. The modal shows the key's name when Juicebox can read it.
+3. Turn on the permissions marked in the checklist, then click **Save**.
+4. Return to the **Ashby permissions** modal in Juicebox and click **Check again**.
+
+<Note>
+  Only Ashby admins can edit API keys. If you aren't an Ashby admin, send these steps to one. Juicebox can't check the **Allow access to non-offer private fields** setting, so confirm it manually if you link intakes to Ashby jobs.
 </Note>
 
 ## Support

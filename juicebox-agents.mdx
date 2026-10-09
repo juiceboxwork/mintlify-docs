@@ -8,18 +8,14 @@ description: "Juicebox Agents are your 24/7 sourcing partner, built to take manu
 
 Juicebox Agents are automated sourcing assistants that continuously source for talent based on the criteria you define. Every Agent lives inside a project, alongside any manual searches for the role you're hiring for.
 
-<Frame>
-  ![Clean Shot 2026 08 17 At 18 40 56@2x](/images/CleanShot-2026-08-17-at-18.40.56@2x.png "Clean Shot 2026 08 17 At 18 40 56@2x")
-</Frame>
-
 Instead of running the same search manually every day, Agents work in the background to monitor the market and surface new, relevant candidates as they appear.
 
 By setting up an Agent, you can:
 
-- **Calibrate with context.** The Agent pulls from your connected tools, your ATS, and your past activity in Juicebox, so you spend less time explaining the role from scratch.
-- **Source smarter.** The Agent maps the talent market, tests multiple versions of the search, and self-corrects before surfacing candidates.
-- **Improve over time.** The Agent learns from the profiles you approve and reject, so lead quality sharpens with every batch.
-- **Automate outreach.** The Agent can send sequences from a connected mailbox, with messaging and timing you control. This is optional and depends on how you configure the Agent.
+- **Calibrate with context** — the Agent pulls from your connected tools, your ATS, and your past activity in Juicebox, so you spend less time explaining the role from scratch.
+- **Source smarter** — the Agent maps the talent market, tests multiple versions of the search, and self-corrects before surfacing candidates.
+- **Improve over time** — the Agent learns from the profiles you approve and reject, so lead quality sharpens with every batch.
+- **Build and automate outreach** — ask the Agent to draft or refine a sequence in chat, review it in the side pane, and choose whether to use it for daily sourcing. Outreach sends from a connected mailbox, with messaging and timing you control.
 
 <Note>
   Agents are an optional add-on to your paid Juicebox subscription. Agents that are sourcing, paused, or awaiting action each take up an Agent seat. Agents that are calibrating or closed do not.
@@ -42,7 +38,7 @@ Your Agent doesn't work in isolation. Before building a search, it researches th
 - **ATS data**: With your ATS connected, the Agent can pull related open roles and past hires to understand what a successful candidate looks like for your team.<br />
 
 <Note>
-  Manage connectors from the **Integrations** tab in Settings. ATS connections are available on the Business plan. Connectors are used by Agents only and they don't feed standalone searches or sequence generation.
+  Manage connectors from the **Integrations** tab in Settings. ATS connections are available on the Business plan. Connected tools can provide context for your sourcing Agent and for AI-generated sequences in Composer chat.
 </Note>
 
 ### Market mapping
@@ -63,6 +59,7 @@ The Agent chat remains available throughout the Agent's lifecycle, from calibrat
 
 - Ask how your pipeline is doing and get recommendations
 - Ask which criteria are limiting your qualified pool
+- [Create or refine an outreach sequence](#build-and-refine-outreach-with-your-agent) and review the result beside the chat
 - Take actions in connected apps, such as pulling a candidate list from Google Sheets to find similar profiles, or writing a talent market map into Notion
 
 <Frame>
@@ -138,37 +135,51 @@ If a profile has the right experience and skills, select **Looks Good**. If the 
   Approval and rejection feedback is optional but **highly encouraged**, as the Agent will consider these learnings (good or bad) for the next batch of profiles provided. In order to move on to the next step, we also recommend reviewing profiles until you can approve 3 candidates in a row.
 </Warning>
 
-10. Continue to configure the Agent based on your workflow by selecting **Outreach Settings**.
+### Build and refine outreach with your Agent
 
-Select **Outreach settings** to finish configuring the Agent. Here you'll set how many leads it sources each day and whether it contacts those leads automatically or sends them to you for review.
+Your sourcing Agent can draft a new sequence, read an existing sequence, revise its messages and settings, and send a test email to your inbox. Ask in the same conversation you use for sourcing—for example, `Build a three-email sequence for this role` or `Make the second email shorter`. The sequence opens beside the chat so you can review the result and edit it directly.
+
+10. After calibration, choose how the Agent should contact approved profiles. If you collapsed the setup prompt, select **Sourcing settings** above the chat to reopen it.
+
+Choose one of the outreach options, then select **Confirm**:
+
+- **Build me a sequence** hands the request to your Agent. It uses the context from your conversation to draft an AI-generated sequence in the **Sequence** side pane.
+- **Use an existing sequence** lets you select a sequence you have already prepared.
+- **I'll do this later, shortlist for now** adds candidates to your shortlist without sending outreach. You can add them to a sequence later.
+
+<Frame caption="Choose how your Agent should contact approved profiles, then select Confirm. Example setup.">
+  ![Agent outreach setup with Build me a sequence, Use an existing sequence, shortlist for now, and Confirm highlighted](/images/sequences/agent-sequence-outreach.svg)
+</Frame>
+
+11. If you ask the Agent to build a sequence, review it beside the Agent chat. Give the Agent outreach examples, selling points, and feedback such as `Make the first email shorter`. You can also edit the title, messages, sender, and timing directly in the canvas. Select **Preview** on a step to check the personalized copy before using the sequence.
+
+This uses the same sourcing Agent conversation you used to calibrate the search. [Composer chat](/sequences#generate-with-ai) is the side panel in the standalone sequence composer.
+
+Changes save automatically. Check the save status at the top of the **Sequence** pane, then use **Close side pane** when you want to return to the full chat. Select **Open sequence** on its card in the conversation to reopen it.
+
+If the Agent asks you to connect a mailbox, use **Connect Gmail** or **Connect Outlook** in the chat. After you return, the Agent can continue setting up the sequence's sender.
+
+<Frame caption="Agent’s Sequence side pane. Example outreach for a fictional company.">
+  ![Agent Sequence side pane with save status, close control, Preview, and editable message highlighted](/images/sequences/agent-sequence-pane.svg)
+</Frame>
+
+12. When you are happy with a sequence the Agent built, confirm its request to use that sequence for daily sourcing. Then finish **Last step, set your sourcing strategy**. If you chose an existing sequence or shortlist-only outreach, **Confirm** takes you directly to this step. Choose your daily lead target and how leads should be approved:
+
+- **Manual** lets you review and approve each lead before the Agent sends outreach or adds them to your shortlist, depending on your outreach choice.
+- **Automatic** lets the Agent approve matching leads and carry out your selected outreach or shortlist action.
 
 <Note>
-  Agents are always running and do not take weekends or PTO. The number of leads selected should represent how many leads you or your team have time to review on a daily or weekly basis.
+  Choose a daily lead target that you and your team have time to review. Drafting a sequence does not start sourcing; finish the strategy settings before starting the Agent.
 </Note>
 
-After selecting your daily lead target, select **Next, outreach settings** to configure how your Agent will handle its sourced candidates.
+Select **Start sourcing** to activate the Agent and collect your first batch of leads.
 
-Note that Agents will only contact candidates using a sequence you've created and reviewed. During setup, you can choose from the following options:
-
-- **Use Existing Sequence** to select a previously created sequence
-- **Generate AI Sequence** to create a personalized outreach sequence based on your conversation with the Agent and the role requirements
-- **Add to Shortlist** if you would prefer to review and approve candidates before any outreach is sent
-
-After you've selected your outreach settings, select **Next, approval type** to control how your leads are processed after sourcing.
-
-Here, there are two options available which will perform the following actions based on your workflow:
-
-- **Automatic,** if you’d like the Agent to shortlist leads on your behalf
-- **Manual,** if you’d like to continue approving/rejecting candidates to help the Agent capture additional learnings
-
-Once all settings are finalized, select **Start sourcing** to activate the Agent and collect your first batch of leads!
-
-<Frame>
-  ![Clean Shot 2026 08 17 At 19 09 21@2x](/images/CleanShot-2026-08-17-at-19.09.21@2x.png "Clean Shot 2026 08 17 At 19 09 21@2x")
+<Frame caption="Set your daily sourcing target and approval type, then select Start sourcing. Example setup.">
+  ![Agent sourcing strategy with daily volume, approval type, and Start sourcing highlighted](/images/sequences/agent-sequence-strategy.svg)
 </Frame>
 
 <Tip>
-  Agent settings can be updated at any time. From the **Projects** tab, open the Agent's project and select the **Settings** tab. For example, if you initially choose to manually review your sourced leads, you can later switch to automatic outreach at any point, and vice versa.
+  To update an Agent's settings, open its project and choose **Sourcing settings** from the Agent's **…** menu. This opens a dialog with daily volume, outreach, and approval controls. Here, select **Use an existing sequence** or **Shortlist only**; changes apply to a running Agent, and **Done** closes the dialog. The currently attached sequence remains visible in the picker even if it has been archived.
 </Tip>
 
 ## Reviewing leads

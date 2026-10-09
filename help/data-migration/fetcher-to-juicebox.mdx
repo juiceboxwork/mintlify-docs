@@ -1,0 +1,77 @@
+---
+title: "Transitioning from Fetcher to Juicebox"
+sidebarTitle: "Fetcher to Juicebox"
+description: "Move your candidates and contact information from Fetcher into a Juicebox project with a CSV import."
+---
+
+Use this guide to bring the candidates you sourced in Fetcher into Juicebox. You export your candidates from Fetcher as a CSV, format the file for Juicebox, and import it into a project shortlist. Contact information in the file carries over to each profile.
+
+## Before you start
+
+- You need a Juicebox account and a project to import into.
+- You need a CSV export of your candidates from Fetcher. The export must include each candidate's LinkedIn or GitHub URL. Juicebox uses this URL to match the profile.
+
+<Note>
+  If you can't export your candidates from Fetcher, contact Fetcher support for help getting a CSV of your data.
+</Note>
+
+## Step 1: Export your candidates from Fetcher
+
+1. Export your candidates from Fetcher as a CSV file.
+2. Open the file and confirm it has a column of LinkedIn or GitHub profile URLs.
+3. Note which columns hold email addresses and phone numbers. You move these into the Juicebox format in the next step.
+
+## Step 2: Format your CSV for Juicebox
+
+Juicebox accepts CSV files only. Format your file to match the Juicebox sample CSV:
+
+| Column | Required | What to put in it |
+| --- | --- | --- |
+| Profile URL | Yes | The candidate's LinkedIn or GitHub URL. |
+| Email or Phone (optional) | No | One email address or phone number. |
+| Additional Email or Phone (optional) | No | Another email address or phone number. Add up to four of these columns. |
+
+[Download the sample CSV](/files/sample_csv_import_Juicebox.csv), or copy this example:
+
+```csv
+Profile URL,Email or Phone (optional),Additional Email or Phone (optional),Additional Email or Phone (optional),Additional Email or Phone (optional),Additional Email or Phone (optional)
+https://www.linkedin.com/in/david-paffenholz,1123456789,david.paffenholz@example.com,dpaffenholz@example.com,example@gmail.com,9877654321
+https://www.linkedin.com/in/ishangpt,ishangupta@example.com,9877654322,,,
+```
+
+Follow these rules when you format the file:
+
+- Put one candidate on each row.
+- Mix emails and phone numbers in any order. Juicebox sorts each value into email or phone on import.
+- Leave a cell empty if you have no more contact information for that candidate.
+- Keep each file to 500 profiles or fewer. Split larger lists into several files and import each one.
+- If you plan to import more than 10,000 profiles, email `support@juicebox.ai`.
+
+<Tip>
+  To carry over tags and notes from Fetcher, add columns with the headers `Tags` and `Notes`. See [Add tags and notes from your CSV](/shortlist-profiles#add-tags-and-notes-from-your-csv).
+</Tip>
+
+## Step 3: Create a project for your Fetcher candidates
+
+Create a new project in Juicebox to hold your imported candidates, for example "Fetcher Candidates". Keeping them in one project lets you see who you already contacted before you reach out from other projects. See [Projects](/projects).
+
+## Step 4: Import your CSV
+
+1. Open your project and go to the **Shortlist** tab.
+2. Click **Add Candidate** in the top right. The **Import Profiles to Shortlist** window opens.
+3. Drag and drop your CSV file into the upload area, or click the area to select the file.
+4. Review the matched profiles. Use the checkmarks to choose which profiles to import.
+5. Click **Import**.
+
+Juicebox flags any profiles it can't match. You can add those candidates one at a time by pasting their profile URL into the **Profile URL or Search Query** field. For more detail, see [Import profiles](/shortlist-profiles#import-profiles).
+
+## Step 5: Check your import
+
+1. Open a few imported profiles and confirm their emails and phone numbers appear.
+2. Add one of the imported candidates to a sequence from a different project. Juicebox shows a warning that says "This profile is shortlisted in another project". See [Add profiles](/add-profiles).
+
+## Related articles
+
+- [Migrating your Data to Juicebox (Starter & Growth)](/help/data-migration/migrate-starter-growth)
+- [Migrating your Data to Juicebox (Business Plan)](/help/data-migration/migrate-business)
+- [Shortlist profiles](/shortlist-profiles)

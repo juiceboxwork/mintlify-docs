@@ -1,0 +1,91 @@
+---
+title: "How do I set up single sign-on (SSO) for Juicebox?"
+sidebarTitle: "Set up SSO"
+description: "Connect Juicebox to your identity provider, such as Okta or Microsoft Entra ID, and move your team members to SSO login."
+---
+
+Single sign-on (SSO) lets your team members sign in to Juicebox with your organization's identity provider, such as Okta or Microsoft Entra ID (Azure AD).
+
+<Note>
+  SSO is available on the Business plan. Contact your Juicebox representative to get started.
+</Note>
+
+## Before you start
+
+- The person completing the setup needs administrator access to your identity provider.
+- The Juicebox team confirms the authorized domain for SSO with you.
+- Send the Juicebox team every additional email domain your team members use to access Juicebox.
+- The Juicebox team sends you three links for your organization: a one-time setup link, a bookmark link, and a login link.
+
+## Step 1: Open the SSO setup portal
+
+Open the one-time setup link from the Juicebox team. The portal shows configuration instructions for your identity provider.
+
+<Warning>
+  The setup link works only once. Some email security tools open or scan links automatically, which can use up the link before your administrator opens it. If the link does not work, contact the Juicebox team for a new one.
+</Warning>
+
+## Step 2: Configure your identity provider
+
+Follow the instructions in the SSO setup portal to add Juicebox to your identity provider. Depending on your provider, this can include:
+
+- Creating or configuring a SAML application
+- Entering the Juicebox service provider details
+- Uploading identity provider metadata or certificates
+- Assigning the Juicebox application to the right users or groups
+
+Complete every required step in the portal before you close it.
+
+## Step 3: Add a Juicebox bookmark or app tile
+
+In your identity provider, create a bookmark or app tile that points to the bookmark link from the Juicebox team. This gives your team members a direct SSO login path after setup is complete.
+
+## Step 4: Confirm authorized domains
+
+The Juicebox team verifies your authorized domain with you. Send any additional domains to the Juicebox team before your team members try to sign in.
+
+Team members who sign in from a domain that is not authorized may not be able to access your organization through SSO.
+
+## Step 5: Complete the configuration
+
+<Warning>
+  When your administrator completes the setup, Juicebox signs out all current team members in your organization.
+</Warning>
+
+After setup:
+
+- Team members sign in through your identity provider.
+- Existing team members confirm their previous Juicebox login method. This connects their existing Juicebox account to their SSO identity and prevents duplicate accounts.
+
+## Step 6: Reconnect existing accounts
+
+Each existing team member follows these steps once:
+
+1. Go to the login link from the Juicebox team.
+2. Select **Continue with SSO** or **Sign in with SSO**.
+3. Sign in with your identity provider credentials.
+4. Confirm your previous Juicebox login method, such as:
+   - Email and password
+   - Google sign-in
+   - Another login method you used before
+5. Complete the confirmation.
+
+Your existing Juicebox account is now connected to SSO.
+
+## Sign in after setup
+
+After you reconnect your account, sign in to Juicebox in either of these ways:
+
+- Open the Juicebox bookmark or app tile your IT team set up.
+- Go to the Juicebox login page and select **Sign in with SSO**.
+
+## Troubleshooting
+
+Contact the Juicebox team at [support@juicebox.ai](mailto:support@juicebox.ai) if:
+
+- The one-time setup link expired or an email security tool opened it.
+- You need to authorize an additional email domain.
+- A team member cannot connect their existing account.
+- A team member appears to have created a duplicate account.
+- The Juicebox application does not appear for an assigned team member.
+- You need technical help configuring your identity provider.

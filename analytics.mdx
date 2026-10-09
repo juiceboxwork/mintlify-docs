@@ -93,12 +93,12 @@ Outreach analytics helps you measure and optimize the performance of your email 
 
 **With key metrics including:**
 
-- **Total runs:** Total number of sequences sent out over time
-- **Open rate:** Percentage of sequences opened by candidates
-- **Click rate:** Percentage of sequence links clicked by candidates
-- **Reply rate:** Percentage of emails replied to by candidates
-- **Interest rate:** Percentage of candidate replies that were interested in your project / opportunity
-- **Bounce rate:** Percentage of sequences that were undeliverable
+- **Profiles contacted:** Number of candidates who have been sent at least one sequence step. The card also shows the number of sequence runs behind that count.
+- **Open rate:** Percentage of contacted sequence runs that candidates opened
+- **Click rate:** Percentage of contacted sequence runs where candidates clicked a link
+- **Reply rate:** Percentage of contacted sequence runs that candidates replied to
+- **Interest rate:** Percentage of contacted sequence runs where candidates replied that they were interested in your project / opportunity
+- **Bounce rate:** Percentage of contacted sequence runs that were undeliverable. Project and user tables count each bounced run once, even if more than one email in the run bounced.
 - **InMail Replies:** Total number of LinkedIn Recruiter InMail replies received from candidates, counted separately from email replies
 
 <Note>
@@ -113,6 +113,19 @@ Outreach analytics helps you measure and optimize the performance of your email 
   2. Email notifications for InMail responses are turned on in your LinkedIn settings.
 
   If either condition is not met, Juicebox cannot detect the reply. Check both for each connected mailbox.
+</Note>
+
+#### How outreach rates are calculated
+
+Open, click, reply, interest, and bounce rates all use contacted sequence runs as the denominator. A run counts as contacted once Juicebox has sent its first step. Juicebox excludes the following runs from the denominator:
+
+- Runs that were cancelled or stopped early, including runs cancelled because the mailbox was disconnected
+- Active or paused runs that are still waiting on their first step
+
+The numerators don't change. Opened, clicked, and replied counts still include every run where that engagement happened. Each rate card shows the raw counts in parentheses, for example `(42/180)`, where the second number is the contacted total.
+
+<Note>
+  Rates may look higher than in earlier reports if your team has many cancelled runs or runs scheduled but not yet sent. Those runs no longer lower your rates.
 </Note>
 
 **For a more granular breakdown, filter outreach analytics by:**
