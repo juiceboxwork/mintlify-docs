@@ -77,18 +77,11 @@ Juicebox will tag profiles that already exist in Ashby. You will see the last mo
 
    ![Ashby integration demo](/images/help/ats-setup/ashby-5.png)
 
-4. When you create the API key in Ashby, turn on the permissions below.
+4. When you create the API key in Ashby, turn on the permissions shown below.
 
-   ![Suggested minimum API scopes](/images/help/ats-setup/ashby-6.png)
-
-   | Module | Read | Write |
-   | --- | --- | --- |
-   | Candidates | Yes | Yes |
-   | Jobs | Yes | Yes |
-   | Hiring Process Metadata | Yes | Yes |
-   | Interviews | Yes | No |
-   | Organization | Yes | No |
-   | API Keys | Yes | No |
+   <Frame>
+     ![API Scopes step of the Create an API Credential modal in Ashby with the required Read and Write permissions selected](/images/help/ats-setup/ashby-api-scopes-1.png)
+   </Frame>
 
    **API Keys: Read** lets Juicebox check which permissions your key has. **Hiring Process Metadata: Write** is required for [sourcing tags](#sourcing-tags). To link intakes to Ashby jobs, also turn on **Allow access to non-offer private fields**.
 
