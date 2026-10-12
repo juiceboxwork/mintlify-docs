@@ -84,6 +84,8 @@ Edit **Subject** on an email that starts a thread. Use the **Cc** and **Bcc** co
 
 You can insert a candidate variable, such as **First Name**, to personalize the subject. Review the resolved subject in the email preview before sending.
 
+You can also insert **Day of Week** to reference the weekday each message goes out. See [Day of Week variable](#day-of-week-variable).
+
 ### Customize the email text
 
 Edit the message directly on its step card. The formatting toolbar supports bold, italic, lists, links, images, and other text formatting. Add a scheduling link as a hyperlink when you want candidates to book time with you. As a best practice, save the scheduling link for a later step rather than the first email.
@@ -180,7 +182,7 @@ Type **/** in a message body to open quick adds. The menu includes:
 | **Edit with AI** | Rewrites the whole step. In Composer chat, choose an option such as **Proofread** or **Make it more concise**, or type your own instruction. |
 | **AI Command** | Opens the AI command picker to insert personalized copy at the cursor. |
 | **Network Mention** | Adds a mention of a relevant mutual connection. See [Network Sourcing](/network-sourcing#use-network-snippets-to-personalize-outreach). |
-| **Variables** | Inserts candidate or sender details, such as **First Name**, **Current Company**, or **Sender First Name**. |
+| **Variables** | Inserts candidate or sender details, such as **First Name**, **Current Company**, or **Sender First Name**, and the scheduled **Day of Week**. |
 | **Snippets** | Inserts saved text, with options to show all snippets or create one. |
 
 Press **/** again if you want to insert a literal slash.
@@ -188,6 +190,24 @@ Press **/** again if you want to insert a literal slash.
 <Frame>
   ![Inline composer menu with Edit with AI and AI Command highlighted in blue](/images/sequences/composer-slash-menu.svg)
 </Frame>
+
+### Day of Week variable
+
+Insert **Day of Week** to add the weekday a message is scheduled to go out, such as Monday or Thursday. Use it for timely phrasing like `Happy {{Day of Week}}` or `Free for a quick call this {{Day of Week}}?`. It works in subjects and message bodies.
+
+```text
+Subject: Quick question this {{Day of Week}}, {{First Name}}
+
+Hi {{First Name}}, hope your {{Day of Week}} is going well.
+```
+
+Juicebox resolves the weekday from each message's scheduled send time in the sequence timezone. This applies to email steps, LinkedIn and call tasks, and test emails. Day of Week doesn't depend on candidate data, so it won't be flagged as a missing variable.
+
+In **Preview**, the weekday is an estimate based on the step's schedule and timezone. The preview notes that enrollment and rescheduling may change it. For example, if enrollment pushes a step to a later date, or you reschedule a step, the message uses the weekday of the new send date. Test emails use the estimated weekday shown in the preview.
+
+<Note>
+  If the preview says the weekday is unavailable, check the step's **Send at** and **Timezone** settings and try again.
+</Note>
 
 ### AI commands
 
