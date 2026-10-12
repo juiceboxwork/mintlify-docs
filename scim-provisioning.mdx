@@ -1,0 +1,116 @@
+---
+title: "Set Up SCIM Provisioning"
+---
+
+## Overview
+
+SCIM (System for Cross-domain Identity Management) allows your organization to manage Juicebox users directly through your identity provider, such as Okta, Microsoft Entra ID, or Google Workspace.
+
+With SCIM, your IT team can automatically add and remove users, manage their roles, and control who has access to Juicebox, without manually updating team members in the platform.
+
+Once SCIM is enabled, your identity provider becomes the source of truth for user access and permissions.
+
+## Before you begin
+
+To set up SCIM, your organization must:
+
+- Be on an eligible **Juicebox Business Plan**.
+- Have Single Sign-On (SSO) configured and active. SSO enforcement must also be on.
+- Have at least one user who has successfully signed in through SSO.
+- Have an IT administrator with access to your organization's identity provider.
+
+<Note>
+  SCIM requires SSO. If your organization hasn't configured SSO yet, you'll need to complete that setup before enabling SCIM.
+</Note>
+
+## Directory Sync setup portal
+
+Your Customer Success Manager will send the Directory Sync setup portal link, where you can connect your identity provider.
+
+{/* SCREENSHOT: Directory Sync setup portal, identity provider selection screen */}
+
+<Tip>
+  The setup portal link expires after 30 days. If your IT administrator is a different person, have them open the portal themselves rather than forwarding the link.
+</Tip>
+
+## Managing users with SCIM
+
+After SCIM is enabled, user management works a little differently.
+
+### Adding new users
+
+To add a user, assign them to the Juicebox application through your identity provider.
+
+Once provisioned, they can access Juicebox using your organization's SSO login.
+
+SCIM-provisioned users will not receive a separate invitation email from Juicebox.
+
+### Updating user roles
+
+To change a user's role, move them to the appropriate role group in your identity provider. Change the user's role group only, not the group that assigns the Juicebox application.
+
+Roles can no longer be changed directly within Juicebox once SCIM is enforced.
+
+### Removing users
+
+To remove a user's access, deactivate or un-assign them from the Juicebox application in your identity provider.
+
+When access is removed:
+
+- The user is signed out of Juicebox.
+- Their active outreach sequences are paused.
+- Their AI Agents continue running until reassigned by an administrator.
+
+If the user is added back through your identity provider, their existing Juicebox account is restored. Any paused sequences will need to be resumed manually.
+
+<Note>
+  If you're using Okta, suspending a user does not automatically revoke their Juicebox access. You must deactivate the user or un-assign them from the Juicebox application.
+</Note>
+
+## Seat limits and billing
+
+When additional licensed users are added through SCIM, Juicebox automatically adjusts your organization's seat limit as needed.
+
+If provisioning new users exceeds your current seat limit, your limit will increase automatically (up to a maximum of 1,000 licensed seats), and the corresponding subscription charges will apply.
+
+Organization administrators will receive confirmation of seat limit increases.
+
+<Warning>
+  Adding licensed users through SCIM may increase your subscription costs. We recommend reviewing your organization's seat requirements before provisioning large groups of users.
+</Warning>
+
+## Changing or removing your directory
+
+<Warning>
+  Do not delete the directory in the setup portal while SCIM is active. Deleting it locks your organization: all users lose access, and running AI Agents and outreach sequences are paused until Juicebox helps you reconnect a new directory. Contact your Customer Success Manager before making changes to the directory.
+</Warning>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Can I still invite users directly from Juicebox?">
+    No. Once SCIM is enabled, all user invitations must be managed through your organization's identity provider.
+  </Accordion>
+
+  <Accordion title="Can I change a user's role in Juicebox?">
+    No. Roles must be managed through your identity provider when SCIM is enabled.
+  </Accordion>
+
+  <Accordion title="Does SCIM require SSO?">
+    Yes. Your organization must have an active SSO connection before SCIM can be enabled. Once enabled, all users must sign in using SSO.
+  </Accordion>
+
+  <Accordion title="Will new users receive an invitation email?">
+    No. Users provisioned through SCIM can access Juicebox using your organization's SSO login. No separate Juicebox invitation email is sent.
+  </Accordion>
+
+  <Accordion title="What happens if I remove a user?">
+    Their access to Juicebox is revoked, and their active sequences are paused. Their AI Agents continue running until reassigned by an administrator.
+  </Accordion>
+
+  <Accordion title="Will adding users affect my subscription?">
+    It may. If the number of licensed users exceeds your current seat limit, Juicebox will automatically increase the limit and apply the corresponding billing changes.
+  </Accordion>
+</AccordionGroup>
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
