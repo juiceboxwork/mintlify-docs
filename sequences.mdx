@@ -59,6 +59,16 @@ Use the timing control above each step to set its schedule:
   ![Follow-up delay, send time, and timezone controls highlighted in blue](/images/sequences/composer-step-schedule.svg)
 </Frame>
 
+#### Blackout dates
+
+If an admin has set [blackout dates](/manage-account#blackout-dates) for your organization, Juicebox schedules every sequence around them:
+
+- A step that lands on a blackout date moves to the next allowed day at the same send time.
+- Later steps keep their spacing from the moved step.
+- Business-day delays don't count blackout dates, just as they don't count weekends.
+- Email, LinkedIn, and call steps all follow blackout dates. Juicebox doesn't send emails or create tasks on those days.
+- Candidates enrolled before an admin added a blackout date also follow it.
+
 ### Select the step type
 
 Open the step-type dropdown beside the step number. Choose **Email**, **Connection Request**, **LinkedIn Message**, or **Call**.
@@ -239,7 +249,7 @@ Review the sequence in the composer, then return to enrollment to choose contact
 
 From the shortlist you can also select all candidates to enroll them at once. To contact candidates you have reached before, re-enroll them from the sequence page.
 
-Juicebox skips candidates contacted within the recently contacted window, which defaults to 90 days. Admins can change this window in settings.
+Juicebox skips candidates contacted within the recently contacted window, which defaults to 90 days. Admins can set the window from 1 to 180 days in [organization settings](/manage-account#recently-contacted-window).
 
 If a connected mailbox is required, follow the prompt to connect one before sending email.
 
