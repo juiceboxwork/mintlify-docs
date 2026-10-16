@@ -59,6 +59,16 @@ Use the timing control above each step to set its schedule:
   ![Follow-up delay, send time, and timezone controls highlighted in blue](/images/sequences/composer-step-schedule.svg)
 </Frame>
 
+#### Blackout dates
+
+If an admin has set [blackout dates](/manage-account#blackout-dates) for your organization, Juicebox schedules every sequence around them:
+
+- A step that lands on a blackout date moves to the next allowed day at the same send time.
+- Later steps keep their spacing from the moved step.
+- Business-day delays don't count blackout dates, just as they don't count weekends.
+- Email, LinkedIn, and call steps all follow blackout dates. Juicebox doesn't send emails or create tasks on those days.
+- Candidates enrolled before an admin added a blackout date also follow it.
+
 ### Select the step type
 
 Open the step-type dropdown beside the step number. Select **Email**, **Connection Request**, **LinkedIn Message**, or **Call**.
@@ -83,6 +93,8 @@ A follow-up in an existing thread shows **Reply to Step** and the step number in
 Edit **Subject** on an email that starts a thread. Use the **Cc** and **Bcc** control beside the subject to show those fields.
 
 You can insert a candidate variable, such as **First Name**, to personalize the subject. Review the resolved subject in the email preview before sending.
+
+You can also insert **Day of Week** to reference the weekday each message goes out. See [Day of Week variable](#day-of-week-variable).
 
 ### Customize the email text
 
@@ -180,7 +192,7 @@ Type **/** in a message body to open quick adds. The menu includes:
 | **Edit with AI** | Rewrites the whole step. In Composer chat, choose an option such as **Proofread** or **Make it more concise**, or type your own instruction. |
 | **AI Command** | Opens the AI command picker to insert personalized copy at the cursor. |
 | **Network Mention** | Adds a mention of a relevant mutual connection. See [Network Sourcing](/network-sourcing#use-network-snippets-to-personalize-outreach). |
-| **Variables** | Inserts candidate or sender details, such as **First Name**, **Current Company**, or **Sender First Name**. |
+| **Variables** | Inserts candidate or sender details, such as **First Name**, **Current Company**, or **Sender First Name**, and the scheduled **Day of Week**. |
 | **Snippets** | Inserts saved text, with options to show all snippets or create one. |
 
 Press **/** again if you want to insert a literal slash.
@@ -188,6 +200,24 @@ Press **/** again if you want to insert a literal slash.
 <Frame>
   ![Inline composer menu with Edit with AI and AI Command highlighted in blue](/images/sequences/composer-slash-menu.svg)
 </Frame>
+
+### Day of Week variable
+
+Insert **Day of Week** to add the weekday a message is scheduled to go out, such as Monday or Thursday. Use it for timely phrasing like `Happy {{Day of Week}}` or `Free for a quick call this {{Day of Week}}?`. It works in subjects and message bodies.
+
+```text
+Subject: Quick question this {{Day of Week}}, {{First Name}}
+
+Hi {{First Name}}, hope your {{Day of Week}} is going well.
+```
+
+Juicebox resolves the weekday from each message's scheduled send time in the sequence timezone. This applies to email steps, LinkedIn and call tasks, and test emails. Day of Week doesn't depend on candidate data, so it won't be flagged as a missing variable.
+
+In **Preview**, the weekday is an estimate based on the step's schedule and timezone. The preview notes that enrollment and rescheduling may change it. For example, if enrollment pushes a step to a later date, or you reschedule a step, the message uses the weekday of the new send date. Test emails use the estimated weekday shown in the preview.
+
+<Note>
+  If the preview says the weekday is unavailable, check the step's **Send at** and **Timezone** settings and try again.
+</Note>
 
 ### AI commands
 
@@ -239,7 +269,7 @@ Review the sequence in the composer, then return to enrollment to choose contact
 
 From the shortlist you can also select all candidates to enroll them at once. To contact candidates you have reached before, re-enroll them from the sequence page.
 
-Juicebox skips candidates contacted within the recently contacted window, which defaults to 90 days. Admins can change this window in settings.
+Juicebox skips candidates contacted within the recently contacted window, which defaults to 90 days. Admins can set the window from 1 to 180 days in [organization settings](/manage-account#recently-contacted-window).
 
 If a connected mailbox is required, follow the prompt to connect one before sending email.
 

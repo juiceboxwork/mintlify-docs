@@ -68,17 +68,41 @@ View and update organizational settings. These settings affect all users in the 
 - Only export with contact info
 - Add notes for Stack Rank and Agents
 - Multiple active sequences per candidate
+- Recently contacted window
 - Auto-enroll with fallback after email bounce
 - Force include unsubscribe link
 - Enforced footer addendum
 - Enforce Email strict mode (locks Email strict mode on for every user in the organization)
 - Available email preferences
 - Organization email sending limit
+- Blackout dates and organization timezone
 - Monthly usage reports (available on the business plan)
 
 ![Screenshot 2026-07-07 at 3.51.31 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/manage-account/Screenshot_2026-07-07_at_3-51-31_PM.png)
 
-### Team members
+#### Recently contacted window
+
+The **Recently contacted window (days)** setting under **Outreach and sequences** defines how long a candidate counts as recently contacted after someone in your organization emails them. Only admins can change it. The default is 90 days, and you can enter any whole number from 1 to 180.
+
+Juicebox uses this window in two places:
+
+- When you add a candidate to a sequence, Juicebox shows a [recently emailed warning](/add-profiles#warnings) if anyone in your organization emailed them within the window.
+- Agents exclude candidates emailed within the window from their search results.
+
+#### Blackout dates
+
+Use **Blackout dates** to stop sequences from sending on holidays or company-wide breaks. Only admins can change these settings. Blackout dates apply to every sequence in your organization.
+
+1. Set the **Timezone**. Blackout dates start and end at midnight in this timezone.
+2. Under **Dates**, add a single date or a date range, with an optional label.
+3. To add holidays in bulk, apply a preset:
+   - **US federal holidays**: adds each federal holiday in the next 12 months. Holidays that fall on a weekend also block the weekday they're observed on.
+   - **Year-end break (Dec 24 – Jan 1)**: adds the year-end break.
+4. Remove any dates you still want to send on.
+
+Sequences schedule around blackout dates instead of pausing. Juicebox doesn't send emails or create LinkedIn or call tasks on a blackout date. A step that lands on a blackout date moves to the next allowed day, and later steps keep their spacing. Learn more in [Sequences](/sequences#blackout-dates).
+
+### Team Members
 
 Invite teammates or hiring managers to your Juicebox organization. Set their permissions to either:
 
@@ -86,6 +110,8 @@ Invite teammates or hiring managers to your Juicebox organization. Set their per
 - **View-only**
 
 [_Learn more about inviting Hiring Managers._](/request-a-review)
+
+The **Pending invitations** tab lists invitations that haven't been accepted yet. The **Status** column shows when each invitation was sent and last reminded. Any member can resend a pending invitation from its row, once every 24 hours. Admins and view-only admins can also remind all invitations pending for more than 30 days at once. See [Resend a pending invitation](/help/plans/add-team-members#resend-a-pending-invitation).
 
 ![Screenshot 2026-07-07 at 3.59.45 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/manage-account/Screenshot_2026-07-07_at_3-59-45_PM.png)
 
