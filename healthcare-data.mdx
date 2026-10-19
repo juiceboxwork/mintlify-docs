@@ -36,12 +36,12 @@ Open the **Healthcare** filter group in Search to filter on:
 
 | Filter | Examples |
 | --- | --- |
-| **Role** | RN, Nurse Practitioner, Physician |
+| **Role** | RN, Nurse Practitioner, Physician, Behavioral Health |
 | **Licensed in** | Texas, California, New York |
+| **Formerly licensed in** | North Carolina, Tennessee |
 | **Practicing in** | Los Angeles, Rochester, Minnesota |
-| **Specialty & training** | Emergency Medicine, Oncology, Cardiology Fellowship |
-| **Subspecialty** | Pediatric Neurosurgery, Interventional Radiology |
-| **Clinical credentials** | Board certified, ACLS, CCRN |
+| **Specialty & training** | Emergency Medicine, Oncology, Pediatric Neurosurgery, Cardiology Fellowship |
+| **Clinical credentials** | Board certified, ACLS, BLS, CCRN |
 | **Affiliated with** | Mayo Clinic, UCSF, Cleveland Clinic |
 | **Requirements** | Hospital privileges, nursing compact license, private practice background, travel or contract background |
 
@@ -60,6 +60,19 @@ Use **All (AND)** when a role requires coverage across several states, such as a
 
 You can also ask for this in plain language, for example: "RNs licensed in both Texas and Florida."
 
+### Find clinicians who were formerly licensed in a state
+
+Use **Formerly licensed in** to find clinicians with past ties to a state. It matches providers who held a state license there that has since expired or lapsed, and who hold no active license in that state now. Clinicians who once practiced in an area are often more open to relocating back, which helps when you are filling roles in thin markets.
+
+When you select more than one state, Juicebox matches providers formerly licensed in any of them (OR).
+
+**Formerly licensed in** differs from **Licensed in**:
+
+- **Licensed in** matches providers who currently hold a license, or an active nursing compact license, that covers the state.
+- **Formerly licensed in** matches providers whose license in the state is no longer active. Juicebox excludes anyone who still holds an active license there. For NLC states, Juicebox also excludes nurses who are still authorized there through an active compact license.
+
+You can also ask for this in plain language, for example: "RNs who used to be licensed in North Carolina."
+
 ### Filter on nursing compact licenses
 
 Select **Has nursing compact license** under **Requirements** to find RNs and LPN/LVNs who hold an active, unencumbered Nurse Licensure Compact (NLC) multistate license. Juicebox excludes compact privileges that are expired, inactive, suspended, restricted, or otherwise encumbered.
@@ -68,9 +81,46 @@ Use this filter when you need nurses who can practice across participating NLC s
 
 When you filter by **Licensed in**, Juicebox also counts an active nursing compact license as an alternate way to match any selected state that participates in the NLC. For example, a search for RNs licensed in Texas also returns RNs who hold a compact license from another NLC state.
 
+### Pick a role or role group
+
+The **Role** filter includes individual professions, such as RN or Physician, and umbrella role groups that cover several related professions in one pick:
+
+- **Behavioral Health**
+- **Nurses (RN / LPN)**
+- **Therapists (PT / OT / SLP / RT)**
+- **Allied Health**
+- **Other Clinicians**
+- **Advanced Practice Nurses (CRNA / Midwife / Clinical Nurse Specialist)**
+
+When you select more than one role, Juicebox matches providers in any of them (OR). For example, pick **Behavioral Health** instead of selecting each behavioral health profession separately.
+
+### Pick clinical credentials by family
+
+Each option in **Clinical credentials** is a credential family. One pick covers every known spelling of that credential in the source records. For example, **Licensed Practical Nurse (LPN / LVN)** matches records listed as LPN, LVN, or LPN Multistate, and **Basic Life Support (BLS)** matches BLS, BLS Provider, and BLS for Healthcare Providers. You do not need to select each variation separately.
+
+### Browse the Specialty and Role lists
+
+Click into the **Specialty** or **Role** field without typing to browse the full list of options:
+
+- **Specialty** lists specialties alphabetically, with subspecialties nested under their parent specialty.
+- **Role** lists professions, with member professions nested under their role group.
+
+Picking a parent covers everything beneath it. When you select a parent specialty or role group, Juicebox shows its children as checked, so you do not need to add them separately.
+
+**Specialty** matches the specialty on a provider's license or board certification. If you type a specialty or role that is not in the list, the picker offers **Add "[your text]" as a criterion**. Click it to add the typed text as a ranking criterion in one step. See [Filters vs criteria](/filters-vs-criteria) for how the two differ.
+
 <Frame>
   ![Clean Shot 2026 08 31 At 16 21 52@2x](/images/CleanShot-2026-08-31-at-16.21.52@2x.png "Clean Shot 2026 08 31 At 16 21 52@2x")
 </Frame>
+
+### Contact filters for healthcare profiles
+
+If your organization has Healthcare Data enabled, the **Work Email** and **Phone Number** contact filters also match contact data from healthcare registries:
+
+- **Work Email** also matches emails listed in public registry records.
+- **Phone Number** also matches registry phone numbers. These may be practice office lines rather than direct numbers.
+
+**Personal Email** does not match registry contact data.
 
 ## Review the healthcare profile
 
