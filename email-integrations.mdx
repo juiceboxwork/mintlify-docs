@@ -120,9 +120,20 @@ Control who can send a sequence from a mailbox with public and private access le
 
 ### Sequence behavior
 
-To automatically stop sequences and archive any pending tasks from this mailbox when a candidate books a meeting, please select the checkbox next to **Stop sequences when meeting is booked.**
+To automatically stop sequences and archive any pending tasks from this mailbox when a candidate books a meeting, select the checkbox next to **Stop sequences when meeting is booked.**
 
 ![Screenshot 2026-04-14 at 5.01.57 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/email-integrations/3fba3cf2-4619-46ec-a7b8-a07ee17513ca.png)
+
+Juicebox recognizes a booking by matching the candidate's email address against the calendar event. For sequences to stop reliably, the event must include the candidate's email in one of two places:
+
+- **The participant list.** Booking tools that add the candidate as an attendee, such as Calendly, Google appointment schedules, and Microsoft Bookings, do this by default.
+- **The event description.** Some ATS scheduling tools invite only the interviewers and put the candidate's details in the event body. In Ashby, edit the **Invite to interviewers** template under Scheduling defaults so the candidate's email appears in the event description. See [Ashby's guide to the invite template](https://docs.ashbyhq.com/setting-scheduling-defaults#invite-to-interviewers-template).
+
+A few limits to be aware of:
+
+- Only events on the mailbox's **primary calendar** are detected. Bookings that land only on a shared or secondary calendar, such as a separate interview calendar, do not stop the sequence.
+- Events with more than 5 participants are ignored, so group events and panel interviews do not stop sequences.
+- The sequence must have been sent from the mailbox that owns the calendar.
 
 ## Admin email settings
 
