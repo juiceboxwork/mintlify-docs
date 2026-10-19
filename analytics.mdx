@@ -45,7 +45,7 @@ Usage analytics helps admins and team leads understand where value is being gene
 
 **For a more granular breakdown, filter usage analytics by:**
 
-- User
+- User or [member tags](#filter-by-member-tags)
 - Date range
 - Time period (e.g., days, weeks, months)
 
@@ -75,7 +75,7 @@ Project analytics provides visibility into recruiting performance at the project
 **For a more granular breakdown, filter project analytics by:**
 
 - Project
-- User
+- User or [member tags](#filter-by-member-tags)
 - Date range
 
 ### 💌 Outreach analytics
@@ -127,7 +127,7 @@ The numerators don't change. Opened, clicked, and replied counts still include e
 
 - Sequence
 - Project
-- Started by
+- Started by (user or [member tags](#filter-by-member-tags))
 - Inboxes
 - Date range
 - Time period (days, weeks, months)
@@ -166,8 +166,21 @@ By monitoring how agents source, qualify, and surface leads, you can confidently
 **For a more granular breakdown, filter agent analytics by:**
 
 - Agent
+- Owned by (user or [member tags](#filter-by-member-tags))
 - Date range
 - Time period (days, weeks, months)
+
+### Filter by member tags
+
+Use member tags to scope analytics to a group of teammates, such as a recruiting team or region, without picking each user individually. Tag filters are available in the **Users** filter on Usage and Projects analytics, the **Started by** filter on Outreach analytics, and the **Owned by** filter on Agent analytics.
+
+1. Open the filter and select **By tags**.
+2. Select one or more tags.
+3. Choose how Juicebox matches the selected tags:
+   - **Match any** (default): Includes members who have at least one of the selected tags.
+   - **Match all**: Turn on **Match all selected tags** to include only members who have every selected tag. A **Match all** badge appears on the filter.
+
+Your tag selections and match setting are saved in the page URL, so shared links open with the same filters applied. Selecting specific users under **By users** clears any tag filters.
 
 ### **Sharing analytics**
 
