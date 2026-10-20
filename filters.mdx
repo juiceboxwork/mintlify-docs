@@ -102,6 +102,24 @@ In the example below, the search will run as follows: show candidates that are s
 
 ![Screenshot 2026-02-13 at 3.43.12 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/filters/Screenshot_2026-02-13_at_3-43-12_PM.png)
 
+### Experience in a Title
+
+Use the **Experience in a Title** filter in the Job Titles section to require a minimum number of years in a specific role, separate from total career years of experience. This matches phrasing like “4 years as a Senior Account Executive” or “3 years as an SWE” against a candidate’s time spent in that role, rather than their overall tenure.
+
+When you prompt with phrases like *“5 years as a product manager”*, Juicebox routes the requirement into this filter automatically instead of conflating it with **Years of Experience**, **Seniority**, or **Job Titles**. You can also add roles manually:
+
+1. In the **Job Titles** section, find **Experience in a Title**.
+2. Type a role in the “Add a role, e.g. Senior Software Engineer” field and select a suggestion. Include seniority directly in the role text (for example, *Senior Software Engineer* or *Enterprise Account Executive*).
+3. Set the required years for that entry.
+4. Repeat to add more roles. Each entry can be edited inline or removed with the trash icon.
+
+When you have two or more roles, a **Match Any / Match All** dropdown appears next to the section header:
+
+- **Match Any** (default): a candidate satisfies the filter if they meet the years requirement for at least one of the roles.
+- **Match All**: a candidate must meet the years requirement for every role listed.
+
+Active entries appear as a chip in the filter summary (e.g. *4+ yrs as Senior Account Executive*) and each entry counts toward the **Filters** badge. Use **Clear all** in the section header to remove every entry at once.
+
 ### Excluded Fields
 
 Juicebox has a multitude of smart search fields — including expanding job titles to help find best fit candidates. For example, entering “Software Engineer” will also help you find Principal Software Engineers. However, in some cases, you may want to restrict how broad the search is.
