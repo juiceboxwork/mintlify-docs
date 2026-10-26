@@ -44,6 +44,7 @@ Open the **Healthcare** filter group in Search to filter on:
 | **Clinical credentials** | Board certified, ACLS, BLS, CCRN |
 | **Affiliated with** | Mayo Clinic, UCSF, Cleveland Clinic |
 | **Requirements** | Hospital privileges, nursing compact license, private practice background, travel or contract background |
+| **NPI** | 1234567890, or a pasted list or CSV of up to 1,000 NPIs |
 
 <Note>
   **Licensed in** and **Practicing in** are different filters. Licensed in is where a provider holds a state license to practice. Practicing in is where they actually work. A provider can be licensed in a state where they do not currently practice.
@@ -93,6 +94,30 @@ The **Role** filter includes individual professions, such as RN or Physician, an
 - **Advanced Practice Nurses (CRNA / Midwife / Clinical Nurse Specialist)**
 
 When you select more than one role, Juicebox matches providers in any of them (OR). For example, pick **Behavioral Health** instead of selecting each behavioral health profession separately.
+
+Assistant roles include:
+
+- **Medical Assistant**, under **Allied Health**. Matches CMA, RMA, CCMA, and NCMA credentials.
+- **Anesthesiologist Assistant**, under **Allied Health**. Matches the CAA credential.
+- **Speech-Language Pathology Assistant**, under **Therapists**. Matches the SLPA credential.
+
+### Search by a list of NPIs
+
+Use the **NPI** filter when you already know which providers you want, such as a target list from a client or a roster exported from another system. Juicebox matches providers by their 10-digit National Provider Identifier (NPI). You can add up to 1,000 unique NPIs per search.
+
+To add NPIs, do one of the following:
+
+- **Type or paste NPIs** into the NPI field. Separate them with commas, semicolons, spaces, tabs, new lines, or dashes. If you type, press **Enter** to add them. Pasted lists are added right away.
+- **Click Upload CSV** and choose a CSV file smaller than 1 MB. The file can be a single column of NPIs, with or without a header row. For a file with more than one column, include a column header such as `NPI`, `NPI Number`, `Provider NPI`, or `National Provider Identifier`.
+
+For example, you can paste a list like this:
+
+```text
+1234567890, 1987654321
+1112223334; 1555666777
+```
+
+Juicebox removes duplicates and skips NPIs that are already in the filter. If any entry does not contain 10 digits, or the batch would bring the filter above 1,000 unique NPIs, Juicebox shows an error and adds none of the NPIs from that batch. Fix the list and add it again.
 
 ### Pick clinical credentials by family
 
