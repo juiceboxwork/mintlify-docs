@@ -8,7 +8,7 @@ title: "Juicebox MCP"
 
 The Juicebox Model Context Protocol (MCP) server lets AI models and agents access and interact with your Juicebox data through a standardized interface.
 
-Connect it to Claude, ChatGPT, Cursor, or any other MCP-compatible tool to read your recruiting analytics and create or calibrate agents in Juicebox, all without leaving your AI client.
+Connect it to Claude, ChatGPT, Grok Bot, Cursor, or any other MCP-compatible tool to read your recruiting analytics and create or calibrate agents in Juicebox, all without leaving your AI client.
 
 ## **Permissions & access**
 
@@ -27,6 +27,16 @@ Our MCP server authenticates each user individually via OAuth. You complete your
 Each MCP connection stays signed in for 30 days from the time you first approve it. Your AI client refreshes access automatically during that window, but refreshing does not extend the session past 30 days. After 30 days, your client prompts you to complete the OAuth flow again. Sign in and select Approve to reconnect.
 
 If your client's registration with the Juicebox MCP server is missing, the client registers again automatically when you sign in. You don't need to remove and re-add the server.
+
+### **SSO-enforced organizations**
+
+If your organization requires SSO, Juicebox only accepts MCP connections that you authorized while signed in with SSO. Juicebox refuses connections authorized with a password or Google sign-in, and your AI client can no longer call Juicebox tools or refresh access.
+
+To fix this, sign out of Juicebox, sign back in with SSO, and then reconnect the Juicebox MCP server from your AI client. Select **Approve** when prompted.
+
+<Note>
+  Connections approved before this check was introduced keep working until their 30-day session ends. After that, you must reconnect while signed in with SSO.
+</Note>
 
 ## **Set up your MCP client**
 
@@ -63,6 +73,12 @@ claude mcp add --transport http juicebox [https://mcp.juicebox.ai/v1](https://mc
 <Frame>
   ![Chat GPT Plugins](/ChatGPTPlugins.png "Chat GPT Plugins")
 </Frame>
+
+### **Grok Bot**
+
+1. Open the Juicebox plugin page in Grok Bot: [x.ai/bot/plugin/52606141](https://x.ai/bot/plugin/52606141). You can also find it from the **Juicebox MCP** section on the Integrations page in Juicebox.
+2. Follow the authorization prompts to connect Juicebox.
+3. Log in to Juicebox (if you aren't already) and select **Approve** in the MCP access window.
 
 ### **Cursor and other IDEs**
 
