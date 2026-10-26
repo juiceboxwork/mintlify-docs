@@ -183,6 +183,7 @@ Available to regular and admin licensed seats on non-Agent projects. Hiring-mana
 
 - **Create search** — paste a role brief or job description. Juicebox builds filters and criteria, saves the search in the project you name, and runs it immediately. The response includes the search link, pool size, first-page count, and up to five candidates. If the source looks like a job description, Juicebox uses JD mode automatically.
 - **Update search** — apply a natural-language edit to one existing search and re-run it.
+- **Create similar search** — start a Find Similar search seeded from example profiles. Seed it from profiles named or linked in the thread, the project's shortlist, the top results of an existing search, or any combination. Add an optional focus, such as "5+ years backend engineering", to rank candidates on what makes the seeds a good fit. Without a focus, Juicebox derives ranking criteria from the traits the seed profiles share. Juicebox saves the search in the project and runs it immediately, then returns the same link, pool size, first-page count, and up to five candidates as **Create search**. Requires a plan that includes Find Similar.
 
 Example prompts:
 
@@ -191,6 +192,7 @@ Example prompts:
 @juicebox, show me the filters on the "Staff PM - NYC" search.
 @juicebox, create a search in [Project] for a senior backend engineer with Go and Kubernetes based in the EU.
 @juicebox, in [Project], update "Staff PM - NYC" to also include product-led-growth experience.
+@juicebox, in [Project], find people similar to our shortlist, focusing on early-stage startup experience.
 ```
 
 Search writes are gated on licensed-seat projects.
@@ -347,6 +349,7 @@ If they're already linked, `@Juicebox account` confirms who they're connected as
 | Inspect a search | `@juicebox, show me the filters on the "[Search title]" search in [Project].` |
 | Create a search | `@juicebox, create a search in [Project] for [role brief or JD].` |
 | Update a search | `@juicebox, in [Project], update "[Search title]" to also require [criterion].` |
+| Create a similar search | `@juicebox, in [Project], find more people like the top results of "[Search title]".` |
 
 ## Slack permissions requested
 
