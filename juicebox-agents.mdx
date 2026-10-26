@@ -192,6 +192,8 @@ If the Agent asks you to connect a mailbox, use **Connect Gmail** or **Connect O
 - **Manual** lets you review and approve each lead before the Agent sends outreach or adds them to your shortlist, depending on your outreach choice.
 - **Automatic** lets the Agent approve matching leads and carry out your selected outreach or shortlist action.
 
+When you set up a new Agent, the approval type defaults to the one you chose most recently on another Agent. If your organization doesn't allow automatic approval, the default is **Manual**.
+
 <Note>
   Choose a daily lead target that you and your team have time to review. Drafting a sequence does not start sourcing; finish the strategy settings before starting the Agent.
 </Note>
@@ -224,6 +226,15 @@ During the review process, you can leave additional feedback to help the Agent c
 </Frame>
 
 All feedback submitted during reviews is also stored within the chat, and the Agent generates learnings from each reviewed batch, so you can reference its full history and decision-making context in one place. The Agent's reasoning is visible as it works, so you can see how it interpreted your feedback and why it selected each batch.<br />
+
+### Switching to automatic approval
+
+If an Agent uses **Manual** approval, Juicebox checks each batch after you finish reviewing it. Juicebox offers to switch the Agent to automatic approval when both of these are true:
+
+- You reviewed at least five leads in the batch, and no leads are still pending.
+- You approved at least 70% of the reviewed leads. Skipped leads count as reviewed but not approved.
+
+Select **Switch to automatic** to let the Agent approve matching leads from now on, or **Keep manual** to dismiss the prompt for that batch. You can change the approval type later in **Sourcing settings**.
 
 The sourcing panel also shows your daily leads at a glance: how many leads are waiting for approval and how many profiles have been shortlisted, along with when your next batch of leads will arrive.
 
@@ -299,6 +310,8 @@ If this message occurs you can:
 An Agent pauses automatically after four days without activity, and you can pause one manually at any time.
 
 Closing an Agent turns it off and frees the seat. You can reopen a closed Agent at any time in the Agents tab and select the three dots in the top right corner \> Reopen agent.
+
+If a closed Agent still has leads waiting for approval and its project is open, you can still approve, reject, or skip those leads. Approving a lead still triggers the outreach or shortlist action you configured. The Agent stays closed: reviewing its leads doesn't reopen it, restart sourcing, or generate new learnings.
 
 <Frame>
   ![Clean Shot 2026 08 18 At 17 05 35@2x](/images/CleanShot-2026-08-18-at-17.05.35@2x.png "Clean Shot 2026 08 18 At 17 05 35@2x")
