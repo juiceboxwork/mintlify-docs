@@ -126,6 +126,8 @@ Open: [app.juicebox.ai/account?tab=email-settings](https://app.juicebox.ai/accou
 </Frame>
 
 - **On:** sequences and ATS exports only use email addresses Juicebox has independently verified. Bounce rates drop sharply, and your sender reputation is protected.
+
+  Email addresses you added manually to a candidate still count as sendable in strict mode. Juicebox treats a manual add as your confirmation of the address. This applies when you preview a sequence, when you enroll candidates, and when Juicebox falls back to another address after a bounce. A manually added address that Juicebox has marked as undeliverable or incorrect is still excluded.
 - **Off:** all sourced emails are eligible to send to, including unverified addresses. Your email data coverage is higher, but so is your bounce risk.
 
 Turn strict mode **on** if you are on a new domain, recovering from a deliverability issue, or seeing bounce rates above ~3%.
@@ -263,7 +265,7 @@ Open: [app.juicebox.ai/account?tab=organization-settings](https://app.juicebox.a
 
 When it's on:
 
-- Sequences, agent outreach, and ATS exports only send to email addresses Juicebox has independently verified. This applies to everyone in the organization, regardless of each user's personal **Email strict mode** setting under **Account → Email settings**.
+- Sequences, agent outreach, and ATS exports only send to email addresses Juicebox has independently verified. In sequences, addresses a user added manually are also allowed unless Juicebox has marked them undeliverable or incorrect. This applies to everyone in the organization, regardless of each user's personal **Email strict mode** setting under **Account → Email settings**.
 - The per-user **Email strict mode** toggle stays on and disabled, with a tooltip explaining that an admin has enforced strict mode for everyone.
 - Agents and other automated workers that would otherwise pass a non-strict flag are also forced to strict mode, so their outreach follows the same verified-only rule.
 - The API rejects any attempt to turn a user's strict mode off with a `403 locked-by-admin` response until the org setting is turned back off.
