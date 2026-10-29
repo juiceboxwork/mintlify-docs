@@ -24,12 +24,48 @@ Follow the regular [export](/exports) steps and select **Export to SmartRecruite
 
 Juicebox will tag profiles that already exist in SmartRecruiters. You will see the last modified date, as well as the option to view the profile directly in SmartRecruiters by clicking the **View in ATS** button.
 
-## Setting up the integration
+## Before you start
+
+You need **Admin Access** to your SmartRecruiters instance. If your account does not have the **Admin** user role, you can't create the credentials the integration needs.
+
+1. Log in to SmartRecruiters and open **Settings** from the account menu in the top right corner.
+
+   <Frame>
+     ![Settings in the SmartRecruiters account menu](/images/help/ats-setup/smartrecruiters-1.png)
+   </Frame>
+
+2. Check that your account shows **Admin Access** under your account name.
+
+   <Frame>
+     ![Admin Access label under the account name in SmartRecruiters Settings](/images/help/ats-setup/smartrecruiters-2.png)
+   </Frame>
+
+<Note>
+  The screenshots show SmartRecruiters settings or the connection window provided by Kombo. Use the permissions and source name shown in your own connection; screenshot values are examples.
+</Note>
+
+## Connect SmartRecruiters to Juicebox
+
+<Note>
+  The person who connects the integration is shown in SmartRecruiters as the author of some actions the integration performs. To make automated actions easier to identify, you can connect with a separate SmartRecruiters user created for the integration. See [Kombo's guide to creating an integration user](https://help.kombo.dev/hc/en-us/articles/31805589713425-SmartRecruiters-Creating-an-integration-user).
+</Note>
 
 1. Navigate to the **Integrations** tab on the Juicebox platform.
 2. Select **SmartRecruiters** and click **Activate**. You can also use the search bar at the top.
-3. You will see a pop-up asking to activate your integration. Note that you must be an administrator of SmartRecruiters in order to link to Juicebox successfully.
-4. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
+3. In the connection pop-up, click **Sign in with SmartRecruiters**.
+
+   <Frame>
+     ![Sign in with SmartRecruiters button in the connection pop-up](/images/help/ats-setup/smartrecruiters-3.png)
+   </Frame>
+
+4. Log in to SmartRecruiters. On the next screen, click **ALLOW ACCESS**.
+
+   <Frame caption="The permission list is specific to your connection; this screenshot is an example.">
+     ![ALLOW ACCESS button on the SmartRecruiters permissions screen](/images/help/ats-setup/smartrecruiters-4.png)
+   </Frame>
+
+5. If the connection pop-up asks you to create a custom source, follow the steps in [Create a custom candidate source](#create-a-custom-candidate-source), then return to the pop-up.
+6. After you have clicked through the remaining pages of the pop-up, the configuration will be completed. If successful, you will see a green **Connected** button in your Integrations marketplace.
 
 Congratulations! You have successfully integrated SmartRecruiters and Juicebox.
 
@@ -37,6 +73,40 @@ Congratulations! You have successfully integrated SmartRecruiters and Juicebox.
   It may take up to 30 minutes for all data to sync between Juicebox and SmartRecruiters.
 </Note>
 
+## Create a custom candidate source
+
+The connection pop-up may ask you to create a custom source in SmartRecruiters so candidates have the correct source attribution. It shows the **Source Name** to use.
+
+<Frame caption="The source name is specific to your connection; this screenshot is an example.">
+  ![Create a custom source step in the connection pop-up](/images/help/ats-setup/smartrecruiters-5.png)
+</Frame>
+
+1. Log in to SmartRecruiters and open **Settings** from the account menu in the top right corner.
+
+   <Frame>
+     ![Settings in the SmartRecruiters account menu](/images/help/ats-setup/smartrecruiters-1.png)
+   </Frame>
+
+2. Under **Configuration**, click **Custom Candidate Sources**.
+
+   <Frame>
+     ![Custom Candidate Sources under Configuration in SmartRecruiters Settings](/images/help/ats-setup/smartrecruiters-6.png)
+   </Frame>
+
+3. Click **Create source**.
+
+   <Frame>
+     ![Create source button on the Custom candidate sources page](/images/help/ats-setup/smartrecruiters-7.png)
+   </Frame>
+
+4. Enter the **Source Name** exactly as shown in the connection pop-up. Select a **Source Type** and **Source Sub-type**, for example **Other**.
+
+   <Frame>
+     ![Add custom source form with Source Name, Source Type, and Source Sub-type](/images/help/ats-setup/smartrecruiters-8.png)
+   </Frame>
+
 ## Support
 
 For an overview of all integration features, see [ATS Integrations](/ats-integrations). If you're facing any issues with your integration, contact our support team at [support@juicebox.ai](mailto:support@juicebox.ai).
+
+ATS-side setup reference: [Kombo’s SmartRecruiters connection guide](https://help.kombo.dev/hc/en-us/articles/16086133813521-SmartRecruiters-ATS-How-do-I-link-my-account).
