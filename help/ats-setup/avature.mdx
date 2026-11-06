@@ -28,7 +28,7 @@ You must be an Avature administrator to complete the setup.
   <img src="/images/help/ats-setup/new-2026-09/avature/setup-51457748977425-01.png" alt="Avature search results for rest api showing REST APIs and REST API Key Configuration" width="760" />
 </Frame>
 
-Open **Integrations** in Juicebox, select **Avature**, and choose **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
+Open **Integrations** in Juicebox, select **Avature**, and click **Activate**. Keep the connection window open while completing the steps below. If the integration is not visible, ask [Juicebox Support](mailto:support@juicebox.ai) to confirm access for your account.
 
 The setup has three main steps:
 
@@ -46,7 +46,7 @@ The screenshots show vendor settings or the connection window provided by Kombo.
 
 1. In Avature, search for **REST API Key Configuration** and open the page.
 2. Turn on the **REST API Key** toggle and click **Generate new**.
-3. **Expiration:** do not set an expiration date. If the key expires, the integration stops syncing until it is reconnected with a new key.
+3. **Expiration:** do not set an expiration date. If the key expires, the integration stops syncing until you reconnect it with a new key.
 4. **IP restrictions:** leave this empty. If you want to allowlist static IPs, contact [Juicebox Support](mailto:support@juicebox.ai) first.
 5. Copy the key and paste it into the connection window.
 6. Click the blue **Save** button in the bottom-left corner.
@@ -77,8 +77,8 @@ Create the custom REST API that Juicebox connects to. The remaining steps add en
 ### Configure the API
 
 1. **Mode**: select the mode shown in the connection window.
-   - *Read only*: data is only read from Avature.
-   - *Read and write*: candidates and applications are also created in Avature.
+   - *Read only*: the integration only reads data from Avature.
+   - *Read and write*: the integration also creates candidates and applications in Avature.
 2. **Format**: *JSON*.
 3. **Status**: *Pre-live*.
 4. **Custom URL path**: copy the value from the connection window and paste it exactly as shown.
@@ -93,13 +93,13 @@ Avature builds the full **API URL** from your domain and the custom URL path. Co
 
 ## Configure the endpoints
 
-Add the routes, filters, and fields the connection needs. Which ones you need depends on the data requested for your connection, so **follow the lists shown in the connection window**.
+Add the routes, filters, and fields the connection needs. Which ones you need depends on the data requested for your connection. **Follow the lists shown in the connection window**.
 
 All of these actions happen in the **Available Routes** section. Routes are shown as a tree under your API URL, for example **/people People** or **/jobs Jobs**.
 
 ### Add a route
 
-Routes are the endpoints that are read from and written to, for example candidates, jobs, or candidate files.
+Routes are the endpoints the integration reads from and writes to, for example candidates, jobs, or candidate files.
 
 1. In **Available Routes**, find where the connection window says to add the route:
    - **Directly under your API URL** for a main route, such as **Jobs**.
@@ -136,7 +136,7 @@ Fields decide which data can be read (**Read** tab) and written (**Write** tab) 
 4. Click **>** in the middle to move them over.
 5. Click the blue **Add N items** button in the bottom-left corner.
 
-Some fields must use a specific name so they can be recognized, for example *ref_number* or *salary_expectations*:
+Some fields must use a specific name so the integration can recognize them, for example *ref_number* or *salary_expectations*:
 
 1. In the route's **Data model**, find the field you added.
 2. Change its name to the exact name shown in the connection window.
@@ -171,7 +171,7 @@ Save your REST API and upload its documentation file. The connection uses this f
   <img src="/images/help/ats-setup/new-2026-09/avature/setup-51457748977425-08.png" alt="API Documentation section of the REST API with the Download button highlighted" width="760" />
 </Frame>
 
-The file is checked against everything the connection window asked you to set up. If something is missing, you see a list of the items that failed, for example **"First Email field was added to the /people endpoint's read fields"**. After fixing the issue, download a new *openapi.yaml* file and upload it again.
+The connection window checks the file against everything it asked you to set up. If something is missing, you see a list of the items that failed, for example **"First Email field was added to the /people endpoint's read fields"**. After fixing the issue, download a new *openapi.yaml* file and upload it again.
 
 ## Troubleshooting
 
