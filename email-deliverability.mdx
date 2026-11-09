@@ -43,6 +43,8 @@ Scale sending volume to match how much your domain has proven it can handle. As 
 
 If you need more capacity, adding more mailboxes is generally safer than pushing a single mailbox to its ceiling. Distributing load across several senders spreads reputation risk and helps avoid provider-side errors like "Daily Message/Recipient limit exceeded."
 
+In Juicebox, [mailbox rotation](/sequences#rotate-between-mailboxes) spreads a sequence's new contacts across up to 6 mailboxes and keeps each mailbox within its daily cap.
+
 In Juicebox, the per-mailbox daily cap is adjusted per mailbox from [Email integrations](/email-integrations); see the [Per-mailbox daily send limit](#per-mailbox-daily-send-limit) section below for defaults and ceilings.
 
 ### 4. Keep your list clean
@@ -300,7 +302,7 @@ On top of your settings, Juicebox applies several safeguards regardless of confi
 - **Email verification.** We run an [email waterfall](/contact-data) across multiple providers with automated bounce checks before sending. When strict mode is on, this becomes a hard gate.
 - **Sending intervals.** Messages in a sequence are automatically spaced out, typically ~120 seconds between sends from the same mailbox, so a scheduled batch goes out at a human pace instead of a burst.
 - **Daily caps enforcement.** Sequences that would exceed a mailbox's per-day cap automatically defer to later days rather than pushing volume through.
-- **Multi-mailbox distribution.** Sequences can be tied to different connected mailboxes to spread load without over-sending from any single one.
+- **Multi-mailbox distribution.** Sequences can be tied to different connected mailboxes to spread load without over-sending from any single one. With [mailbox rotation](/sequences#rotate-between-mailboxes), Juicebox assigns each new contact one mailbox for the whole run, balanced by load and kept within each mailbox's daily cap.
 - **Unsubscribe enforcement.** Admins can require an unsubscribe link on every sequence email from [organization settings](/manage-account#general).
 
 ### Recommended setup checklist
