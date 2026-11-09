@@ -137,9 +137,21 @@ Juicebox then attributes your exports to the linked ATS user. To switch accounts
 
 The row only appears when your login email doesn't match a user in a connected ATS, or when you've already linked an account. [Learn more about account settings.](/manage-account#ats-account)
 
+Admins can also link or unlink ATS accounts for teammates from the **ATS email** column in **Team members**. [Learn more about team members.](/manage-account#team-members)
+
 ### Activating an integration
 
 Most integrations can be set up in a self-serve capacity. To do so, please select the “Activate Integration” field and follow the steps in the pop-up window. After successfully connecting your ATS or CRM, your account manager will reach out to you with next steps, if necessary.
+
+#### Set your Greenhouse URL
+
+After you connect Greenhouse v3, Juicebox asks you to add your Greenhouse URL. Juicebox uses it to link candidates and jobs back to your own Greenhouse host.
+
+1. In Greenhouse, open any candidate's profile.
+2. Copy the profile link from your browser, for example `https://app.greenhouse.io/people/123`.
+3. Paste the link into the **Add your Greenhouse URL** dialog and click **Save**.
+
+The link must be an `https://` Greenhouse address that contains `/people/`. Juicebox saves everything before `/people/` as your base URL. If you click **Skip**, Juicebox links to `https://app.greenhouse.io`.
 
 <Note>
   **Supported Plans:** ATS and CRM integrations are included on the [Business](https://juicebox.ai/pricing) plan. Contact [sales@juicebox.work](mailto:sales@juicebox.work) for more details.
