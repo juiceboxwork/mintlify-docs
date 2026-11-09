@@ -23,6 +23,7 @@ Example searches:
 - "Physicians certified in family medicine, licensed in Texas, with experience in senior living or value-based primary care"
 - "Dentists licensed in Arizona who are in private practice"
 - "Nurse practitioners licensed in Florida who work in cardiology"
+- "Telehealth physicians licensed in California with active licenses in at least 5 states"
 
 Juicebox turns your search into filters and ranking criteria automatically. You can review and adjust them any time.
 
@@ -40,8 +41,8 @@ Open the **Healthcare** filter group in Search to filter on:
 | **Licensed in** | Texas, California, New York |
 | **Formerly licensed in** | North Carolina, Tennessee |
 | **Practicing in** | Los Angeles, Rochester, Minnesota |
-| **Specialty & training** | Emergency Medicine, Oncology, Pediatric Neurosurgery, Cardiology Fellowship |
-| **Clinical credentials** | Board certified, ACLS, BLS, CCRN |
+| **Specialty & training** | Emergency Medicine, Oncology, Obesity Medicine, Pediatric Neurosurgery, Cardiology Fellowship |
+| **Clinical credentials** | Board certified, ABOM, ACLS, BLS, CCRN |
 | **Affiliated with** | Mayo Clinic, UCSF, Cleveland Clinic |
 | **Requirements** | Hospital privileges, nursing compact license, private practice background, travel or contract background |
 
@@ -59,6 +60,19 @@ When you select more than one state in **Licensed in**, use the toggle next to t
 Use **All (AND)** when a role requires coverage across several states, such as a telehealth nurse who must be licensed in Texas, Florida, and Georgia. When **All (AND)** is on, the search summary shows the filter as **Licensed in (all)**.
 
 You can also ask for this in plain language, for example: "RNs licensed in both Texas and Florida."
+
+### Require a minimum number of licensed states
+
+Use the **Licensed in at least** select next to the **Any**/**All** toggle on **Licensed in** to require active licenses in a minimum number of states. The options are:
+
+- **Any number**: No minimum. This is the default.
+- **2+**, **3+**, **5+**, or **10+ states**: Matches providers with active licenses in at least that many states, in any states.
+
+Use a minimum when a role needs broad license coverage but you do not care which states, such as multistate telehealth or locums work. The minimum combines (AND) with any states you select. For example, select **California** and **5+ states** to find providers licensed in California who also hold active licenses in at least 5 states in total.
+
+Juicebox counts only active state licenses toward the minimum. Nursing compact privileges and licenses with an unknown status do not count.
+
+You can also ask for this in plain language, for example: "Physicians with at least 3 active state licenses." Juicebox sets the minimum for you.
 
 ### Find clinicians who were formerly licensed in a state
 
@@ -107,7 +121,7 @@ Click into the **Specialty** or **Role** field without typing to browse the full
 
 Picking a parent covers everything beneath it. When you select a parent specialty or role group, Juicebox shows its children as checked, so you do not need to add them separately.
 
-**Specialty** matches the specialty on a provider's license or board certification. If you type a specialty or role that is not in the list, the picker offers **Add "[your text]" as a criterion**. Click it to add the typed text as a ranking criterion in one step. See [Filters vs criteria](/filters-vs-criteria) for how the two differ.
+**Specialty** matches the specialty on a provider's license or board certification. Common alternate names map to the matching specialty. For example, Bariatric Medicine maps to **Obesity Medicine**. If you type a specialty or role that is not in the list, the picker offers **Add "[your text]" as a criterion**. Click it to add the typed text as a ranking criterion in one step. See [Filters vs criteria](/filters-vs-criteria) for how the two differ.
 
 <Frame>
   ![Clean Shot 2026 08 31 At 16 21 52@2x](/images/CleanShot-2026-08-31-at-16.21.52@2x.png "Clean Shot 2026 08 31 At 16 21 52@2x")
