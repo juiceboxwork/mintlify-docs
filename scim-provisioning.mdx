@@ -77,7 +77,11 @@ Juicebox holds the extra seats during the day and bills them once a day:
 - **During the day:** If provisioning new users takes your organization over its seat limit, Juicebox holds the additional seats so invitations aren't blocked. Your seat limit and subscription don't change yet, and no email is sent.
 - **Nightly at 7 PM Pacific:** Juicebox recounts your licensed users and raises your seat limit to that count, up to a maximum of 1,000 licensed seats. Juicebox doesn't bill seats that were added and then freed again before 7 PM.
 - **Invoicing:** Juicebox creates a Stripe draft invoice for the added seats, prorated for the remainder of your term. About 24 hours later, Juicebox sends the invoice with the payment terms in your contract or order form. Weekends can extend this delay.
-- **Confirmation:** Organization administrators receive a **Seat upgrade confirmed** email. You receive at most one seat email per day, and only on days when SCIM added seats.
+- **Confirmation:** Juicebox sends two SCIM seat notices on days when SCIM added seats:
+  - **IT admin notice:** The [IT admin email](/manage-account#it-admin-email) set in your organization's General settings receives a notice that your organization went over its seat count. If no IT admin email is set, Juicebox skips this notice.
+  - **Admin notice:** Every organization administrator receives a notice that lists the users licensed since the last confirmation. The email lists up to 50 users. Your organization's first confirmation doesn't include a list.
+
+  If the IT admin email belongs to an administrator, that person receives only the admin notice. Your organization receives at most one seat email per day.
 
 Removing users never lowers your seat limit. Freed seats are reused by the next user your identity provider assigns.
 
@@ -115,7 +119,7 @@ Removing users never lowers your seat limit. Freed seats are reused by the next 
   </Accordion>
 
   <Accordion title="Will adding users affect my subscription?">
-    It may. If the number of licensed users exceeds your current seat limit, Juicebox holds the additional seats during the day. At 7 PM Pacific, Juicebox raises your seat limit to your licensed user count and creates an invoice for the added seats. Administrators receive one **Seat upgrade confirmed** email on days when seats were added.
+    It may. If the number of licensed users exceeds your current seat limit, Juicebox holds the additional seats during the day. At 7 PM Pacific, Juicebox raises your seat limit to your licensed user count and creates an invoice for the added seats. On days when seats were added, your IT admin email receives an over-seat-count notice, and administrators receive a notice listing the newly licensed users.
   </Accordion>
 </AccordionGroup>
 
