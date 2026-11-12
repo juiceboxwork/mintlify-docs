@@ -30,14 +30,13 @@ In the _Create New Credential_ box, make the following selections:
 
 ### Permissions
 
-Juicebox uses the Greenhouse Harvest v3 API. The permissions fall into two groups:
+Juicebox uses the Greenhouse Harvest v3 API. We recommend **Advanced** access: select every permission below. Juicebox then has your full hiring data, which means deeper insights and more powerful Agent capabilities.
 
-- **Required permissions** run the integration. They cover exports, job imports, and syncing your candidates, jobs, stages, and stage history.
-- **Optional permissions** give the Agent more hiring data to work with. You can leave any of them off.
+If you don't want to share some of that data, you can leave off any of the [Advanced permissions](#advanced-permissions). Juicebox still needs the Basic permissions to run the integration.
 
-#### Required permissions
+#### Basic permissions
 
-Verify that the following permissions are selected for the Juicebox integration:
+These permissions cover essential candidate and job data. Juicebox needs them for exports, job imports, and syncing your candidates, jobs, stages, and stage history. Verify that they are selected for the Juicebox integration:
 
 **Applications**
 
@@ -97,9 +96,9 @@ Verify that the following permissions are selected for the Juicebox integration:
 - View sources (`harvest:sources:list`)
 - View pay input ranges (`harvest:pay_input_ranges:list`)
 
-#### Optional permissions
+#### Advanced permissions
 
-These permissions give the Agent more hiring data to work with. If you don't want to share some of this data, leave that permission off. The rest of the integration works the same. The Agent works without the data it can't access.
+These permissions give the Agent additional hiring data to work with. We recommend selecting all of them. If you don't want to share some of this data, these are the ones you can leave off.
 
 **Scorecards**
 
@@ -118,6 +117,8 @@ The Agent can use offer data when it reports on your hiring pipeline.
 
 - View offers (`harvest:offers:list`)
 
+When an Advanced permission is off, the rest of the integration works the same. The Agent works without the data it can't access.
+
 ## Setting up the integration on Juicebox
 
 Once you have completed the previous steps and received your Harvest API key, head to the Juicebox platform.
@@ -128,10 +129,10 @@ Once you have completed the previous steps and received your Harvest API key, he
      ![Greenhouse (V3) card in the Integrations tab](/images/help/ats-setup/greenhouse-6.png)
    </Frame>
 
-2. Choose what data Juicebox can access, then click **Connect Greenhouse (V3)**.
+2. Choose what data Juicebox can access, then click **Connect Greenhouse (V3)**. We recommend **Advanced**.
 
-   - **Advanced**: Gives Juicebox access to additional hiring data for deeper insights and more powerful Agent capabilities. Choose this to share the [optional permissions](#optional-permissions).
-   - **Basic**: Gives Juicebox access to essential candidate and job data for exporting.
+   - **Advanced**: Gives Juicebox access to additional hiring data for deeper insights and more powerful Agent capabilities. This covers the Basic and [Advanced permissions](#advanced-permissions).
+   - **Basic**: Gives Juicebox access to essential candidate and job data for exporting. Choose this only if you don't want to share the Advanced permissions.
 
    {/* TODO: screenshot needed — access dialog with the Advanced and Basic options, shown after clicking Connect Greenhouse (V3) */}
 
