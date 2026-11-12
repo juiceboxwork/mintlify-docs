@@ -30,7 +30,13 @@ In the _Create New Credential_ box, make the following selections:
 
 ### Permissions
 
-Juicebox uses the Greenhouse Harvest v3 API. Verify that the following permissions are selected for the Juicebox integration:
+Juicebox uses the Greenhouse Harvest v3 API. We recommend **Advanced** access: select every permission below. Juicebox then has your full hiring data, which means deeper insights and more powerful Agent capabilities.
+
+If you don't want to share some of that data, you can leave off any of the [Advanced permissions](#advanced-permissions). Juicebox still needs the Basic permissions to run the integration.
+
+#### Basic permissions
+
+These permissions cover essential candidate and job data. Juicebox needs them for exports, job imports, and syncing your candidates, jobs, stages, and stage history. Verify that they are selected for the Juicebox integration:
 
 **Applications**
 
@@ -67,20 +73,10 @@ Juicebox uses the Greenhouse Harvest v3 API. Verify that the following permissio
 - View job interview stages (`harvest:job_interview_stages:list`)
 - View job interviews (`harvest:job_interviews:list`)
 
-**Interviews and scorecards**
+**Interviews**
 
 - View interviews (`harvest:interviews:list`)
 - View interviewers (`harvest:interviewers:list`)
-- View scorecards (`harvest:scorecards:list`)
-- View scorecard candidate attributes (`harvest:scorecard_candidate_attributes:list`)
-- View scorecard questions (`harvest:scorecard_questions:list`)
-- View scorecard question options (`harvest:scorecard_question_options:list`)
-- View scorecard answer options (`harvest:scorecard_question_answer_options:list`)
-- View scorecard answers (`harvest:scorecard_question_answers:list`)
-
-**Offers**
-
-- View offers (`harvest:offers:list`)
 
 **Organization**
 
@@ -100,47 +96,94 @@ Juicebox uses the Greenhouse Harvest v3 API. Verify that the following permissio
 - View sources (`harvest:sources:list`)
 - View pay input ranges (`harvest:pay_input_ranges:list`)
 
+#### Advanced permissions
+
+These permissions give the Agent additional hiring data to work with. We recommend selecting all of them. If you don't want to share some of this data, these are the ones you can leave off.
+
+**Scorecards**
+
+The Agent can use interview feedback when it reports on your hiring pipeline.
+
+- View scorecards (`harvest:scorecards:list`)
+- View scorecard candidate attributes (`harvest:scorecard_candidate_attributes:list`)
+- View scorecard questions (`harvest:scorecard_questions:list`)
+- View scorecard question options (`harvest:scorecard_question_options:list`)
+- View scorecard answer options (`harvest:scorecard_question_answer_options:list`)
+- View scorecard answers (`harvest:scorecard_question_answers:list`)
+
+**Offers**
+
+The Agent can use offer data when it reports on your hiring pipeline.
+
+- View offers (`harvest:offers:list`)
+
+When an Advanced permission is off, the rest of the integration works the same. The Agent works without the data it can't access.
+
 ## Setting up the integration on Juicebox
 
 Once you have completed the previous steps and received your Harvest API key, head to the Juicebox platform.
 
-1. On the left-hand sidebar, navigate to the **Integrations** tab and click **Connect Greenhouse (V3)**.
+1. On the left-hand sidebar, navigate to the **Integrations** tab and click **Connect** on the Greenhouse (V3) card.
 
    <Frame>
-     ![Greenhouse (V3) card in the Integrations tab](/images/help/ats-setup/greenhouse-6.png)
+     ![Greenhouse (V3) card in the Integrations tab](/images/help/ats-setup/greenhouse-13.png)
    </Frame>
 
-2. A pop-up window appears and guides you through the integration steps. Review the data permissions, then click **Continue**.
+2. Choose what data Juicebox can access, then click **Connect Greenhouse (V3)**. We recommend **Advanced**.
+
+   - **Advanced**: Gives Juicebox access to additional hiring data for deeper insights and more powerful Agent capabilities. This covers the Basic and [Advanced permissions](#advanced-permissions).
+   - **Basic**: Gives Juicebox access to essential candidate and job data for exporting. Choose this only if you don't want to share the Advanced permissions.
+
+   <Frame>
+     ![Review Juicebox's access to Greenhouse (V3) dialog with the Advanced and Basic options](/images/help/ats-setup/greenhouse-12.png)
+   </Frame>
+
+3. A pop-up window appears and guides you through the integration steps. Review the data permissions, then click **Continue**.
 
    <Frame>
      ![Data permissions in the Greenhouse (V3) connection pop-up](/images/help/ats-setup/greenhouse-7.png)
    </Frame>
 
-3. Click **Sign in with Greenhouse (V3)**. An authorization window opens.
+4. Click **Sign in with Greenhouse (V3)**. An authorization window opens.
 
    <Frame>
      ![Sign in with Greenhouse (V3) step in the connection pop-up](/images/help/ats-setup/greenhouse-8.png)
    </Frame>
 
-4. Enter the email address connected to your Greenhouse account and click **Log in to Greenhouse**.
+5. Enter the email address connected to your Greenhouse account and click **Log in to Greenhouse**.
 
    <Frame>
      ![Greenhouse authorization window asking for your email](/images/help/ats-setup/greenhouse-9.png)
    </Frame>
 
-5. Check the **Authorize using a service account** box and click **Authorize**.
+6. Check the **Authorize using a service account** box and click **Authorize**.
 
    <Frame>
      ![Authorize using a service account option in the Greenhouse authorization window](/images/help/ats-setup/greenhouse-10.png)
    </Frame>
 
-6. Juicebox then asks you to set up a source. In your Greenhouse dashboard, go to **Settings** > **Custom Options** > **Sources**, click **Create New Source**, select **Other** for the Sourcing Strategy, and name the source **Juicebox**. This step is important: it makes every candidate exported from Juicebox show up in Greenhouse with the right source.
+7. Juicebox then asks you to set up a source. In your Greenhouse dashboard, go to **Settings** > **Custom Options** > **Sources**, click **Create New Source**, select **Other** for the Sourcing Strategy, and name the source **Juicebox**. This step is important: it makes every candidate exported from Juicebox show up in Greenhouse with the right source.
 
    <Frame>
      ![Create a source step in the Greenhouse (V3) connection pop-up](/images/help/ats-setup/greenhouse-11.png)
    </Frame>
 
-7. Click **Set up integration** and you're all set.
+8. Click **Set up integration** and you're all set.
+
+## Add permissions to an existing connection
+
+If your Greenhouse connection is missing permissions, the Greenhouse (V3) card on the **Integrations** page shows **Limited permissions** instead of the plain **Connected** status. Reconnect to turn them on. Everything you've already set up stays the same.
+
+1. On the **Integrations** page, click **Limited permissions** on the Greenhouse (V3) card. A modal shows which permissions are missing.
+2. Click **Reconnect**.
+3. Choose **Advanced**, then confirm.
+4. Sign in to Greenhouse in the window that opens. Turn on the permissions that were marked as missing, then finish.
+
+New data can take a few hours to appear in Juicebox.
+
+<Note>
+  Only Juicebox admins can reconnect Greenhouse. If someone else manages Greenhouse, click **Copy link** in the access dialog and send the link to them.
+</Note>
 
 ## Using the Juicebox integration with Greenhouse Recruiting
 
