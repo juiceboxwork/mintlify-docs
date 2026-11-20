@@ -61,6 +61,7 @@
             "icon": "robot",
             "pages": [
               "juicebox-agents",
+              "blends",
               "knowledge-vault"
             ]
           },
@@ -101,6 +102,7 @@
             "pages": [
               "exports",
               "ats-integrations",
+              "ats-intelligence",
               "email-integrations",
               "juicebox-for-slack",
               "juicebox-mcp",
