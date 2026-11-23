@@ -41,7 +41,9 @@ Open the **Healthcare** filter group in Search to filter on:
 | **Licensed in** | Texas, California, New York |
 | **Formerly licensed in** | North Carolina, Tennessee |
 | **Practicing in** | Los Angeles, Rochester, Minnesota |
+| **Exclude role** | LPN, Behavior Technician |
 | **Specialty & training** | Emergency Medicine, Oncology, Obesity Medicine, Pediatric Neurosurgery, Cardiology Fellowship |
+| **Exclude specialty** | Orthodontics, Periodontics |
 | **Clinical credentials** | Board certified, ABOM, ACLS, BLS, CCRN |
 | **Affiliated with** | Mayo Clinic, UCSF, Cleveland Clinic |
 | **Requirements** | Hospital privileges, nursing compact license, private practice background, travel or contract background |
@@ -107,6 +109,19 @@ The **Role** filter includes individual professions, such as RN or Physician, an
 - **Advanced Practice Nurses (CRNA / Midwife / Clinical Nurse Specialist)**
 
 When you select more than one role, Juicebox matches providers in any of them (OR). For example, pick **Behavioral Health** instead of selecting each behavioral health profession separately.
+
+### Exclude roles and specialties
+
+Use **Exclude role** and **Exclude specialty** to leave out providers you do not want. Each box sits next to its include box (**Role** or **Specialty**) and uses the same picker and browse list. An option you pick in one box is hidden from its partner box.
+
+- **Exclude role** removes providers whose main role matches. A second license does not count. For example, excluding RNs keeps a nurse practitioner who also holds an RN license. Excluding a role group, such as **Nurses (RN / LPN)**, removes every role in the group.
+- **Exclude specialty** removes providers whose main specialty is the excluded specialty or sits under it. For example, excluding **Dentistry** also removes Orthodontics.
+
+When a provider has no role or specialty data, Juicebox removes them if their current job title exactly matches the excluded role or specialty. If an include and an exclude overlap, the more specific pick wins. For example, include **Dentistry** and exclude **Orthodontics** to find dentists who are not orthodontists.
+
+The search summary lists exclusions separately, for example "does not practice as LPN" or "does not specialize in Orthodontics."
+
+You can also ask for this in plain language, for example: "RNs, no LPNs" or "Dentists, but not orthodontists." Juicebox fills in the exclusion boxes for you.
 
 ### Pick clinical credentials by family
 
