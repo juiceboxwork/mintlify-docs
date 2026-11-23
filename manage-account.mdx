@@ -56,16 +56,6 @@ Any changes will apply to all mailboxes and active sequences using that signatur
 
 ![Screenshot 2026-07-07 at 3.34.30 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/manage-account/Screenshot_2026-07-07_at_3-34-30_PM.png)
 
-### ATS account
-
-If your organization has a connected ATS and your Juicebox login email doesn't match any user in that ATS, an **[ATS name] account** (for example, **Greenhouse account**) row appears in your personal account settings. Use it to tell Juicebox which ATS user is you, so exports to the ATS are credited to you.
-
-- **Link:** Open the dropdown, search by name or email, and select your ATS user.
-- **Switch:** Select a different ATS user in the same dropdown.
-- **Unlink:** Select **None**.
-
-[_Learn more about ATS integrations._](/ats-integrations#link-your-ats-user-account)
-
 ### Export preferences
 
 When exporting talent profiles to CSV, you can choose to include up to 15 optional fields, such as GitHub, Behance, or personal websites (when available).
@@ -138,6 +128,16 @@ Invite teammates or hiring managers to your Juicebox organization. Set their per
 [_Learn more about inviting Hiring Managers._](/request-a-review)
 
 To find members by tag, use the **Tags** filter. You can select multiple tags. By default, Juicebox shows members who have any of the selected tags. Turn on **Match all selected tags** to show only members who have every selected tag.
+
+The **ATS email** column shows how each member maps to a user in your organization's ATS. Juicebox checks the ATS your organization synced most recently:
+
+- **Connected:** The member's Juicebox email matches a user in your ATS. Juicebox credits their exports automatically, so there's nothing to link.
+- **A linked email:** The member is manually linked to an ATS user.
+- **Not linked:** The member's email doesn't match an ATS user and no account is linked.
+
+Admins can click a linked email or **Not linked** to open a dropdown, then search and select an ATS account to link it. To remove a link, select **None**. The dropdown only lists accounts from your organization's ATS. Only admins can link or unlink accounts. View-only admins and members can't.
+
+Linking an ATS account lets that member view the same ATS data the ATS account can access, including sensitive information. The first time you link an account in a browser session, Juicebox asks you to confirm. Click **Link account** to continue. Juicebox doesn't ask again for the rest of the session.
 
 The **Pending invitations** tab lists invitations that haven't been accepted yet. The **Status** column shows when each invitation was sent and last reminded. Any member can resend a pending invitation from its row, once every 24 hours. Admins and view-only admins can also remind all invitations pending for more than 30 days at once. See [Resend a pending invitation](/help/plans/add-team-members#resend-a-pending-invitation).
 
@@ -227,6 +227,8 @@ Manage reusable preset lists for search filters here. Presets let you save and r
 ### ATS
 
 Use this page to keep Juicebox projects, Agents, and ATS workflows aligned.⁠ ATS Settings let admins manage their ATS connection, configure automated exports, and control how candidates move from Juicebox into the right ATS job or stage. ATS integration is available on the business plan.
+
+If you use Greenhouse v3, the **Greenhouse URL** row shows the Greenhouse host Juicebox uses for candidate and job links. Admins can click the pencil icon to change it. [Learn more about setting your Greenhouse URL.](/ats-integrations#set-your-greenhouse-url)
 
 ![Screenshot 2026-07-07 at 4.41.47 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/manage-account/Screenshot_2026-07-07_at_4-41-47_PM.png)
 
