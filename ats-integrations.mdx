@@ -83,7 +83,7 @@ There is a 5 second delay between when the trigger action takes place and when t
 
 **Setup**: [Organization-level ATS settings](https://app.juicebox.ai/account?tab=ats):
 
-The **Automated ATS Exports** (enabled by default) toggle will enable/disable auto-exports for any project in the org.
+The **Enable automated exports by default** toggle (on by default) sets the default for projects linked to an ATS job. Individual projects can turn automated exports on or off, unless your org blocks them.
 
 ![Screenshot 2026-01-09 at 3.14.31 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/ats-integrations/Screenshot_2026-01-09_at_3-14-31_PM.png)
 
@@ -105,9 +105,36 @@ The **Auto-Export Trigger** setting determines when to export a candidate(s) for
 
 When you narrow the selection, Juicebox only looks up the selected field, so contact credits are spent only on that field. If strict filtering is on, Juicebox skips a candidate who has none of the selected contact info instead of exporting them with only a name.
 
-**Phone numbers only** is not available for SmartRecruiters or Pinpoint, which require an email to create a candidate. The setting is disabled when **Include Contact Information** or **Automated ATS Exports** is turned off.
+**Phone numbers only** is not available for SmartRecruiters or Pinpoint, which require an email to create a candidate. The setting is disabled when **Include Contact Information** or **Enable automated exports by default** is turned off.
 
 ![Screenshot 2026-01-09 at 3.18.43 PM](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/ats-integrations/Screenshot_2026-01-09_at_3-18-43_PM.png)
+
+#### Auto-export setup rules
+
+Organization admins can control how users set up automated exports on projects. Open [Organization-level ATS settings](https://app.juicebox.ai/account?tab=ats) and find the **Auto-export setup rules** section. These rules only affect automated exports. Manual and quick exports are unchanged.
+
+- **Require a stage for auto-export setup**: Users must select an export stage before they can confirm auto-export setup for a project.
+- **Allowed auto-export stages**: Restrict which stages users can select when setting up automated exports. Juicebox shows one row per ATS connection. Leave a connection on **All stages**, or select **Choose stages** to pick the stages it allows.
+
+When stage rules apply, the project's **Auto-export stage** dropdown only offers allowed stages. If a project's saved stage isn't allowed or no longer exists in the job, Juicebox asks the user to choose another stage.
+
+Some export targets don't use a job stage, so stage rules don't apply to them:
+
+- The general candidate pool, on ATSs that support it
+- Ashby sourcing projects
+- Greenhouse when your org exports candidates as Prospects
+
+Use these rules when your team wants every automated export to land in a specific pipeline stage, such as a sourcing or lead stage.
+
+<Note>
+  Projects that don't follow the rules stop auto-exporting. Juicebox skips their automated exports until a user updates the project's export stage to one the rules allow.
+</Note>
+
+#### Block automated exports across the organization
+
+The **Block automated exports across the organization** toggle stops automated exports for every project. Project settings can't override the block. Manual exports remain available. Only organization admins can change this setting.
+
+While the block is on, Juicebox keeps your saved defaults and each project's auto-export preferences. They apply again when you remove the block.
 
 **Project-level Job Linking** allows for the ability to link to an ATS job, as well as an interview stage, when creating or editing projects or agents. For Ashby, you can also link to a sourcing project instead.
 
@@ -115,7 +142,7 @@ When you narrow the selection, Juicebox only looks up the selected field, so con
 
 ### Automatically apply project configuration suggestions
 
-When you name a new project, Juicebox matches the title against your synced ATS jobs. It can then pre-fill the project configuration card with the linked ATS job, collaborators, and (if Automated ATS Exports is on) the export stage and auto-export toggle. The **Automatically apply project configuration suggestions** setting in [Organization-level ATS settings](https://app.juicebox.ai/account?tab=ats) controls whether those matches are written to the project silently or held back for the owner to review.
+When you name a new project, Juicebox matches the title against your synced ATS jobs. It can then pre-fill the project configuration card with the linked ATS job, collaborators, and (if automated exports are on) the export stage and auto-export toggle. The **Automatically apply project configuration suggestions** setting in [Organization-level ATS settings](https://app.juicebox.ai/account?tab=ats) controls whether those matches are written to the project silently or held back for the owner to review.
 
 The setting is only visible when your org is on the Business plan and has an ATS integration with job sync enabled. It defaults to on, matching the previous behavior.
 
