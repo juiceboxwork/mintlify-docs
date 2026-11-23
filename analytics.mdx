@@ -46,6 +46,18 @@ Usage analytics helps admins and team leads understand where value is being gene
 - Date range
 - Time period (e.g., days, weeks, months)
 
+#### Usage by user leaderboard
+
+The **Usage by user** leaderboard breaks out activity for each teammate, with a **Total** row at the bottom. Use the outreach rate columns to compare how well each teammate's outreach converts, not just how much they send.
+
+- **Replied:** Shows the number of replies, with `X% of contacted` underneath. This is the user's reply rate.
+- **Interested:** Shows the number of interested replies, with `Y% of replies` underneath. This is the share of replies that were interested.
+- **Interested % of contacted:** Shows interested replies as a percentage of candidates contacted. Click the column header to sort teammates by this rate. Users with no contacted candidates show `0%`.
+
+Juicebox calculates the rates in the **Total** row from the summed counts across all users. It does not average each user's rate. For example, if one user has 1 reply from 10 contacted and another has 9 replies from 90 contacted, the total reply rate is 10%.
+
+When you export the leaderboard as a CSV, the file includes matching rate columns: **Replied % of contacted**, **Interested % of replies**, and **Interested % of contacted**.
+
 ### 📈 Projects analytics
 
 Project analytics provides visibility into recruiting performance at the project level. This view helps you understand how each project is progressing or where efforts may need to be prioritized.
@@ -119,6 +131,35 @@ The numerators don't change. Opened, clicked, and replied counts still include e
 <Note>
   Rates may look higher than in earlier reports if your team has many cancelled runs or runs scheduled but not yet sent. Those runs no longer lower your rates.
 </Note>
+
+#### Not interested reasons
+
+The **Not interested reasons** chart shows why candidates declined your outreach. Use it to spot patterns, such as compensation or location concerns, that you can address in your messaging or role setup. The chart follows the page's date, sequence, project, started by, and inbox filters.
+
+Juicebox groups each not-interested reply into one of these reasons:
+
+| Reason | Description |
+| --- | --- |
+| Not job hunting | Happy where they are, or not considering new opportunities. |
+| Bad timing | Busy, just started a role, or wants to wait. |
+| Location | Location, relocation, commute, or remote/hybrid expectations. |
+| Role fit | The role's responsibilities, seniority, title, or function isn't right for them. |
+| Company fit | The company's industry, stage, reputation, or mission isn't right for them. |
+| Compensation | Pay, equity, or other financial terms are the main obstacle. |
+| Wrong person | The email reached the wrong person. |
+| Personal reasons | Personal circumstances are the main reason they declined. |
+| Other | A reason that fits none of the above, or one they didn't make clear. |
+| Not categorized | Marked not interested by hand, or a reply Juicebox couldn't categorize. |
+
+Each reason shows its count and share of not-interested replies. Hover the info icon next to the chart title to see the reason descriptions.
+
+To review the replies behind a reason:
+
+1. Click a reason in the chart.
+2. Review the matching replies in the dialog. Each row shows the candidate, sequence, reply summary, who added them, and when they replied. Replies under **Not categorized** have no summary. The dialog applies the same filters as the page.
+3. Click a row to open the candidate's full profile on the **Sequences** tab. Close the profile to return to the dialog.
+
+The dialog lists only replies in sequences you can open. If other matching replies are in private sequences, the dialog shows how many are hidden.
 
 **For a more granular breakdown, filter outreach analytics by:**
 
