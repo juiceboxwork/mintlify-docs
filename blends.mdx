@@ -24,7 +24,7 @@ Blends are one-click actions in your Agent. Each one starts from a proven prompt
 
 <Steps>
   <Step title="Open your Agent">
-    Open the Agent for the role you're working on.
+    Open the Agent for the role you're working on. To start a new Agent with a Blend, open the project homepage and select **Agent** in the Agent/Search switch.
   </Step>
   <Step title="Open the Blends menu">
     Select **Blends** at the bottom of the chat box, or type `/` in the chat.
@@ -44,18 +44,41 @@ Blends are one-click actions in your Agent. Each one starts from a proven prompt
   Blends use your Agent's context, including the job description, intake notes, and calibration. The more context your Agent has, the sharper the result.
 </Tip>
 
+### Starting an Agent with a Blend
+
+When you start an Agent from the project homepage, **Blends** appears next to the Agent/Search switch in the composer. Select a Blend there and your new Agent runs it as its first task.
+
+- Blends in the project composer are available on paid plans and on desktop.
+- If you switch to **Search**, Juicebox clears the selected Blend, because Blends only run in an Agent.
+
 ## Available Blends
 
 | Blend | What it does |
 | --- | --- |
-| **Talent map**<br />_"Generate a report on the market for this role"_ | Builds a shareable report on the market for the role: how many people fit, where they're located, top employers, titles, adjacent titles, years of experience, and skills. |
-| **ATS pipeline health**<br />_"Where's the bottleneck in the interview process?"_ | Visualizes where candidates are stuck, why they drop off, and what to fix, using your ATS data. |
+| **Map the talent market**<br />_"Where can I find talent for this role?"_ | Builds a shareable report on the market for the role: how many people fit, where they're located, top employers, titles, adjacent titles, years of experience, and skills. |
+| **Pipeline health**<br />_"Where are candidates getting stuck in the hiring process?"_ | Visualizes where candidates are stuck, why they drop off, and what to fix, using your ATS data. |
+| **Refine search with interview feedback**<br />_"What feedback can help me find better candidates?"_ | Reads the interview feedback in your ATS and writes a report on common strengths and concerns, with example quotes, broken down by interviewer and stage. Your Agent then updates its search to match the report's sourcing suggestions. |
+| **Analyze successful hires**<br />_"What do our successful hires have in common?"_ | Reviews who you've hired for the role in your ATS and reports what they have in common, including past employers, titles, and experience, and what set them apart from rejected candidates. |
+
+### Plan access
+
+Every Blend appears in the Blends menu, whatever your plan. What happens when you select one depends on your plan and ATS connection:
+
+- **Map the talent market** is available on every plan, including Free.
+- **ATS Blends** (Pipeline health, Refine search with interview feedback, and Analyze successful hires) require the Business plan or another plan with ATS access, plus a connected ATS.
+  - On other plans, ATS Blends show **Upgrade**. Selecting it opens pricing options.
+  - If your plan includes ATS access but no ATS is connected, admins see **Connect ATS**. Selecting it starts the ATS connection flow. See [ATS integrations](/ats-integrations).
+
+<Note>
+  ATS Blends work with Ashby and Greenhouse. See [ATS Intelligence](/ats-intelligence) for details.
+</Note>
 
 ## Tips for getting more out of Blends
 
-- **Run Talent map before your intake:** Bring the report to your hiring manager kickoff so you scope the role from the same data.
-- **Check ATS pipeline health before every hiring manager sync:** You'll walk in knowing where candidates are stuck and what to do next.
+- **Map the talent market before your intake:** Bring the report to your hiring manager kickoff so you scope the role from the same data.
+- **Check Pipeline health before every hiring manager sync:** You'll walk in knowing where candidates are stuck and what to do next.
 - **Follow up in the chat:** After a Blend runs, keep asking. Try "Which of these companies should I target first?" or "Who's been waiting longest for a decision?"
+- **Refine your search after interviews:** Once feedback starts coming in, run Refine search with interview feedback so your Agent sources closer to what interviewers want.
 - **Share the report:** Talent map reports open in a shareable view you can send to your hiring manager.
 
 <Note>
