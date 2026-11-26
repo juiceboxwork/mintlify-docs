@@ -32,19 +32,17 @@ In the _Create New Credential_ box, make the following selections:
 
 Juicebox uses the Greenhouse Harvest v3 API. We recommend **Advanced** access: select every permission below. Juicebox then has your full hiring data, which means deeper insights and more powerful Agent capabilities.
 
-If you don't want to share some of that data, you can leave off any of the [Advanced permissions](#advanced-permissions). Juicebox still needs the Basic permissions to run the integration.
+If you don't want to share offer data, you can leave off the [Advanced permission](#advanced-permissions). Juicebox still needs the Basic permissions to run the integration.
 
 #### Basic permissions
 
-These permissions cover essential candidate and job data. Juicebox needs them for exports, job imports, and syncing your candidates, jobs, stages, and stage history. Select all of them for the Juicebox integration:
+These permissions cover essential candidate and job data. Juicebox needs them for exports, job imports, and syncing your candidates, jobs, stages, stage history, interviews, and scorecards. Select all of them for the Juicebox integration:
 
 **Applications**
 
 - View applications (`harvest:applications:list`)
 - Create applications (`harvest:applications:create`)
 - Move applications between stages (`harvest:applications:move`)
-- Reject applications (`harvest:applications:reject`)
-- Mark applications as hired (`harvest:applications:hire`)
 
 **Candidates**
 
@@ -77,6 +75,17 @@ These permissions cover essential candidate and job data. Juicebox needs them fo
 
 - View interviews (`harvest:interviews:list`)
 - View interviewers (`harvest:interviewers:list`)
+- View interview kits (`harvest:interview_kits:list`)
+
+**Scorecards**
+
+- View scorecards (`harvest:scorecards:list`)
+- View scorecard candidate attributes (`harvest:scorecard_candidate_attributes:list`)
+- View scorecard questions (`harvest:scorecard_questions:list`)
+- View scorecard question options (`harvest:scorecard_question_options:list`)
+- View scorecard question candidate attributes (`harvest:scorecard_question_candidate_attributes:list`)
+- View scorecard answer options (`harvest:scorecard_question_answer_options:list`)
+- View scorecard answers (`harvest:scorecard_question_answers:list`)
 
 **Organization**
 
@@ -90,26 +99,21 @@ These permissions cover essential candidate and job data. Juicebox needs them fo
 
 - View application stages (`harvest:application_stages:list`)
 - View rejection reasons (`harvest:rejection_reasons:list`)
-- View rejection details (`harvest:rejection_details:list`)
 - View candidate attribute types (`harvest:candidate_attribute_types:list`)
 - View focus candidate attributes (`harvest:focus_candidate_attributes:list`)
 - View sources (`harvest:sources:list`)
 - View pay input ranges (`harvest:pay_input_ranges:list`)
 
+**Webhooks**
+
+- View webhooks (`harvest:webhooks:list`)
+- Create webhooks (`harvest:webhooks:create`)
+- Update webhooks (`harvest:webhooks:update`)
+- Delete webhooks (`harvest:webhooks:destroy`)
+
 #### Advanced permissions
 
-These permissions give the Agent additional hiring data to work with. We recommend selecting all of them. If you don't want to share some of this data, these are the ones you can leave off.
-
-**Scorecards**
-
-The Agent can use interview feedback when it reports on your hiring pipeline.
-
-- View scorecards (`harvest:scorecards:list`)
-- View scorecard candidate attributes (`harvest:scorecard_candidate_attributes:list`)
-- View scorecard questions (`harvest:scorecard_questions:list`)
-- View scorecard question options (`harvest:scorecard_question_options:list`)
-- View scorecard answer options (`harvest:scorecard_question_answer_options:list`)
-- View scorecard answers (`harvest:scorecard_question_answers:list`)
+Advanced access adds one permission. We recommend selecting it. If you don't want to share offer data, you can leave it off.
 
 **Offers**
 
@@ -117,7 +121,7 @@ The Agent can use offer data when it reports on your hiring pipeline. Offer data
 
 - View offers (`harvest:offers:list`)
 
-When an Advanced permission is off, the rest of the integration works the same. The Agent works without the data it can't access.
+When the offers permission is off, the rest of the integration works the same. The Agent works without offer data.
 
 ## Setting up the integration on Juicebox
 
@@ -131,8 +135,8 @@ Once you have completed the previous steps and received your Harvest API key, he
 
 2. Choose what data Juicebox can access, then click **Connect Greenhouse (V3)**. We recommend **Advanced**.
 
-   - **Advanced**: Gives Juicebox access to additional hiring data for deeper insights and more powerful Agent capabilities. This covers the Basic and [Advanced permissions](#advanced-permissions).
-   - **Basic**: Gives Juicebox access to essential candidate and job data for exporting. Choose this only if you don't want to share the Advanced permissions.
+   - **Advanced**: Gives Juicebox access to additional hiring data for deeper insights and more powerful Agent capabilities. This covers the Basic permissions and the [Advanced permission](#advanced-permissions).
+   - **Basic**: Gives Juicebox access to essential candidate and job data for exporting. Choose this only if you don't want to share offer data.
 
    <Frame>
      ![Review Juicebox's access to Greenhouse (V3) dialog with the Advanced and Basic options](/images/help/ats-setup/greenhouse-12.png)
