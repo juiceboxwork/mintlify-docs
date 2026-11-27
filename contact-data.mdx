@@ -60,6 +60,13 @@ Symbolized by a yellow warning sign, this icon suggests a heightened risk of ema
 
 ![Contact Data](https://raw.githubusercontent.com/juiceboxwork/docs/kb-migration/images/contact-data/Untitled-2.png)
 
+**Bounced and wrong emails**
+
+Juicebox also learns from real sends:
+
+- **Hard bounces:** If an address hard-bounced for any Juicebox organization in the last 12 months, Juicebox marks it undeliverable and ranks it last when you reveal, refresh, or draft a sequence. A reveal whose only email has bounced isn't charged a credit.
+- **Wrong-email replies:** If a candidate replies that the email isn't theirs, Juicebox downvotes that address. Sends, exports, and bounce fallback then use the next-best email. The address shows **Marked as invalid: they replied it's the wrong email**.
+
 ### Deliverability Assurance: 95%
 
 We guarantee 95% deliverability for emails verified with Juicebox. Guidelines:
